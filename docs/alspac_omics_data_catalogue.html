@@ -1,0 +1,2639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-04-23 Fri 12:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ALSPAC OMICs Data Catalogue</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="ALSPAC" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style type="text/css">pre {white-space: pre-wrap;}</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ALSPAC OMICs Data Catalogue</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3dd4d03">1. Introduction</a>
+<ul>
+<li><a href="#org8252bdd">1.1. Genetic data</a></li>
+<li><a href="#org0d5de94">1.2. Other omic data</a></li>
+<li><a href="#org4352c2b">1.3. How to use this document</a></li>
+<li><a href="#org6e9160f">1.4. Further information</a></li>
+</ul>
+</li>
+<li><a href="#orgdbc086e">2. Genetics</a>
+<ul>
+<li><a href="#org3923d15">2.1. Genome-wide - HRC imputed - G0 mothers + G1</a>
+<ul>
+<li><a href="#orgc639522">2.1.1. About:</a></li>
+<li><a href="#org92578a8">2.1.2. Change log:</a></li>
+<li><a href="#org085810f">2.1.3. Files included:</a></li>
+<li><a href="#org1e33b45">2.1.4. Known issues:</a></li>
+<li><a href="#org84ecbc1">2.1.5. Quality control:</a></li>
+<li><a href="#org1b5d12d">2.1.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#org6caa8d7">2.2. Whole genome sequencing - G1</a>
+<ul>
+<li><a href="#org6685a90">2.2.1. About:</a></li>
+<li><a href="#orgd6830d6">2.2.2. Change log:</a></li>
+<li><a href="#orge405ee6">2.2.3. Files included:</a></li>
+<li><a href="#org9ea779e">2.2.4. Known issues:</a></li>
+<li><a href="#org878ef62">2.2.5. Quality control:</a></li>
+<li><a href="#orgdc778b0">2.2.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#org4b24bf8">2.3. Genome-wide - 1000G imputed - G0 partners</a>
+<ul>
+<li><a href="#orga1432cd">2.3.1. About:</a></li>
+<li><a href="#org60484e8">2.3.2. Change log:</a></li>
+<li><a href="#org18bcf31">2.3.3. Files included:</a></li>
+<li><a href="#orgb5c669d">2.3.4. Known issues:</a></li>
+<li><a href="#org2052ff8">2.3.5. Quality control:</a></li>
+<li><a href="#orgd8016cb">2.3.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#org1250e6f">2.4. Genome-wide - 1000G imputed - G0 mothers + G1</a>
+<ul>
+<li><a href="#org3aefd5c">2.4.1. About:</a></li>
+<li><a href="#orgf8addd7">2.4.2. Change log:</a></li>
+<li><a href="#orgaf03757">2.4.3. Files included:</a></li>
+<li><a href="#org29c0094">2.4.4. Known issues:</a></li>
+<li><a href="#orgea5cd19">2.4.5. Quality control:</a></li>
+<li><a href="#orgafed267">2.4.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#org16b88fe">2.5. Genome-wide - HapMap2 imputed - G0 mothers</a>
+<ul>
+<li><a href="#orga193f42">2.5.1. About:</a></li>
+<li><a href="#orgf9c2c7a">2.5.2. Change log:</a></li>
+<li><a href="#orgf6d3bb9">2.5.3. Files included:</a></li>
+<li><a href="#org633bba9">2.5.4. Known issues:</a></li>
+<li><a href="#orgaba6e06">2.5.5. Quality control:</a></li>
+<li><a href="#orgae21beb">2.5.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#orgf1a9bc3">2.6. Genome-wide - HapMap2 imputed - G1</a>
+<ul>
+<li><a href="#orge26c31d">2.6.1. About:</a></li>
+<li><a href="#org59636c9">2.6.2. Change log:</a></li>
+<li><a href="#orgb97349c">2.6.3. Files included:</a></li>
+<li><a href="#orgff85a24">2.6.4. Known issues:</a></li>
+<li><a href="#org843b357">2.6.5. Quality control:</a></li>
+<li><a href="#orged3e4c8">2.6.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#org7cccb97">2.7. Genome-wide - Illumina 660 quad - G0 mothers</a>
+<ul>
+<li><a href="#orgc573e7e">2.7.1. About:</a></li>
+<li><a href="#org21cd0f4">2.7.2. Change log:</a></li>
+<li><a href="#orgb9b6fdd">2.7.3. Files included:</a></li>
+<li><a href="#orgaf10b58">2.7.4. Known issues:</a></li>
+<li><a href="#orgb61db10">2.7.5. Quality control:</a></li>
+<li><a href="#orge6ad8e5">2.7.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#org53e4001">2.8. Genome-wide - Illumina 550 quad - G1</a>
+<ul>
+<li><a href="#org28e298e">2.8.1. About:</a></li>
+<li><a href="#org923b9e6">2.8.2. Change log:</a></li>
+<li><a href="#org84b3e10">2.8.3. Files included:</a></li>
+<li><a href="#org76e3535">2.8.4. Known issues:</a></li>
+<li><a href="#orge83964d">2.8.5. Quality control:</a></li>
+<li><a href="#org177c803">2.8.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#org30549b1">2.9. Genome-wide - Illumina exome core array - G0 partners</a>
+<ul>
+<li><a href="#orgde99b11">2.9.1. About:</a></li>
+<li><a href="#org7c0a274">2.9.2. Change log:</a></li>
+<li><a href="#orga0cd9ef">2.9.3. Files included:</a></li>
+<li><a href="#org5d790aa">2.9.4. Known issues:</a></li>
+<li><a href="#orged63a0a">2.9.5. Quality control:</a></li>
+<li><a href="#org8c33de3">2.9.6. User guide:</a></li>
+</ul>
+</li>
+<li><a href="#orgd98264e">2.10. Genome-wide - CNV - G1</a>
+<ul>
+<li><a href="#orgaffee5a">2.10.1. About:</a></li>
+<li><a href="#orgef66c01">2.10.2. Change log:</a></li>
+<li><a href="#orgc6ffcfb">2.10.3. Files included:</a></li>
+<li><a href="#orgf04ce5e">2.10.4. Known issues:</a></li>
+<li><a href="#org2cab703">2.10.5. Quality control:</a></li>
+<li><a href="#org41fc582">2.10.6. User guide:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org338d727">3. Gene Expression</a>
+<ul>
+<li><a href="#orgea42a57">3.1. Gene expression - array - G1</a>
+<ul>
+<li><a href="#orgd3390cd">3.1.1. About:</a></li>
+<li><a href="#orgde56f03">3.1.2. Change log:</a></li>
+<li><a href="#org8b83dd2">3.1.3. Files included:</a></li>
+<li><a href="#org5687cd7">3.1.4. Known issues:</a></li>
+<li><a href="#org333b303">3.1.5. Quality control:</a></li>
+<li><a href="#org4107c0d">3.1.6. User guide:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4272aab">4. Epigenetics</a>
+<ul>
+<li><a href="#orgeda0c9d">4.1. DNA methylation - 450k - G0 mothers + G1</a>
+<ul>
+<li><a href="#org9ff6459">4.1.1. About:</a></li>
+<li><a href="#org748ba60">4.1.2. Change log:</a></li>
+<li><a href="#org377800a">4.1.3. Files included:</a></li>
+<li><a href="#orgad243ac">4.1.4. Known issues:</a></li>
+<li><a href="#orge22eb18">4.1.5. Quality control:</a></li>
+<li><a href="#orgba15cd0">4.1.6. User guide:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3dd4d03" class="outline-2">
+<h2 id="org3dd4d03"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Over the course of the <a href="http://www.bristol.ac.uk/alspac/">ALSPAC</a> study many large scale <a href="https://en.wikipedia.org/wiki/Omics">omics</a> datasets have been developed. This document acts as an overview and guide to help researchers determine the appropriate dataset(s) to <a href="http://www.bristol.ac.uk/alspac/researchers/access/">request</a> for their studies.
+</p>
+</div>
+
+<div id="outline-container-org8252bdd" class="outline-3">
+<h3 id="org8252bdd"><span class="section-number-3">1.1</span> Genetic data</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Note that several rounds of genomic data collection have occurred and continue to occur due to emergence of new improved technologies, meaning that there are numerous versions of the genomic data available to researchers. There are three main types of genomic data available to researchers at the present time: genotype array data, genotype array data imputed to sequence level density, and genotype sequenced data. Imputation has been performed several times as new sequenced reference panels become available. The same types of data have not yet been generated for all participants though plans are underway to unify the imputation batches across all array genotyped individuals.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d5de94" class="outline-3">
+<h3 id="org0d5de94"><span class="section-number-3">1.2</span> Other omic data</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+DNA methylation datasets and gene expression datasets, both based on arrays, are described in this document. Metabolomic data is separately described in the <a href="http://www.bristol.ac.uk/alspac/researchers/our-data/">ALSPAC data catalog</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4352c2b" class="outline-3">
+<h3 id="org4352c2b"><span class="section-number-3">1.3</span> How to use this document</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Every omic dataset that can be requested by researchers has an entry in this document. The entry is comprised of several sections that are each written in <a href="https://yaml.org/">yaml</a> format in order to organise meta data fields in a human readable way. The available data is summarised in the following
+table. For full details of the data set please see the appropriate section of this document.
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Dataset names</th>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-left">Code Names</th>
+<th scope="col" class="org-left">Dataset size</th>
+<th scope="col" class="org-right">N (Line counts)</th>
+<th scope="col" class="org-left">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Genome-wide - Illumina 660 quad - G0 mothers</td>
+<td class="org-left">Genome-wide array data including raw files and genotype calls for G0 mothers</td>
+<td class="org-left">gwa_660_g0m</td>
+<td class="org-left">115GB</td>
+<td class="org-right">3000</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - Illumina exome core array - G0 partners</td>
+<td class="org-left">Genome-wide array data including raw files and genotype calls for G0 partners, also including additional G0 mothers and G1 individuals who were absent from previous genotyping rounds</td>
+<td class="org-left">gwa_exome_g0p</td>
+<td class="org-left">200GB</td>
+<td class="org-right">8884</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - Illumina 550 quad - G1</td>
+<td class="org-left">Genome-wide array data including raw files and genotype calls for G1 individuals</td>
+<td class="org-left">gwa_550_g1</td>
+<td class="org-left">200GB</td>
+<td class="org-right">2201</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - Illumina exome core array - G2</td>
+<td class="org-left">Genome-wide array data including raw files and genotype calls for G2 individuals</td>
+<td class="org-left">gwa_exome_g2</td>
+<td class="org-left">602GB</td>
+<td class="org-right">8365</td>
+<td class="org-left">no</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - HapMap2 imputed - G0 mothers</td>
+<td class="org-left">Genome-wide array data imputed to the HapMap2 reference panel for G0 mothers</td>
+<td class="org-left">gi_hapmap2_g0m</td>
+<td class="org-left">5.1 GB</td>
+<td class="org-right">8340</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - HapMap2 imputed - G1</td>
+<td class="org-left">Genome-wide array data imputed to the HapMap2 reference panel for G1 individuals</td>
+<td class="org-left">gi_hapmap2_g1</td>
+<td class="org-left">11 GB</td>
+<td class="org-right">8365</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - 1000G imputed - G0 mothers + G1</td>
+<td class="org-left">Genome-wide array data imputed to the 1000 genomes reference panel for G0 mothers and G1 individuals</td>
+<td class="org-left">gi_1000g_g0m_g1</td>
+<td class="org-left">150GB</td>
+<td class="org-right">17844</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - 1000G imputed - G0 partners</td>
+<td class="org-left">Genome-wide array data imputed to the 1000 genomes reference panel for G0 partners, with some additional G0 mothers and G1 individuals</td>
+<td class="org-left">gi_1000g_g0p</td>
+<td class="org-left">50GB</td>
+<td class="org-right">2203</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - HRC imputed - G0 mothers + G1</td>
+<td class="org-left">Genome-wide array data imputed to the HRC reference panel for G0 mothers and G1 individuals</td>
+<td class="org-left">gi_hrc_g0m_g1</td>
+<td class="org-left">1018GB</td>
+<td class="org-right">17844</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">HLA imputation - G1</td>
+<td class="org-left">Imputation of classic HLA alleles for G1 individuals</td>
+<td class="org-left">gi_hla_g1</td>
+<td class="org-left">na</td>
+<td class="org-right">na</td>
+<td class="org-left">no</td>
+</tr>
+
+<tr>
+<td class="org-left">Genome-wide - CNV - G1</td>
+<td class="org-left">Copy number variation calls from genome-wide array data for G1 individuals</td>
+<td class="org-left">cnv_550_g1</td>
+<td class="org-left">402 GG</td>
+<td class="org-right">7590</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Whole genome sequencing - G1</td>
+<td class="org-left">Whole genome sequencing for G1 individuals, part of the UK10K dataset</td>
+<td class="org-left">wgs_hiseq_g1</td>
+<td class="org-left">350 GB</td>
+<td class="org-right">1867</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">Whole exome sequencing - G1</td>
+<td class="org-left">Whole exome sequencing for G1 individuals</td>
+<td class="org-left">wes_novaseq_g1</td>
+<td class="org-left">2.3 TB</td>
+<td class="org-right">2971</td>
+<td class="org-left">no</td>
+</tr>
+
+<tr>
+<td class="org-left">Gene expression - array - G1</td>
+<td class="org-left">Gene expression data from Illumina Human HT-12 v3 bead array for G1 individuals</td>
+<td class="org-left">ge_ht12_g1</td>
+<td class="org-left">2.5 GB</td>
+<td class="org-right">6707</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">DNA methylation - 450k - G0 mothers + G1</td>
+<td class="org-left">DNA methylation data from Illumina 450k arrays for G0 mothers at two time points and G1 individuals at three time points</td>
+<td class="org-left">dnam_450_g0m_g1</td>
+<td class="org-left">300GB</td>
+<td class="org-right">5000</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">DNA methylation - EPIC - G1</td>
+<td class="org-left">DNA methylation data from Illumina EPIC arrays for G1 individuals at multiple time points</td>
+<td class="org-left">dnam_epic_g1</td>
+<td class="org-left">300GB</td>
+<td class="org-right">na</td>
+<td class="org-left">no</td>
+</tr>
+
+<tr>
+<td class="org-left">DNA methylation - Bisulfite sequencing - G0 mothers</td>
+<td class="org-left">DNA methylation data from bisulfite sequencing on G0 mothers</td>
+<td class="org-left">dnam_bs_g0m</td>
+<td class="org-left">1.3T</td>
+<td class="org-right">8</td>
+<td class="org-left">yes</td>
+</tr>
+
+<tr>
+<td class="org-left">DNA methylation - raw arrays - multiple timepoints</td>
+<td class="org-left">Raw IDAT files for all rounds of DNA methylation array assays, for advanced usage only</td>
+<td class="org-left">dnam_rawarray_all</td>
+<td class="org-left">1 TB</td>
+<td class="org-right">na</td>
+<td class="org-left">no</td>
+</tr>
+
+<tr>
+<td class="org-left">DNA methylation - normalised arrays - multiple time points</td>
+<td class="org-left">DNA methylation data generated from several rounds of array assays, and then normalised into analysable datasets for a range of participants</td>
+<td class="org-left">dnam_normarray_all</td>
+<td class="org-left">1 TB</td>
+<td class="org-right">na</td>
+<td class="org-left">no</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-org6e9160f" class="outline-3">
+<h3 id="org6e9160f"><span class="section-number-3">1.4</span> Further information</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+We have developed an informal and more general guide to omic data <a href="https://docs.google.com/document/d/1tOEC753fgES-M2bHHCFFSxXf5rafAPgawgWGVjiCH6k">here</a>. This is an unofficial guide that contains information about how to use different file formats, recommended software for analysis, and where to find further guides. If further information is required please contact alspac-genetics@bristol.ac.uk.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdbc086e" class="outline-2">
+<h2 id="orgdbc086e"><span class="section-number-2">2</span> Genetics</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org3923d15" class="outline-3">
+<h3 id="org3923d15"><span class="section-number-3">2.1</span> Genome-wide - HRC imputed - G0 mothers + G1</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgc639522" class="outline-4">
+<h4 id="orgc639522"><span class="section-number-4">2.1.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_Array_Genotypes_HRC_Imputation
+
+Keywords:
+  - imputation
+  - genomic
+  - snp
+  - genetic
+  - genome-wide
+  - genotype
+  - haplotype reference consortium
+
+Title: ALSPAC imputed to Haplotype Reference Consortium panel (30/09/2015)
+
+Description: |
+  SNP chips are useful for the generation of data on hundreds of thousands of SNPs, but there are millions more polymorphisms that remain untyped with this technology. If suitable numbers of whole genome sequences exist (e.g. 1000 genomes data) then millions of genotypes that are missing from a sample because they have not been typed by SNP chips can be imputed using probabilistic methods. Here the ALSPAC mother and children data were imputed to a new reference panel known as the Haplotype Reference Consortium (HRC) panel. This comprises around 31000 sequenced individuals (mostly European), so the coverage of European haplotypes is much greater than in other panels. As a consequence imputation accuracy is expected to improve, particularly at lower frequencies.
+
+  The ALSPAC genotype data generated using the Illumina HumanHap550 quad (children) and Illumina human660W quad (mothers) has been jointly phased using ShapeIt v2 (which uses relationship information to improve phasing accuracy) and imputed to the HRC panel (pre-release 2015).
+
+'Documentation Authors':
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+  - "Gibran Hemani: g.hemani@bristol.ac.uk"
+  - "George McMahon: epgmm@bristol.ac.uk"
+  - "Jonathan Marchini: marchini@stats.ox.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+
+Formats:
+  - Dosage format (binary)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org92578a8" class="outline-4">
+<h4 id="org92578a8"><span class="section-number-4">2.1.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2020/06/15:
+  Author: Sam Neaves
+  Changes:
+  - Made the dataset for standard releases to only include qc'd  bgen files for the moment.
+
+
+2015/10/25:
+  Author: Gibran Hemani
+  Changes:
+  - Converted IDs from randomised back to ALN-qlet
+  - Derived best guess genotypes
+  - Generated kinships
+  - Made unrelated ID lists
+  - Generated principal components
+  - Documentation
+  - Converted SNP IDs to RS IDs in `bestguess` files and `snp-stats` files
+  - Changed directory structure
+
+2015/09/04:
+  Author: Jonathan Marchini
+  Changes:
+  - Created bgen files from haplotypes with randomised IDs
+  - Generated info scores
+  - Uploaded to IEU FTP
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org085810f" class="outline-4">
+<h4 id="org085810f"><span class="section-number-4">2.1.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`dosages_bgen`": |
+  Imputed genotype dosages in binary oxford format. Can be read and manipulated with QCTOOL. SNPTEST can be used to perform GWAS. PLINK1.90 can be used to read data and convert to best guess (but won't use the data's dosage format for any analysis). Note: the SNP IDs in the dosages are in the format `chr:pos_a1_a2`.
+
+"`bestguess`": |
+  All imputed dosages converted to 'best guess' genotypes in binary plink format. Caution: This includes a very large number of low quality imputed SNPs and they can throw up spurious results when used as best guess genotypes. Used hard call threshold of 0.1, so there will be some missing values here. Where possible the SNP IDs in the `bim` files are the build 37 rs IDs, otherwise they are `chr:pos_a1_a2` naming convention.
+
+"`snp-stats`": |
+  Imputation quality metrics generated using QCTOOL using the `--snp-stats` option. `SNPID` column is the same as the chromosome number if SNP was was originally on the genotype chip, or `chr:pos_a1_a2` format if imputed. The `RSID` column has rs IDs where possible. The `information` column gives imputation R-squared quality metric. The `RSID` column matches the SNP IDs in the `bim` files.
+
+"`derived/filtered/bestguess/maf0.01_info0.8`": |
+  Dosages converted to 'best guess' genotypes in binary plink format, filtered to only include SNPs with MAF &gt; 0.01 and imputation info score &gt; 0.8. For most analyses this is a computationally tractable format that will not suffer from statistical problems if the focus of the analysis is on well imputed common variants. Used hard call threshold of 0.1, so there will be some missing values here.
+
+"`derived/filtered/bestguess/maf0.01_info0.8/combined`": |
+  Same as above but with all chromosomes combined into a single file.
+
+"`derived/filtered/bestguess/maf0.01_info0.8/combined/hapmap3`": |
+  Same as above but with all chromosomes combined into a single file and including only HapMap3 SNPs.
+
+"`derived/principal_components`": |
+  Generated using the `scripts/pcs.sh` script. It extracts unrelated individuals (IBS &lt; 0.05) and independent SNPs with long range LD regions removed, and then calculates PCs using the `--pca` command in plink1.90.
+
+"`derived/kinships`": |
+  Genetic relationship matrices calculated using GCTA standard algorithm using only 1.1 million HapMap3 best guess tag SNPs. These were constructed by extracting autosomal HapMap3 SNPs from `bestguess/maf0.01_info0.8` data. These data include mothers and children, if you want to use only unrelated individuals then use only individuals listed in unrelated_ids. Kinships are available for each separate chromosome (`data_chr[i].grm`) or for the entire autosome (`data.grm`)
+
+"`derived/unrelated_ids`": |
+  Lists of samples with no cryptic relatedness. These were made by calculating the genetic relatedness using the IBS grm method in GCTA, and discarding a random individual from each pair with relatedness greater than 0.05. The `*_unrelated.txt` is a list of unrelated IDs to include. The `*_exclusion_list.txt` is a list of the individuals that were excluded to create the unrelated list. Use the exclusion lists for SNPTEST.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1e33b45" class="outline-4">
+<h4 id="org1e33b45"><span class="section-number-4">2.1.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  # There are currently no recorded issues with this dataset.
+  issue: "na"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org84ecbc1" class="outline-4">
+<h4 id="org84ecbc1"><span class="section-number-4">2.1.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+  ALSPAC children were genotyped using the Illumina HumanHap550 quad chip genotyping platforms by 23andme subcontracting the Wellcome Trust Sanger Institute, Cambridge, UK and the Laboratory Corporation of America, Burlington, NC, US. The resulting raw genome-wide data were subjected to standard quality control methods. Individuals were excluded on the basis of gender mismatches; minimal or excessive heterozygosity; disproportionate levels of individual missingness (&gt;3%) and insufficient sample replication (IBD &lt; 0.8). Population stratification was assessed by multidimensional scaling analysis and compared with Hapmap II (release 22) European descent (CEU), Han Chinese, Japanese and Yoruba reference populations; all individuals with non-European ancestry were removed. SNPs with a minor allele frequency of &lt; 1%, a call rate of &lt; 95% or evidence for violations of Hardy-Weinberg equilibrium (P &lt; 5E-7) were removed. Cryptic relatedness was measured as proportion of identity by descent (IBD &gt; 0.1). Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation. 9,115 subjects and 500,527 SNPs passed these quality control filters.
+
+  ALSPAC mothers were genotyped using the Illumina human660W-quad array at Centre National de Génotypage (CNG) and genotypes were called with Illumina GenomeStudio. PLINK (v1.07) was used to carry out quality control measures on an initial set of 10,015 subjects and 557,124 directly genotyped SNPs. SNPs were removed if they displayed more than 5% missingness or a Hardy-Weinberg equilibrium P value of less than 1.0e-06. Additionally SNPs with a minor allele frequency of less than 1% were removed. Samples were excluded if they displayed more than 5% missingness, had indeterminate X chromosome heterozygosity or extreme autosomal heterozygosity. Samples showing evidence of population stratification were identified by multidimensional scaling of genome-wide identity by state pairwise distances using the four HapMap populations as a reference, and then excluded. Cryptic relatedness was assessed using a IBD estimate of more than 0.125 which is expected to correspond to roughly 12.5% alleles shared IBD or a relatedness at the first cousin level. Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation. 9,048 subjects and 526,688 SNPs passed these quality control filters.
+
+  We combined 477,482 SNP genotypes in common between the sample of mothers and sample of children. We removed SNPs with genotype missingness above 1% due to poor quality (11,396 SNPs removed) and removed a further 321 subjects due to potential ID mismatches. This resulted in a dataset of 17,842 subjects containing 6,305 duos and 465,740 SNPs (112 were removed during liftover and 234 were out of HWE after combination). We estimated haplotypes using ShapeIT (v2.r644) which utilises relatedness during phasing. The phased haplotypes were then imputed to the Haplotype Reference Consortium (HRC) panel of approximately 31,000 phased whole genomes. The HRC panel was phased using ShapeIt v2, and the imputation was performed using Impute V3.
+
+  This gave 8,237 eligible children and 8,196 eligible mothers with available genotype data after exclusion of related subjects using cryptic relatedness measures described previously.
+
+Details:
+
+  Genotyping centre:
+    Children: Wellcome Trust Sanger Institute, Cambridge, UK and the Laboratory Corporation of America, Burlington, NC, US
+    Mothers: Centre National de Génotypage (CNG)
+
+  Genotyping array:
+    Children: Illumina Human Hap 550-quad
+    Mothers: Illumina human660W-quad
+
+  Calling algorithm: Illumina GenomeStudio
+
+  Software used for QC filtering: PLINK (v1.07)
+
+  SNP call rate filter:
+    Children: 0.05
+    Mothers: 0.05
+    Combined: 0.01
+
+  SNP HWE filter: 5e-7
+
+  SNP MAF filter: 0.01
+
+  SNPs before QC:
+    Mothers: 557124
+    Children: 550000
+
+  SNPs after QC:
+    Mothers: 526688
+    Children: 500527
+    Combined: 477482
+
+  Sample size before QC: 19930
+
+  Genome build: Build 37
+
+  Individual call rate filter:
+    Children: 0.03
+    Mothers: 0.05
+
+  Cryptic relatedness filter:
+    Mothers: 12.5% or more alleles shared IBD (pihat calculated by PLINK)
+    Children: 10% or more alleles shared IBD (pihat calculated by PLINK)
+
+  Autosomal heterozygosity filter: Outliers were excluded
+
+  X chromosome heterozygosity filter:
+    - Samples with undetermined X chromosome heterozygosity were excluded
+    - Pseudoautosomal regions have been removed
+
+  Population Stratification: Samples that clustered outside the CEU HapMap2 population using multidimensional scaling of genome-wide IBS pairwise distances.
+
+  Sample size after QC: 18163
+
+  Phasing software: ShapeIt v2.r727
+
+  Phasing parameters:
+    States: 100
+    Window: 2
+    Effective population size: 11418
+    Genetic map: 1000 genomes phase 1 version 3 (release date 21/05/2011)
+    Burn in iterations: 7
+    Pruning interations: 8
+    Main iterations: 20
+
+  Imputation software: Impute2 v2.2.2
+
+  Imputation reference panel: 1000 genomes phase 1 version 3
+
+  Imputation reference phase version: ShapeIt v2 released December 2013
+
+  Imputation reference samples: 2186 haplotypes from all populations
+
+  Imputation reference exclusions: No monomorphic or singleton SNPs
+
+  Imputation parameters:
+    Effective population size: 10000
+    Window size: 5Mb
+    Window overlap: 250Kb
+    Number of reference haplotypes: 2000
+    Number of sample haplotypes: 80
+    MCMC iterations: 30
+    Burn in iterations: 10
+
+  Number of SNPs after imputation: 39098471
+
+  "Number of SNPs after filtering on MAF &gt; 0.01 and info &gt; 0.8": 7191388
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1b5d12d" class="outline-4">
+<h4 id="org1b5d12d"><span class="section-number-4">2.1.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-1-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+  See the scripts hosted here:
+  https://github.com/explodecomputer/data_manipulation
+
+Perform GWAS: |
+  An example of how to submit a GWAS using SNPTEST to run on BC3 can be found here:
+  https://gist.github.com/explodecomputer/ad61c0e61007547d50de
+
+Individuals with withdrawn consent: |
+  File with list of individuals with withdrawn consent is in root of shared directory. Also available as text files that can be used for exclusion in plink or snptest:
+  `/panfs/panasas01/shared/alspac/studies/latest/alspac/genetic/variants/arrays/gwas/imputed/1000genomes/released/27Feb2015/data/derived/exclusion_ids/`
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6caa8d7" class="outline-3">
+<h3 id="org6caa8d7"><span class="section-number-3">2.2</span> Whole genome sequencing - G1</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org6685a90" class="outline-4">
+<h4 id="org6685a90"><span class="section-number-4">2.2.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC Whole genome sequencing
+
+Aliases:
+  - Uk10k
+
+Keywords:
+  - ALSPAC
+  - genomic
+  - genetic
+  - genome-wide
+  - genotype
+  - whole-genome
+  - sequencing 
+
+
+Description: |
+  ALSPAC and TwinsUK cohorts were sequenced at an average read depth of 6.7x through the UK10K program (http://www.UK10K.org) using the Illumina HiSeq platform, and aligned to the GRCh37 human reference using BWA. SNV calls were completed using samtools/bcftools and VQSR and GATK were used to recall these calls.
+
+paper: | http://www.ncbi.nlm.nih.gov/pubmed/26367797
+
+
+'Documentation Authors':
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+
+Formats:
+  - VCF files.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd6830d6" class="outline-4">
+<h4 id="orgd6830d6"><span class="section-number-4">2.2.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<div class="org-src-container">
+<pre class="src src-yaml">DATASET: ALSPAC_UK10K
+
+21-June-2016
+	Data set generated
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge405ee6" class="outline-4">
+<h4 id="orge405ee6"><span class="section-number-4">2.2.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`alspac`": |
+  The vcf files were generated from the qced data. 1,867 ALSPAC participants were included and their ID updated to aln. The linker file is here data/derived/linkerToAln/ALSPAC_1867_uk10k_aln.txt. This is a copy of the original file from here "/projects/UK10K/REL-2012-06-02/Phenotypes/ALSPAC_1867_uk10k_aln.txt". The aln mappings are in columns 44 and 45.
+  bcftools reheader was applied as part of samtools-1.2-41
+
+"`md5sums`": |
+  md5sum for each data file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9ea779e" class="outline-4">
+<h4 id="org9ea779e"><span class="section-number-4">2.2.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  # There are currently no recorded issues with this dataset.
+  issue: "na"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org878ef62" class="outline-4">
+<h4 id="org878ef62"><span class="section-number-4">2.2.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-2-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+  'Whole Genome Sequencing': |
+
+  ALSPAC and TwinsUK cohorts were sequenced to an average read depth of 6.7x through the UK10K program (www.uk10k.org). Whole genome sequencing was completed at the Wellcome Trust Sanger Institute and Beijing Genomics Institute. Briefly, DNA was sheared and subjected to Illumina paired-end DNA library preparation and sequenced using the Illumina HiSeq platform. Reads were aligned to the GRCh37 human reference, using BWA (v0.5.9-r16). BAM files were further processed to realign around known INDELs, base quality score recalibration, addition of BAQ tags using GATK.
+SNV calls were completed using samtools/bcftools (version 0.1.18-r579), and were then called to produce a VCF file. The pipeline to create these calls is available from: https://github.com/VertebrateResequencing/vr- codebase/tree/develop.
+Sites were called using the Variant Quality Score Recalibration (VQSR) and GATK Unified Genotyper was used to recall the sites and alleles discovered by samtools. The VariantRecalibrator within GATK was used to first model the variants, then GATK ApplyRecalibration was applied to assign VQSLOD scores (see http://www.broadinstitute.org/gsa/wiki/index.php/Variant_quality_score_recalibration for more details).
+VQSLOD score threshold was set at -0.6804 which improved site concordance with duplicate samples sequenced using high-depth exome sequence methods. Two further thresholds were applied: failure of HWE (P&lt;1e-6) and evidence of batch effects between samples genotyped at Sanger and BGI (P&lt;1e-2). In total, 4.2M variants were removed through these QC criteria. The final set contained over 42M SNVs.
+In order to assess the validity of the sequence data, 61 samples were also sequenced using high-depth next generation exome sequencing (depth = 70x), described previously. 74,621 sites were shared out of the 86,322 sites that were called in the exome data, representing a sensitivity of 86.4% across the 35Mb bait region. We assessed the non-reference discordance rate and found that 0.2% were discordant, suggesting that the resultant dataset had high concordance with high depth exome sequencing.
+
+ 'Post-genotyping sample QC': |
+Of the 4,030 samples (1,990 TwinsUK and 2,040 ALSPAC) that were submitted for sequencing, 3,910 samples (1,934 TwinsUK and 1,976 ALSPAC) were sequenced and went through the variant calling procedure. Low quality samples were identified before the genotype refinement by comparing the samples to their GWAS genotypes using about 20,000 sites on chromosome 20. Comparing the raw genotype calls to these existing GWAS genotypes data, we removed a total of 112 samples (64 TwinsUK and 48 ALSPAC) because of one or more of the following causes: (i) high overall discordance to GWAS genotype data (&gt;3%) (55 TwinsUK and 36 ALSPAC), (ii) heterozygosity rate &gt; 3SD from population mean (1 TwinsUK and 1 ALSPAC), suggesting possible contamination (iii) no GWAS genotype data available for that sample (7 TwinsUK and 0 ALSPAC) and (iv) sample below 4x mean read-depth (1 TwinsUK and 11 ALSPAC). Overall, 3,798 samples (1,870 TwinsUK and 1,928 ALSPAC) were brought forward to the genotype refinement step.
+
+ 'Genotype refinement': |
+The missing and low confidence genotypes in the filtered VCFs were refined through an imputation procedure with BEAGLE 4. The program was run with default parameters. VCFs were split into chunks each containing a maximum of 3,000 sites plus 1,000 sites in buffer regions, that is 500 on either side. Multiallelic sites were included in the imputation. It took 882 CPU weeks to complete. After imputation, chunks were recombined using the vcf-phased-join script from the vcftools package.
+
+ 'Post-refinement sample QC': |
+Additional sample-level QC steps were carried out on refined genotypes, leading to the exclusion of additional 17 samples (16 TwinsUK and 1 ALSPAC) due to one or more of the following causes: (i) post- refinement non-reference discordance (NRD) with GWAS data &gt; 5% (12 TwinsUK and 1 ALSPAC), (ii) multiple relations to other samples, i.e. more than 25 relations with IBS&gt;0.125 were deemed indicative of contamination (13 TwinsUK and 1 ALSPAC), (iii) discordance with manifest gender (3 TwinsUK and 0 ALSPAC). To identify these samples we pruned the WGS data to a set of independent SNVs and calculated genome-wide average identity by state between each pair of samples across the two cohorts. The resulting set of contaminated samples corresponded almost completely to the set of samples with NRD&gt;5%. This left a final set of 3,781 samples (1,854 TwinsUK and 1,927 ALSPAC).
+
+  'Removal of related and non-European ancestry samples for association analyses': |
+The final release set that passed all QC contains non-European and related samples, both of which we sought to exclude to simplify the association testing. To identify participants of non-European ancestry we merged a pruned dataset to the 11 HapMap3 populations and performed a principal components analysis (PCA) using EIGENSTRAT. A total of 44 participants (12 TwinsUK and 32 ALSPAC) did not cluster to the European (CEU) cluster of samples and were removed from association analyses. Individuals with &gt; 20,000 singleton variants represent ethnic outliers that were excluded from association analyses. We further sought to flag related individuals for exclusion in association tests. Overall, 69 samples (36 TwinsUK and 33 ALSPAC) were flagged because of relatedness greater than third degree (IBS&gt;0.125). Finally 63 co-twin samples (42 dizygotic and 21 monozygotic) and three duplicate samples were removed from TwinsUK. The final sequence data set that was used for the association analyses comprises 3,621 samples (1,754 TwinsUK and 1,867 ALSPAC).
+
+ 'publication': |
+   http://www.ncbi.nlm.nih.gov/pubmed/26367797
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdc778b0" class="outline-4">
+<h4 id="orgdc778b0"><span class="section-number-4">2.2.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-2-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+   Use qctools and vcftools.
+
+Perform GWAS: |
+  To be added.
+
+Individuals with withdrawn consent: |
+  Data is organized into 'freezes'. A current freeze has the current withdrawn users. For ALSPAC direct users this is what is visible. For collaborators the data you receive will be a copy that has removed any withdrawn users. The original data directory is only visible to ALSPAC admin. The list of withdrawn users is in /omics_freeze_creation/withdrawls/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b24bf8" class="outline-3">
+<h3 id="org4b24bf8"><span class="section-number-3">2.3</span> Genome-wide - 1000G imputed - G0 partners</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orga1432cd" class="outline-4">
+<h4 id="orga1432cd"><span class="section-number-4">2.3.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_1000G_Round_2_Mothers_and_Fathers
+
+Aliases:
+    - ALSPAC_WorkPackage_2014
+
+Keywords:
+    - ALSPAC
+    - HumanCoreExome
+    - imputation
+    - genomic
+    - snp
+    - genetic
+    - genome-wide
+    - genotype
+    - 1000 genomes
+
+
+Title: ALSPAC genotypes for mothers and fathers from work package 2015
+
+
+Description: |
+    ALSPAC genotype data generated on Illumina HumanCore Exome arrays. This data has been cleaned, flipped to the positive strand and in b37 coordinates and imputed to the 1000 genomes phase I version 3.
+
+'Documentation Authors':
+    - "George McMahon: epgmm@bristol.ac.uk"
+    - "Sam Neaves s.neaves@bristol.ac.uk"
+
+PIs:
+    - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+    - "Tom Gaunt: tom.gaunt@bristol.ac.uk"
+    - "Wendy Mcardle: wendy.mcardle@bristol.ac.uk"
+    - "Sue Ring: s.m.ring@bristol.ac.uk"
+
+
+Formats:
+  - Oxford dossage format consisting of binary dosage format (bgen) and sample file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org60484e8" class="outline-4">
+<h4 id="org60484e8"><span class="section-number-4">2.3.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2020/06/09:
+  Author: Sam Neaves
+  Changes:
+  - Restrict dataset to only the bgen and sample files for the time being.
+  - The snp-test quality scores and other derived datasets will be added back later if appropiate.
+
+2016/10/27:
+  Author: George McMahon
+  Changes:
+  - release 2
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org18bcf31" class="outline-4">
+<h4 id="org18bcf31"><span class="section-number-4">2.3.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`bgen`": |
+
+  Bgen files of the imputed genotypes.
+    Imputed genotype dosages in binary format. Bassed on the plain text .gen files which have Three columns per individual refers. Each column represent one of three genotypes, and the value is the probability that the individual has that genotype. The .bgen files can be used  with SNPTEST and QCTOOLs, and can also be read by PLINK1.90. It is much faster to manipulate data than using the `.gz` format in `dosage`.
+These were generated from the VCF output of imputation using qctool -g data_chr$k.vcf -vcf-genotype-field GP -og data_chr$k.bgen
+
+
+"`md5sums`": |
+  md5sum for each data file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb5c669d" class="outline-4">
+<h4 id="orgb5c669d"><span class="section-number-4">2.3.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  # There are currently no recorded issues with this dataset.
+  issue: "na"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2052ff8" class="outline-4">
+<h4 id="org2052ff8"><span class="section-number-4">2.3.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-3-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+3,453 ALSPAC mother and fathers and 535,478 SNPs were genotyped using the Illumina HumanCoreExome chip genotyping platforms by the ALSPAC lab and called using GenomeStudio. The resulting raw genome-wide data were subjected to standard quality control methods using PLINK (v1.07). Individuals were excluded on the basis of gender mismatches (n = 80); minimal or excessive heterozygosity (n = 64); disproportionate levels of individual missingness (&gt;5%, n = 60) and possible contamination (n = 3). Population stratification was assessed by multidimensional scaling analysis and compared with 1000 Genomes phase 3 data and principal component analysis (n = 266); all individuals with non-European ancestry were removed. Cryptic relatedness was measured as SNP relatedness in GCTA (relatedness &gt; 0.1, n = 69 removed). SNPs with a call rate of &lt; 95% or evidence for violations of Hardy-Weinberg equilibrium (P &lt; 1E-7) and those which failed GenomeStudio quality control measures were removed (n = 21,298). 6,594 duplicate SNPs were also removed. 
+This resulted in 2,911 unrelated mothers and father genotypes at 507,586 SNPs. We then identified 2217 samples where aln assigned historically by the lab matched genetically assigned aln.  
+
+We phased data of 3074 samples that passed qc but contained related subjects in shapeit v2.r837. We then removed 155,336 monomorphic SNPs, 1033 markers not in 1000 genomes, 11,842 A/T or G/C SNPs and 10 duplicate sites to give 337,732 SNPs on chromosomes 1-23. Of the 329,363 markers on chromosomes 1-22, 298,742 overlapped the reference genome. We imputed to the 1000 genomes phase 1 version 3 using the Michigan Imputation Server. We then identified 2217 samples where aln assigned historically by the lab matched genetically assigned aln. We then removed 12 subjects who have withdrawn consent and 6 subjects genotyped in an earlier work package to give 2201 subjects.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd8016cb" class="outline-4">
+<h4 id="orgd8016cb"><span class="section-number-4">2.3.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-3-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+  See the scripts hosted here:
+  https://github.com/explodecomputer/data_manipulation
+
+Perform GWAS: |
+  An example of how to run a GWAS using SNPTEST to found here:
+  https://gist.github.com/explodecomputer/ad61c0e61007547d50de
+  It also includes information for ALSPAC direct users on submiting jobs to BC3.
+
+Individuals with withdrawn consent: |
+  Data is organized into 'freezes'. A current freeze has the current withdrawn users. For ALSPAC direct users this is what is visible. For collaborators the data you receive will be a copy that has removed any withdrawn users. The original data directory is only visible to ALSPAC admin. The list of withdrawn users is in /omics_freeze_creation/withdrawls/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1250e6f" class="outline-3">
+<h3 id="org1250e6f"><span class="section-number-3">2.4</span> Genome-wide - 1000G imputed - G0 mothers + G1</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-org3aefd5c" class="outline-4">
+<h4 id="org3aefd5c"><span class="section-number-4">2.4.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: Genome-wide - 1000G imputed - G0 mothers + G1
+
+
+Aliases:
+  - gi_1000g_g0m_g1
+  - ALSPAC_Array_Genotypes_1000genomes_Imputation
+
+Keywords:
+  - ALSPAC
+  - imputation
+  - genomic
+  - snp
+  - genetic
+  - genome-wide
+  - genotype
+  - 1000 genomes
+
+Title: 	Genome-wide array data imputed to the 1000 genomes reference panel for G0 mothers and G1 individuals (phase 1, version 3, release Dec 2013)
+
+Description: |
+  SNP chips are useful for the generation of data on hundreds of thousands of SNPs, but there are millions more polymorphisms that remain untyped with this technology. If suitable numbers of whole genome sequences exist (e.g. 1000 genomes data) then millions of genotypes that are missing from a sample because they have not been typed by SNP chips can be imputed using probabilistic methods. Here the ALSPAC mother and children data were imputed to 1000 genomes using the best available phasing and imputation software and reference panels at the time.
+
+  The ALSPAC genotype data generated using the Illumina HumanHap550 quad (children) and Illumina human660W quad (mothers) has been jointly imputed to the 1000 genomes reference panel (Version 1, Phase 3, Dec 2013 Release).
+
+'Documentation Authors':
+  - "Gibran Hemani: g.hemani@bristol.ac.uk"
+  - "George McMahon: epgmm@bristol.ac.uk"
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+
+Formats:
+  - Oxford dossage format consisting of binary dosage format (bgen) and sample file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf8addd7" class="outline-4">
+<h4 id="orgf8addd7"><span class="section-number-4">2.4.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2020/06/09:
+  Author: Sam Neaves
+  Changes:
+  - Restrict dataset to only the bgen and sample files for the time being.
+  - The snp-test quality scores and other derived datasets will be added back later if appropiate.
+
+2015/10/24:
+  Author: Gibran Hemani
+  Changes:
+  - Added bgen format
+  - Added snp-test quality scores
+  - Restructured `data` directory slightly, filtered datasets are now in derived folder. No data has been changed compared to previous version.
+
+2015/08/11:
+  Author: Gibran Hemani
+  Changes:
+  - Added phased genotypes
+  - Updated documentation
+
+2015/06/12:
+  Author: Gibran Hemani
+  Changes:
+  - added list of individuals to remove to exclude relateds
+  - updated qc documentation to confirm that X-PAR regions are excluded
+  - updated documentation
+  - updated data.sample file to make dummy phenotype column labelled "C", now should work with SNPTEST
+
+2015/04/24:
+  Author: Gibran Hemani
+  Changes:
+    - updated ID format in derived files to match the ID format used for bestguess and dosage data formats
+
+2014/12/16:
+  Author: Gibran Hemani
+  Changes:
+  - Data set reformatted
+
+2015/04/24:
+  Author: Gibran Hemani
+  Changes:
+  - Data set generated
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaf03757" class="outline-4">
+<h4 id="orgaf03757"><span class="section-number-4">2.4.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`dosage_bgen`": |
+  Imputed genotype dosages in binary format. Bassed on the plain text .gen files which have Three columns per individual refers. Each column represent one of three genotypes, and the value is the probability that the individual has that genotype. The .bgen files can be used  with SNPTEST and QCTOOLs, and can also be read by PLINK1.90. It is much faster to manipulate data than using the `.gz` format in `dosage`.
+
+
+"`md5sums`": |
+  md5sum for each data file.
+
+"`data.sample`": |
+  The sample file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org29c0094" class="outline-4">
+<h4 id="org29c0094"><span class="section-number-4">2.4.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-4-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  # There are currently no recorded issues with this dataset.
+  issue: "na"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgea5cd19" class="outline-4">
+<h4 id="orgea5cd19"><span class="section-number-4">2.4.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-4-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+  ALSPAC children were genotyped using the Illumina HumanHap550 quad chip genotyping platforms by 23andme subcontracting the Wellcome Trust Sanger Institute, Cambridge, UK and the Laboratory Corporation of America, Burlington, NC, US. The resulting raw genome-wide data were subjected to standard quality control methods. Individuals were excluded on the basis of gender mismatches; minimal or excessive heterozygosity; disproportionate levels of individual missingness (&gt;3%) and insufficient sample replication (IBD &lt; 0.8). Population stratification was assessed by multidimensional scaling analysis and compared with Hapmap II (release 22) European descent (CEU), Han Chinese, Japanese and Yoruba reference populations; all individuals with non-European ancestry were removed. SNPs with a minor allele frequency of &lt; 1%, a call rate of &lt; 95% or evidence for violations of Hardy-Weinberg equilibrium (P &lt; 5E-7) were removed. Cryptic relatedness was measured as proportion of identity by descent (IBD &gt; 0.1). Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation. 9,115 subjects and 500,527 SNPs passed these quality control filters.
+
+  ALSPAC mothers were genotyped using the Illumina human660W-quad array at Centre National de Génotypage (CNG) and genotypes were called with Illumina GenomeStudio. PLINK (v1.07) was used to carry out quality control measures on an initial set of 10,015 subjects and 557,124 directly genotyped SNPs. SNPs were removed if they displayed more than 5% missingness or a Hardy-Weinberg equilibrium P value of less than 1.0e-06. Additionally SNPs with a minor allele frequency of less than 1% were removed. Samples were excluded if they displayed more than 5% missingness, had indeterminate X chromosome heterozygosity or extreme autosomal heterozygosity. Samples showing evidence of population stratification were identified by multidimensional scaling of genome-wide identity by state pairwise distances using the four HapMap populations as a reference, and then excluded. Cryptic relatedness was assessed using a IBD estimate of more than 0.125 which is expected to correspond to roughly 12.5% alleles shared IBD or a relatedness at the first cousin level. Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation. 9,048 subjects and 526,688 SNPs passed these quality control filters.
+
+  We combined 477,482 SNP genotypes in common between the sample of mothers and sample of children. We removed SNPs with genotype missingness above 1% due to poor quality (11,396 SNPs removed) and removed a further 321 subjects due to potential ID mismatches. This resulted in a dataset of 17,842 subjects containing 6,305 duos and 465,740 SNPs (112 were removed during liftover and 234 were out of HWE after combination). We estimated haplotypes using ShapeIT (v2.r644) which utilises relatedness during phasing. We obtained a phased version of the 1000 genomes reference panel (Phase 1, Version 3) from the Impute2 reference data repository (phased using ShapeIt v2.r644, haplotype release date Dec 2013). Imputation of the target data was performed using Impute V2.2.2 against the reference panel (all polymorphic SNPs excluding singletons), using all 2186 reference haplotypes (including non-Europeans).
+
+  This gave 8,237 eligible children and 8,196 eligible mothers with available genotype data after exclusion of related subjects using cryptic relatedness measures described previously.
+
+Details:
+
+  Genotyping centre:
+    Children: Wellcome Trust Sanger Institute, Cambridge, UK and the Laboratory Corporation of America, Burlington, NC, US
+    Mothers: Centre National de Génotypage (CNG)
+
+  Genotyping array:
+    Children: Illumina Human Hap 550-quad
+    Mothers: Illumina human660W-quad
+
+  Calling algorithm: Illumina GenomeStudio
+
+  Software used for QC filtering: PLINK (v1.07)
+
+  SNP call rate filter:
+    Children: 0.05
+    Mothers: 0.05
+    Combined: 0.01
+
+  SNP HWE filter: 5e-7
+
+  SNP MAF filter: 0.01
+
+  SNPs before QC:
+    Mothers: 557124
+    Children: 550000
+
+  SNPs after QC:
+    Mothers: 526688
+    Children: 500527
+    Combined: 477482
+
+  Sample size before QC: 19930
+
+  Genome build: Build 37
+
+  Individual call rate filter:
+    Children: 0.03
+    Mothers: 0.05
+
+  Cryptic relatedness filter:
+    Mothers: 12.5% or more alleles shared IBD (pihat calculated by PLINK)
+    Children: 10% or more alleles shared IBD (pihat calculated by PLINK)
+
+  Autosomal heterozygosity filter: Outliers were excluded
+
+  X chromosome heterozygosity filter:
+    - Samples with undetermined X chromosome heterozygosity were excluded
+    - Pseudoautosomal regions have been removed
+
+  Population Stratification: Samples that clustered outside the CEU HapMap2 population using multidimensional scaling of genome-wide IBS pairwise distances.
+
+  Sample size after QC: 18163
+
+  Phasing software: ShapeIt v2.r727
+
+  Phasing parameters:
+    States: 100
+    Window: 2
+    Effective population size: 11418
+    Genetic map: 1000 genomes phase 1 version 3 (release date 21/05/2011)
+    Burn in iterations: 7
+    Pruning interations: 8
+    Main iterations: 20
+
+  Imputation software: Impute2 v2.2.2
+
+  Imputation reference panel: 1000 genomes phase 1 version 3
+
+  Imputation reference phase version: ShapeIt v2 released December 2013
+
+  Imputation reference samples: 2186 haplotypes from all populations
+
+  Imputation reference exclusions: No monomorphic or singleton SNPs
+
+  Imputation parameters:
+    Effective population size: 10000
+    Window size: 5Mb
+    Window overlap: 250Kb
+    Number of reference haplotypes: 2000
+    Number of sample haplotypes: 80
+    MCMC iterations: 30
+    Burn in iterations: 10
+
+  Number of SNPs after imputation: 28699419
+
+  "Number of SNPs after filtering on MAF &gt; 0.01 and info &gt; 0.8": 8282911
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgafed267" class="outline-4">
+<h4 id="orgafed267"><span class="section-number-4">2.4.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-4-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+  See the scripts hosted here:
+  https://github.com/explodecomputer/data_manipulation
+
+Perform GWAS: |
+  An example of how to run a GWAS using SNPTEST to found here:
+  https://gist.github.com/explodecomputer/ad61c0e61007547d50de
+  It also includes information for ALSPAC direct users on submiting jobs to BC3.
+
+Individuals with withdrawn consent: |
+  Data is organized into 'freezes'. A current freeze has the current withdrawn users. For ALSPAC direct users this is what is visible. For collaborators the data you receive will be a copy that has removed any withdrawn users. The original data directory is only visible to ALSPAC admin. The list of withdrawn users is in /omics_freeze_creation/withdrawls/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org16b88fe" class="outline-3">
+<h3 id="org16b88fe"><span class="section-number-3">2.5</span> Genome-wide - HapMap2 imputed - G0 mothers</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-orga193f42" class="outline-4">
+<h4 id="orga193f42"><span class="section-number-4">2.5.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_HapMap_Round1_Mothers
+
+Aliases:
+  - ALSPAC_Array_Genotypes_Hapmap_Imputation
+
+Keywords:
+  - ALSPAC
+  - imputation
+  - genomic
+  - snp
+  - genetic
+  - genome-wide
+  - genotype
+  - Hapmap
+
+Title: ALSPAC imputed to Hapmap
+
+Description: |
+  SNP chips are useful for the generation of data on hundreds of thousands of SNPs, but there are millions more polymorphisms that remain untyped with this technology. If suitable numbers of whole genome sequences exist (e.g. Hapmap data) then millions of genotypes that are missing from a sample because they have not been typed by SNP chips can be imputed using probabilistic methods. Here the ALSPAC mothers data were imputed to Hapmap genomes using the best available phasing and imputation software and reference panels at the time.
+
+  The ALSPAC genotype data generated using the Illumina human660W quad (mothers) has been imputed to the Hapmap genomes reference panel.
+
+'Documentation Authors':
+  - "Gibran Hemani: g.hemani@bristol.ac.uk"
+  - "George McMahon: epgmm@bristol.ac.uk"
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+
+Formats:
+  - Plink (bed, bim and fam files). A set of three files for each chromosome.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf9c2c7a" class="outline-4">
+<h4 id="orgf9c2c7a"><span class="section-number-4">2.5.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2020/06/09:
+  Author: Sam Neaves
+  Changes:
+  - Create documentation for dataset. 
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf6d3bb9" class="outline-4">
+<h4 id="orgf6d3bb9"><span class="section-number-4">2.5.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`data`": |
+  Imputed genotypes in binary plink format, (bed,bim and fam). A set of three files for each chr.
+
+
+"`md5sums`": |
+  md5sum for each data file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org633bba9" class="outline-4">
+<h4 id="org633bba9"><span class="section-number-4">2.5.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-5-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  issue: "The qc documentation of the imputation of the hapmap is poorly documented"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaba6e06" class="outline-4">
+<h4 id="orgaba6e06"><span class="section-number-4">2.5.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-5-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+  ALSPAC mothers were genotyped using the Illumina human660W-quad array at Centre National de Génotypage (CNG) and genotypes were called with Illumina GenomeStudio. PLINK (v1.07) was used to carry out quality control measures on an initial set of 10,015 subjects and 557,124 directly genotyped SNPs. SNPs were removed if they displayed more than 5% missingness or a Hardy-Weinberg equilibrium P value of less than 1.0e-06. Additionally SNPs with a minor allele frequency of less than 1% were removed. Samples were excluded if they displayed more than 5% missingness, had indeterminate X chromosome heterozygosity or extreme autosomal heterozygosity. Samples showing evidence of population stratification were identified by multidimensional scaling of genome-wide identity by state pairwise distances using the four HapMap populations as a reference, and then excluded. Cryptic relatedness was assessed using a IBD estimate of more than 0.125 which is expected to correspond to roughly 12.5% alleles shared IBD or a relatedness at the first cousin level. Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation. 9,048 subjects and 526,688 SNPs passed these quality control filters.
+
+
+  This gave 8,196 eligible mothers with available genotype data after exclusion of related subjects using cryptic relatedness measures described previously.
+
+Details:
+
+  Genotyping centre:
+    Mothers: Centre National de Génotypage (CNG)
+
+  Genotyping array:
+    Mothers: Illumina human660W-quad
+
+  Calling algorithm: Illumina GenomeStudio
+
+  Software used for QC filtering: PLINK (v1.07)
+
+  SNP call rate filter:
+    Mothers: 0.05
+
+  SNP HWE filter: 5e-7
+
+  SNP MAF filter: 0.01
+
+  SNPs before QC:
+    Mothers: 557124
+
+
+  SNPs after QC:
+    Mothers: 526688
+
+
+
+  Genome build: Build 37
+
+  Individual call rate filter:
+    Mothers: 0.05
+
+  Cryptic relatedness filter:
+    Mothers: 12.5% or more alleles shared IBD (pihat calculated by PLINK)
+
+  Autosomal heterozygosity filter: Outliers were excluded
+
+  X chromosome heterozygosity filter:
+    - Samples with undetermined X chromosome heterozygosity were excluded
+    - Pseudoautosomal regions have been removed
+
+  Population Stratification: Samples that clustered outside the CEU HapMap2 population using multidimensional scaling of genome-wide IBS pairwise distances.
+
+
+  Sample size after QC: 18163
+
+  Phasing software: ShapeIt v2.r727
+
+  Phasing parameters:
+    States: 100
+    Window: 2
+    Effective population size: 11418
+    Genetic map: 1000 genomes phase 1 version 3 (release date 21/05/2011)
+    Burn in iterations: 7
+    Pruning interations: 8
+    Main iterations: 20
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgae21beb" class="outline-4">
+<h4 id="orgae21beb"><span class="section-number-4">2.5.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-5-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+  See the scripts hosted here:
+  https://github.com/explodecomputer/data_manipulation
+
+Perform GWAS: |
+  An example of how to run a GWAS using SNPTEST to found here:
+  https://gist.github.com/explodecomputer/ad61c0e61007547d50de
+  It also includes information for ALSPAC direct users on submiting jobs to BC3.
+
+Individuals with withdrawn consent: |
+  Data is organized into 'freezes'. A current freeze has the current withdrawn users. For ALSPAC direct users this is what is visible. For collaborators the data you receive will be a copy that has removed any withdrawn users. The original data directory is only visible to ALSPAC admin. The list of withdrawn users is in /omics_freeze_creation/withdrawls/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf1a9bc3" class="outline-3">
+<h3 id="orgf1a9bc3"><span class="section-number-3">2.6</span> Genome-wide - HapMap2 imputed - G1</h3>
+<div class="outline-text-3" id="text-2-6">
+</div>
+<div id="outline-container-orge26c31d" class="outline-4">
+<h4 id="orge26c31d"><span class="section-number-4">2.6.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_HapMap_Round1_Children
+
+Aliases:
+  - ALSPAC_Array_Genotypes_Hapmap_Imputation
+
+Keywords:
+  - ALSPAC
+  - imputation
+  - genomic
+  - snp
+  - genetic
+  - genome-wide
+  - genotype
+  - Hapmap
+
+Title: ALSPAC imputed to Hapmap
+
+Description: |
+  SNP chips are useful for the generation of data on hundreds of thousands of SNPs, but there are millions more polymorphisms that remain untyped with this technology. If suitable numbers of whole genome sequences exist (e.g. Hapmap data) then millions of genotypes that are missing from a sample because they have not been typed by SNP chips can be imputed using probabilistic methods. Here the ALSPAC children data were imputed to Hapmap genomes using the best available phasing and imputation software and reference panels at the time.
+
+  The ALSPAC genotype data generated using the Illumina HumanHap550 quad (children) and has been imputed to the Hapmap genomes reference panel.
+
+'Documentation Authors':
+  - "Gibran Hemani: g.hemani@bristol.ac.uk"
+  - "George McMahon: epgmm@bristol.ac.uk"
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+
+Formats:
+  - Plink (bed, bim and fam files). A set of three files for each chromosome and one set of three files for the whole dataset.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org59636c9" class="outline-4">
+<h4 id="org59636c9"><span class="section-number-4">2.6.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2020/06/15:
+  Author: Sam Neaves
+  Changes:
+  - Create documentation for hapmap children dataset. 
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb97349c" class="outline-4">
+<h4 id="orgb97349c"><span class="section-number-4">2.6.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`data`": |
+  Imputed genotypes in binary plink format, (bed,bim and fam). A set of three files for each chr.
+
+"`md5sums`": |
+  md5sum for each data file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgff85a24" class="outline-4">
+<h4 id="orgff85a24"><span class="section-number-4">2.6.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-6-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  issue: "The qc documentation of the imputation of the hapmap is poorly documented"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org843b357" class="outline-4">
+<h4 id="org843b357"><span class="section-number-4">2.6.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-6-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+ ALSPAC children were genotyped using the Illumina HumanHap550 quad chip genotyping platforms by 23andme subcontracting the Wellcome Trust Sanger Institute, Cambridge, UK and the Laboratory Corporation of America, Burlington, NC, US. The resulting raw genome-wide data were subjected to standard quality control methods. Individuals were excluded on the basis of gender mismatches; minimal or excessive heterozygosity; disproportionate levels of individual missingness (&gt;3%) and insufficient sample replication (IBD &lt; 0.8). Population stratification was assessed by multidimensional scaling analysis and compared with Hapmap II (release 22) European descent (CEU), Han Chinese, Japanese and Yoruba reference populations; all individuals with non-European ancestry were removed. SNPs with a minor allele frequency of &lt; 1%, a call rate of &lt; 95% or evidence for violations of Hardy-Weinberg equilibrium (P &lt; 5E-7) were removed. Cryptic relatedness was measured as proportion of identity by descent (IBD &gt; 0.1). Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation. 9,115 subjects and 500,527 SNPs passed these quality control filters.
+
+Details:
+
+  Genotyping centre:
+    Children: Wellcome Trust Sanger Institute, Cambridge, UK and the Laboratory Corporation of America, Burlington, NC, US
+
+  Genotyping array:
+    Children: Illumina Human Hap 550-quad
+
+  Calling algorithm: Illumina GenomeStudio
+
+  Software used for QC filtering: PLINK (v1.07)
+
+  SNP call rate filter:
+    Children: 0.05
+
+  SNP HWE filter: 5e-7
+
+  SNP MAF filter: 0.01
+
+  SNPs before QC:
+    Children: 550000
+
+
+  SNPs after QC:
+    Children: 500527
+
+
+
+  Genome build: Build 37
+
+  Individual call rate filter:
+    Children: 0.03
+
+  Cryptic relatedness filter:
+    Children: 10% or more alleles shared IBD (pihat calculated by PLINK)
+
+  Autosomal heterozygosity filter: Outliers were excluded
+
+  X chromosome heterozygosity filter:
+    - Samples with undetermined X chromosome heterozygosity were excluded
+    - Pseudoautosomal regions have been removed
+
+  Population Stratification: Samples that clustered outside the CEU HapMap2 population using multidimensional scaling of genome-wide IBS pairwise distances.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orged3e4c8" class="outline-4">
+<h4 id="orged3e4c8"><span class="section-number-4">2.6.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-6-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+  See the scripts hosted here:
+  https://github.com/explodecomputer/data_manipulation
+
+Perform GWAS: |
+  An example of how to run a GWAS using SNPTEST to found here:
+  https://gist.github.com/explodecomputer/ad61c0e61007547d50de
+  It also includes information for ALSPAC direct users on submiting jobs to BC3.
+
+Individuals with withdrawn consent: |
+  Data is organized into 'freezes'. A current freeze has the current withdrawn users. For ALSPAC direct users this is what is visible. For collaborators the data you receive will be a copy that has removed any withdrawn users. The original data directory is only visible to ALSPAC admin. The list of withdrawn users is in /omics_freeze_creation/withdrawls/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7cccb97" class="outline-3">
+<h3 id="org7cccb97"><span class="section-number-3">2.7</span> Genome-wide - Illumina 660 quad - G0 mothers</h3>
+<div class="outline-text-3" id="text-2-7">
+</div>
+<div id="outline-container-orgc573e7e" class="outline-4">
+<h4 id="orgc573e7e"><span class="section-number-4">2.7.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_Array_Round_1_Mothers
+
+Aliases:
+  - ALSPAC_Array_Round_1_Mothers
+
+Keywords:
+  - ALSPAC
+  - genomic
+  - snp
+  - genetic
+  - genome-wide
+  - genotype
+
+Title: Alspac round 1 mothers array data.
+
+Description: |
+  The ALSPAC genotype data generated Illumina human660W quad (mothers).
+
+'Documentation Authors':
+  - "Gibran Hemani: g.hemani@bristol.ac.uk"
+  - "George McMahon: epgmm@bristol.ac.uk"
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+
+Formats:
+  - Plink format.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org21cd0f4" class="outline-4">
+<h4 id="org21cd0f4"><span class="section-number-4">2.7.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-7-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2020/06/09:
+  Author: Sam Neaves
+  Changes:
+  - Made this the ALSPAC mothers array data release. Just from the plink files.
+
+2015/10/24:
+  Author: Gibran Hemani
+  Changes:
+  - Added bgen format
+  - Added snp-test quality scores
+  - Restructured `data` directory slightly, filtered datasets are now in derived folder. No data has been changed compared to previous version.
+
+2015/08/11:
+  Author: Gibran Hemani
+  Changes:
+  - Added phased genotypes
+  - Updated documentation
+
+2015/06/12:
+  Author: Gibran Hemani
+  Changes:
+  - added list of individuals to remove to exclude relateds
+  - updated qc documentation to confirm that X-PAR regions are excluded
+  - updated documentation
+  - updated data.sample file to make dummy phenotype column labelled "C", now should work with SNPTEST
+
+2015/04/24:
+  Author: Gibran Hemani
+  Changes:
+    - updated ID format in derived files to match the ID format used for bestguess and dosage data formats
+
+2014/12/16:
+  Author: Gibran Hemani
+  Changes:
+  - Data set reformatted
+
+2015/04/24:
+  Author: Gibran Hemani
+  Changes:
+  - Data set generated
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb9b6fdd" class="outline-4">
+<h4 id="orgb9b6fdd"><span class="section-number-4">2.7.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-7-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`plink`": |
+  data.bed, data.bim, data.fam plink formated files.
+
+
+"`md5sums`": |
+  md5sum for each data file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaf10b58" class="outline-4">
+<h4 id="orgaf10b58"><span class="section-number-4">2.7.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-7-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  # There are currently no recorded issues with this dataset.
+  issue: "na"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb61db10" class="outline-4">
+<h4 id="orgb61db10"><span class="section-number-4">2.7.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-7-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+  ALSPAC mothers were genotyped using the Illumina human660W-quad array at Centre National de Génotypage (CNG) and genotypes were called with Illumina GenomeStudio. PLINK (v1.07) was used to carry out quality control measures on an initial set of 10,015 subjects and 557,124 directly genotyped SNPs. SNPs were removed if they displayed more than 5% missingness or a Hardy-Weinberg equilibrium P value of less than 1.0e-06. Additionally SNPs with a minor allele frequency of less than 1% were removed. Samples were excluded if they displayed more than 5% missingness, had indeterminate X chromosome heterozygosity or extreme autosomal heterozygosity. Samples showing evidence of population stratification were identified by multidimensional scaling of genome-wide identity by state pairwise distances using the four HapMap populations as a reference, and then excluded. Cryptic relatedness was assessed using a IBD estimate of more than 0.125 which is expected to correspond to roughly 12.5% alleles shared IBD or a relatedness at the first cousin level. Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation. 9,048 subjects and 526,688 SNPs passed these quality control filters.
+
+
+  This gave  8,196 eligible mothers with available genotype data after exclusion of related subjects using cryptic relatedness measures described previously.
+
+Details:
+
+  Genotyping centre:
+    Mothers: Centre National de Génotypage (CNG)
+
+  Genotyping array:
+    Mothers: Illumina human660W-quad
+
+  Calling algorithm: Illumina GenomeStudio
+
+  Software used for QC filtering: PLINK (v1.07)
+
+  SNP call rate filter:
+    Mothers: 0.05
+
+  SNP HWE filter: 5e-7
+
+  SNP MAF filter: 0.01
+
+  SNPs before QC:
+    Mothers: 557124
+
+  SNPs after QC:
+    Mothers: 526688
+
+  Genome build: Build 37
+
+  Individual call rate filter:
+    Mothers: 0.05
+
+  Cryptic relatedness filter:
+    Mothers: 12.5% or more alleles shared IBD (pihat calculated by PLINK)
+
+  Autosomal heterozygosity filter: Outliers were excluded
+
+  X chromosome heterozygosity filter:
+    - Samples with undetermined X chromosome heterozygosity were excluded
+    - Pseudoautosomal regions have been removed
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge6ad8e5" class="outline-4">
+<h4 id="orge6ad8e5"><span class="section-number-4">2.7.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-7-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+  See the scripts hosted here:
+  https://github.com/explodecomputer/data_manipulation
+
+Perform GWAS: |
+  An example of how to run a GWAS using SNPTEST to found here:
+  https://gist.github.com/explodecomputer/ad61c0e61007547d50de
+  It also includes information for ALSPAC direct users on submiting jobs to BC3.
+
+Individuals with withdrawn consent: |
+  Data is organized into 'freezes'. A current freeze has the current withdrawn users. For ALSPAC direct users this is what is visible. For collaborators the data you receive will be a copy that has removed any withdrawn users. The original data directory is only visible to ALSPAC admin. The list of withdrawn users is in /omics_freeze_creation/withdrawls/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org53e4001" class="outline-3">
+<h3 id="org53e4001"><span class="section-number-3">2.8</span> Genome-wide - Illumina 550 quad - G1</h3>
+<div class="outline-text-3" id="text-2-8">
+</div>
+<div id="outline-container-org28e298e" class="outline-4">
+<h4 id="org28e298e"><span class="section-number-4">2.8.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-8-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_Round_1_Children
+
+Aliases:
+  - ALSPAC_Array_Genotypes
+
+Keywords:
+  - ALSPAC
+  - genomic
+  - snp
+  - genetic
+  - genome-wide
+  - genotype
+
+Title: Alspac round 1 mothers array data.
+
+Description: |
+  The ALSPAC genotype data generated using the Illumina HumanHap550 quad (children).
+
+'Documentation Authors':
+  - "Gibran Hemani: g.hemani@bristol.ac.uk"
+  - "George McMahon: epgmm@bristol.ac.uk"
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+
+Formats:
+  - Plink format.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org923b9e6" class="outline-4">
+<h4 id="org923b9e6"><span class="section-number-4">2.8.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-8-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2020/06/09:
+  Author: Sam Neaves
+  Changes:
+  - Make the array children data set from the plink files.
+  - The snp-test quality scores and other derived datasets will be added back later if appropiate.
+
+2015/10/24:
+  Author: Gibran Hemani
+  Changes:
+  - Added bgen format
+  - Added snp-test quality scores
+  - Restructured `data` directory slightly, filtered datasets are now in derived folder. No data has been changed compared to previous version.
+
+2015/08/11:
+  Author: Gibran Hemani
+  Changes:
+  - Added phased genotypes
+  - Updated documentation
+
+2015/06/12:
+  Author: Gibran Hemani
+  Changes:
+  - added list of individuals to remove to exclude relateds
+  - updated qc documentation to confirm that X-PAR regions are excluded
+  - updated documentation
+  - updated data.sample file to make dummy phenotype column labelled "C", now should work with SNPTEST
+
+2015/04/24:
+  Author: Gibran Hemani
+  Changes:
+    - updated ID format in derived files to match the ID format used for bestguess and dosage data formats
+
+2014/12/16:
+  Author: Gibran Hemani
+  Changes:
+  - Data set reformatted
+
+2015/04/24:
+  Author: Gibran Hemani
+  Changes:
+  - Data set generated
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org84b3e10" class="outline-4">
+<h4 id="org84b3e10"><span class="section-number-4">2.8.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-8-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`plink`": |
+  Binary plink files of the genotypes (data.bed, data.bim and data.fam).
+
+
+
+"`md5sums`": |
+  md5sum for each data file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org76e3535" class="outline-4">
+<h4 id="org76e3535"><span class="section-number-4">2.8.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-8-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  # There are currently no recorded issues with this dataset.
+  issue: "na"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge83964d" class="outline-4">
+<h4 id="orge83964d"><span class="section-number-4">2.8.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-8-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+  ALSPAC children were genotyped using the Illumina HumanHap550 quad chip genotyping platforms by 23andme subcontracting the Wellcome Trust Sanger Institute, Cambridge, UK and the Laboratory Corporation of America, Burlington, NC, US. The resulting raw genome-wide data were subjected to standard quality control methods. Individuals were excluded on the basis of gender mismatches; minimal or excessive heterozygosity; disproportionate levels of individual missingness (&gt;3%) and insufficient sample replication (IBD &lt; 0.8). Population stratification was assessed by multidimensional scaling analysis and compared with Hapmap II (release 22) European descent (CEU), Han Chinese, Japanese and Yoruba reference populations; all individuals with non-European ancestry were removed. SNPs with a minor allele frequency of &lt; 1%, a call rate of &lt; 95% or evidence for violations of Hardy-Weinberg equilibrium (P &lt; 5E-7) were removed. Cryptic relatedness was measured as proportion of identity by descent (IBD &gt; 0.1). Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation. 9,115 subjects and 500,527 SNPs passed these quality control filters.
+
+Details:
+
+  Genotyping centre:
+    Children: Wellcome Trust Sanger Institute, Cambridge, UK and the Laboratory Corporation of America, Burlington, NC, US
+
+  Genotyping array:
+    Children: Illumina Human Hap 550-quad
+
+  Calling algorithm: Illumina GenomeStudio
+
+  Software used for QC filtering: PLINK (v1.07)
+
+  SNP call rate filter:
+    Children: 0.05
+
+
+  SNP HWE filter: 5e-7
+
+  SNP MAF filter: 0.01
+
+  SNPs before QC:
+    Children: 550000
+
+  SNPs after QC:
+    Children: 500527
+
+  Genome build: Build 37
+
+  Individual call rate filter:
+    Children: 0.03
+
+  Cryptic relatedness filter:
+    Children: 10% or more alleles shared IBD (pihat calculated by PLINK)
+
+  Autosomal heterozygosity filter: Outliers were excluded
+
+  X chromosome heterozygosity filter:
+    - Samples with undetermined X chromosome heterozygosity were excluded
+    - Pseudoautosomal regions have been removed
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org177c803" class="outline-4">
+<h4 id="org177c803"><span class="section-number-4">2.8.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-8-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+  See the scripts hosted here:
+  https://github.com/explodecomputer/data_manipulation
+
+Perform GWAS: |
+  An example of how to run a GWAS using SNPTEST to found here:
+  https://gist.github.com/explodecomputer/ad61c0e61007547d50de
+  It also includes information for ALSPAC direct users on submiting jobs to BC3.
+
+Individuals with withdrawn consent: |
+  Data is organized into 'freezes'. A current freeze has the current withdrawn users. For ALSPAC direct users this is what is visible. For collaborators the data you receive will be a copy that has removed any withdrawn users. The original data directory is only visible to ALSPAC admin. The list of withdrawn users is in /omics_freeze_creation/withdrawls/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30549b1" class="outline-3">
+<h3 id="org30549b1"><span class="section-number-3">2.9</span> Genome-wide - Illumina exome core array - G0 partners</h3>
+<div class="outline-text-3" id="text-2-9">
+</div>
+<div id="outline-container-orgde99b11" class="outline-4">
+<h4 id="orgde99b11"><span class="section-number-4">2.9.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-9-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_Round_2_mothers_and_fathers
+
+Keywords:
+    - ALSPAC
+    - HumanCoreExome
+
+Aliases:
+  - ALSPAC_Array_Genotypes
+  - ALSPAC_WorkPackage_2014
+
+
+Title: ALSPAC genotypes for mothers and fathers from work package 2015
+
+
+Description: |
+    ALSPAC genotype data generated on Illumina HumanCore Exome arrays. This data has been cleaned, flipped to the positive strand and in b37 coordinatess.
+
+'Documentation Authors':
+    - "George McMahon: epgmm@bristol.ac.uk"
+    - "Sam Neaves s.neaves@bristol.ac.uk"
+
+PIs:
+    - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+    - "Tom Gaunt: tom.gaunt@bristol.ac.uk"
+    - "Wendy Mcardle: wendy.mcardle@bristol.ac.uk"
+    - "Sue Ring: s.m.ring@bristol.ac.uk"
+
+
+Formats:
+    - Binary plink format
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7c0a274" class="outline-4">
+<h4 id="org7c0a274"><span class="section-number-4">2.9.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-9-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2020/06/10:
+  Author: Sam Neaves
+  Changes:
+  - Set the dataset to just the plink files for the time being.
+
+2016/10/27:
+  Author: George McMahon
+  Changes:
+  - release 2
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga0cd9ef" class="outline-4">
+<h4 id="orga0cd9ef"><span class="section-number-4">2.9.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-9-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`plink`": |
+  Binary plink files of the QC'd genotypes, strand flipped and updated to build 37 (data.fam, data.bim, data.bed)
+
+
+"`md5sums`": |
+  md5sum for each data file.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5d790aa" class="outline-4">
+<h4 id="org5d790aa"><span class="section-number-4">2.9.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-9-4">
+<div class="org-src-container">
+<pre class="src src-yaml">---
+  # There are currently no recorded issues with this dataset.
+  issue: "na"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orged63a0a" class="outline-4">
+<h4 id="orged63a0a"><span class="section-number-4">2.9.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-9-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+3,453 ALSPAC mother and fathers and 535,478 SNPs were genotyped using the Illumina HumanCoreExome chip genotyping platforms by the ALSPAC lab and called using GenomeStudio. The resulting raw genome-wide data were subjected to standard quality control methods using PLINK (v1.07). Individuals were excluded on the basis of gender mismatches (n = 80); minimal or excessive heterozygosity (n = 64); disproportionate levels of individual missingness (&gt;5%, n = 60) and possible contamination (n = 3). Population stratification was assessed by multidimensional scaling analysis and compared with 1000 Genomes phase 3 data and principal component analysis (n = 266); all individuals with non-European ancestry were removed. Cryptic relatedness was measured as SNP relatedness in GCTA (relatedness &gt; 0.1, n = 69 removed). SNPs with a call rate of &lt; 95% or evidence for violations of Hardy-Weinberg equilibrium (P &lt; 1E-7) and those which failed GenomeStudio quality control measures were removed (n = 21,298). 6,594 duplicate SNPs were also removed. 
+This resulted in 2,911 unrelated mothers and father genotypes at 507,586 SNPs. We then identified 2217 samples where aln assigned historically by the lab matched genetically assigned aln.  
+
+We identified 2217 samples where aln assigned historically by the lab matched genetically assigned aln. We then removed 12 subjects who have withdrawn consent and 6 subjects genotyped in an earlier work package to give 2201 subjects.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8c33de3" class="outline-4">
+<h4 id="org8c33de3"><span class="section-number-4">2.9.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-9-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Extract SNPs or individuals: |
+  See the scripts hosted here:
+  https://github.com/explodecomputer/data_manipulation
+
+Perform GWAS: |
+  An example of how to run a GWAS using SNPTEST to found here:
+  https://gist.github.com/explodecomputer/ad61c0e61007547d50de
+  It also includes information for ALSPAC direct users on submiting jobs to BC3.
+
+Individuals with withdrawn consent: |
+  Data is organized into 'freezes'. A current freeze has the current withdrawn users. For ALSPAC direct users this is what is visible. For collaborators the data you receive will be a copy that has removed any withdrawn users. The original data directory is only visible to ALSPAC admin. The list of withdrawn users is in /omics_freeze_creation/withdrawls/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd98264e" class="outline-3">
+<h3 id="orgd98264e"><span class="section-number-3">2.10</span> Genome-wide - CNV - G1</h3>
+<div class="outline-text-3" id="text-2-10">
+</div>
+<div id="outline-container-orgaffee5a" class="outline-4">
+<h4 id="orgaffee5a"><span class="section-number-4">2.10.1</span> About:</h4>
+<div class="outline-text-4" id="text-2-10-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_Array_Genotypes_PennCNV_Children
+
+Keywords:
+  - ALSPAC
+  - CNV
+  - PennCNV
+
+Title: ALSPAC PennCNV
+
+Description: |
+  This release contains predicted ALSPAC CNVs using PennCNV.  Data were generated using the PennCNV hh550 libraries (i.e. hh550.hmm and hh550.hg18.pfb)
+
+'Documentation Authors':
+  - "Tom Gaunt: Tom.Gaunt@bris.ac.uk"
+  - "Hashem Shihab: H.Shihab@bris.ac.uk"
+  - "Anna Guyatt: anna.guyatt@bristol.ac.uk"
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PI:
+  - "Tom Gaunt: Tom.Gaunt@bris.ac.uk"
+
+Formats:
+  - PennCNV "standard" format
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgef66c01" class="outline-4">
+<h4 id="orgef66c01"><span class="section-number-4">2.10.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-2-10-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2015/10/02
+  Author: Hashem Shihab
+  Changes:
+  - Dataset generated
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc6ffcfb" class="outline-4">
+<h4 id="orgc6ffcfb"><span class="section-number-4">2.10.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-2-10-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`data.cnv`": |
+  Predicted PennCNV calls
+"`derived_data`": |
+  Filtered predicted PennCNV calls
+"`raw`": |
+  ALSPAC children raw X,Y and LRR, BAF data
+"`timepoint`": |
+  Timepoint when DNA was collected
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf04ce5e" class="outline-4">
+<h4 id="orgf04ce5e"><span class="section-number-4">2.10.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-2-10-4">
+<div class="org-src-container">
+<pre class="src src-yaml">## Identifiers
+
+**Raised by**: Hash Shihab
+**Date written**: 2015-11-06
+**Date resolved**: not yet resolved
+**Resolved by**: N/A
+
+  NB date written is appropximate here (AG).  
+
+  23andMe identifiers were in the form "ALSPAC&lt;n&gt;" where &lt;n&gt; is a numeric identifier.  I had to use the "23andMe.recode" file to convert these identifiers back to ALN:QLET.  However, there are some "duplicate" ALNs in this file, e.g. see ALSPAC09899933 (ALN 38877) and ALSPAC09900002 (ALN 38877D).  Therefore, I used ALSPAC_10K_UNRELATEDS_FINAL.fam (the magic 8365 dataset) to fetch a list of identifiers that I should be using, i.e. should I use the 38877 or 38877D ALN.
+
+  For the final version of the dataset, I removed any remaining "D" characters from the ALN:QLET (as per conversations with Chris Raistrick).
+
+  Also, there were some "missing" individuals from the 23andMe raw data, see run.out. 
+
+## Identifiers
+
+**Raised by**: Anna Guyatt
+**Date written**: 2016-09-08
+**Date resolved**: not yet resolved
+**Resolved by**: N/A
+
+  AG found one individual with 'D' ALN in original dataset. This has been removed during the QC process and this subject is not present in the filtered.cnv file in the 'derived' folder.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2cab703" class="outline-4">
+<h4 id="org2cab703"><span class="section-number-4">2.10.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-2-10-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+  This release contains predicted ALSPAC CNVs using PennCNV.
+
+  LRR and BAF data was missing from the 23andMe raw genotype data, so we had to generate this data ourselves using an in house algorithm that Tom wrote (see make.sh in code release).
+
+  Once this data has been generated, I ran PennCNV using the hh550 libraries (see PennCNV.sh in code release).
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org41fc582" class="outline-4">
+<h4 id="org41fc582"><span class="section-number-4">2.10.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-2-10-6">
+<div class="org-src-container">
+<pre class="src src-yaml">
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org338d727" class="outline-2">
+<h2 id="org338d727"><span class="section-number-2">3</span> Gene Expression</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgea42a57" class="outline-3">
+<h3 id="orgea42a57"><span class="section-number-3">3.1</span> Gene expression - array - G1</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-orgd3390cd" class="outline-4">
+<h4 id="orgd3390cd"><span class="section-number-4">3.1.1</span> About:</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: "ALSPAC_Gene_Expression_LCL"
+
+Keywords:
+  - "genomic"
+  - "expression"
+  - "genome-wide"
+  - "illumina"
+  - "transcription"
+
+Title: ALSPAC gene expression on LCLs from children
+
+Description: |
+  Gene expression data from LCLs from children. Published here http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004461
+
+Access: |
+  Please obtain access through the usual ALSPAC data access channels
+
+'Documentation Authors':
+  - "Gibran Hemani: g.hemani@bristol.ac.uk"
+  - "Dave Evans: Dave.Evans@bristol.ac.uk"
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+  - "Dave Evans: Dave.Evans@bristol.ac.uk"
+
+Formats:
+  - Text format (raw, plus two different normalisations)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgde56f03" class="outline-4">
+<h4 id="orgde56f03"><span class="section-number-4">3.1.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2015-10-14:
+  Author: Gibran Hemani
+  Changes:
+    - Initial creation
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8b83dd2" class="outline-4">
+<h4 id="org8b83dd2"><span class="section-number-4">3.1.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`raw`": |
+  Gzipped text file with IDs in columns and probes in rows. Two columns per individual, with one column for average signal and one column for average number of beads. Presumably this is a file generated by the Illumina Genome Studio software. The IDs used in the file are mapped to ALNs in the `id_map.txt` file.
+
+"`bryois`": |
+  RData file with IDs in columns and Illumina probe IDs in rows. This is the normalised data used in Bryois et al 2014. The object name in the RData file is `dat`.
+
+"`molgenis`": |
+  RData file with IDs in columns and Illumina probe IDs in rows. Normalised data following the molgenis pipeline, found at https://github.com/molgenis/systemsgenetics/wiki/eQTL-mapping-analysis-cookbook. The object name in the RData file is `dat`.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5687cd7" class="outline-4">
+<h4 id="org5687cd7"><span class="section-number-4">3.1.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-3-1-4">
+<div class="org-src-container">
+<pre class="src src-yaml">2015-10-14:
+  Author: Gibran Hemani
+  Issues: 
+    - No raw `idat` files available
+    - No user guide
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org333b303" class="outline-4">
+<h4 id="org333b303"><span class="section-number-4">3.1.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-3-1-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Description: |
+  There are two different version of QC available, one performed by David Evans for the Bryois et al 2014 paper, and one performed by Gibran Hemani for the molgenis eQTL mapping meta analysis. 
+
+Summary:
+  Platform: Illumina Human HT-12 V3 BeadChips
+  Number of individuals: 931
+  Number of probes: 48804
+Bryois: |
+  LCL's from unrelated individuals were grown under identical conditions and cells frozen in RNAlater. RNA was extracted using an RNeasy extraction kit (Qiagen) and was amplified using the Illumina TotalPrep-96 RNA Amplification kit (Ambion). Expression profiling of the samples, each with two technical replicates, were performed using the Illumina Human HT-12 V3 BeadChips (Illumina Inc) including 48,804 probes where 200 ng of total RNA was processed according to the protocol supplied by Illumina. Raw data was imported to the Illumina Beadstudio software and probes with less than three beads present were excluded. Log2 - transformed expression signals were then normalized with quantile normalization of the replicates of each individual followed by quantile normalization across all individuals. We restricted our analysis to 23'935 probes tagging genes annotated in Ensembl. Principal component analysis was performed on 931 individuals. 62 individuals with principal component 1 or 2 greater than one standard deviation of the population were excluded from further analysis. See http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004461 for full details.
+Molgenis: |
+  Genetic outliers were removed, any individuals that were clear outliers in the first 2 genetic principal components. Each probe was simply quantile normalised and then log2 transformed. Then adjusted for the first 4 genetic MDS, expression principal components (excluding those that had genetic associations), and scaled to have mean 0 and variance 1. See https://github.com/molgenis/systemsgenetics/wiki/eQTL-mapping-analysis-cookbook for full details.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4107c0d" class="outline-4">
+<h4 id="org4107c0d"><span class="section-number-4">3.1.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-3-1-6">
+<div class="org-src-container">
+<pre class="src src-yaml">
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4272aab" class="outline-2">
+<h2 id="org4272aab"><span class="section-number-2">4</span> Epigenetics</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgeda0c9d" class="outline-3">
+<h3 id="orgeda0c9d"><span class="section-number-3">4.1</span> DNA methylation - 450k - G0 mothers + G1</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-org9ff6459" class="outline-4">
+<h4 id="org9ff6459"><span class="section-number-4">4.1.1</span> About:</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<div class="org-src-container">
+<pre class="src src-yaml">Dataset: ALSPAC_Methylation
+
+Aliases:
+  - 
+
+Keywords:
+  - ALSPAC
+  - Methylation
+
+Title: ALSPAC Methylation data.
+
+Description: |
+
+
+'Documentation Authors':
+  - "Josine Min: josine.min@bristol.ac.uk"
+  - "Sam Neaves: s.neaves@bristol.ac.uk"
+
+PIs:
+  - "Nic Timpson: n.j.timpson@bristol.ac.uk"
+
+Formats:
+  - 
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org748ba60" class="outline-4">
+<h4 id="org748ba60"><span class="section-number-4">4.1.2</span> Change log:</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<div class="org-src-container">
+<pre class="src src-yaml">2015-02-08:
+  Author: Josine Min
+  Changes:
+    - sample and probe qc using meffil (see qc.yaml)
+    - functional normalization
+    - cord blood references
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org377800a" class="outline-4">
+<h4 id="org377800a"><span class="section-number-4">4.1.3</span> Files included:</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<div class="org-src-container">
+<pre class="src src-yaml">"`samplesheet`": |
+  `data.Robj`: manifest file with columns extracted directly from LIMS and age, sex, aln, timepoint, timecode, sampletype, genotypeQC columns to remove population stratification samples, duplicate.rm column to remove duplicates. Samples in rows, variables in columns.
+
+"`betas`": | 
+  `data.Robj`: normalized betas using functional normalization. We used 10 PCs on the controlmatrix to regress out technical variation. Slide was regressed out as random effect before normaliziation. Data is stored as a RData object. CpGs are in rows and samples in columns.
+
+"`control_matrix`": |
+  `data.txt`: The 850 control probes are summarized in 42 control types. These probes can roughly be divided into negative control probes (613), probes intended for between array normalization (186) and the remainder (49), which are designed for quality control, including assessing the bisulfite conversion rate. None of these probes are designed to measure a biological signal.  The summarized control probes can be used as surrogates for unwanted variation and are used for the functional normalization. In this text file, sampels are rows and 42 control types are in columns.
+
+"`detection_p_values`": |
+  `data.Robj`:  This matrix shows the detection pvalues for each sample and each CpG and is extracted from the idat files using the "meffil.load.detection.pvalues" function in meffil. Data is stored as a RData object. CpGs are in rows and samples in columns.
+
+"`qc.objects_clean`": |
+  `data.Robj`: All data processing has been conducted using Meffil. Meffil uses illuminaio R package to parse Illumina IDAT files into a meffil object called norm.objects. All meffil functions, QC summary, functional normalization and post-normalization QC summary operate on the norm.objects. Specifically, the norm.objects contain raw control probe intensities, quantile distributions of the raw intensities, poor quality probes based on detection Pvalues and number of beads, predicted sex,  predicted cellcounts and a samplesheet with batch variables. In addition, copy number variation can be extracted. This object is a list of individuals.
+
+"`qc.objects_all`": |
+  `data.Robj`: This objects contain all 5469 samples extracted from LIMS and is not cleaned up. This object has been used to do the data cleaning. All data processing has been conducted using Meffil. Meffil uses illuminaio R package to parse Illumina IDAT files into a meffil object called qc.objects. All meffil functions, QC summary, functional normalization and post-normalization QC summary operate on the qc or norm.objects. Specifically, the qc.objects contain raw control probe intensities, poor quality probes based on detection Pvalues and number of beads, predicted sex,  predicted cellcounts and a samplesheet with batch variables. In addition, copy number variation can be extracted. This object is a list of individuals.
+
+"`derived/cellcounts/houseman/data.txt`": |
+  Cell counts extracted using Houseman algorithm implemented in meffil (PMID: 22568884). In this text file, samples are in rows and cell types in columns.
+
+"`derived/cellcounts/cord/gervinandlyle`": |
+  Cellcounts in cord predicted using GervinandLyle cord reference (unpublised). This reference has been implemented in meffil. In this text file, samples are in rows and cell types in columns.
+
+"`derived/cellcounts/cord/gse68456`": |
+  Cellcounts in cord predicted using cord reference published in de Goede et al (PMID: 26366232). This reference has been implemented in meffil. In this text file, samples are in rows and cell types in columns.
+
+"`derived/cellcounts/cord/andrews-and-bakulski`": |
+  Cellcounts in cord predicted using cord reference published in Bakulski et al 2016 (PMID: 27019159). This reference has been implemented in meffil. In this text file, samples are in rows and cell types in columns.
+
+"`derived/reports/qc`": |
+  Using meffil on `qc.objects_all` we have generated a qc.report: `ARIESall_qc-report.html`. Based on the plots here we have cleaned the data. 
+
+"`derived/reports/normalization`": |
+  Includes `normalization-report.pc*160915.html`. Using meffil on `betas` and normalisation objects generates these reports. It shows PCA plots on control probes and normalized betas. In addition it shows associations between PCs and batch variables.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgad243ac" class="outline-4">
+<h4 id="orgad243ac"><span class="section-number-4">4.1.4</span> Known issues:</h4>
+<div class="outline-text-4" id="text-4-1-4">
+<div class="org-src-container">
+<pre class="src src-yaml">2016-02-08:
+  Author: "Josine Min josine.min@bristol.ac.uk"
+  Issues:
+    - Confounding between Slide and sample type in cord blood samples.
+    - Large sample type effects (bloodspots vs white cells) in cord blood.
+    - Issues with age for mums TF1-3. For some mums it is unknown whether they are sampled at TF1, 2 or 3. 
+    - Slide effects are still there even after regressing out Slide before normalisation. 
+    - Variance components modelling shows that a lot of residual variance is still present after normalisation and regressing out age, gender, cellcounts, sampletype, aln, aln_qlet, aln_qlet_timepoint and slide.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge22eb18" class="outline-4">
+<h4 id="orge22eb18"><span class="section-number-4">4.1.5</span> Quality control:</h4>
+<div class="outline-text-4" id="text-4-1-5">
+<div class="org-src-container">
+<pre class="src src-yaml">Author: Josine Min
+Description: |
+  This dataset contains 4854 individuals (cord, F7, 15up, antenatal and FOM) normalised together using functional normalization.
+
+Sample description: |
+  In total there are 5469 samples for five timepoints (cord=1127; F7=1086; 15up=1073; antenatal=1100; FOM=1083) measured belonging to the 1022 mother-child pairs. The 15up samples are a mixture of 277 samples of kids at TF3 clinic at 15 yrs and 796 TF4 clinic at age 17 yrs. FOM consists of FOM (mothers at FOM clinic) and TF1-3 (mothers at child clinics TF1 to 3). There are 369 technical replicates (361 duplicates + 8 triplicates). Most of these samples are poor quality samples (low detection score) and were therefore repeated in the lab. 4904/5469 ARIES samples have been successfully genotyped. 112/5469 samples failed genotype QC due to sample swaps, gender mismatches, high IBD or relatedness issues between mums and kids and were removed from ARIES. We found 411 genotype mismatches (with a concordance below 80%) between the 65 snp probes on the 450k array and the genotype arrays with a concordance below 80% and these samples are removed. Furthermore, samples were removed if: i) mum samples had more than 90% concordance with a kids sample (22 samples) ii) concordance was below 80% between duplicates and less than 80% concordance with at least one other mums of kids sample (N=200). iii) mums samples of which concordance was below 80% between duplicates (N=10) iv) samples with low concordance (below 80%) with other timepoints (N=10). v) mums samples with low concordance (below 80%) with other timepoints (N=24). Methylation quality was checked by: sexcheck (N=191), the median intensity methylated vs unmethylated signal for all control probes (N=63), dyebias (N=14), detection pvalue (N=166), low bead numbers (N=2) and post normalization checks (N=13). The data was normalized using functional normalization (Fortin et al.). As we found that slide effects were large even after normalization, we regressed out slide on the raw betas before normalization and on the controlmatrix. After normalization 13 additional samples were removed during PCA analysis. After cleanup, we have 4854 samples including 71 replicates (9-25 samples for each timepoint) and 191 samples which are population stratification outliers in the genotype data. The userguide shows how to remove these samples. 
+
+
+
+  | Timecode  | TimePoint | Gender | Mean Age | Blood Spots | pbl | white cells | whole blood |
+  |-----------|-----------|--------|----------|-------------|-----|-------------|-------------|
+  | cord      | cord      | M+F    | 0        | 168         | 0   | 746         | 0           |
+  | F7        | F7        | M+F    | 7.5      | 0           | 0   | 64          | 916         |
+  | F17       | 15up      | M+F    | 15.4     | 0           | 0   | 254         | 0           |
+  | TF3       | 15up      | M+F    | 17.7     | 0           | 0   | 727         | 0           |
+  | antenatal | antenatal | F      | 28.7     | 0           | 0   | 436         | 551         |
+  | TF1-3     | FOM       | F      | 43       | 0           | 177 | 0           | 0           |
+  | FOM       | FOM       | F      | 47.8     | 0           | 0   | 810         | 0           |
+
+  For full details download the [QC document](../../blob/master/resources/QC_ARIES_alltimepoints140915.pdf)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba15cd0" class="outline-4">
+<h4 id="orgba15cd0"><span class="section-number-4">4.1.6</span> User guide:</h4>
+<div class="outline-text-4" id="text-4-1-6">
+<div class="org-src-container">
+<pre class="src src-yaml">Remove duplicate and population stratification samples: |
+
+  ```r
+  # load manifest file
+  load("./samplesheet/data.Robj")
+  dim(samplesheet) #4854
+
+  table(samplesheet$duplicate.rm)
+
+  #Remove 
+  #    71
+
+  table(samplesheet$genotypeQCmums)
+  #        /highhet        /IBD10per            /Miss           /strat 
+  #               2              159                4               59 
+  #NotInMothersGWAS                Y 
+  #             113             1642 
+
+  table(samplesheet$genotypeQCkids)
+
+  #CR     ETHNICITY HZT;ETHNICITY     IMISS;HZT NotInKidsGWAS 
+  #          325            76            56             6            34 
+  #            Y 
+  #         2378
+
+  sample.rm &lt;- which(samplesheet$duplicate.rm=="Remove"|samplesheet$genotypeQCkids=="ETHNICITY"|samplesheet$genotypeQCkids=="HZT;ETHNICITY"|samplesheet$genotypeQCmums=="/strat")
+
+  # 261 samples are removed
+  length(sample.rm)
+  # 261
+
+  samplesheet_filtered &lt;- samplesheet[-sample.rm,]
+  dim(samplesheet_filtered) # 4593
+
+  #remove these samples from beta matrix
+  pc=10
+  load("./betas/data.Robj")
+  m &lt;- match(samplesheet$Sample_Name,colnames(norm.beta.random))
+  norm.beta.random &lt;- norm.beta.random[,m]
+  dim(norm.beta.random) #4593
+  ```
+
+More details: |
+  See [./docs/misc/user_guide_ARIESreleasev3.pdf](../../blob/master/resources/user_guide_ARIESreleasev3.pdf) for more extensive documentation.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: ALSPAC</p>
+<p class="date">Created: 2021-04-23 Fri 12:53</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
