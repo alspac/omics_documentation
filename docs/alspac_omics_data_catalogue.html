@@ -720,29 +720,7 @@ Formats:
 <pre class="src src-yaml">"`dosages_bgen`": |
   Imputed genotype dosages in binary oxford format. Can be read and manipulated with QCTOOL. SNPTEST can be used to perform GWAS. PLINK1.90 can be used to read data and convert to best guess (but won't use the data's dosage format for any analysis). Note: the SNP IDs in the dosages are in the format `chr:pos_a1_a2`.
 
-"`bestguess`": |
-  All imputed dosages converted to 'best guess' genotypes in binary plink format. Caution: This includes a very large number of low quality imputed SNPs and they can throw up spurious results when used as best guess genotypes. Used hard call threshold of 0.1, so there will be some missing values here. Where possible the SNP IDs in the `bim` files are the build 37 rs IDs, otherwise they are `chr:pos_a1_a2` naming convention.
 
-"`snp-stats`": |
-  Imputation quality metrics generated using QCTOOL using the `--snp-stats` option. `SNPID` column is the same as the chromosome number if SNP was was originally on the genotype chip, or `chr:pos_a1_a2` format if imputed. The `RSID` column has rs IDs where possible. The `information` column gives imputation R-squared quality metric. The `RSID` column matches the SNP IDs in the `bim` files.
-
-"`derived/filtered/bestguess/maf0.01_info0.8`": |
-  Dosages converted to 'best guess' genotypes in binary plink format, filtered to only include SNPs with MAF &gt; 0.01 and imputation info score &gt; 0.8. For most analyses this is a computationally tractable format that will not suffer from statistical problems if the focus of the analysis is on well imputed common variants. Used hard call threshold of 0.1, so there will be some missing values here.
-
-"`derived/filtered/bestguess/maf0.01_info0.8/combined`": |
-  Same as above but with all chromosomes combined into a single file.
-
-"`derived/filtered/bestguess/maf0.01_info0.8/combined/hapmap3`": |
-  Same as above but with all chromosomes combined into a single file and including only HapMap3 SNPs.
-
-"`derived/principal_components`": |
-  Generated using the `scripts/pcs.sh` script. It extracts unrelated individuals (IBS &lt; 0.05) and independent SNPs with long range LD regions removed, and then calculates PCs using the `--pca` command in plink1.90.
-
-"`derived/kinships`": |
-  Genetic relationship matrices calculated using GCTA standard algorithm using only 1.1 million HapMap3 best guess tag SNPs. These were constructed by extracting autosomal HapMap3 SNPs from `bestguess/maf0.01_info0.8` data. These data include mothers and children, if you want to use only unrelated individuals then use only individuals listed in unrelated_ids. Kinships are available for each separate chromosome (`data_chr[i].grm`) or for the entire autosome (`data.grm`)
-
-"`derived/unrelated_ids`": |
-  Lists of samples with no cryptic relatedness. These were made by calculating the genetic relatedness using the IBS grm method in GCTA, and discarding a random individual from each pair with relatedness greater than 0.05. The `*_unrelated.txt` is a list of unrelated IDs to include. The `*_exclusion_list.txt` is a list of the individuals that were excluded to create the unrelated list. Use the exclusion lists for SNPTEST.
 </pre>
 </div>
 </div>
