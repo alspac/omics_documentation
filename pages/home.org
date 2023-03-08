@@ -1,0 +1,13 @@
+#+OPTIONS: toc:nil
+
+* Welcome to the ALSPAC omics data catalog
+
+The ALSPAC study has generated numerous large-scale omics datasets over time. The purpose of this site is to provide researchers with an overview and guide to help them choose the appropriate dataset(s) for their studies. The site provides detailed information about the files included in our "Named" datasets and the content of "freezes," which are the versions of the datasets available to external collaborators.
+
+It is important to note that multiple rounds of genomic data collection have been conducted, and new and improved technologies mean that this process is ongoing. As a result, several versions of genomic data are available to researchers, including genotype array data, genotype array data that has been imputed to sequence level density, and genotype sequenced data. Imputation has been conducted multiple times using new sequenced reference panels. However, not all participants have had the same types of data generated for them. Plans are being made to unify the imputation batches across all array genotyped individuals.
+
+This site also provides details about other omic data, such as DNA methylation datasets and gene expression datasets based on arrays. However, metabolomic data is addressed separately in the ALSPAC data catalog.
+
+To get started and browse the catalog go to :
+[[http://purl.org/alspac/alspac-data-catalogue-schema/alspac_data_catalogue_001][List
+of Availble Datasets]]

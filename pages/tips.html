@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-03-08 Wed 08:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tips on using Omics data</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Samuel Neaves" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Tips on using Omics data</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgfdddeed">1. Introduction</a></li>
+<li><a href="#org273cb0d">2. Disclaimer</a></li>
+<li><a href="#orge3a9a2d">3. Operating systems</a></li>
+<li><a href="#org322159d">4. Key Omics software</a>
+<ul>
+<li><a href="#orgb81dcbc">4.1. Plink</a></li>
+<li><a href="#orgdbe85de">4.2. SNPTest</a></li>
+<li><a href="#orge0d22cd">4.3. BoltLmm</a></li>
+<li><a href="#org1d3869f">4.4. Qctools</a></li>
+<li><a href="#orgbce5e29">4.5. SAMTOOLS</a>
+<ul>
+<li><a href="#org3a8b1fa">4.5.1. VCFTOOLS</a></li>
+<li><a href="#org288c0cc">4.5.2. BCFTOOLS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc10d7f8">5. File types</a>
+<ul>
+<li><a href="#org196ff94">5.1. .gen</a></li>
+<li><a href="#orga47bbda">5.2. .bgen</a></li>
+<li><a href="#org5c6a589">5.3. .sample</a></li>
+<li><a href="#orgdc8390b">5.4. .ped</a></li>
+<li><a href="#orge243b1f">5.5. .map</a></li>
+<li><a href="#org690dac1">5.6. .bed</a></li>
+<li><a href="#org6007182">5.7. .bim</a></li>
+<li><a href="#orga2da29a">5.8. .fam</a></li>
+<li><a href="#orga8eec00">5.9. .csv</a></li>
+<li><a href="#orgd15dc86">5.10. .vcf</a></li>
+<li><a href="#orgaea7262">5.11. .bcf</a></li>
+<li><a href="#org2aa0021">5.12. .tar.gz</a></li>
+<li><a href="#org006f089">5.13. .enc</a></li>
+</ul>
+</li>
+<li><a href="#orga113ffc">6. Variant/SNP ids</a></li>
+<li><a href="#org41c9448">7. Overview of Imputation reference panels</a>
+<ul>
+<li><a href="#org55f1467">7.1. Panels</a>
+<ul>
+<li><a href="#orgd58b792">7.1.1. TOPmed</a></li>
+<li><a href="#orgf4ba6d1">7.1.2. HRC</a></li>
+<li><a href="#org053b9f2">7.1.3. 1000 Genomes</a></li>
+<li><a href="#orgc3017c1">7.1.4. Hapmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga796111">8. SNP data types from imputation.</a></li>
+<li><a href="#org6130cc4">9. SNP Statistics</a></li>
+<li><a href="#org563fdbe">10. Best practice</a>
+<ul>
+<li><a href="#orge8c41eb">10.1. GWAS</a></li>
+<li><a href="#orgb9fa27e">10.2. Phewas</a></li>
+<li><a href="#orgd17ae83">10.3. Methylation</a></li>
+<li><a href="#orgd75cedb">10.4. Gene expression</a></li>
+</ul>
+</li>
+<li><a href="#orgf616f1e">11. Population stratification</a></li>
+<li><a href="#org3d526d1">12. Common tasks</a></li>
+<li><a href="#org62268af">13. Courses</a></li>
+<li><a href="#orgbbca7ae">14. Further sources of help</a>
+<ul>
+<li><a href="#org1d50fea">14.1. Stack exchange</a></li>
+<li><a href="#org5385be8">14.2. Bio-stars</a></li>
+<li><a href="#org172c097">14.3. Mailing lists</a></li>
+<li><a href="#orge3ca230">14.4. Ask ALSPAC</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfdddeed" class="outline-2">
+<h2 id="orgfdddeed"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This section is a guide to using 'Omics datasets. It explains which software to use and describes common file formats. It's a good starting point for beginners and helpful for problem-solving.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org273cb0d" class="outline-2">
+<h2 id="org273cb0d"><span class="section-number-2">2</span> Disclaimer</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Some information is copied or reworded from software documentation. Check the original documentation alongside this guide for up-to-date information. Note that some links may no longer work.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge3a9a2d" class="outline-2">
+<h2 id="orge3a9a2d"><span class="section-number-2">3</span> Operating systems</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+You can use ALSPAC data with any operating system, but Unix-based systems like Macintosh, Linux, or BSD are more convenient due to the data's size and complexity. We recommend using the command line and programming scripts with languages like Bash, R, Python, or Perl. Many online resources are available to learn these tools. Use free/libre and open-source software where possible.
+</p>
+
+<p>
+Links:
+</p>
+<ul class="org-ul">
+<li>ALSPAC data information: <a href="https://alspac.github.io/omics_freeze_creation/alspac_omics_docs.html">https://alspac.github.io/omics<sub>freeze</sub><sub>creation</sub>/alspac<sub>omics</sub><sub>docs.html</sub></a></li>
+<li>Unix guide: <a href="https://www.osc.edu/supercomputing/unix-cmds">https://www.osc.edu/supercomputing/unix-cmds</a></li>
+<li>Beginning Python: <a href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a></li>
+<li>Beginning R: <a href="https://www.statmethods.net/r-tutorial/index.html">https://www.statmethods.net/r-tutorial/index.html</a></li>
+<li>Free/libre and open-source software: <a href="https://www.fsf.org/about/">https://www.fsf.org/about/</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org322159d" class="outline-2">
+<h2 id="org322159d"><span class="section-number-2">4</span> Key Omics software</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgb81dcbc" class="outline-3">
+<h3 id="orgb81dcbc"><span class="section-number-3">4.1</span> Plink</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Plink is a tool for performing quality control and whole genome
+association analysis of genetic data.
+</p>
+<ul class="org-ul">
+<li>Link: <a href="http://zzz.bwh.harvard.edu/plink/">http://zzz.bwh.harvard.edu/plink/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdbe85de" class="outline-3">
+<h3 id="orgdbe85de"><span class="section-number-3">4.2</span> SNPTest</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+SNPTest is a tool for performing  whole genome
+association analysis of genetic data.
+</p>
+<ul class="org-ul">
+<li>Link:
+<a href="https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html">https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html</a>
+(Not open source)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge0d22cd" class="outline-3">
+<h3 id="orge0d22cd"><span class="section-number-3">4.3</span> BoltLmm</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+BoltLmm is a tool for performing genome
+association analysis of genetic data. It is recommended for analysis
+of more than 5000 samples, its methods automatically take into
+account population substructures.
+</p>
+<ul class="org-ul">
+<li>Link: <a href="https://data.broadinstitute.org/alkesgroup/BOLT-LMM/">https://data.broadinstitute.org/alkesgroup/BOLT-LMM/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1d3869f" class="outline-3">
+<h3 id="org1d3869f"><span class="section-number-3">4.4</span> Qctools</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+A tool for quality control of genetic data.
+It is also useful to inspect and modify .gen .bgen and vcf files etc (see section 4 below). 
+</p>
+<ul class="org-ul">
+<li>Link: <a href="https://www.well.ox.ac.uk/~gav/qctool_v2/">https://www.well.ox.ac.uk/~gav/qctool_v2/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbce5e29" class="outline-3">
+<h3 id="orgbce5e29"><span class="section-number-3">4.5</span> SAMTOOLS</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+Samtools is a suite of tools which are used for genomic analysis.
+</p>
+<ul class="org-ul">
+<li>Link: <a href="http://www.htslib.org/">http://www.htslib.org/</a></li>
+</ul>
+</div>
+<div id="outline-container-org3a8b1fa" class="outline-4">
+<h4 id="org3a8b1fa"><span class="section-number-4">4.5.1</span> VCFTOOLS</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<p>
+Part of samtools that allows you to work with vcf files.
+</p>
+<ul class="org-ul">
+<li>Link: <a href="https://vcftools.github.io/index.html">https://vcftools.github.io/index.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org288c0cc" class="outline-4">
+<h4 id="org288c0cc"><span class="section-number-4">4.5.2</span> BCFTOOLS</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<p>
+This is a part of samstools and allows users to manipulate .bcf files.
+</p>
+<ul class="org-ul">
+<li>Link: <a href="http://samtools.github.io/bcftools/bcftools.html">http://samtools.github.io/bcftools/bcftools.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc10d7f8" class="outline-2">
+<h2 id="orgc10d7f8"><span class="section-number-2">5</span> File types</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+In a Unix environment the postfix of a file name does not explicitly mean anything to the operating system,  unlike in a Windows system which will look at the file types. In a Unix system it is just part of the name of the file and humans use it to distinguish file formats. The following is a non-exhaustive list of file types you may encounter whilst using ALSPAC Omics data.
+</p>
+</div>
+
+<div id="outline-container-org196ff94" class="outline-3">
+<h3 id="org196ff94"><span class="section-number-3">5.1</span> .gen</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+This is an 'oxford' data format for genetic data. The .gen file is a
+plain text file, this means that standard Unix command line tools can
+be used to inspect the data. For example, 'head' or 'less'.
+</p>
+
+<p>
+The .gen (genotype) file stores data on a one-line-per-SNP format. The first 5 entries of each line are the SNP ID, RS ID of the SNP, base-pair position of the SNP, the allele coded A and the allele coded B. The SNP ID can be used to denote the chromosome number of each SNP. The next three numbers on the line are the probabilities of the three genotypes AA, AB and BB at the SNP for the first individual in the cohort. The next three numbers are the genotype probabilities for the second individual in the cohort. The next three numbers are for the third individual and so on. The order of individuals in the genotype file should match the order of the individuals in the sample file (see below). It should be noted that the probabilities need not sum to 1 to allow for the possibility of a NULL genotype call. This format allows for genotype uncertainty. This genotype file format is the same as that produced by the genotype calling algorithm CHIAMO. NOTE : We recommend that you arrange SNPs in base-pair order in the genotype files. This is required if you want to use the files with IMPUTE and will make viewing the output of SNPTEST somewhat easier. For example, Suppose you want to create a genotype for 2 individuals at 5 SNPs whose genotypes are
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">SNP 1</td>
+<td class="org-left">AA</td>
+<td class="org-left">AA</td>
+</tr>
+
+<tr>
+<td class="org-left">SNP 2</td>
+<td class="org-left">GG</td>
+<td class="org-left">GT</td>
+</tr>
+
+<tr>
+<td class="org-left">SNP 3</td>
+<td class="org-left">CC</td>
+<td class="org-left">CT</td>
+</tr>
+
+<tr>
+<td class="org-left">SNP 4</td>
+<td class="org-left">CT</td>
+<td class="org-left">CT</td>
+</tr>
+
+<tr>
+<td class="org-left">SNP 5</td>
+<td class="org-left">AG</td>
+<td class="org-left">GG</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+The correct genotype file would look like this:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">SNP1 rs1 1000</td>
+<td class="org-left">A</td>
+<td class="org-left">C</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SNP2 rs2 2000</td>
+<td class="org-left">G</td>
+<td class="org-left">T</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SNP3 rs3 3000</td>
+<td class="org-left">C</td>
+<td class="org-left">T</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SNP4 rs4 4000</td>
+<td class="org-left">C</td>
+<td class="org-left">T</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">SNP5 rs5 5000</td>
+<td class="org-left">A</td>
+<td class="org-left">G</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-orga47bbda" class="outline-3">
+<h3 id="orga47bbda"><span class="section-number-3">5.2</span> .bgen</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+A binary version of a .gen file. This file can not be visually
+inspected on the command line. .bgen files are used because they
+greatly increase the speed and storage efficiency of software for
+storing large amounts of Omics data. The full details of the file
+format are discussed in : <a href="https://www.well.ox.ac.uk/~gav/bgen_format/">https://www.well.ox.ac.uk/~gav/bgen_format/</a> 
+bgen files are normally used with tools such as qctools and snptest
+There is also a library for reading .bgen files into R :
+<a href="https://bitbucket.org/gavinband/bgen/wiki/rbgen">https://bitbucket.org/gavinband/bgen/wiki/rbgen</a> 
+</p>
+</div>
+</div>
+<div id="outline-container-org5c6a589" class="outline-3">
+<h3 id="org5c6a589"><span class="section-number-3">5.3</span> .sample</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+The .sample file is paired with either .gen or .bgen files. It
+contains information on the samples that is not genetic. It is a plain
+text file that can be inspected with standard Unix command line tools.
+</p>
+
+<p>
+Please note that the sample file format changed with the release of SNPTEST v2. Specifically, the way in which covariates and phenotypes are coded on the second line of the header file has changed. 
+The sample file has three parts (a) a header line detailing the names of the columns in the file, (b) a line detailing the types of variables stored in each column, and (c) a line for each individual detailing the information for that individual. Here is an example of the start of a sample file for reference
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">ID<sub>1</sub></td>
+<td class="org-right">ID<sub>2</sub></td>
+<td class="org-right">missing</td>
+<td class="org-right">cov<sub>1</sub></td>
+<td class="org-right">cov<sub>2</sub></td>
+<td class="org-right">cov<sub>3</sub></td>
+<td class="org-right">cov<sub>4</sub></td>
+<td class="org-right">pheno1</td>
+<td class="org-left">bin1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">D</td>
+<td class="org-right">D</td>
+<td class="org-right">C</td>
+<td class="org-right">C</td>
+<td class="org-right">P</td>
+<td class="org-left">B</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">.007</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+<td class="org-right">.0019</td>
+<td class="org-left">-0.008 1.233 1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+<td class="org-right">.009</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+<td class="org-right">.0022</td>
+<td class="org-left">-0.001 6.234 0</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">.005</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+<td class="org-right">.0025</td>
+<td class="org-left">0.0028 6.121 1</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">0</td>
+<td class="org-right">.007</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">.0017</td>
+<td class="org-left">-0.011 3.234 1</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-right">0</td>
+<td class="org-right">.004</td>
+<td class="org-right">3</td>
+<td class="org-right">2</td>
+<td class="org-right">-0</td>
+<td class="org-right">.012</td>
+<td class="org-left">0.0236 2.786 0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The header line:
+This line needs a minimum of three entries. The first three entries should always be ID<sub>1</sub>, ID<sub>2</sub> and missing. They denote that the first three columns contain the first ID, second ID and missing data proportion of each individual. Additional entries on this line should be the names of covariates or phenotypes that are included in the file. In the above example, there are 4 covariates named cov<sub>1</sub>, cov<sub>2</sub>, cov<sub>3</sub>, cov<sub>4</sub>, a continuous phenotype named pheno1 and a binary phenotype named bin1.
+NOTE : All phenotypes should appear after the covariates in this file.
+The second line of the file details the type of variables included in each column. The first three entries of this line should be set to 0. Subsequent entries in this line for covariates and phenotypes should be specified by the following rules
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">D</td>
+<td class="org-left">Discrete covariate (coded using positive integers)</td>
+</tr>
+
+<tr>
+<td class="org-left">C</td>
+<td class="org-left">Continuous covariates</td>
+</tr>
+
+<tr>
+<td class="org-left">P</td>
+<td class="org-left">Continuous Phenotype</td>
+</tr>
+
+<tr>
+<td class="org-left">B</td>
+<td class="org-left">Binary Phenotype (0 = Controls, 1 = Cases)</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+The remainder of the file should consist of a line for each individual containing the information specified by the entries of the header line (see example above).
+Use spaces to separate the entries of the sample file and not TABS
+because that is the expected character.
+</p>
+
+<p>
+Missing values - Specifying missing values for covariates and
+phenotypes is possible. It was recommended that you use -9 for missing
+values. This was the default value assumed by SNPTEST v1, although the
+-missing<sub>code</sub> option in SNPTEST v1 meant that you could use other
+numeric values for the missing code, In SNPTEST v2 the behavior of the
+-missing<sub>code</sub> option has changed so that it now takes a comma-separated
+list of values, each of which is treated as missing when encountered
+in the sample file(s). Default missing values are now denoted by the
+two character string "NA".
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc8390b" class="outline-3">
+<h3 id="orgdc8390b"><span class="section-number-3">5.4</span> .ped</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+A plink format file that is in plain text and can be viewed with standard tools. It contains genetic variant data. <a href="https://www.cog-genomics.org/plink/1.9/formats#ped">https://www.cog-genomics.org/plink/1.9/formats#ped</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge243b1f" class="outline-3">
+<h3 id="orge243b1f"><span class="section-number-3">5.5</span> .map</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+A plink format file that is in plain text. It contains information
+about variants.
+<a href="https://www.cog-genomics.org/plink/1.9/formats#map">https://www.cog-genomics.org/plink/1.9/formats#map</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org690dac1" class="outline-3">
+<h3 id="org690dac1"><span class="section-number-3">5.6</span> .bed</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+A plink format file that isa binary equivalent of a .ped file. It is smaller and faster to process but is not easily viewable or editable. <a href="https://www.cog-genomics.org/plink/1.9/formats#bed">https://www.cog-genomics.org/plink/1.9/formats#bed</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org6007182" class="outline-3">
+<h3 id="org6007182"><span class="section-number-3">5.7</span> .bim</h3>
+<div class="outline-text-3" id="text-5-7">
+<p>
+A plink format, similar to a .map file but is used with binary .bed files.
+<a href="https://www.cog-genomics.org/plink/1.9/formats#bin">https://www.cog-genomics.org/plink/1.9/formats#bin</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orga2da29a" class="outline-3">
+<h3 id="orga2da29a"><span class="section-number-3">5.8</span> .fam</h3>
+<div class="outline-text-3" id="text-5-8">
+<p>
+A plain text format that contains sample information for plink binary
+files.
+<a href="https://www.cog-genomics.org/plink/1.9/formats#fam">https://www.cog-genomics.org/plink/1.9/formats#fam</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orga8eec00" class="outline-3">
+<h3 id="orga8eec00"><span class="section-number-3">5.9</span> .csv</h3>
+<div class="outline-text-3" id="text-5-9">
+<p>
+A plain text format where different fields are separated by
+commas. (Comma separated variables).
+</p>
+</div>
+</div>
+<div id="outline-container-orgd15dc86" class="outline-3">
+<h3 id="orgd15dc86"><span class="section-number-3">5.10</span> .vcf</h3>
+<div class="outline-text-3" id="text-5-10">
+<p>
+VCF files are a flexible file format for storing different types of
+genetic variants. They are a plain text format that can be inspected
+on the command line with standard Unix tools. However they are often
+very large files, and specific tools such as 'vcftools' are useful for
+working with this data. Commonly SNPs are stored in these files but other variants such as
+Copy Number variations can also be stored.
+The basic form for a vcf file is: 
+<a href="https://en.wikipedia.org/wiki/Variant_Call_Format">https://en.wikipedia.org/wiki/Variant_Call_Format</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgaea7262" class="outline-3">
+<h3 id="orgaea7262"><span class="section-number-3">5.11</span> .bcf</h3>
+<div class="outline-text-3" id="text-5-11">
+<p>
+This is a binary version of a vcf file. It cannot be inspected on the
+command line, but can be used with the genomic tools mentioned in this document.
+</p>
+</div>
+</div>
+<div id="outline-container-org2aa0021" class="outline-3">
+<h3 id="org2aa0021"><span class="section-number-3">5.12</span> .tar.gz</h3>
+<div class="outline-text-3" id="text-5-12">
+<p>
+This is a standard Unix file format for bundling and compressing a set of files. It is similar to a .zip file. It is made by first bundling a set of files into a .tar file (sometimes called a tar ball). This is then compressed using 'gun zip'. <a href="https://en.wikipedia.org/wiki/Tar_(computing)">https://en.wikipedia.org/wiki/Tar_(computing)</a> <a href="https://en.wikipedia.org/wiki/Gzip">https://en.wikipedia.org/wiki/Gzip</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org006f089" class="outline-3">
+<h3 id="org006f089"><span class="section-number-3">5.13</span> .enc</h3>
+<div class="outline-text-3" id="text-5-13">
+<p>
+This file extension is used as a convention to mean that the file is encrypted. You will need to have that  password that was used to encrypt the data in order to unencrypt the files. <a href="https://en.wikipedia.org/wiki/OpenSSL">https://en.wikipedia.org/wiki/OpenSSL</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga113ffc" class="outline-2">
+<h2 id="orga113ffc"><span class="section-number-2">6</span> Variant/SNP ids</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+There are many types of genetic variation. A common type is a single
+nucleotide polymorphism (SNP). Others include copy number variations.
+</p>
+
+<p>
+Variants can be specified by a Chromosome and location in reference to
+a specific build of the human genome. They can also be given a
+reference SNP (rs) cluster identifier.
+</p>
+
+<ul class="org-ul">
+<li>Chr:Location</li>
+<li>Rs ids</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org41c9448" class="outline-2">
+<h2 id="org41c9448"><span class="section-number-2">7</span> Overview of Imputation reference panels</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+SNP array data frequently contain hundreds of thousands of
+variants. However due to linkage disequilibrium it is possible to
+estimate many more SNP values for an individual. This estimation
+procedure is called imputation and it works by combining an
+individuals SNP array data with a large reference population of
+sequenced data. In this way it is possible to have accurate
+estimations of millions of SNP values for an individual without the
+cost of fully sequencing each person. ALSPAC has prerun the imputation
+process using three different imputation panels.
+</p>
+</div>
+
+<div id="outline-container-org55f1467" class="outline-3">
+<h3 id="org55f1467"><span class="section-number-3">7.1</span> Panels</h3>
+<div class="outline-text-3" id="text-7-1">
+</div>
+<div id="outline-container-orgd58b792" class="outline-4">
+<h4 id="orgd58b792"><span class="section-number-4">7.1.1</span> TOPmed</h4>
+<div class="outline-text-4" id="text-7-1-1">
+<p>
+An upcoming (to alspac) reference panel which will have the most snps
+</p>
+</div>
+</div>
+<div id="outline-container-orgf4ba6d1" class="outline-4">
+<h4 id="orgf4ba6d1"><span class="section-number-4">7.1.2</span> HRC</h4>
+<div class="outline-text-4" id="text-7-1-2">
+<p>
+This is the latest reference panel and our data contains circa 40 millions of SNPs.
+</p>
+</div>
+</div>
+<div id="outline-container-org053b9f2" class="outline-4">
+<h4 id="org053b9f2"><span class="section-number-4">7.1.3</span> 1000 Genomes</h4>
+<div class="outline-text-4" id="text-7-1-3">
+<p>
+This is the previous generation reference panel which is still widely
+used in ALSPAC studies. There are some SNPs that appear in this panel
+that are not in the HRC panel.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc3017c1" class="outline-4">
+<h4 id="orgc3017c1"><span class="section-number-4">7.1.4</span> Hapmap</h4>
+<div class="outline-text-4" id="text-7-1-4">
+<p>
+This was the first widely used imputation panel.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga796111" class="outline-2">
+<h2 id="orga796111"><span class="section-number-2">8</span> SNP data types from imputation.</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+SNPs that have been imputed can be stored and analysed in different
+formats. These can be appropriate for different types of analysis, for
+example an analysis could assume and additive effect for the minor
+allele or it could assume a recessive/dominant effect. 
+</p>
+
+<ul class="org-ul">
+<li>Best guess. The data will be presented as either 0,1, or 2 to
+represent how many of the minor alleles at
+that position a person has. The best guess is derived from the
+probability of a variant calculated from the imputation process.</li>
+<li>Dosage. This is the probability that the person has 0, 1 or 2 of the minor
+allele. i.e. 0.1, 0.2,0.7. This will sum to one across the three
+possibilities (i.e for each SNP for each individual).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6130cc4" class="outline-2">
+<h2 id="org6130cc4"><span class="section-number-2">9</span> SNP Statistics</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+You can generate statistics on your SNP data using the program
+'QCtools'. This will give you the imputation information scores. For example:
+</p>
+
+<p>
+qctool -g example.bgen -s example.sample -sample-stats -osample sample-stats.txt
+</p>
+</div>
+</div>
+
+<div id="outline-container-org563fdbe" class="outline-2">
+<h2 id="org563fdbe"><span class="section-number-2">10</span> Best practice</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-orge8c41eb" class="outline-3">
+<h3 id="orge8c41eb"><span class="section-number-3">10.1</span> GWAS</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+We recommend you follow the steps outlined in the following paper when performing GWAS: 
+Marees, Andries T., et al. "A tutorial on conducting genome‐wide
+association studies: Quality control and statistical analysis."
+International journal of methods in psychiatric research 27.2 (2018):
+e1608. <a href="https://doi.org/10.1002/mpr.1608">https://doi.org/10.1002/mpr.1608</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb9fa27e" class="outline-3">
+<h3 id="orgb9fa27e"><span class="section-number-3">10.2</span> Phewas</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+We recommend you follow the steps outlined in the following paper when performing Phewas: 
+Millard, L., Davies, N., Timpson, N. et al. MR-PheWAS: hypothesis prioritization among potential causal effects of body mass index on many outcomes, using Mendelian randomization. Sci Rep 5, 16645 (2015). <a href="https://doi.org/10.1038/srep16645">https://doi.org/10.1038/srep16645</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgd17ae83" class="outline-3">
+<h3 id="orgd17ae83"><span class="section-number-3">10.3</span> Methylation</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+The following paper describes the methylation data available in ALSPAC
+Relton, Caroline L., et al. "Data resource profile: accessible resource for integrated epigenomic studies (ARIES)." International journal of epidemiology 44.4 (2015): 1181-1190.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd75cedb" class="outline-3">
+<h3 id="orgd75cedb"><span class="section-number-3">10.4</span> Gene expression</h3>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgf616f1e" class="outline-2">
+<h2 id="orgf616f1e"><span class="section-number-2">11</span> Population stratification</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+This is when an observed genetic association is due to the
+population/geography. Not taking this into account can lead to biased
+estimates of effects.
+One common method to account for these is to calculate principal
+components of the genetic data and then to include these as covariables
+in any models.
+Principal components can be generated using plink or other tools.
+</p>
+
+<p>
+For more information about how to do this in plink see:<a href="https://www.cog-genomics.org/plink/1.9/strat">https://www.cog-genomics.org/plink/1.9/strat</a>
+</p>
+
+<p>
+An common method used to account for population substructure is by using
+linear mixed models. For example using the bolt LMM software tool.
+</p>
+
+<p>
+<a href="https://data.broadinstitute.org/alkesgroup/BOLT-LMM/">https://data.broadinstitute.org/alkesgroup/BOLT-LMM/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3d526d1" class="outline-2">
+<h2 id="org3d526d1"><span class="section-number-2">12</span> Common tasks</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+Here we provide links to webpages that provide instructions or provide
+brief details any code for completing common tasks using the various
+software we have described above (section x):
+</p>
+
+<ul class="org-ul">
+<li>Extract some SNPs from a bgen data file and convert to plain text.</li>
+</ul>
+
+<p>
+<a href="https://www.well.ox.ac.uk/~gav/qctool_v2/documentation/examples/filtering_variants.html">https://www.well.ox.ac.uk/~gav/qctool_v2/documentation/examples/filtering_variants.html</a>
+</p>
+
+<ul class="org-ul">
+<li>Extract some SNPs from bed data:</li>
+</ul>
+<p>
+<a href="http://zzz.bwh.harvard.edu/plink/dataman.shtml">http://zzz.bwh.harvard.edu/plink/dataman.shtml</a>
+</p>
+
+<p>
+plink &#x2013;bfile mydata &#x2013;chr 2 &#x2013;from-kb 5000 &#x2013;to-kb 10000 
+</p>
+
+<ul class="org-ul">
+<li>Reading .bgen and .sample oxford files in plink</li>
+</ul>
+
+<p>
+Plink supports bgen files but it is fussy about the types of its
+ columns in the data.sample file. You may wish to remove or retype
+ columns to read a data.sample file into plink. For more info see:
+</p>
+
+<p>
+<a href="https://www.cog-genomics.org/plink/2.0/input">https://www.cog-genomics.org/plink/2.0/input</a>
+</p>
+
+<p>
+To make a new sample file removing some columns you can use the Unix command: 'cut -f 1,2,3 -d " " data.sample &gt; data2.sample'
+</p>
+</div>
+</div>
+
+<div id="outline-container-org62268af" class="outline-2">
+<h2 id="org62268af"><span class="section-number-2">13</span> Courses</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Working with 'Omics data can be complicated but there are many
+excellent resources available to help you learn how to do this. There
+are both paid in person courses and free online courses.
+</p>
+
+<p>
+Details on paid courses offered by Bristol University can be found here: <a href="https://www.bristol.ac.uk/medical-school/study/short-courses/">https://www.bristol.ac.uk/medical-school/study/short-courses/</a> 
+In addition, a number of free online courses are summarised here: <a href="https://www.mooc-list.com/tags/bioinformatics">https://www.mooc-list.com/tags/bioinformatics</a>
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgbbca7ae" class="outline-2">
+<h2 id="orgbbca7ae"><span class="section-number-2">14</span> Further sources of help</h2>
+<div class="outline-text-2" id="text-14">
+</div>
+<div id="outline-container-org1d50fea" class="outline-3">
+<h3 id="org1d50fea"><span class="section-number-3">14.1</span> Stack exchange</h3>
+<div class="outline-text-3" id="text-14-1">
+<p>
+Stack exchange is an online Q&amp;A community which is divided into
+different sub-communities. The first and most well-known is Stack overflow. This is one of the best place to ask
+questions about programming on the Internet.
+Other useful exchange sites include bioinformatics
+<a href="https://bioinformatics.stackexchange.com/">https://bioinformatics.stackexchange.com/</a>, maths
+<a href="https://mathoverflow.net/">https://mathoverflow.net/</a> and statistics <a href="https://stats.stackexchange.com/">https://stats.stackexchange.com/</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5385be8" class="outline-3">
+<h3 id="org5385be8"><span class="section-number-3">14.2</span> Bio-stars</h3>
+<div class="outline-text-3" id="text-14-2">
+<p>
+Biostars is bioinformatics community Q&amp;A web-site: <a href="https://www.biostars.org/">https://www.biostars.org/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org172c097" class="outline-3">
+<h3 id="org172c097"><span class="section-number-3">14.3</span> Mailing lists</h3>
+<div class="outline-text-3" id="text-14-3">
+<p>
+For individual product/projects there is often a mailing list. For example to get help using SNPTEST you can ask on the mailing list <a href="https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#contact">https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#contact</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge3ca230" class="outline-3">
+<h3 id="orge3ca230"><span class="section-number-3">14.4</span> Ask ALSPAC</h3>
+<div class="outline-text-3" id="text-14-4">
+<p>
+If you can not find the answer to your question or you think there is
+something wrong with your data then please contact the alspac-omics@bristol.ac.uk
+mailbox and we will do our best to help you. 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Samuel Neaves</p>
+<p class="date">Created: 2023-03-08 Wed 08:40</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

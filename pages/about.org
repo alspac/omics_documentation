@@ -1,0 +1,10 @@
+* About
+
+This is the new ALSPAC omics data catalog.
+
+It give details on all availble datasets, including the files in the
+latest versions of our datasets and the file availble to external
+colaborators on application in our dataset freezes.
+
+
+
