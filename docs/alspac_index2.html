@@ -3,27 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loading...</title>
+  <title>Large File Display</title>
   <script>
-    async function loadContent() {
-      try {
-        const part1Response = await fetch('index_part1.html');
-        const part1Html = await part1Response.text();
-        const part2Response = await fetch('index_part2.html');
-        const part2Html = await part2Response.text();
-
-        const fullHtml = part1Html + part2Html;
-        document.open();
-        document.write(fullHtml);
-        document.close();
-      } catch (error) {
-        console.error('Error fetching content:', error);
-      }
+    async function fetchLargeFile() {
+      const response = await fetch('https://uob-my.sharepoint.com/:alspac_omics_data_catalogue.html:/g/personal/sn0550_bristol_ac_uk/ETzYOSJxU8hJoeQP6Hg2bMsBdKH7CmNyx8OeoBFZ2znuxw?download=1');
+      const fileContent = await response.text();
+      document.getElementById('fileContent').textContent = fileContent;
     }
-
-    loadContent();
   </script>
 </head>
 <body>
+  <h1>Large File Content</h1>
+  <pre id="fileContent"></pre>
+  <script>
+    fetchLargeFile();
+  </script>
 </body>
 </html>
