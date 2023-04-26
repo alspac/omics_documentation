@@ -1,3 +1,44 @@
-<html>
-  <p> hello world </p>
-  </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <script>
+    async function loadContent() {
+      try {
+        const part1Response = await fetch('index_part1.html');
+        const part1Html = await part1Response.text();
+        const part2Response = await fetch('index_part2.html');
+          const part2Html = await part2Response.text();
+
+	          const part3Response = await fetch('index_part3.html');
+          const part3Html = await part3Response.text();
+
+	          const part4Response = await fetch('index_part4.html');
+          const part4Html = await part4Response.text();
+
+	          const part5Response = await fetch('index_part5.html');
+          const part5Html = await part5Response.text();
+
+	          const part6Response = await fetch('index_part6.html');
+          const part6Html = await part6Response.text();
+
+	          const part7Response = await fetch('index_part7.html');
+        const part7Html = await part7Response.text();
+
+        const fullHtml = part1Html + part2Html + part3Html + part4Html + part5Html + part6Html + part7Html;
+        document.open();
+        document.write(fullHtml);
+        document.close();
+      } catch (error) {
+        console.error('Error fetching content:', error);
+      }
+    }
+
+    loadContent();
+  </script>
+</head>
+<body>
+</body>
+</html>
