@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <script>
+    async function loadContent() {
+      try {
+        const part1Response = await fetch('index_part1.html');
+        const part1Html = await part1Response.text();
+        const part2Response = await fetch('index_part2.html');
+        const part2Html = await part2Response.text();
+
+        const fullHtml = part1Html + part2Html;
+        document.open();
+        document.write(fullHtml);
+        document.close();
+      } catch (error) {
+        console.error('Error fetching content:', error);
+      }
+    }
+
+    loadContent();
+  </script>
+</head>
+<body>
+</body>
+</html>
