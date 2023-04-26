@@ -6,8 +6,9 @@
   <title>Large File Display</title>
   <script>
     async function fetchLargeFile() {
-      const response = await fetch('https://cors-anywhere.herokuapp.com/https://uob-my.sharepoint.com/:alspac_omics_data_catalogue.html:/g/personal/sn0550_bristol_ac_uk/ETzYOSJxU8hJoeQP6Hg2bMsBdKH7CmNyx8OeoBFZ2znuxw?download=1
-');
+  
+   const response = await fetch('https://cors-anywhere.herokuapp.com/https://uob-my.sharepoint.com/:alspac_omics_data_catalogue.html:/g/personal/sn0550_bristol_ac_uk/ETzYOSJxU8hJoeQP6Hg2bMsBdKH7CmNyx8OeoBFZ2znuxw?download=1');
+
       const fileContent = await response.text();
       document.getElementById('fileContent').textContent = fileContent;
     }
