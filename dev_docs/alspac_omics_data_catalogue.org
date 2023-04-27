@@ -6,6 +6,7 @@
 #+AUTHOR: ALSPAC
 #+HTML_HEAD: <style type="text/css">pre {white-space: pre-wrap;}</style>
 
+
 #+HTML_HEAD: <script>
 #+HTML_HEAD:   function scrollToResource(about) {
 #+HTML_HEAD:     const table = document.querySelector(`table[about="${about}"]`);
@@ -23,8 +24,23 @@
 #+HTML_HEAD:     }
 #+HTML_HEAD:   }
 #+HTML_HEAD: 
+#+HTML_HEAD:   function handleInternalNavigation(event) {
+#+HTML_HEAD:     const target = event.target;
+#+HTML_HEAD:     if (target.tagName.toLowerCase() === 'a') {
+#+HTML_HEAD:       const href = target.getAttribute('href');
+#+HTML_HEAD:       if (href.startsWith('http://purl.org/alspac/alspac-data-catalogue-schema/')) {
+#+HTML_HEAD:         event.preventDefault();
+#+HTML_HEAD:         const resourceName = href.replace('http://purl.org/alspac/alspac-data-catalogue-schema/', '');
+#+HTML_HEAD:         const about = `http://purl.org/alspac/alspac-data-catalogue-schema/${resourceName}`;
+#+HTML_HEAD:         scrollToResource(about);
+#+HTML_HEAD:       }
+#+HTML_HEAD:     }
+#+HTML_HEAD:   }
+#+HTML_HEAD: 
 #+HTML_HEAD:   document.addEventListener('DOMContentLoaded', handleRedirection);
+#+HTML_HEAD:   document.addEventListener('click', handleInternalNavigation);
 #+HTML_HEAD: </script>
+
 
 
 
@@ -57,8 +73,12 @@ This website is equipped with RDFa, enabling the metadata to be
 machine-readable and allowing for the creation of queries using SPARQL
 with compatible tools, such as Apache [[https://any23.apache.org/][Any23]] and [[https://jena.apache.org/][Apache Jena]].
 
+For more information about this see the document on [[https://www.go-fair.org/fair-principles/][FAIR]] data
+principles and the document describing the rational and construction
+of this catalog [[https://github.com/alspac/alspac-data-catalogue-schema/blob/main/paper/paper.org][here]].
+
 * Catalog overview
-#+INCLUDE "./alspac_data_catalogue-001.html" export html
+#+INCLUDE: "./alspac_data_catalogue-001.html" export html
 
 * Genetic Array Data
 
