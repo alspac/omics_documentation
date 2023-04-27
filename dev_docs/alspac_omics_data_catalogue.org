@@ -57,7 +57,8 @@ This website is equipped with RDFa, enabling the metadata to be
 machine-readable and allowing for the creation of queries using SPARQL
 with compatible tools, such as Apache [[https://any23.apache.org/][Any23]] and [[https://jena.apache.org/][Apache Jena]].
 
-
+* Catalog overview
+#+INCLUDE "./alspac_data_catalogue-001.html" export html
 
 * Genetic Array Data
 
