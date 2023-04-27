@@ -44,14 +44,14 @@
     file from emacs. Using either a local gui version of emacs and
     running C-e H h. or running: to run emacs on the command line.
 11. Check the html file if ok give to Pau to deploy on the local
-    apache instance that serves the page.
+    apache instance that serves the page at https://proposals.epi.bristol.ac.uk/alspac_omics_data_catalogue.html#org91891a3
 12. Copy the ttl, rdf and html files for each dataset into the
     appropiate dataset repo and commit
 
 To update the tips section of document follow the steps 9-11 editing
 the org file appropiately. 
 
-If step 7 does not run on a remote rdf to html website.
+NOTE: If step 7 does not run on a remote rdf to html website.
 You need to set up a local server.
 1. clone: https://github.com/rhizomik/redefer-rdf2html
 2. Modify java file to increase allowed file size
