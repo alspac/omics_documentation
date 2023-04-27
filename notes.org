@@ -27,24 +27,19 @@
    1. biomake gohtml
    2. biomake go2html
    3. biomake go3html
-      
-   This will make the html files
 
+      This will make the html files
+8. Copy the html files from the local github repo of the schema site to the local github repo of the omics_documentation/dev_docs/ (either freezes/datasets/versions)
 
-8. Copy the html files from the local github repo of the schema site
-   to the local github repo of the omics_documentation/dev_docs/
-   (either freezes/datasets/versions)
 9. Update the
-   /omics_documentation/dev_docs/alspac_omics_data_catalogue.org file
-   if a new file has been added:
+   /omics_documentation/dev_docs/alspac_omics_data_catalogue.org file if a new file has been added:
 
    e.g. Add something like ** Dataset name and then #include: the file
    as the other datasets are.
-
 10. Build the
-    /omics_documentation/dev_docs/alspac_omics_data_catalogue.html
-    file from emacs. Using either a local gui version of emacs and
-    running C-e H h. or running: to run emacs on the command line.
+     /omics_documentation/dev_docs/alspac_omics_data_catalogue.html
+     file from emacs. Using either a local gui version of emacs and
+     running C-e H h. or running: to run emacs on the command line.
 11. Check the html file if ok give to Pau to deploy on the local
     apache instance that serves the page at https://proposals.epi.bristol.ac.uk/alspac_omics_data_catalogue.html#org91891a3
 12. Copy the ttl, rdf and html files for each dataset into the
