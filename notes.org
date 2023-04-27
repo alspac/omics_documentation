@@ -1,0 +1,111 @@
+Steps to update static catalog.
+
+1. Create or update the yaml file for the
+   namedALSPACdataset/datasetversion or freeze in the github repo for
+   the correct dataset.
+2. Copy the yaml file into a local copy of alspacdatacatalog schema
+   repo
+   /alspac-data-catalogue-schema/src/data/examples/catalog/...
+   (Either Datasets,Versions or Freezes dir)
+3. if a new file has been made (e.g. a new freeze doc) Update the biomake file:
+   /alspac-data-catalogue-schema/makeprog
+   adding the file to the list of each 'go' rule.
+4. Run
+   1. biomake go (This makes the freeze ttl)
+   2. biomake go2 (version ttls)
+   3. biomake go3 (Dataset ttls)
+
+      This will have made the ttl files.
+5. Run
+   1. biomake gordf
+   2. biomake go2rdf
+   3. biomake go3rdf     
+      This will have made the rdf files
+6. Commit the ttl and rdf files to schema git hub repo
+7. Run (See note )
+   1. biomake gohtml
+   2. biomake go2html
+   3. biomake go3html
+   This will make the html files
+8. Copy the html files from the local github repo of the schema site
+   to the local github repo of the omics_documentation/dev_docs/
+   (either freezes/datasets/versions)
+9. Update the
+   /omics_documentation/dev_docs/alspac_omics_data_catalogue.org file
+   if a new file has been added:
+
+   e.g. Add something like ** Dataset name and then #include: the file
+   as the other datasets are.
+
+10. Build the
+    /omics_documentation/dev_docs/alspac_omics_data_catalogue.html
+    file from emacs. Using either a local gui version of emacs and
+    running C-e H h. or running: to run emacs on the command line.
+11. Check the html file if ok give to Pau to deploy on the local
+    apache instance that serves the page.
+12. Copy the ttl, rdf and html files for each dataset into the
+    appropiate dataset repo and commit
+
+To update the tips section of document follow the steps 9-11 editing
+the org file appropiately. 
+
+If step 7 does not run on a remote rdf to html website.
+You need to set up a local server.
+1.clone: https://github.com/rhizomik/redefer-rdf2html
+2. Modify java file to increase allowed file size
+https://github.com/rhizomik/redefer-rdf2html/blob/master/src/main/java/net/rhizomik/redefer/rdf2html/RDF2HTMLServlet.java
+
+line 39
+
+
+3. build the war file with 'mvn clean package' from the top level
+dir(where the pom.xml file is)
+4.download apache tom cat
+5.copy the war file into tomcat server (webapp folder )and start tom cat
+(using startup script in bin dir).
+6.Addjust the gohtml, go2html,go3html rules as appropiate to point at
+local server and try running them again. (This is prob only need for
+go2html because of large file sizes)
+
+* IMPORTANT IF THIS IS HARD
+If for some reason you can not create ttl, rdf, or html files from the
+yaml files you could just modify the org file for the catalog to
+include the yaml files. This will lose the nice html presentation and
+the rdfa semantics of the data but will be readable by people.
+
+** Tripple store (Advance option)
+
+If you want to run the Cliopatria tripple store version of the docs
+that I have demoed, then you need to set up a docker image.
+
+You can use the existing image by running:
+
+docker run -ti -p 80:3020 \
+	-v $PWD:/opt/project \
+	-v /etc/group:/etc/group:ro \
+	-v /etc/passwd:/etc/passwd:ro \
+	-u $( id -u $USER ):$( id -g $USER ) \
+	jrvosse/cliopatria \
+        cpack install swish
+
+This has been customised to have ALSPAC logo, tips document and to
+have names displayed in tables.	
+
+The cliopatria auth details are:
+user: admin
+password: alspac_walrus
+
+If you want to run a new image without the customisation then you can
+use the standard cliopatria docker image from here:
+
+https://github.com/jrvosse/ClioPatriaDocker
+
+You can then upload the rdf and set the prefixes by following the docs
+to do this.
+
+You can also choose to use alterantive tripple stores.
+
+For example, Apache Jena, Virtuoso, Stardog, Graphdb, blazegraph or
+RDF4j.
+
+
