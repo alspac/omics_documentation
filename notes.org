@@ -1,4 +1,4 @@
-Steps to update static catalog.
+* Steps to update static catalog.
 
 1. Create or update the yaml file for the
    namedALSPACdataset/datasetversion or freeze in the github repo for
@@ -27,6 +27,8 @@ Steps to update static catalog.
    2. biomake go2html
    3. biomake go3html
    This will make the html files
+
+
 8. Copy the html files from the local github repo of the schema site
    to the local github repo of the omics_documentation/dev_docs/
    (either freezes/datasets/versions)
@@ -51,21 +53,27 @@ the org file appropiately.
 
 If step 7 does not run on a remote rdf to html website.
 You need to set up a local server.
-1.clone: https://github.com/rhizomik/redefer-rdf2html
+1. clone: https://github.com/rhizomik/redefer-rdf2html
 2. Modify java file to increase allowed file size
 https://github.com/rhizomik/redefer-rdf2html/blob/master/src/main/java/net/rhizomik/redefer/rdf2html/RDF2HTMLServlet.java
-
 line 39
 
 
-3. build the war file with 'mvn clean package' from the top level
-dir(where the pom.xml file is)
+3. build the war file with 'mvn clean package' from the top level dir(where the pom.xml file is)
 4.download apache tom cat
-5.copy the war file into tomcat server (webapp folder )and start tom cat
-(using startup script in bin dir).
+5.copy the war file into tomcat server (webapp folder )and start tom
+cat (using startup script in bin dir).
 6.Addjust the gohtml, go2html,go3html rules as appropiate to point at
-local server and try running them again. (This is prob only need for
-go2html because of large file sizes)
+local server and try running them again. (This is prob only need for go2html because of large file sizes)
+
+
+
+** Purl management
+
+If the url of where the catalog is hosted changes you need to update
+the Purl. This is controlled by the internet archive. 
+
+
 
 * IMPORTANT IF THIS IS HARD
 If for some reason you can not create ttl, rdf, or html files from the
