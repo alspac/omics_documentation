@@ -39,49 +39,51 @@
 10. Build the
      /omics_documentation/dev_docs/alspac_omics_data_catalogue.html
      file from emacs. Using either a local gui version of emacs and
-     running C-e H h. or running: to run emacs on the command line.
+     running C-e H h. or running: to run emacs on the command line:
+     emacs myorgfile.org --batch -f org-html-export-to-html --kill 
 11. Check the html file if ok give to Pau to deploy on the local
     apache instance that serves the page at https://proposals.epi.bristol.ac.uk/alspac_omics_data_catalogue.html#org91891a3
 12. Copy the ttl, rdf and html files for each dataset into the
-    appropiate dataset repo and commit
+    appropriate dataset repo and commit.
 
 To update the tips section of document follow the steps 9-11 editing
-the org file appropiately. 
+the org file appropriately. 
 
 NOTE: If step 7 does not run on a remote rdf to html website.
 You need to set up a local server.
+
 1. clone: https://github.com/rhizomik/redefer-rdf2html
 2. Modify java file to increase allowed file size
-https://github.com/rhizomik/redefer-rdf2html/blob/master/src/main/java/net/rhizomik/redefer/rdf2html/RDF2HTMLServlet.java
-line 39
-
-
+   https://github.com/rhizomik/redefer-rdf2html/blob/master/src/main/java/net/rhizomik/redefer/rdf2html/RDF2HTMLServlet.java
+   line 393.
 3. build the war file with 'mvn clean package' from the top level dir(where the pom.xml file is)
-4.download apache tom cat
-5.copy the war file into tomcat server (webapp folder )and start tom
-cat (using startup script in bin dir).
-6.Addjust the gohtml, go2html,go3html rules as appropiate to point at
-local server and try running them again. (This is prob only need for go2html because of large file sizes)
+4. Download apache tom cat https://tomcat.apache.org/
+5. copy the war file into tomcat server (webapp folder )and start tom cat (using startup script in bin dir).
+6. Addjust the gohtml, go2html,go3html rules as appropriate to point at
+local server rather than remote and try running them again. (This is
+prob only need for go2html because of large file sizes - in fact the
+make file is already set up for this)
 
 
 
 ** Purl management
 
 If the url of where the catalog is hosted changes you need to update
-the Purl. This is controlled by the internet archive. 
+the Purl. This is controlled by the Internet archive.
+This has been handed over to Laura.
 
 
 
 * IMPORTANT IF THIS IS HARD
 If for some reason you can not create ttl, rdf, or html files from the
 yaml files you could just modify the org file for the catalog to
-include the yaml files. This will lose the nice html presentation and
-the rdfa semantics of the data but will be readable by people.
+include the yaml files. This will loose the nice html presentation and
+the rdfa semantics (and internal links) of the data but will be readable by people.
 
 ** Tripple store (Advance option)
 
 If you want to run the Cliopatria tripple store version of the docs
-that I have demoed, then you need to set up a docker image.
+that I have demo-ed, then you need to set up a docker image.
 
 You can use the existing image by running:
 
@@ -100,7 +102,7 @@ The cliopatria auth details are:
 user: admin
 password: alspac_walrus
 
-If you want to run a new image without the customisation then you can
+If you want to run a new image without the customization then you can
 use the standard cliopatria docker image from here:
 
 https://github.com/jrvosse/ClioPatriaDocker
@@ -108,7 +110,7 @@ https://github.com/jrvosse/ClioPatriaDocker
 You can then upload the rdf and set the prefixes by following the docs
 to do this.
 
-You can also choose to use alterantive tripple stores.
+You can also choose to use alternative tripple stores.
 
 For example, Apache Jena, Virtuoso, Stardog, Graphdb, blazegraph or
 RDF4j.
