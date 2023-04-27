@@ -19,13 +19,15 @@
 5. Run
    1. biomake gordf
    2. biomake go2rdf
-   3. biomake go3rdf     
+   3. biomake go3rdf
+         
       This will have made the rdf files
 6. Commit the ttl and rdf files to schema git hub repo
 7. Run (See note )
    1. biomake gohtml
    2. biomake go2html
    3. biomake go3html
+      
    This will make the html files
 
 
