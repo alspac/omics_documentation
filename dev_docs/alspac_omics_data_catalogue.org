@@ -1,0 +1,549 @@
+#+TITLE: ALSPAC OMICs Data Catalogue
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+#+HTML_HEAD_EXTRA: <style> #footlogo { display: none; } </style>
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: ^:nil
+#+AUTHOR: ALSPAC
+#+HTML_HEAD: <style type="text/css">pre {white-space: pre-wrap;}</style>
+
+#+HTML_HEAD: <script>
+#+HTML_HEAD:   function scrollToResource(about) {
+#+HTML_HEAD:     const table = document.querySelector(`table[about="${about}"]`);
+#+HTML_HEAD:     if (table) {
+#+HTML_HEAD:       table.scrollIntoView({ behavior: 'smooth' });
+#+HTML_HEAD:     }
+#+HTML_HEAD:   }
+#+HTML_HEAD: 
+#+HTML_HEAD:   function handleRedirection() {
+#+HTML_HEAD:     const url = new URL(window.location.href);
+#+HTML_HEAD:     const hash = url.hash.substr(1);
+#+HTML_HEAD:     if (hash) {
+#+HTML_HEAD:       const about = `http://purl.org/alspac/alspac-data-catalogue-schema/${hash}`;
+#+HTML_HEAD:       scrollToResource(about);
+#+HTML_HEAD:     }
+#+HTML_HEAD:   }
+#+HTML_HEAD: 
+#+HTML_HEAD:   document.addEventListener('DOMContentLoaded', handleRedirection);
+#+HTML_HEAD: </script>
+
+
+
+
+
+* Introduction
+Welcome to the ALSPAC Omics Catalog, your gateway to the comprehensive
+omics data offered by ALSPAC. Our catalog features a variety of named
+ALSPAC datasets, each consisting of collected or produced data that
+has been organized, named, and curated for ease of use. Every named
+ALSPAC dataset comes with accompanying metadata that provides
+information about the dataset as a whole. Each named ALSPAC dataset
+has at least one release version that includes a curated selection of files detailed in the metadata sections.
+
+Please note that these datasets are not generally accessible. However,
+the information is made available for browsing to help both internal
+ALSPAC users and external researchers understand the data and
+facilitate custom data requests. See
+http://www.bristol.ac.uk/alspac/researchers/access/ for how to do this.
+
+For our external ALSPAC collaborators, we offer as standard "freezes"
+of specific dataset versions of named ALSPAC datasets. These freezes,
+along with their metadata, are outlined in this catalog. External
+collaborators will be granted access to these freezes upon request
+(See http://www.bristol.ac.uk/alspac/researchers/access/ ). A freeze represents a carefully selected subset of data files within a version, containing the core data from a dataset with withdrawn consent removed and specific dataset IDs applied. These freezes are subject to periodic updates.
+
+The metadata presented in our catalog adheres to the ALSPAC Data Catalog Schema, which is crafted in LinkML. To explore the full schema documentation, please visit: https://alspac.github.io/alspac-data-catalogue-schema/
+
+This website is equipped with RDFa, enabling the metadata to be
+machine-readable and allowing for the creation of queries using SPARQL
+with compatible tools, such as Apache [[https://any23.apache.org/][Any23]] and [[https://jena.apache.org/][Apache Jena]].
+
+
+
+* Genetic Array Data
+
+** Genome-wide - Illumina 550 quad - G1 (gwa_550_g1)
+
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/gwa_550_g1.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/gwa_550_g1_2022-12-05.html" export html
+
+*** Freeze Docs
+
+#+INCLUDE: "./freezes/gwa_550_g1_2022-12-05_f2.html" export html
+
+** Genome-wide - Illumina exome core array - G0 partners (gwa_exome_g0p)
+
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/gwa_exome_g0p.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/gwa_exome_g0p_2016-11-22.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/gwa_exome_g0p_2016-11-22_f2.html" export html
+
+** Genome-wide - Illumina 660 quad - G0 mothers (gwa_660_g0m)
+
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/gwa_660_g0m.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/gwa_660_g0m_2022-12-05.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/gwa_660_g0m_2022-12-05_f2.html" export html
+** Genome-wide - CNV - G1 (cnv_550_g1)
+
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/cnv_550_g1.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/cnv_550_g1_2015-11-09.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/cnv_550_g1_2015-11-09_f2.html" export html
+
+
+* Imputed Data
+
+
+** Genome-wide - HRC imputed - G0 mothers + G1 (gi_hrc_g0m_g1)
+
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/gi_hrc_g0m_g1.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/gi_hrc_g0m_g1_2017-05-04.html" export html
+
+*** Freeze Docs
+
+#+INCLUDE: "./freezes/gi_hrc_g0m_g1_2017-05-04_f2.html" export html
+** Genome-wide - HapMap2 imputed - G1 (gi_hapmap2_g1)
+
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/gi_hapmap2_g1.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/gi_hapmap2_g1_2022-12-07.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/gi_hapmap2_g1_2022-12-07_f2.html" export html
+
+** Genome-wide - HapMap2 imputed - G0 mothers (gi_hapmap2_g0m)
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/gi_hapmap2_g0m.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/gi_hapmap2_g0m_2022-12-07.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/gi_hapmap2_g0m_2022-12-07_f2.html" export html
+
+** Genome-wide - 1000G imputed - G0 partners (gi_1000g_g0p)
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/gi_1000g_g0p.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/gi_1000g_g0p_2016-11-22.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/gi_1000g_g0p_2016-11-22_f2.html" export html
+
+** Genome-wide - 1000G imputed - G0 mothers + G1 (gi_1000g_g0m_g1)
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/gi_1000g_g0m_g1.html" export html
+
+*** Version Docs
+
+
+
+*** Freeze Docs
+
+#+INCLUDE: "./freezes/gi_1000g_g0m_g1_2015-10-30_f2.html" export html
+* Sequence Data
+
+** Whole genome sequencing - G1 (wgs_hiseq_g1)
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/wgs_hiseq_g1.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/wgs_hiseq_g1_2016-08-18.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/wgs_hiseq_g1_2016-08-18_f2.html" export html
+* Epigentic Data
+
+
+** DNA methylation - 450k - G0 mothers + G1 (dnam_450_g0m_g1)
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/dnam_450_g0m_g1.html" export html
+
+*** Version Docs
+
+#+INCLUDE: "./versions/dnam_450_g0m_g1_2016-05-03.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/dnam_450_g0m_g1_2016-05-03_f2.html" export html
+* Gene Expression Data
+
+** Gene expression - array - G1 (ge_ht12_g1)
+*** Dataset Docs
+
+#+INCLUDE: "./datasets/ge_ht12_g1.html" export html
+
+*** Version Docs
+#+INCLUDE: "./versions/ge_ht12_g1_2015-11-02.html" export html
+
+*** Freeze Docs
+#+INCLUDE: "./freezes/ge_ht12_g1_2015-11-02_f2.html" export html
+
+* Schema Docs as HTML
+
+#+INCLUDE: "./alspac_data_catalogue_schema.html" export html
+
+* Omics tips
+
+** Introduction
+This section is a guide to using 'Omics datasets. It explains which software to use and describes common file formats. It's a good starting point for beginners and helpful for problem-solving.
+
+** Disclaimer
+Some information is copied or reworded from software documentation. Check the original documentation alongside this guide for up-to-date information. Note that some links may no longer work.
+
+** Operating systems
+You can use ALSPAC data with any operating system, but Unix-based systems like Macintosh, Linux, or BSD are more convenient due to the data's size and complexity. We recommend using the command line and programming scripts with languages like Bash, R, Python, or Perl. Many online resources are available to learn these tools. Use free/libre and open-source software where possible.
+
+Links:
+
+- Unix guide: [[https://www.osc.edu/supercomputing/unix-cmds][https://www.osc.edu/supercomputing/unix-cmds]]
+- Beginning Python: [[https://www.python.org/about/gettingstarted/][https://www.python.org/about/gettingstarted/]]
+- Beginning R: [[https://www.statmethods.net/r-tutorial/index.html][https://www.statmethods.net/r-tutorial/index.html]]
+- Free/libre and open-source software: [[https://www.fsf.org/about/][https://www.fsf.org/about/]] 
+
+
+** Key Omics software
+*** Plink
+Plink is a tool for performing quality control and whole genome
+association analysis of genetic data.
+- Link: http://zzz.bwh.harvard.edu/plink/ 
+*** SNPTest
+SNPTest is a tool for performing  whole genome
+association analysis of genetic data.
+- Link:
+  https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html
+  (Not open source)
+*** BoltLmm
+BoltLmm is a tool for performing genome
+association analysis of genetic data. It is recommended for analysis
+of more than 5000 samples, its methods automatically take into
+account population substructures.
+- Link: https://data.broadinstitute.org/alkesgroup/BOLT-LMM/
+*** Qctools
+A tool for quality control of genetic data.
+It is also useful to inspect and modify .gen .bgen and vcf files etc (see section 4 below). 
+- Link: https://www.well.ox.ac.uk/~gav/qctool_v2/
+*** SAMTOOLS
+Samtools is a suite of tools which are used for genomic analysis.
+- Link: http://www.htslib.org/
+**** VCFTOOLS
+Part of samtools that allows you to work with vcf files.
+- Link: https://vcftools.github.io/index.html
+**** BCFTOOLS
+This is a part of samstools and allows users to manipulate .bcf files.
+- Link: http://samtools.github.io/bcftools/bcftools.html
+
+** File types
+In a Unix environment the postfix of a file name does not explicitly mean anything to the operating system,  unlike in a Windows system which will look at the file types. In a Unix system it is just part of the name of the file and humans use it to distinguish file formats. The following is a non-exhaustive list of file types you may encounter whilst using ALSPAC Omics data.
+
+*** .gen
+This is an 'oxford' data format for genetic data. The .gen file is a
+plain text file, this means that standard Unix command line tools can
+be used to inspect the data. For example, 'head' or 'less'.
+
+The .gen (genotype) file stores data on a one-line-per-SNP format. The first 5 entries of each line are the SNP ID, RS ID of the SNP, base-pair position of the SNP, the allele coded A and the allele coded B. The SNP ID can be used to denote the chromosome number of each SNP. The next three numbers on the line are the probabilities of the three genotypes AA, AB and BB at the SNP for the first individual in the cohort. The next three numbers are the genotype probabilities for the second individual in the cohort. The next three numbers are for the third individual and so on. The order of individuals in the genotype file should match the order of the individuals in the sample file (see below). It should be noted that the probabilities need not sum to 1 to allow for the possibility of a NULL genotype call. This format allows for genotype uncertainty. This genotype file format is the same as that produced by the genotype calling algorithm CHIAMO. NOTE : We recommend that you arrange SNPs in base-pair order in the genotype files. This is required if you want to use the files with IMPUTE and will make viewing the output of SNPTEST somewhat easier. For example, Suppose you want to create a genotype for 2 individuals at 5 SNPs whose genotypes are
+
+
+|-------+----+----|
+| SNP 1 | AA | AA |
+| SNP 2 | GG | GT |
+| SNP 3 | CC | CT |
+| SNP 4 | CT | CT |
+| SNP 5 | AG | GG |
+|-------+----+----|
+
+
+The correct genotype file would look like this:
+
+|---------------+---+---+---+---+---+---+---+---|
+| SNP1 rs1 1000 | A | C | 1 | 0 | 0 | 1 | 0 | 0 |
+| SNP2 rs2 2000 | G | T | 1 | 0 | 0 | 0 | 1 | 0 |
+| SNP3 rs3 3000 | C | T | 1 | 0 | 0 | 0 | 1 | 0 |
+| SNP4 rs4 4000 | C | T | 0 | 1 | 0 | 0 | 1 | 0 |
+| SNP5 rs5 5000 | A | G | 0 | 1 | 0 | 0 | 0 | 1 |
+|---------------+---+---+---+---+---+---+---+---|
+
+
+*** .bgen
+A binary version of a .gen file. This file can not be visually
+inspected on the command line. .bgen files are used because they
+greatly increase the speed and storage efficiency of software for
+storing large amounts of Omics data. The full details of the file
+format are discussed in : https://www.well.ox.ac.uk/~gav/bgen_format/ 
+bgen files are normally used with tools such as qctools and snptest
+There is also a library for reading .bgen files into R :
+https://bitbucket.org/gavinband/bgen/wiki/rbgen 
+*** .sample
+The .sample file is paired with either .gen or .bgen files. It
+contains information on the samples that is not genetic. It is a plain
+text file that can be inspected with standard Unix command line tools.
+
+Please note that the sample file format changed with the release of SNPTEST v2. Specifically, the way in which covariates and phenotypes are coded on the second line of the header file has changed. 
+The sample file has three parts (a) a header line detailing the names of the columns in the file, (b) a line detailing the types of variables stored in each column, and (c) a line for each individual detailing the information for that individual. Here is an example of the start of a sample file for reference
+
+|------+------+---------+-------+-------+-------+-------+--------+----------------|
+| ID_1 | ID_2 | missing | cov_1 | cov_2 | cov_3 | cov_4 | pheno1 | bin1           |
+|    0 |    0 |       0 |     D |     D |     C |     C |      P | B              |
+|    1 |    1 |       0 |  .007 |     1 |     2 |     0 |  .0019 | -0.008 1.233 1 |
+|    2 |    2 |       0 |  .009 |     1 |     2 |     0 |  .0022 | -0.001 6.234 0 |
+|    3 |    3 |       0 |  .005 |     1 |     2 |     0 |  .0025 | 0.0028 6.121 1 |
+|    4 |    4 |       0 |  .007 |     2 |     1 |     0 |  .0017 | -0.011 3.234 1 |
+|    5 |    5 |       0 |  .004 |     3 |     2 |    -0 |   .012 | 0.0236 2.786 0 |
+|------+------+---------+-------+-------+-------+-------+--------+----------------|
+
+The header line:
+This line needs a minimum of three entries. The first three entries should always be ID_1, ID_2 and missing. They denote that the first three columns contain the first ID, second ID and missing data proportion of each individual. Additional entries on this line should be the names of covariates or phenotypes that are included in the file. In the above example, there are 4 covariates named cov_1, cov_2, cov_3, cov_4, a continuous phenotype named pheno1 and a binary phenotype named bin1.
+NOTE : All phenotypes should appear after the covariates in this file.
+The second line of the file details the type of variables included in each column. The first three entries of this line should be set to 0. Subsequent entries in this line for covariates and phenotypes should be specified by the following rules
+
+|---+----------------------------------------------------|
+| D | Discrete covariate (coded using positive integers) |
+| C | Continuous covariates                              |
+| P | Continuous Phenotype                               |
+| B | Binary Phenotype (0 = Controls, 1 = Cases)         |
+|---+----------------------------------------------------|
+
+
+The remainder of the file should consist of a line for each individual containing the information specified by the entries of the header line (see example above).
+Use spaces to separate the entries of the sample file and not TABS
+because that is the expected character.
+
+Missing values - Specifying missing values for covariates and
+phenotypes is possible. It was recommended that you use -9 for missing
+values. This was the default value assumed by SNPTEST v1, although the
+-missing_code option in SNPTEST v1 meant that you could use other
+numeric values for the missing code, In SNPTEST v2 the behavior of the
+-missing_code option has changed so that it now takes a comma-separated
+list of values, each of which is treated as missing when encountered
+in the sample file(s). Default missing values are now denoted by the
+two character string "NA".
+
+*** .ped
+A plink format file that is in plain text and can be viewed with standard tools. It contains genetic variant data. https://www.cog-genomics.org/plink/1.9/formats#ped
+
+*** .map
+A plink format file that is in plain text. It contains information
+about variants.
+https://www.cog-genomics.org/plink/1.9/formats#map
+*** .bed
+A plink format file that isa binary equivalent of a .ped file. It is smaller and faster to process but is not easily viewable or editable. https://www.cog-genomics.org/plink/1.9/formats#bed
+*** .bim
+A plink format, similar to a .map file but is used with binary .bed files.
+https://www.cog-genomics.org/plink/1.9/formats#bin
+*** .fam
+A plain text format that contains sample information for plink binary
+files.
+https://www.cog-genomics.org/plink/1.9/formats#fam
+*** .csv
+A plain text format where different fields are separated by
+commas. (Comma separated variables).
+*** .vcf
+VCF files are a flexible file format for storing different types of
+genetic variants. They are a plain text format that can be inspected
+on the command line with standard Unix tools. However they are often
+very large files, and specific tools such as 'vcftools' are useful for
+working with this data. Commonly SNPs are stored in these files but other variants such as
+Copy Number variations can also be stored.
+The basic form for a vcf file is: 
+https://en.wikipedia.org/wiki/Variant_Call_Format
+*** .bcf
+This is a binary version of a vcf file. It cannot be inspected on the
+command line, but can be used with the genomic tools mentioned in this document.
+*** .tar.gz
+This is a standard Unix file format for bundling and compressing a set of files. It is similar to a .zip file. It is made by first bundling a set of files into a .tar file (sometimes called a tar ball). This is then compressed using 'gun zip'. https://en.wikipedia.org/wiki/Tar_(computing) https://en.wikipedia.org/wiki/Gzip
+*** .enc
+This file extension is used as a convention to mean that the file is encrypted. You will need to have that  password that was used to encrypt the data in order to unencrypt the files. https://en.wikipedia.org/wiki/OpenSSL
+
+** Variant/SNP ids
+
+There are many types of genetic variation. A common type is a single
+nucleotide polymorphism (SNP). Others include copy number variations.
+
+Variants can be specified by a Chromosome and location in reference to
+a specific build of the human genome. They can also be given a
+reference SNP (rs) cluster identifier.
+
+- Chr:Location
+- Rs ids
+
+** Overview of Imputation reference panels
+
+SNP array data frequently contain hundreds of thousands of
+variants. However due to linkage disequilibrium it is possible to
+estimate many more SNP values for an individual. This estimation
+procedure is called imputation and it works by combining an
+individuals SNP array data with a large reference population of
+sequenced data. In this way it is possible to have accurate
+estimations of millions of SNP values for an individual without the
+cost of fully sequencing each person. ALSPAC has prerun the imputation
+process using three different imputation panels.
+
+*** Panels
+**** TOPmed
+An upcoming (to alspac) reference panel which will have the most snps
+**** HRC
+This is the latest reference panel and our data contains circa 40 millions of SNPs.
+**** 1000 Genomes
+This is the previous generation reference panel which is still widely
+used in ALSPAC studies. There are some SNPs that appear in this panel
+that are not in the HRC panel.
+**** Hapmap
+This was the first widely used imputation panel.
+** SNP data types from imputation.
+
+SNPs that have been imputed can be stored and analysed in different
+formats. These can be appropriate for different types of analysis, for
+example an analysis could assume and additive effect for the minor
+allele or it could assume a recessive/dominant effect. 
+
+- Best guess. The data will be presented as either 0,1, or 2 to
+  represent how many of the minor alleles at
+  that position a person has. The best guess is derived from the
+  probability of a variant calculated from the imputation process.
+- Dosage. This is the probability that the person has 0, 1 or 2 of the minor
+  allele. i.e. 0.1, 0.2,0.7. This will sum to one across the three
+  possibilities (i.e for each SNP for each individual).
+
+** SNP Statistics
+
+You can generate statistics on your SNP data using the program
+'QCtools'. This will give you the imputation information scores. For example:
+
+qctool -g example.bgen -s example.sample -sample-stats -osample sample-stats.txt
+
+** Best practice
+*** GWAS
+We recommend you follow the steps outlined in the following paper when performing GWAS: 
+Marees, Andries T., et al. "A tutorial on conducting genome‐wide
+association studies: Quality control and statistical analysis."
+International journal of methods in psychiatric research 27.2 (2018):
+e1608. https://doi.org/10.1002/mpr.1608
+*** Phewas 
+We recommend you follow the steps outlined in the following paper when performing Phewas: 
+Millard, L., Davies, N., Timpson, N. et al. MR-PheWAS: hypothesis prioritization among potential causal effects of body mass index on many outcomes, using Mendelian randomization. Sci Rep 5, 16645 (2015). https://doi.org/10.1038/srep16645
+*** Methylation
+The following paper describes the methylation data available in ALSPAC
+Relton, Caroline L., et al. "Data resource profile: accessible resource for integrated epigenomic studies (ARIES)." International journal of epidemiology 44.4 (2015): 1181-1190.
+
+
+
+
+** Population stratification
+This is when an observed genetic association is due to the
+population/geography. Not taking this into account can lead to biased
+estimates of effects.
+One common method to account for these is to calculate principal
+components of the genetic data and then to include these as covariables
+in any models.
+Principal components can be generated using plink or other tools.
+
+For more information about how to do this in plink see:https://www.cog-genomics.org/plink/1.9/strat
+
+An common method used to account for population substructure is by using
+linear mixed models. For example using the bolt LMM software tool.
+
+https://data.broadinstitute.org/alkesgroup/BOLT-LMM/
+
+** Common tasks
+
+Here we provide links to webpages that provide instructions or provide
+brief details any code for completing common tasks using the various
+software we have described above (section x):
+
+- Extract some SNPs from a bgen data file and convert to plain text.
+
+https://www.well.ox.ac.uk/~gav/qctool_v2/documentation/examples/filtering_variants.html
+
+- Extract some SNPs from bed data:
+http://zzz.bwh.harvard.edu/plink/dataman.shtml
+
+plink --bfile mydata --chr 2 --from-kb 5000 --to-kb 10000 
+
+- Reading .bgen and .sample oxford files in plink
+
+Plink supports bgen files but it is fussy about the types of its
+ columns in the data.sample file. You may wish to remove or retype
+ columns to read a data.sample file into plink. For more info see:
+
+https://www.cog-genomics.org/plink/2.0/input
+
+To make a new sample file removing some columns you can use the Unix command: 'cut -f 1,2,3 -d " " data.sample > data2.sample'
+
+** Courses
+Working with 'Omics data can be complicated but there are many
+excellent resources available to help you learn how to do this. There
+are both paid in person courses and free online courses.
+
+Details on paid courses offered by Bristol University can be found here: https://www.bristol.ac.uk/medical-school/study/short-courses/ 
+In addition, a number of free online courses are summarised here: https://www.mooc-list.com/tags/bioinformatics
+
+
+
+** Further sources of help
+*** Stack exchange 
+Stack exchange is an online Q&A community which is divided into
+different sub-communities. The first and most well-known is Stack overflow. This is one of the best place to ask
+questions about programming on the Internet.
+Other useful exchange sites include bioinformatics
+https://bioinformatics.stackexchange.com/, maths
+https://mathoverflow.net/ and statistics https://stats.stackexchange.com/.
+
+*** Bio-stars 
+Biostars is bioinformatics community Q&A web-site: https://www.biostars.org/
+
+*** Mailing lists 
+For individual product/projects there is often a mailing list. For example to get help using SNPTEST you can ask on the mailing list https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#contact
+
+
+*** AI tools
+
+AI tools such as chatGPT can be useful to understand how to work with
+omics data.
+
+*** Ask ALSPAC
+
+If you can not find the answer to your question or you think there is
+something wrong with your data then please contact the alspac-omics@bristol.ac.uk
+mailbox and we will do our best to help you. 
+
+
