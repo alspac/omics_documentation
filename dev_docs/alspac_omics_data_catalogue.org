@@ -14,13 +14,18 @@
 #+HTML_HEAD:       table.scrollIntoView({ behavior: 'smooth' });
 #+HTML_HEAD:     }
 #+HTML_HEAD:   }
-#+HTML_HEAD: 
+#+HTML_HEAD:
 #+HTML_HEAD:   function handleRedirection() {
 #+HTML_HEAD:     const url = new URL(window.location.href);
 #+HTML_HEAD:     const hash = url.hash.substr(1);
 #+HTML_HEAD:     if (hash) {
-#+HTML_HEAD:       const about = `http://purl.org/alspac/alspac-data-catalogue-schema/${hash}`;
-#+HTML_HEAD:       scrollToResource(about);
+#+HTML_HEAD:       const actualAnchor = document.getElementById(hash);
+#+HTML_HEAD:       if (actualAnchor) {
+#+HTML_HEAD:         actualAnchor.scrollIntoView({ behavior: 'smooth' });
+#+HTML_HEAD:       } else {
+#+HTML_HEAD:         const about = `http://purl.org/alspac/alspac-data-catalogue-schema/${hash}`;
+#+HTML_HEAD:         scrollToResource(about);
+#+HTML_HEAD:       }
 #+HTML_HEAD:     }
 #+HTML_HEAD:   }
 #+HTML_HEAD: 
