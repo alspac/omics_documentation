@@ -1,0 +1,234 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gi_1000g_g0p_2016-11-22_f6
+name: Genome-wide - 1000G imputed - G0 partners version 2016-11-22 freeze 5
+description: >-
+  This dataset is the sixth freeze of 2016-11-22 version of the Genome-wide array data imputed to the 1000 genomes reference panel
+  for G0 partners, with some additional G0 mothers and G1 individuals.
+
+freeze_size: 44G
+linker_file_md5sum: 45415c7d4fae355b4fb2d6ccd042620d
+woc_file_md5sum: 6c887db8c7dd10cc695630ca73b41405
+all_individuals_to_exclude_md5sum: e4efce63f9f671548d08c8bb2f9cc4f7
+git_tag: https://github.com/alspac/dataset_gi_1000g_g0p/releases/tag/freeze6
+is_current_freeze: true
+freeze_number: 6
+freeze_date: 2025-09-30
+previous_freeze: alspacdcs:gi_1000g_g0p_2016-11-22_f5
+freeze_of_alspac_dataset_version: alspacdcs:gi_1000g_g0p_2016-11-22
+freeze_of_named_alspac_dataset: alspacdcs:gi_1000g_g0p
+
+contains:
+- data
+
+files: []
+data:
+  contains:
+  - filtered_data_chr22.bgen
+  - filtered_data_chr21.bgen
+  - filtered_data_chr20.bgen
+  - filtered_data_chr19.bgen
+  - filtered_data_chr16.bgen
+  - filtered_data_chr18.bgen
+  - filtered_data_chr14.bgen
+  - filtered_data_chr17.bgen
+  - filtered_data_chr15.bgen
+  - filtered_data_chr13.bgen
+  - filtered_data_chr09.bgen
+  - filtered_data_chr12.bgen
+  - filtered_data_chr11.bgen
+  - filtered_data_chr10.bgen
+  - filtered_data_chr07.bgen
+  - filtered_data_chr08.bgen
+  - filtered_data_chr06.bgen
+  - filtered_data_chr04.bgen
+  - filtered_data_chr05.bgen
+  - filtered_data_chr02.bgen
+  - filtered_data_chr03.bgen
+  - filtered_data_chr01.bgen
+  - swapped.sample
+  files:
+  - id: alspacdcs:88d6c1fb-637e-45e6-aed7-b3a314f01b43
+    name: filtered_data_chr22.bgen
+    md5sum: 824412e963441699f260c6245f65659d
+    filesize: 721.5MB
+    filetype: .bgen
+    number_of_variants: 366590
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:4df43797-f090-4a69-b8f0-eb27dde2b726
+    name: filtered_data_chr21.bgen
+    md5sum: 7881bdc24e7f0adbfb800b49d1efd590
+    filesize: 671.1MB
+    filetype: .bgen
+    number_of_variants: 378064
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:3a69092e-67f8-40e1-8f48-bd8a0ef43806
+    name: filtered_data_chr20.bgen
+    md5sum: d241eb21be3188c26c460e1f65f0d8c1
+    filesize: 1.1GB
+    filetype: .bgen
+    number_of_variants: 618749
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:2c1484b3-3a79-47c4-957b-eb7dc0a0a343
+    name: filtered_data_chr19.bgen
+    md5sum: 37ea045cd9f4027cba547b7b89c3a1a0
+    filesize: 1.2GB
+    filetype: .bgen
+    number_of_variants: 606147
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:127c1e60-f254-4f6f-af8b-6a5fc78f1c12
+    name: filtered_data_chr16.bgen
+    md5sum: 52f065575d3cb2dff34df6763a583766
+    filesize: 1.5GB
+    filetype: .bgen
+    number_of_variants: 867901
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:a4d6a3eb-9f36-4c56-b79a-b48b9bb04772
+    name: filtered_data_chr18.bgen
+    md5sum: b8e055a6c0955bb67161c9f7a1d8cad7
+    filesize: 1.3GB
+    filetype: .bgen
+    number_of_variants: 783661
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:588abf2e-4186-4fbb-aca3-9e9e8a0d7b33
+    name: filtered_data_chr14.bgen
+    md5sum: 1ecd96aab2925bafd7d20497d85dd937
+    filesize: 1.4GB
+    filetype: .bgen
+    number_of_variants: 903811
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:a2c4b90b-c8d5-4781-86fc-30abb3dda4ca
+    name: filtered_data_chr17.bgen
+    md5sum: 73d85caf67dcedc63b11a43bd5ccb44d
+    filesize: 1.4GB
+    filetype: .bgen
+    number_of_variants: 755467
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:1494da4f-c326-4be9-bd9a-1042fb06339d
+    name: filtered_data_chr15.bgen
+    md5sum: f8c5b54206189808e9a361cc0da63798
+    filesize: 1.4GB
+    filetype: .bgen
+    number_of_variants: 814028
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:f31abcf8-9570-4e8e-a3cb-3f6064a6a362
+    name: filtered_data_chr13.bgen
+    md5sum: 176a10d38ab80783a8e392e5791edea7
+    filesize: 1.5GB
+    filetype: .bgen
+    number_of_variants: 988473
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:f6fd76fe-aec2-460e-9e16-b131e0a91776
+    name: filtered_data_chr09.bgen
+    md5sum: 82a480f3e8792db2c1cec3adc50e1357
+    filesize: 1.9GB
+    filetype: .bgen
+    number_of_variants: 1189463
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:b9b4f93b-3ee7-404f-9b24-bd3b6d3b4736
+    name: filtered_data_chr12.bgen
+    md5sum: 509202db22200fe0bd58210ab8e9c757
+    filesize: 2.1GB
+    filetype: .bgen
+    number_of_variants: 1316510
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:7c8064bb-916e-4e4f-a36b-225234db223b
+    name: filtered_data_chr11.bgen
+    md5sum: b1b7e3bef0fe72cd90bd0ba456f687aa
+    filesize: 2.1GB
+    filetype: .bgen
+    number_of_variants: 1359640
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:6c6e37e4-78cd-46c1-b784-db9aa41e00ff
+    name: filtered_data_chr10.bgen
+    md5sum: 8f64fe184e4c876a345a728ed5eeddcf
+    filesize: 2.1GB
+    filetype: .bgen
+    number_of_variants: 1363104
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:1f2be053-4a68-440a-b328-f806d7ab6790
+    name: filtered_data_chr07.bgen
+    md5sum: f832922558eddcf3feed87091c2ec0ae
+    filesize: 2.6GB
+    filetype: .bgen
+    number_of_variants: 1601293
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:4ab48954-47ad-4138-bc9a-2e2b65df9ec5
+    name: filtered_data_chr08.bgen
+    md5sum: 47d79712e676a0048f90858cbb888179
+    filesize: 2.3GB
+    filetype: .bgen
+    number_of_variants: 1558902
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:021c15de-7ffd-4ee2-b834-8f9e8411dd04
+    name: filtered_data_chr06.bgen
+    md5sum: a9327ad1591fdf7d349b066544e71c3a
+    filesize: 2.6GB
+    filetype: .bgen
+    number_of_variants: 1758025
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:12db13fe-2594-45b1-bccd-f6fe916cb6b7
+    name: filtered_data_chr04.bgen
+    md5sum: 514f09f02c74fc3eca83379e9e99c5dc
+    filesize: 3.1GB
+    filetype: .bgen
+    number_of_variants: 1969883
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:2f9c9b1f-553a-48ab-973e-cad46335845f
+    name: filtered_data_chr05.bgen
+    md5sum: f4accbf5bdd6a2ccc9598e9e2221915d
+    filesize: 2.7GB
+    filetype: .bgen
+    number_of_variants: 1809961
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:250aba37-8329-430a-9065-37e3fa65494e
+    name: filtered_data_chr02.bgen
+    md5sum: e297c8d30455053d23ac360bcc886bb0
+    filesize: 3.5GB
+    filetype: .bgen
+    number_of_variants: 2349883
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:9c547458-6640-4bb3-972e-408f607047f7
+    name: filtered_data_chr03.bgen
+    md5sum: c0b55e9d65c219ffb1b8c58a0ebb7c18
+    filesize: 3.0GB
+    filetype: .bgen
+    number_of_variants: 1969275
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:4acc911f-cc1b-419e-8f16-f178f079229a
+    name: filtered_data_chr01.bgen
+    md5sum: a5eb049e4df5a8b005ae51b47947d830
+    filesize: 3.3GB
+    filetype: .bgen
+    number_of_variants: 2159337
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:859a623f-b408-4cb5-81b7-4f48da58e7b6
+    name: swapped.sample
+    md5sum: 1bf22d5d9118fc1479199f108af11138
+    filesize: 164.9KB
+    filetype: .sample
+    number_of_participants: 2198
+    belongs_to: data

@@ -1,0 +1,336 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:dnam_epic450_g0_g1_2022-7-13_f4
+name: >-
+  DNA methylation - EPIC & 450k - G0 + G1 version 2022-7-13 Freeze 4
+description: >-
+  This is the freeze 4 version of dnam_epic450_g0_g1, which was first introduced
+  in freeze 2 and first released 2022-7-13.
+
+freeze_size: 137G
+linker_file_md5sum: fafe49f2e5ce4d5bd018fba250503eff
+woc_file_md5sum: 163b7668b82ec7e5e6b7e35aecbbb473
+all_individuals_to_exclude_md5sum: 92b14080f8a933c32fcb064767eb1112
+git_tag: https://github.com/alspac/dataset_dnam_epic450_g0_g1/releases/tag/Freeze4
+is_current_freeze: true
+freeze_number: 4
+freeze_date: 2024-06-11 ### Update to align with date of release
+previous_freeze: 3
+freeze_of_alspac_dataset_version: alspacdcs:dnam_epic450_g0_g1_2022-7-13
+freeze_of_named_alspac_dataset: alspacdcs:dnam_epic450_g0_g1
+
+has_containers:
+  - id: alspacdcs:a4ae8168-cbdf-44b4-8b10-e5cc7a988826
+    name: data
+    description: A dir/folder containing the data files
+  - id: alspacdcs:368b116d-4f30-4930-915b-f25a540aabb6
+    name: betas
+    description: A dir/folder containing the beta files
+    belongs_to_container: alspacdcs:a4ae8168-cbdf-44b4-8b10-e5cc7a988826
+  - id: alspacdcs:64f83a02-ba1b-455b-a8d5-eebd33f17adf
+    name: control_matrix
+    description: A dir/folder containing the control matrix files 
+    belongs_to_container: alspacdcs:a4ae8168-cbdf-44b4-8b10-e5cc7a988826
+  - id: alspacdcs:087b88a3-bdc8-41df-9574-5f449e78a882
+    name: derived
+    description: A dir/folder containing the derived data (e.g. Cell count predictions and dnamage) 
+    belongs_to_container: alspacdcs:a4ae8168-cbdf-44b4-8b10-e5cc7a988826
+  - id: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+    name: cellcounts
+    description: A dir/folder containing the cell count predictions
+    belongs_to_container: alspacdcs:087b88a3-bdc8-41df-9574-5f449e78a882
+  - id: alspacdcs:07768702-d945-449b-ab16-3fa064bf981a
+    name: detection_p_values
+    description: A dir/folder containing the matrix of detection values
+    belongs_to_container: alspacdcs:a4ae8168-cbdf-44b4-8b10-e5cc7a988826
+  - id: alspacdcs:3ab1bca7-efaf-414f-837d-cf0ad30afb09
+    name: samplesheet
+    description: A dir/folder containing matrices of the sample identification.
+    belongs_to_container: alspacdcs:a4ae8168-cbdf-44b4-8b10-e5cc7a988826 
+
+
+has_parts:
+  - id: alspacdcs:bc629684-4fa1-42f0-b48c-7e4473d4ed4d
+    name: betas
+    description: >-
+      Normalized betas using functional normalization.
+      We used 10 PCs on the controlmatrix to regress out technical
+      variation. Slide was regressed out as random effect before
+      normaliziation. CpGs are in rows and samples in columns.
+    data_distributions:
+      - id: alspacdcs:1f940257-3a73-49d1-bd6c-ceeb794c0a4b
+        name: 450.gds
+        description: >-
+          R data object for the Normalized beta data for the 450 array only.
+        md5sum: 02e9b3cdda39d3476bfce111f5935f93
+        filesize: 22G
+        filetype: .gds
+        belongs_to_container: alspacdcs:368b116d-4f30-4930-915b-f25a540aabb6
+        number_of_participants: 5927
+      - id: alspacdcs:4c23fc84-df4d-48c0-969c-c3f8e12dd93f
+        name: common.gds
+        description: >-
+          R data object for the Normalized beta data for both the EPIC and 450 arrays.
+        md5sum: 2d447051e6241bf35dc1bfba4e740848
+        filesize: 30G
+        filetype: .gds
+        belongs_to_container: alspacdcs:368b116d-4f30-4930-915b-f25a540aabb6
+        number_of_participants: 8669
+      - id: alspacdcs:dc5ebcb3-a432-44c1-9f6f-1cbcdf7480ae
+        name: epic.gds
+        description: >-
+          R data object for the Normalized beta data for  the EPIC array only.
+        md5sum: 0357486c3af3b5ee120c7b05bf077340
+        filesize: 18G
+        filetype: .gds
+        belongs_to_container: alspacdcs:368b116d-4f30-4930-915b-f25a540aabb6
+        number_of_participants: 2742
+
+  - id: alspacdcs:cde6fb9f-9fa7-4941-aa0f-b3fe3140999b
+    name: control_matrix
+    description: >-
+      The 850 control probes are summarized in 42 control types.
+      These probes can roughly be divided into negative control probes
+      (613), probes intended for between array normalization (186)
+      and the remainder (49), which are designed for quality
+      control, including assessing the
+      bisulfite conversion rate. None of these probes are designed
+      to measure a biological signal.
+      The summarized control probes can be used as surrogates for
+      unwanted variation and are used for the functional
+      normalization.
+      Samples are rows and 42 control types are in columns.
+    data_distributions:
+      - id: alspacdcs:8ca4a216-7dac-47c8-949a-38cc4a26af18
+        name: 450.txt
+        description: >-
+          Plain text file of the control matrix for the 450 array only.
+        md5sum: 9e6aa62498c5bb7493f7512e274056ba
+        filesize: 2.2M
+        filetype: .txt
+        belongs_to_container: alspacdcs:64f83a02-ba1b-455b-a8d5-eebd33f17adf
+        number_of_participants: 5927
+      - id: alspacdcs:8ddf1661-41f3-47e8-840e-cce8fed13f04
+        name: common.txt
+        description: >-
+          Plain text file of the control matrix for both the EPIC and 450 arrays.
+        md5sum: 42d21ff7a2ead483e85b909b279e9912
+        filesize: 3.2M
+        filetype: .txt
+        belongs_to_container: alspacdcs:64f83a02-ba1b-455b-a8d5-eebd33f17adf
+        number_of_participants:  8669
+      - id: alspacdcs:09bc4485-93c8-41a5-bfe2-bf44f6e9a345
+        name: epic.txt
+        description: >-
+          Plain text file of the control matrix for the EPIC array only.
+        md5sum: 7a680d3ccd26a491ec7dde2ce91eeeab
+        filesize: 1.0M
+        filetype: .txt
+        belongs_to_container: alspacdcs:64f83a02-ba1b-455b-a8d5-eebd33f17adf
+        number_of_participants:  2742
+
+  - id: alspacdcs:b73ed28a-7219-49b5-94b8-e39d2bbda6f2
+    name: DNA methylation age
+    description: >-
+      DNA methylation aging estimates from within the dataset. 
+      Further information on this data and its usage is found
+      within the `dnamage.html` and `dnamage.md` within the docs
+      dir/folder.
+    data_distributions:
+      - id: alspacdcs:2ba6caa3-327a-4615-af93-ec81836bec57
+        name: dnamage.csv
+        description: >-
+          A csv file containing DNA methylation aging estimates within the dataset. 
+        md5sum: bd0c2efef6ee145cd0804d61c7e83151
+        filesize: 12M
+        filetype: .csv
+        belongs_to_container: alspacdcs:087b88a3-bdc8-41df-9574-5f449e78a882
+        number_of_participants:  8192
+
+  - id: alspacdcs:6a7baf4c-121e-400d-a72f-357c33980ac1
+    name: cell counts
+    description: >-
+      Files contain cell counts estimated using a variety of cell type 
+      references using the Houseman deconvolution algorithm (PMID: 22568884).
+      In each file, samples correspond to rows and cell types to columns.
+    data_distributions:
+      - id: alspacdcs:0fafdf8e-12b0-4cb6-bd85-c0e6bc82c8d1
+        name: andrews-and-bakulski-cord-blood.txt
+        description: >-
+          Cord blood cell count estimates derived using the Bakulski et al. 2016 reference 
+          (PMID 27019159; https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.CordBlood.450k.html).
+          This reference has been implemented in meffil. Cell counts estimated for b-cells, 
+          cd4+ t cells, cd8+ t cells, granulocytes, monocytes, natural killer cells and 
+          nucleated red blood cells. In this text file, samples are in rows and cell types in columns.
+        md5sum: 33c69aa8e50deb28355dcb82d01c7510
+        filesize: 114K
+        filetype: .txt
+        belongs_to_container: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+        number_of_participants: 913  
+      - id: alspacdcs:1b7994b3-22db-4aff-99b2-8438d283d12d
+        name: gervin-and-lyle-cord-blood.txt
+        description: >-
+          Cord blood cell count estimates derived using the Gervin et al. 2019
+          reference (PMID 31455416; GEO accession GSE127824). Cell counts 
+          estimated for b-cells, cd4+ t cells, cd8+ t cells, granulocytes, monocytes,
+          and natural killer cells. This reference has been implemented in meffil. 
+          In this text file, samples are in rows and cell types in columns.
+        md5sum: 099c4cf9bd4ecfee91c19c3c2d2b6f70
+        filesize: 100K
+        filetype: .txt
+        belongs_to_container: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+        number_of_participants: 913
+      - id: alspacdcs:b426de30-1685-45c8-9cf2-5831f65b44d4
+        name: cord-blood-gse68456.txt
+        description: >-
+          Cord blood cell count estimates derived using the de Goede et al. 2015 reference
+          (PMID 26366232; GEO accession GSE68456).  Cell counts estimated for b-cells, cd4+ t cells,
+          cd8+ t cells, granulocytes, monocytes, natural killer cells and nucleated red blood cells.
+          This reference has been implemented in meffil. In this text file, samples are in rows and
+          cell types in columns.
+        md5sum: 941f8a9ce1289ab5baaf10fb29bd8941
+        filesize: 130K
+        filetype: .txt
+        belongs_to_container: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+        number_of_participants: 913
+      - id: alspacdcs:8048cc87-bf93-4d83-8440-a27e6fe9f2ae
+        name: blood-gse35069-complete.txt
+        description: >-
+          Cell counts in peripheral blood predicted using the peripheral blood reference published in 
+          Reinius et al. 2012 (PMID: 22848472). Same as 'blood gse35069.txt' but replaces granulocytes
+          with eosinophils and neutrophils. This reference has been implemented in meffil. 
+          In this text file, samples are in rows and cell types in columns.  
+        md5sum: 27ab648c56b56e62709a98fcba95a764
+        filesize: 1.2M
+        filetype: .txt
+        belongs_to_container: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+        number_of_participants: 8669         
+      - id: alspacdcs:74143e64-6d2d-4e69-b99e-1e12a7df3657
+        name: blood-gse35069.txt
+        description: >-
+          Blood cell count estimates derived using the Reinius et al. 2012 reference 
+          (PMID 25424692; GEO accession GSE35069).  Cell counts estimated for b-cells,
+          cd4+ t cells, cd8+ t cells, granulocytes, monocytes, and natural killer cells.
+          In this text file, samples are in rows and cell types in columns.
+        md5sum: 53fb63b4cef457d90688b3ddb861fa73
+        filesize: 1021K
+        filetype: .txt
+        belongs_to_container: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+        number_of_participants:  8669
+      - id: alspacdcs:3e2301b0-7d09-45bd-8364-700fdc3e873a
+        name: blood-idoloptimized-epic.txt
+        description: >-
+          Cell counts in peripheral blood predicted using the cell type reference from Bioconductor 
+          package FlowSorted.Blood.EPIC. This reference has been implemented in meffil. In this text file,
+          samples are in rows and cell types in columns.
+        md5sum: 7331e83d31e1d200bbff3d041223cde1
+        filesize: 347K
+        filetype: .txt
+        belongs_to_container: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+        number_of_participants: 2742
+      - id: alspacdcs:a803d79f-faf0-4f7a-aae6-2548031834cc
+        name: blood-idoloptimized.txt
+        description: >-
+          Cell counts in peripheral blood predicted using the cell type reference from Bioconductor 
+          package FlowSorted.Blood.EPIC but restricted to the IDOLOptimizedCpGs450klegacy CpG sites. 
+          This reference has been implemented in meffil. In this text file, samples are in rows and 
+          cell types in columns.
+        md5sum: 2c2bdbf34093960af969ca37ae43c77b
+        filesize: 1.1M
+        filetype: .txt
+        belongs_to_container: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+        number_of_participants: 8669
+      - id: alspacdcs:e3a207d4-4dfa-44ad-bdf1-58cae95bb972
+        name: combined-cord-blood.txt
+        description: >-
+          Cord blood cell count estimates derived using the Bakulski et al, Gervin et al., de Goede et al.,
+          and Lin et al. references (https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.CordBloodCombined.450k.html)
+          for CpG sites selected using the IDOL algorithm and optimized for the Illumina Infinium 
+          HumanMethylation450 Beadchip. Cell counts estimated for b-cells, cd4+ t cells, cd8+ t cells,
+          granulocytes, monocytes, natural killer cells and nucleated red blood cells.
+          In this text file, samples are in rows and cell types in columns.
+        md5sum: 7cbcf72ca00012d17d22ff6d21b7575c
+        filesize: 129K
+        filetype: .txt
+        belongs_to_container: alspacdcs:ad61ac55-921a-4b7a-9a80-c3c7b8d6e975
+        number_of_participants: 913
+
+  - id: alspacdcs:7556f038-dc22-47f0-96eb-af81a58eefe6
+    name: detection p values
+    description: >-
+      This matrix shows the detection pvalues for each sample and
+      each CpG and is extracted from the idat files using the "meffil.load.detection.pvalues"
+      function in meffil. CpGs are in rows and samples in columns.
+    data_distributions:
+      - id: alspacdcs:a1cc883a-a4ce-4660-8926-0bdb67c731fd
+        name: 450.gds
+        description: >-
+          R object file for the detection p values matrix for the 450 array only.
+        md5sum: 1c437226b2aab0c00aed7098e739f49d
+        filesize: 22G
+        filetype: .gds
+        belongs_to_container: alspacdcs:07768702-d945-449b-ab16-3fa064bf981a
+        number_of_participants: 5927
+      - id: alspacdcs:a2ef6985-97de-4ee3-996f-4d295773fbbc
+        name: common.gds
+        description: >-
+          R object file for the detection p values matrix for both EPIC and 450 arrays.
+        md5sum: c6f4348fa7d92a5f341f69e1784036da
+        filesize: 30G
+        filetype: .gds
+        belongs_to_container: alspacdcs:07768702-d945-449b-ab16-3fa064bf981a
+        number_of_participants: 8669
+      - id: alspacdcs:d312d4b0-3e87-4a49-8840-b2162c0daa1a
+        name: epic.gds
+        description: >-
+          R object file for the detection p values matrix for the EPIC array only.
+        md5sum: 341d1194d468e10e80be9dc9990c474b
+        filesize: 18G
+        filetype: .gds
+        belongs_to_container: alspacdcs:07768702-d945-449b-ab16-3fa064bf981a
+        number_of_participants: 2742
+
+  - id: alspacdcs:
+    description: >-
+      Manifest files with columns extracted directly from LIMS and age,
+      sex, omics ID, timepoint, timecode, sampletype, genotype columns to report
+      sample mismatches, duplicate.rm column to remove duplicates.
+      Samples in rows, variables in columns.
+    data_distributions:
+      - id: alspacdcs:4547e736-b1c4-4ade-adc4-622d44522f7c
+        name: samplesheet-450.csv
+        description: >-
+          R data object manifest file for the 450 array only.
+        md5sum: ae8ccd22c2784bb900959362bfdf95e5
+        filesize: 2.2M
+        filetype: .csv
+        belongs_to_container: alspacdcs:3ab1bca7-efaf-414f-837d-cf0ad30afb09
+        number_of_participants: 5927              
+      - id: alspacdcs:1c1bf0bc-c254-4c25-96bf-96558f37f059
+        name: samplesheet-common.csv
+        description: >-
+          R data object manifest file for both the EPIC and 450 arrays. This is a duplicate with samplesheet.csv.
+        md5sum: 1e60ab2f50c9f578c3a6ead251974197
+        filesize: 3.3M
+        filetype: .csv
+        belongs_to_container: alspacdcs:3ab1bca7-efaf-414f-837d-cf0ad30afb09
+        number_of_participants: 8669
+      - id: alspacdcs:fce38b25-3100-4b12-b13d-6b528d8dfffc
+        name: samplesheet-epic.csv
+        description: >-
+          R data object manifest file for the EPIC array only.
+        md5sum: 656ead1968eb4ae0ac07b1a2416907ad
+        filesize: 1.1M
+        filetype: .csv
+        belongs_to_container: alspacdcs:3ab1bca7-efaf-414f-837d-cf0ad30afb09
+        number_of_participants: 2742 
+      - id: alspacdcs:707a0d83-66fe-4a74-96fc-1b2c5d7f0158
+        name: samplesheet.csv
+        description: >-
+          R data object manifest file for both the EPIC and 450 arrays. This is a duplicate with samplesheet-common.csv.
+        md5sum: 1e60ab2f50c9f578c3a6ead251974197 # should be the same as samplesheet-common.csv
+        filesize: 3.3M
+        filetype: .csv
+        belongs_to_container: alspacdcs:3ab1bca7-efaf-414f-837d-cf0ad30afb09
+        number_of_participants: 8669

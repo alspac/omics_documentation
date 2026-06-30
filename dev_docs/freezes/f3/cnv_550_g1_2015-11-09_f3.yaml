@@ -1,0 +1,83 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:cnv_550_g1_2015-11-09_f3
+name: Genome-wide - CNV - G1 release version 2015-11-09 freeze 3
+description: >-
+  This is the third freeze of the 2015-11-09 version of
+  cnv_550_g1 dataset.
+  It contains two csv versions of the cnv called data, the unfilterd
+  and filtered versions.
+freeze_size: 27m
+linker_file_md5sum: b528acad88cd1697129a7cd59aa14ada
+woc_file_md5sum: cf9249c306e766a8689f78197e1f5f25
+all_individuals_to_exclude_md5sum: 7faad74aeebaba4ed71aac783414d75b
+git_tag: https://github.com/alspac/dataset_cnv_550_g1/releases/tag/freeze3
+is_current_freeze: true
+freeze_number: 3
+freeze_date: 2023-09-13
+previous_freeze: alspacdcs:cnv_550_g1_2015-11-09_f2
+freeze_of_alspac_dataset_version: alspacdcs:cnv_550_g1_2015-11-09
+freeze_of_named_alspac_dataset: alspacdcs:cnv_550_g1
+has_parts:
+  - id: alspacdcs:cnv_550_g1_2015-11-09_cnvdata_f3
+    name: Unfiltered CNV data
+    description: >- 
+      This is the output of Penncnv before filtering.
+      columns
+        V1 - Position
+        V2 - Number of markers in the region
+        V3 - CNV length
+        V4 - Copy number estimate
+        V6 - Start SNP
+        V7 - End SNP
+        V8 - Confidence score
+        qlet - within pregnancy ID
+        cnv_550_g1 - Individual ID
+    data_distributions:
+      - id: alspacdcs:cdd6bfc2e28db5a76806aa24c73df110_new_cnvdata.csv
+        name: new_cnvdata.csv
+        description: >- 
+          This is the csv file for the output of Penncnv before filtering.
+        md5sum: cdd6bfc2e28db5a76806aa24c73df110
+        filesize: 21M
+        filetype: .csv
+        number_of_participants: 7450  #data$id_qlet <- paste(data$cnv_550_g1, data$qlet, sep="_")
+        #length(unique(data$id_qlet))
+        number_of_cnv_variants: 70030 # Read file into R as data then:
+        # dim(unique(data[1]))
+        belongs_to_container: alspacdcs:bd0fb41e-f720-46a7-9ed0-04dd3e0b22bd
+        
+  - id: alspacdcs:cnv_550_g1_2015-11-09_filtered_f3
+    name: Filtered CNV data
+    description: >-
+      CNV data that has been filtered.
+      columns
+        V1 - Position
+        V2 - Number of markers in the region
+        V3 - CNV length
+        V4 - Copy number estimate
+        V6 - Start SNP
+        V7 - End SNP
+        V8 - Confidence score
+        qlet - within pregnancy ID
+        cnv_550_g1 - Individual ID
+    data_distributions:
+      - id: alspacdcs:98eb9cb3bfd21eb807800de82f1e8099_new_filtered.csv
+        name: new_filtered.csv
+        description: >-
+          This is the csv file for the output of Penncnv after filtering.
+        md5sum: 98eb9cb3bfd21eb807800de82f1e8099
+        filesize: 5.9M
+        filetype: .csv
+        number_of_participants: 6793 # Read into data 2 in r
+        # data2$id_qlet <- paste(data2$cnv_550_g1, data2$qlet, sep="_") and length(unique(data2$id_qlet))
+        number_of_cnv_variants: 14244 #Read into data2 in r then
+        #length(unique(data2$V1))
+        belongs_to_container: alspacdcs:bd0fb41e-f720-46a7-9ed0-04dd3e0b22bd
+        
+has_containers:
+  - id: alspacdcs:bd0fb41e-f720-46a7-9ed0-04dd3e0b22bd ## uuid
+    name: data
+    description: A dir/folder containing the two freeze data files
+

@@ -1,0 +1,341 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_f5
+name: >- 
+  Whole Exome Sequencing - Novaseq - G0 & G1 version 2024-09-20 freeze 5
+description: >-
+  This is first iteration of wes_novaseq_g0_g1, first introduced in freeze 5. It contains data in vcf 4.2 format. It contains the majority of the G1 cohort (n=~8296), accompanied by G0 mothers (n=~1642) and partners (n=~1630) to create trios. Participants who have withdrawn their consent are removed and an omics ID applied according to the freeze. Over time the participants are able to withdraw their consent and will be removed from the dataset, so the number of available individuals can reduce as time progresses. 
+  
+  This exome sequencing (ES) data was conducted at the Sanger institute and was part of an effort to ES ALSPAC, MCS and BiB. All ES data was quality controlled at the Sanger institute prior to this ALSPAC release and has been extensively document in the relevant publication (see below). 
+
+  In brief (exert from associated publication, Koko et al., 2024):
+
+    "Sample QC: 
+      * Before variant calling: Samples were removed if they failed one or more filters based on quality of base-calls after sequencing, or quality of the CRAM files of aligned reads. The remainder then underwent variant calling.
+      * After variant calling: We assigned individuals to populations using principal component analysis (PCA), then identified and removed individuals who were outliers on one or more variant-based metrics within each of the populations. We compared the exome data to genotyping array data from the same samples and removed samples that did not match as expected, since these could be sample mix-ups. The samples were also checked for unexpected relatedness; samples showing conflicts between reported and inferred relatedness were removed. This sample QC was split in two separate steps, before and after variant and genotype QC, as detailed in the coming sections. 
+    Integrated variant and genotype QC:
+      * Variant QC: We removed candidate variants which may not be real, instead being artefacts or mapping errors, using a trained random forest model to distinguish likely true positives from likely false positives. 
+      * Genotype QC: We removed low-quality individual genotype calls from the dataset. This was done in conjunction with variant QC, as we will explain below."
+
+  for extended information such as thresholds please find within the publication.
+
+  Associated publication:
+    Koko et al., 2024
+    DOI: https://doi.org/10.12688/wellcomeopenres.22697.2
+
+
+freeze_size: 167G
+linker_file_md5sum: a8b3ed028e1a22a41e428612a62bc7c9
+woc_file_md5sum: 163b7668b82ec7e5e6b7e35aecbbb473
+all_individuals_to_exclude_md5sum: e551ddec737da29e25fc8d3119989a6a
+git_tag: https://github.com/alspac/dataset_wes_novaseq_g0_g1/releases/tag/freeze5
+is_current_freeze: true
+freeze_number: 5
+freeze_date: 2025-02-27
+previous_freeze: alspacdcs:wes_novaseq_g0_g1_2024-09-20_f4
+freeze_of_alspac_dataset_version: alspacdcs:wes_novaseq_g0_g1_2024-09-20
+freeze_of_named_alspac_dataset: alspacdcs:wes_novaseq_g0_g1
+
+has_parts:
+  - id: alspacdcs:ae68d502-5a2d-4280-9c4c-a3598957eb27
+    name: compressed vcf files
+    description: >- 
+      Compressed vcf file containing all participants for each chromosome. Generated using bcftools v1.19. To be used with corresponding index file (in format of chr1_data.vcf.gz.csi).
+
+    data_distributions:
+      - id: alspacdcs:1393a335-9614-462a-8171-cacce83d9228
+        name: chr1_data.vcf.gz
+        md5sum: 991ae5adc49999b67ad2a5eeb947c415
+        filesize: 16.3GB
+        filetype: .gz
+        number_of_variants: 370645
+        number_of_participants: 11500
+      - id: alspacdcs:4a580346-e4c1-45b6-90eb-01e909368fdf
+        name: chr2_data.vcf.gz
+        md5sum: acee28fa07f40a4d65bdebfb496ebd78
+        filesize: 11.8GB
+        filetype: .gz
+        number_of_variants: 272150
+        number_of_participants: 11500
+      - id: alspacdcs:783a3911-16f3-44b4-a083-e677ca8701d7
+        name: chr3_data.vcf.gz
+        md5sum: c30a14536c4927e2fe0b6029dc913711
+        filesize: 9.1GB
+        filetype: .gz
+        number_of_variants: 206875
+        number_of_participants: 11500
+      - id: alspacdcs:5d2e9095-2f4c-48f8-9469-4d0a2db6feee
+        name: chr4_data.vcf.gz
+        md5sum: 0e03787179147bfe52995addcc0b4bb3
+        filesize: 6.1GB
+        filetype: .gz
+        number_of_variants: 140675
+        number_of_participants: 11500
+      - id: alspacdcs:c6618b13-3ca1-4b6f-9bd8-3c035f1711b5
+        name: chr5_data.vcf.gz
+        md5sum: 58c9ccd5d3cb94baa71c6d0948ab94a0
+        filesize: 7.0GB
+        filetype: .gz
+        number_of_variants: 161010
+        number_of_participants: 11500
+      - id: alspacdcs:df0d7ea2-874d-4cf8-a777-4c85d1b9fda6
+        name: chr6_data.vcf.gz
+        md5sum: 9483605e1c3baa66b46f9e3d0137466d
+        filesize: 8.0GB
+        filetype: .gz
+        number_of_variants: 181754
+        number_of_participants: 11500
+      - id: alspacdcs:481c4b01-5a75-49f5-8b14-e3dc91b7df58
+        name: chr7_data.vcf.gz
+        md5sum: 9823da37fd8d1bcb70710f0f12a85cae
+        filesize: 8.1GB
+        filetype: .gz
+        number_of_variants: 181925
+        number_of_participants: 11500
+      - id: alspacdcs:08dc63cd-df57-4cd7-9f9b-da9aa29fd06d
+        name: chr8_data.vcf.gz
+        md5sum: daca7b2c5d14c28267d477516355fe5b
+        filesize: 5.9GB
+        filetype: .gz
+        number_of_variants: 133894
+        number_of_participants: 11500
+      - id: alspacdcs:7b60eb90-7159-44e0-a0a2-eb339f9a3e1e
+        name: chr9_data.vcf.gz
+        md5sum: 06854c04f90b3f4e358bb60181042161
+        filesize: 7.1GB
+        filetype: .gz
+        number_of_variants: 161039
+        number_of_participants: 11500
+      - id: alspacdcs:2feaab6d-9ef6-48be-804f-623cd58c7b45
+        name: chr10_data.vcf.gz
+        md5sum: 2145f8e9ed3bed5831b0921ea65e2e11
+        filesize: 6.5GB
+        filetype: .gz
+        number_of_variants: 149730
+        number_of_participants: 11505
+      - id: alspacdcs:36f15a4c-7461-4f5c-845a-540d78969bb5
+        name: chr11_data.vcf.gz
+        md5sum: 509b385b9195da7fe93355536ae49450
+        filesize: 10.2GB
+        filetype: .gz
+        number_of_variants: 227858
+        number_of_participants: 11500
+      - id: alspacdcs:27d17b38-d51e-49ef-8e98-9f6b1ecee217
+        name: chr12_data.vcf.gz
+        md5sum: d983ad6ffefc50e7c163edabd6157b4b
+        filesize: 8.5GB
+        filetype: .gz
+        number_of_variants: 193518
+        number_of_participants: 11500
+      - id: alspacdcs:6a4ddadd-bfa2-47ec-9a91-9ab5eafc49e5
+        name: chr13_data.vcf.gz
+        md5sum: b2f5304ba781bfc2604783ecc8dd8a3a
+        filesize: 2.8GB
+        filetype: .gz
+        number_of_variants: 63931
+        number_of_participants: 11500
+      - id: alspacdcs:a80774c1-3374-469c-8d4a-727735eb114e
+        name: chr14_data.vcf.gz
+        md5sum: c4ee5f555d11c9f70282340417e78294
+        filesize: 5.7GB
+        filetype: .gz
+        number_of_variants: 128137
+        number_of_participants: 11500
+      - id: alspacdcs:d124d290-33f6-4c7b-905a-badffbd0d824
+        name: chr15_data.vcf.gz
+        md5sum: 42a6c9f94f26927f428c06498def17d7
+        filesize: 5.6GB
+        filetype: .gz
+        number_of_variants: 127646
+        number_of_participants: 11500
+      - id: alspacdcs:015e0d1d-2bed-4fe5-83e2-f7841be0d591
+        name: chr16_data.vcf.gz
+        md5sum: 8441010f7cb684dbaeacf0bbd4e42249
+        filesize: 8.3GB
+        filetype: .gz
+        number_of_variants: 186300
+        number_of_participants: 11500
+      - id: alspacdcs:f61fe2eb-ea44-439d-88c8-22a6c91283d6
+        name: chr17_data.vcf.gz
+        md5sum: 4e235ba3f8c100b1f278269b9abe162b
+        filesize: 10.0GB
+        filetype: .gz
+        number_of_variants: 224774
+        number_of_participants: 11500
+      - id: alspacdcs:c668c9f6-4dd4-425c-8e06-dd5a7536a892
+        name: chr18_data.vcf.gz
+        md5sum: db54dcc6eb17b46f1fcefdddb3fd0955
+        filesize: 2.5GB
+        filetype: .gz
+        number_of_variants: 57017
+        number_of_participants: 11500
+      - id: alspacdcs:2c380e03-7824-4b6f-b42b-9c3ebf9a58db
+        name: chr19_data.vcf.gz
+        md5sum: f79c758c9a54e71b132c180158f47e19
+        filesize: 12.5GB
+        filetype: .gz
+        number_of_variants: 271080
+        number_of_participants: 11500
+      - id: alspacdcs:ee246fa3-d17e-447d-9360-b0997d0d882b
+        name: chr20_data.vcf.gz
+        md5sum: 517231ad499d8827b57c8bc3dfc3d320
+        filesize: 4.3GB
+        filetype: .gz
+        number_of_variants: 96655
+        number_of_participants: 11500
+      - id: alspacdcs:42d991a1-d820-4ab0-8b6d-f6a96db7d68e
+        name: chr21_data.vcf.gz
+        md5sum: a37a11719ebb6fac2c0185fd725847b8
+        filesize: 1.9GB
+        filetype: .gz
+        number_of_variants: 42207
+        number_of_participants: 11500
+      - id: alspacdcs:57cc588a-3e86-4294-9c38-173b5fe35da4
+        name: chr22_data.vcf.gz
+        md5sum: 057239d5968e4ebdb982c7a761fddda2
+        filesize: 4.2GB
+        filetype: .gz
+        number_of_variants: 94446
+        number_of_participants: 11500
+      - id: alspacdcs:1e697a14-6c20-4d98-bf0c-b432b307c9bb
+        name: chrX_data.vcf.gz
+        md5sum: 96466a642fa95a37c6ce18bc081a9313
+        filesize: 3.8GB
+        filetype: .gz
+        number_of_variants: 86925
+        number_of_participants: 11500
+      - id: alspacdcs:63fe419d-41ce-49f4-880d-46751b5d3e7e
+        name: chrY_data.vcf.gz
+        md5sum: 98551aecc6df538eb439face7d20067e
+        filesize: 363.9KB
+        filetype: .gz
+        number_of_variants: 9
+        number_of_participants: 11500
+
+
+  - id: alspacdcs:af405b0a-6161-4946-8004-d9c7333d9788
+    name: vcf index files
+    description: >- 
+          vcf index file allowing for faster use of compressed vcf counterpart. Generated using bcftools v1.19. To be used with corresponding vcf file (in format of chr1_data.vcf.gz.csi).
+    data_distributions:
+      - id: alspacdcs:5b755c68-5434-4b17-90ca-b95a4967d2b0
+        name: chr1_data.vcf.gz.csi
+        md5sum: 7e91b9c00c2510cb8d7b9219761127db
+        filesize: 59.3KB
+        filetype: .csi
+      - id: alspacdcs:5496ec33-9e40-4f44-b5d5-a905e346ba36
+        name: chr2_data.vcf.gz.csi
+        md5sum: 9d99d101fdae1b73cb1add0995db1281
+        filesize: 47.6KB
+        filetype: .csi
+      - id: alspacdcs:c6e523d1-099b-4789-92a1-a17d1ca80890
+        name: chr3_data.vcf.gz.csi
+        md5sum: c6f3d3c8784876cc34e1da41ff477544
+        filesize: 37.9KB
+        filetype: .csi
+      - id: alspacdcs:5df3296f-67c2-4634-8e14-b670b8fb70ec
+        name: chr4_data.vcf.gz.csi
+        md5sum: f45a01d452497ef61a6944f8c4874dcf
+        filesize: 29.7KB
+        filetype: .csi
+      - id: alspacdcs:933eeba2-146a-4f5a-accb-e202be199ae7
+        name: chr5_data.vcf.gz.csi
+        md5sum: 0d399ff3b3812732702706af558b4cf2
+        filesize: 30.8KB
+        filetype: .csi
+      - id: alspacdcs:7c402631-6da4-4b6e-bce3-cdca11ef5af9
+        name: chr6_data.vcf.gz.csi
+        md5sum: c84bc37706a8886c04f011290e0fb527
+        filesize: 32.2KB
+        filetype: .csi
+      - id: alspacdcs:49bc0d6d-ae74-4e49-a192-d99f2bad008a
+        name: chr7_data.vcf.gz.csi
+        md5sum: 742aa1280b71dded05a7eca06671467d
+        filesize: 32.2KB
+        filetype: .csi
+      - id: alspacdcs:876f8247-ec68-49db-8998-a081e3570eea
+        name: chr8_data.vcf.gz.csi
+        md5sum: 969272ccf78c43e2eb0c37ae726fa9cb
+        filesize: 24.6KB
+        filetype: .csi
+      - id: alspacdcs:63b70682-ae5d-41fd-846f-815df58ebd21
+        name: chr9_data.vcf.gz.csi
+        md5sum: 0a30e5878fecd543b8b27b65c2153ff4
+        filesize: 25.0KB
+        filetype: .csi
+      - id: alspacdcs:0607a7f5-3c58-46b5-a5b2-09a511118bb7
+        name: chr10_data.vcf.gz.csi
+        md5sum: 9c79d177d09b4a29fde5e29eb6aa681d
+        filesize: 27.8KB
+        filetype: .csi
+      - id: alspacdcs:bbe8ba0d-a093-4bdf-9eda-23c0142b5079
+        name: chr11_data.vcf.gz.csi
+        md5sum: c6520a9a3a2ea08b089a69a676493f7a
+        filesize: 31.5KB
+        filetype: .csi
+      - id: alspacdcs:2695c1de-8205-48b2-a22d-e4dba6ae637a
+        name: chr12_data.vcf.gz.csi
+        md5sum: 780fdb6487f2bc2e88b5ac6cb31beab2
+        filesize: 31.7KB
+        filetype: .csi
+      - id: alspacdcs:90d3ba16-c3ef-4222-a39a-02378d6a8982
+        name: chr13_data.vcf.gz.csi
+        md5sum: 9c1701ea5de03e58a324373cdf36e35b
+        filesize: 13.4KB
+        filetype: .csi
+      - id: alspacdcs:25199639-b5fd-4b13-8d52-aa1cfaaf974d
+        name: chr14_data.vcf.gz.csi
+        md5sum: 3c487ecb0d4d405526a57fddf54c3411
+        filesize: 19.1KB
+        filetype: .csi
+      - id: alspacdcs:c263f9ae-05e7-4bf8-92af-ef02ae58e5f4
+        name: chr15_data.vcf.gz.csi
+        md5sum: 5f39316e63aa7bfc6dcad5f6ec29e0f5
+        filesize: 19.7KB
+        filetype: .csi
+      - id: alspacdcs:017da27c-a816-4652-b4c9-fa358610181b
+        name: chr16_data.vcf.gz.csi
+        md5sum: 07816ce3396eef33d6c8a2128593df4f
+        filesize: 19.9KB
+        filetype: .csi
+      - id: alspacdcs:341e4feb-17ce-4461-9d63-5c841906da3a
+        name: chr17_data.vcf.gz.csi
+        md5sum: fc0dd9fc4480fe26b4e4c7cfdbbe90ae
+        filesize: 26.3KB
+        filetype: .csi
+      - id: alspacdcs:09b71a98-19a6-4860-8fc5-9cd0fd1b4951
+        name: chr18_data.vcf.gz.csi
+        md5sum: 25fd0f8ba4ece3eb2b82eb809d32b274
+        filesize: 12.4KB
+        filetype: .csi
+      - id: alspacdcs:9cbd4505-aebc-4674-92de-b7e478ee112e
+        name: chr19_data.vcf.gz.csi
+        md5sum: 9422f9902edfa9815dea5abfeb699b87
+        filesize: 23.7KB
+        filetype: .csi
+      - id: alspacdcs:6f4bd3d4-b60b-4af2-bcb9-e5ec04cbf034
+        name: chr20_data.vcf.gz.csi
+        md5sum: 5b6c115377d8cbee42e33a4730512221
+        filesize: 14.8KB
+        filetype: .csi
+      - id: alspacdcs:6cde5398-d318-485b-90c9-0a4c65f93a66
+        name: chr21_data.vcf.gz.csi
+        md5sum: 309c8eba9d76d97f53813af20b97948d
+        filesize: 6.3KB
+        filetype: .csi
+      - id: alspacdcs:87c78128-434c-49cc-80d2-07102c87b542
+        name: chr22_data.vcf.gz.csi
+        md5sum: d58b2f9dd877301a8b00920a8a963a97
+        filesize: 11.0KB
+        filetype: .csi
+      - id: alspacdcs:3bb30796-6e72-46da-9c89-5f353c17bd24
+        name: chrX_data.vcf.gz.csi
+        md5sum: a9bcae58debbda0537e9f16f6bf08844
+        filesize: 22.9KB
+        filetype: .csi
+      - id: alspacdcs:4c98124f-7401-422a-ad2c-e8d53703c9f3
+        name: chrY_data.vcf.gz.csi
+        md5sum: 08a6efe6cc066092a0332203f72a377c
+        filesize: 129.0B
+        filetype: .csi

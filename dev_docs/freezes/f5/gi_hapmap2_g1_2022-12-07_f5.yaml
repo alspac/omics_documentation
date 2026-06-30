@@ -1,0 +1,77 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gi_hapmap2_g1_2022-12-07_f5
+name: Genome-wide - HapMap2 imputed - G1 version 2022-12-07 freeze 5
+description: >-
+  Freeze 5 of 2022-12-07 version of Genome-wide array data imputed to the HapMap2 reference panel for G1 individuals
+  
+freeze_size: 5G
+linker_file_md5sum: a8b3ed028e1a22a41e428612a62bc7c9
+woc_file_md5sum: 163b7668b82ec7e5e6b7e35aecbbb473
+all_individuals_to_exclude_md5sum: e551ddec737da29e25fc8d3119989a6a
+git_tag: https://github.com/alspac/dataset_gi_hapmap2_g1/releases/tag/freeze5
+is_current_freeze: true
+freeze_number: 5
+freeze_date: 2025-02-27
+previous_freeze: alspacdcs:gi_hapmap2_g1_2022-12-07_f4
+freeze_of_alspac_dataset_version: alspacdcs:gi_hapmap2_g1_2022-12-07
+freeze_of_named_alspac_dataset: alspacdcs:gi_hapmap2_g1
+
+
+has_containers:
+  - id: alspacdcs:0f3ae21c-aa11-4aab-b8a0-78bf13801cfb
+    name: data
+    description: A dir/folder containing the plink freeze data files
+
+
+has_parts:
+  - id: alspacdcs:5d8b20a5-b2d3-4d3b-a02e-fe865810dd92
+    name: bed file
+    description: >-
+      Plink standard format bed file. See https://www.cog-genomics.org/plink/1.9/formats for further information.
+    data_distributions:
+      - id: alspacdcs:30b0f629-2582-44cd-a13d-27511f2bfc3b
+        name: freeze_id.bed
+        md5sum: c1b6c00b67513aef2147d6d507c4d1be
+        filesize: 4.9GB
+        filetype: .bed
+        belongs_to_container: alspacdcs:0f3ae21c-aa11-4aab-b8a0-78bf13801cfb
+
+  - id: alspacdcs:5a8e0987-f3e7-4354-b77a-353d47390aa2
+    name: bim file
+    description: >-
+      Plink standard bim file. Contains variant information. See https://www.cog-genomics.org/plink/1.9/formats for further information.
+    data_distributions:
+      - id: alspacdcs:3022bf70-3de1-4fe5-a827-627cb6998a53
+        name: freeze_id.bim
+        md5sum: a1ebaaf6286af5b12f4561b380cd302a
+        filesize: 67.6MB
+        filetype: .bim
+        number_of_variants: 2543887
+        belongs_to_container: alspacdcs:0f3ae21c-aa11-4aab-b8a0-78bf13801cfb
+
+  - id: alspacdcs:2a8a7c04-c771-4c80-8e53-32012bcf6cbe
+    name: fam file
+    description: >-
+      Plink standard format fam file. Contains sample information. See https://www.cog-genomics.org/plink/1.9/formats for further information.
+    data_distributions:
+      - id: alspacdcs:26508ec1-acb7-46ae-a7b4-dffa70cdf574
+        name: freeze_id.fam
+        md5sum: 58d7bf44f023345bced230d50c8f0736
+        filesize: 273.0KB
+        filetype: .fam
+        number_of_participants: 8223
+        belongs_to_container: alspacdcs:0f3ae21c-aa11-4aab-b8a0-78bf13801cfb
+
+  - id: alspacdcs:ac4c4c8c-1da4-4c26-9c4d-3bdea467d5b7
+    name: log file
+    description: >-
+      Plink log files. One per chromosome. Contains log information. See https://www.cog-genomics.org/plink/1.9/formats for further information.
+    data_distributions:
+      - id: alspacdcs:d74bea9e-7c43-4b67-9abd-f114daeebd06
+        name: freeze_id.log
+        md5sum: 09b318336263bb2e8ecc563decb92aed
+        filesize: 941.0B
+        filetype: .log
+        belongs_to_container: alspacdcs:0f3ae21c-aa11-4aab-b8a0-78bf13801cfb

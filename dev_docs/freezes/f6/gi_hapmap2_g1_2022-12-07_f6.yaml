@@ -1,0 +1,59 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gi_hapmap2_g1_2022-12-07_f6
+name: Genome-wide - HapMap2 imputed - G1 version 2022-12-07 freeze 6
+description: >-
+  Freeze 6 of 2022-12-07 version of Genome-wide array data imputed to the HapMap2 reference panel for G1 individuals. 
+  In Plink standard format, See https://www.cog-genomics.org/plink/1.9/formats for further information.  
+freeze_size: 5G
+linker_file_md5sum: 45415c7d4fae355b4fb2d6ccd042620d
+woc_file_md5sum: 6c887db8c7dd10cc695630ca73b41405
+all_individuals_to_exclude_md5sum: e4efce63f9f671548d08c8bb2f9cc4f7
+git_tag: https://github.com/alspac/dataset_gi_hapmap2_g1/releases/tag/freeze6
+is_current_freeze: true
+freeze_number: 6
+freeze_date: 2025-09-30
+previous_freeze: alspacdcs:gi_hapmap2_g1_2022-12-07_f5
+freeze_of_alspac_dataset_version: alspacdcs:gi_hapmap2_g1_2022-12-07
+freeze_of_named_alspac_dataset: alspacdcs:gi_hapmap2_g1
+
+contains:
+- data
+files: []
+data:
+  contains:
+  - freeze_id.bed
+  - freeze_id.bim
+  - freeze_id.fam
+  - freeze_id.log
+  files:
+  - id: alspacdcs:51e0b3de-dcce-456f-a99b-76752e42cbc7
+    name: freeze_id.bed
+    md5sum: 4362bfc2985fe02e84950530668c379d
+    filesize: 4.9GB
+    filetype: .bed
+    belongs_to: data
+  - id: alspacdcs:fa76edfd-d194-49ef-b9b7-8a9f922582e2
+    name: freeze_id.bim
+    md5sum: da64bd173633ec7198b8c9b7f61fabca
+    filesize: 67.6MB
+    filetype: .bim
+    number_of_variants: 2543887
+    belongs_to: data
+  - id: alspacdcs:a7e7e68b-7ff1-4287-a4dc-2437ddee77e4
+    name: freeze_id.fam
+    md5sum: fd2ed9d93ab7c69f6bfef1927ae0feaa
+    filesize: 273.0KB
+    filetype: .fam
+    number_of_participants: 8222
+    belongs_to: data
+  - id: alspacdcs:476a079c-a8c6-446c-a84a-af79610ee216
+    name: freeze_id.log
+    md5sum: b291cf31d5cfd1f44eb6217819c9fa20
+    filesize: 941.0B
+    filetype: .log
+    belongs_to: data
+
+
+

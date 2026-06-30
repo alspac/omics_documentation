@@ -1,0 +1,539 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gi_hapmap2_g0m_2022-12-07_f5
+name: Genome-wide - HapMap2 imputed - G0 mothers version 2022-12-07 freeze 5
+description: >-
+  Version 2022-12-07 freeze 5 of Genome-wide array data imputed to the HapMap2 reference panel for G0 mothers.
+  The number of variants & individuals within each plink file set can be viewed within the log file.
+freeze_size: 4.9G
+linker_file_md5sum: a8b3ed028e1a22a41e428612a62bc7c9
+woc_file_md5sum: 163b7668b82ec7e5e6b7e35aecbbb473
+all_individuals_to_exclude_md5sum: e551ddec737da29e25fc8d3119989a6a
+git_tag: https://github.com/alspac/dataset_gi_hapmap2_g0m/releases/tag/freeze5
+is_current_freeze: true
+freeze_number: 5
+freeze_date: 2025-02-27
+previous_freeze: alspacdcs:gi_hapmap2_g0m_2022-12-07_f4
+freeze_of_alspac_dataset_version: alspacdcs:gi_hapmap2_g0m_2022-12-07
+freeze_of_named_alspac_dataset: alspacdcs:gi_hapmap2_g0m
+
+
+has_containers:
+  - id: alspacdcs:50ae5d38-7e0d-4366-ab2d-73e91960eb24 ## uuid
+    name: plink
+    description: A dir/folder containing the plink freeze data files. There are 8118 individuals within this dataset. 
+
+
+has_parts:
+  - id: alspacdcs:b5dac573-22e8-4aff-93e3-6988b564df3d
+    name: bed files
+    description: >-
+      Plink standard format bed files. One per chromosome. See https://www.cog-genomics.org/plink/1.9/formats for further information.
+    belongs_to_container: alspacdcs:50ae5d38-7e0d-4366-ab2d-73e91960eb24
+    data_distributions:
+      - id: alspacdcs:7efe0162-1061-4d97-8149-57346a60105d
+        name: freeze_id_chr1.bed
+        md5sum: 01f7205ea4b6e852c0e8feb72a2cb9cd
+        filesize: 374.7MB
+        filetype: .bed
+      - id: alspacdcs:10652e6a-a6f9-4cbb-a46a-57f6202df995
+        name: freeze_id_chr2.bed
+        md5sum: 494713bafedd17c3be4e782f7881dcc0
+        filesize: 427.5MB
+        filetype: .bed
+      - id: alspacdcs:1eccd5b3-a5d3-4362-9755-383141333576
+        name: freeze_id_chr3.bed
+        md5sum: 609847ca0489b7a97725ec275f8337d2
+        filesize: 337.5MB
+        filetype: .bed
+      - id: alspacdcs:7158d2fe-2c64-4286-902f-2374c8f3d1c9
+        name: freeze_id_chr4.bed
+        md5sum: 147fee33c621f644dad5a2d8ee86fc1d
+        filesize: 315.9MB
+        filetype: .bed
+      - id: alspacdcs:4ce18ceb-5a2a-49f8-864e-96f188ff4015
+        name: freeze_id_chr5.bed
+        md5sum: a3a47a8ea90e0fa39d5c203436b6d982
+        filesize: 325.5MB
+        filetype: .bed
+      - id: alspacdcs:c2b647c2-c543-4b0c-824a-eb46b8e71043
+        name: freeze_id_chr6.bed
+        md5sum: 953f9c82981d59d25dabe44ba5718b29
+        filesize: 353.1MB
+        filetype: .bed
+      - id: alspacdcs:92eca9bf-acec-4211-8078-5d727847f51f
+        name: freeze_id_chr7.bed
+        md5sum: fb9e8aaf4ae7c3fc75233248ec9d03b0
+        filesize: 277.3MB
+        filetype: .bed
+      - id: alspacdcs:e479937f-30e9-42d6-8b7e-98948660f187
+        name: freeze_id_chr8.bed
+        md5sum: de34e8ef57e4c08991e4778401adf861
+        filesize: 285.5MB
+        filetype: .bed
+      - id: alspacdcs:3ac4109b-ce90-404e-9c33-14a0e0724e57
+        name: freeze_id_chr9.bed
+        md5sum: 58ff215f0652257867e42f567ff1c2be
+        filesize: 236.4MB
+        filetype: .bed
+      - id: alspacdcs:71a413bf-2a47-43f9-be4c-a90166c94ad6
+        name: freeze_id_chr10.bed
+        md5sum: 4606d4a5a008927b6ab051461218094a
+        filesize: 267.9MB
+        filetype: .bed
+      - id: alspacdcs:f437e00b-2de1-4f72-b169-a5a13d844a89
+        name: freeze_id_chr11.bed
+        md5sum: 3c89898ce9fc0445c566ea0c060fb9db
+        filesize: 251.8MB
+        filetype: .bed
+      - id: alspacdcs:1bcea287-df1c-4d62-8fc5-974658a1b6ed
+        name: freeze_id_chr12.bed
+        md5sum: 367f44ccd183c47334cfc7cb8333628a
+        filesize: 241.7MB
+        filetype: .bed
+      - id: alspacdcs:355962f4-d2c8-4477-b5f1-d523befa9695
+        name: freeze_id_chr13.bed
+        md5sum: 0e99cf077012880a802dc36ce72142c1
+        filesize: 201.6MB
+        filetype: .bed
+      - id: alspacdcs:1b0a61a1-7b3a-4950-8eea-14663fba419d
+        name: freeze_id_chr14.bed
+        md5sum: a41f9803ec71a0dcdf137806b21ba2e6
+        filesize: 162.5MB
+        filetype: .bed
+      - id: alspacdcs:f403092d-e133-49eb-b8da-b8dd05069089
+        name: freeze_id_chr15.bed
+        md5sum: 611159bc9c4500de559615d0a7c549f2
+        filesize: 140.0MB
+        filetype: .bed
+      - id: alspacdcs:1bb114aa-4804-42c9-b62b-bede2c7d4b0f
+        name: freeze_id_chr16.bed
+        md5sum: b04eb2e4e66fef7ee7d48cb666d78c38
+        filesize: 138.5MB
+        filetype: .bed
+      - id: alspacdcs:e8d235a0-c488-4294-b39a-302f92646247
+        name: freeze_id_chr17.bed
+        md5sum: c6d54ed5ac68f2e0bd806b6124463ee4
+        filesize: 113.2MB
+        filetype: .bed
+      - id: alspacdcs:9871e903-1d2c-401f-aedc-9a20b44e375a
+        name: freeze_id_chr18.bed
+        md5sum: 6b46a8d2993dae303334b9a51b50b92c
+        filesize: 148.7MB
+        filetype: .bed
+      - id: alspacdcs:70569400-5d25-4fac-93a8-181eaecb0d6c
+        name: freeze_id_chr19.bed
+        md5sum: 801ccb3bb64dddaabfc2b7a4a1e4c5b0
+        filesize: 71.7MB
+        filetype: .bed
+      - id: alspacdcs:bfb9ce39-6ad2-4c04-952e-070511f96cb8
+        name: freeze_id_chr20.bed
+        md5sum: 2af011bb98d6b8a8b00b7d938700fdac
+        filesize: 122.8MB
+        filetype: .bed
+      - id: alspacdcs:41a74b3f-38f5-45ac-aef4-05764316abd3
+        name: freeze_id_chr21.bed
+        md5sum: 13165e1c9a27aa42853429b0246a1ed5
+        filesize: 65.6MB
+        filetype: .bed
+      - id: alspacdcs:a2cdb6ad-d6c0-49d9-a9e8-33b1f61d8226
+        name: freeze_id_chr22.bed
+        md5sum: 5abcf552c585152ed0ee11754f3e7833
+        filesize: 65.5MB
+        filetype: .bed
+
+  - id: alspacdcs:03943a89-75f1-4833-83f2-0fb740aff2df
+    name: bim files
+    description: >-
+      Plink standard bim files. One per chromosome. Contains variant information. See https://www.cog-genomics.org/plink/1.9/formats for further information.
+    belongs_to_container: alspacdcs:50ae5d38-7e0d-4366-ab2d-73e91960eb24
+    data_distributions:
+      - id: alspacdcs:b7f6b64c-c359-4871-955c-e69a328dff6d
+        name: freeze_id_chr1.bim
+        md5sum: 44795681691b62d1921ad8855fd11a09
+        filesize: 5.1MB
+        filetype: .bim
+        number_of_variants: 193554
+      - id: alspacdcs:25f5868c-261d-4f4b-a61f-2585c25cc16c
+        name: freeze_id_chr2.bim
+        md5sum: 275cefa559489b51bebbc65657a91822
+        filesize: 5.9MB
+        filetype: .bim
+        number_of_variants: 220833
+      - id: alspacdcs:bbc0949b-a6b1-4c49-bfc5-5c14c112bb32
+        name: freeze_id_chr3.bim
+        md5sum: 96d147406f1f24697b0cb9af0c7091fc
+        filesize: 4.6MB
+        filetype: .bim
+        number_of_variants: 174356
+      - id: alspacdcs:f5a905fe-a12b-49f5-bf6d-89ae8dbcce69
+        name: freeze_id_chr4.bim
+        md5sum: 54a244447b1345636690b252215bfd2d
+        filesize: 4.3MB
+        filetype: .bim
+        number_of_variants: 163157
+      - id: alspacdcs:bd66e1db-4dda-476c-9f29-8a01c22740ec
+        name: freeze_id_chr5.bim
+        md5sum: e8f55ef9016bf2f03ee43f08a6c974c3
+        filesize: 4.4MB
+        filetype: .bim
+        number_of_variants: 168144
+      - id: alspacdcs:47363a39-591d-4d1d-a0eb-d1124ea94485
+        name: freeze_id_chr6.bim
+        md5sum: 3fd4e793a35c5e935454efc1105be192
+        filesize: 4.8MB
+        filetype: .bim
+        number_of_variants: 182381
+      - id: alspacdcs:9d7d252a-49d5-4476-9222-bb3e2c2efdf4
+        name: freeze_id_chr7.bim
+        md5sum: dae38c5168605323dfc584a73f3ce4a1
+        filesize: 3.8MB
+        filetype: .bim
+        number_of_variants: 143232
+      - id: alspacdcs:6dfeca17-935d-4664-a428-28118165d701
+        name: freeze_id_chr8.bim
+        md5sum: 6243ef376ee6cbe643bec69201bec604
+        filesize: 3.9MB
+        filetype: .bim
+        number_of_variants: 147483
+      - id: alspacdcs:38dee48b-137e-49cb-a115-aeaded91f3e3
+        name: freeze_id_chr9.bim
+        md5sum: 1e828e0f36c2d168ce6c1df5887a764b
+        filesize: 3.2MB
+        filetype: .bim
+        number_of_variants: 122112
+      - id: alspacdcs:602fd303-2bae-414a-a5eb-e8e8e283f39c
+        name: freeze_id_chr10.bim
+        md5sum: 3c259904c7da548d25c86a4a36e96285
+        filesize: 3.8MB
+        filetype: .bim
+        number_of_variants: 138402
+      - id: alspacdcs:75d5e65b-5fc3-4f8a-b01b-e69ea1c45628
+        name: freeze_id_chr11.bim
+        md5sum: 703ecef520ce7363c24e9600b363570f
+        filesize: 3.5MB
+        filetype: .bim
+        number_of_variants: 130069
+      - id: alspacdcs:f5166ec7-30e3-4ec4-9de7-0e91454381a8
+        name: freeze_id_chr12.bim
+        md5sum: 515a46f735c531163377d114549042b5
+        filesize: 3.4MB
+        filetype: .bim
+        number_of_variants: 124860
+      - id: alspacdcs:d7f85dcf-75dd-4736-bd7f-5f458f2081c7
+        name: freeze_id_chr13.bim
+        md5sum: cd1b7c80977fb5a0bbd87bc83dd85aed
+        filesize: 2.8MB
+        filetype: .bim
+        number_of_variants: 104120
+      - id: alspacdcs:b6b69cba-f36a-4ddd-bdab-1b80703f7817
+        name: freeze_id_chr14.bim
+        md5sum: 4a933818aaea48201f455ebd07ea1b78
+        filesize: 2.3MB
+        filetype: .bim
+        number_of_variants: 83936
+      - id: alspacdcs:a0f73fdd-1936-4407-ad7a-3743f87fe429
+        name: freeze_id_chr15.bim
+        md5sum: 1e1139db4b031ba577b5ac6ae000ce6f
+        filesize: 1.9MB
+        filetype: .bim
+        number_of_variants: 72300
+      - id: alspacdcs:538edd86-5b6b-4d41-8387-1e8d8b2d7b72
+        name: freeze_id_chr16.bim
+        md5sum: 8bd9cb45256b6b5ca37ce66eec810035
+        filesize: 1.9MB
+        filetype: .bim
+        number_of_variants: 71550
+      - id: alspacdcs:64834bdd-5c5d-4883-a2cf-b457e35ae0ea
+        name: freeze_id_chr17.bim
+        md5sum: 0dc0770759f9edccec7ce305e07b57d4
+        filesize: 1.6MB
+        filetype: .bim
+        number_of_variants: 58455
+      - id: alspacdcs:38d19e6e-ed06-4724-a339-04eac4625317
+        name: freeze_id_chr18.bim
+        md5sum: 9ffd8f006c82701060dff29bf460e8fe
+        filesize: 2.1MB
+        filetype: .bim
+        number_of_variants: 76812
+      - id: alspacdcs:6119148e-dd26-4c3e-a934-bfdbd96d5099
+        name: freeze_id_chr19.bim
+        md5sum: c6fce7e15e198304f752ccbce66299b9
+        filesize: 1012.3KB
+        filetype: .bim
+        number_of_variants: 37045
+      - id: alspacdcs:4a80d624-fb52-48cf-9e39-fdda12c2b6c0
+        name: freeze_id_chr20.bim
+        md5sum: 6e0b2d6cd06cc6e36f9cbc3f8df0a169
+        filesize: 1.7MB
+        filetype: .bim
+        number_of_variants: 63408
+      - id: alspacdcs:fbf18f66-9ddd-4e0f-b3cf-026c43b48826
+        name: freeze_id_chr21.bim
+        md5sum: c1f6f2181c49172608ac79e18425e4f4
+        filesize: 924.7KB
+        filetype: .bim
+        number_of_variants: 33863
+      - id: alspacdcs:47ffbaa6-f74d-470b-b48e-15a469f6e7c8
+        name: freeze_id_chr22.bim
+        md5sum: 86a1da3366ba87e62f561dc09f64f9ac
+        filesize: 920.9KB
+        filetype: .bim
+        number_of_variants: 33815
+
+  - id: alspacdcs:ef194b12-6864-44b3-9d89-2090dfe305d0
+    name: fam files
+    description: >-
+      Plink standard format fam files. One per chromosome. Contains sample information. See https://www.cog-genomics.org/plink/1.9/formats for further information.
+    belongs_to_container: alspacdcs:50ae5d38-7e0d-4366-ab2d-73e91960eb24
+    data_distributions:
+      - id: alspacdcs:3b986b53-808e-4c4e-8275-d81d00d5ebb0
+        name: freeze_id_chr1.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:be2d1539-f667-4748-ad08-993aee03319a
+        name: freeze_id_chr2.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:eff796b6-bb95-4d15-babf-ff893a328ae8
+        name: freeze_id_chr3.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:34325f98-aafa-4d83-92c5-1efc16e60b31
+        name: freeze_id_chr4.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:13f956cf-a81a-49a0-bcc3-7315425d94f6
+        name: freeze_id_chr5.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:d43d7d7c-bd21-4035-9cf4-5a946c0b0548
+        name: freeze_id_chr6.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:534c0964-72af-4418-9f0a-223d0dfbc74f
+        name: freeze_id_chr7.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:a139d84d-286d-4d65-bfa6-e1a329345ac9
+        name: freeze_id_chr8.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:23ee8db2-4cb5-413d-b714-0dd88334f645
+        name: freeze_id_chr9.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:a2155a79-99ea-425b-bac3-0b305f097246
+        name: freeze_id_chr10.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:6b064bab-e8cc-4477-8c4d-8bfc17bb685a
+        name: freeze_id_chr11.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:f8826d19-d418-488a-8112-8367b5243ea2
+        name: freeze_id_chr12.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:45bc4687-9b97-47db-b3cd-0e7660a77abd
+        name: freeze_id_chr13.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:68e4a8f3-df5a-4450-b93a-f7a71689a397
+        name: freeze_id_chr14.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:c1b56a86-4d10-4547-b8f0-a3820f4c20ed
+        name: freeze_id_chr15.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:9cb04ba9-e116-4ba7-ae9f-2e1d833708fc
+        name: freeze_id_chr16.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:e4d93b96-b25f-4608-b721-f891e6c2d6df
+        name: freeze_id_chr17.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:f6ca5a65-8201-46fe-ac3d-c674fe440d8c
+        name: freeze_id_chr18.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:212d5196-61c5-4d52-b613-5f6616df9fca
+        name: freeze_id_chr19.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:cfaa861f-bdf7-468d-b61a-8b43829bc5ae
+        name: freeze_id_chr20.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:8df35b0d-b9ab-4009-94be-4d37bdd31dad
+        name: freeze_id_chr21.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+      - id: alspacdcs:6055cdf3-c2cb-4fe6-9440-1853beb7ebd3
+        name: freeze_id_chr22.fam
+        md5sum: 7d0f1e0b6f52f143324cb926a75f6cb8
+        filesize: 277.5KB
+        filetype: .fam
+        number_of_participants: 8118
+
+  - id: alspacdcs:ac6efac2-4681-4147-92da-b3ec2467aa96
+    name: log files
+    description: >-
+      Plink log files. One per chromosome. Contains log information. See https://www.cog-genomics.org/plink/1.9/formats for further information.
+    belongs_to_container: alspacdcs:50ae5d38-7e0d-4366-ab2d-73e91960eb24
+    data_distributions:
+      - id: alspacdcs:d929e593-a613-4ca3-9f35-c35b32be2db6
+        name: freeze_id_chr1.log
+        md5sum: 4f11877b64d9c9a0995ab1c577f56110
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:6fa0dbe8-630d-4856-8226-a832e5dc5389
+        name: freeze_id_chr2.log
+        md5sum: 8a009ab139c9672ba79aaa52f4203d51
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:a68c566f-c96e-46cd-b6c6-0c1125539094
+        name: freeze_id_chr3.log
+        md5sum: 97957d1a5d46b7752133aabd29338719
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:4c09ff2b-d741-485d-941c-b2d6a3b66058
+        name: freeze_id_chr4.log
+        md5sum: b0320867b36bc85b3ad9a598056bba4b
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:85a71fd7-6eff-4dae-a190-cda29c54b293
+        name: freeze_id_chr5.log
+        md5sum: ffebb4d4442623feadd2ebb9fea762aa
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:06fc2045-5551-4e12-942f-bb036da84233
+        name: freeze_id_chr6.log
+        md5sum: 6a43815212a8ec77fe3a35c9d9c3692e
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:b686c422-0770-4799-a0f7-497ba9805a6b
+        name: freeze_id_chr7.log
+        md5sum: e0aed5e04f28d83c75d9c6dd77e90995
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:a0a1f077-e686-4ca3-8d5d-8ce9613b59c9
+        name: freeze_id_chr8.log
+        md5sum: 2f044afef682620cd7e97f0a65263245
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:d3e4c602-3173-4e3e-9484-f3ab8a9aa003
+        name: freeze_id_chr9.log
+        md5sum: d3be92946a1deb543f6e5c9d46620d0c
+        filesize: 971.0B
+        filetype: .log
+      - id: alspacdcs:2685cbf0-561e-42f8-b520-0db9bc44b792
+        name: freeze_id_chr10.log
+        md5sum: 4f371c2cd4e72ab6cf1a72b05e564bc3
+        filesize: 977.0B
+        filetype: .log
+      - id: alspacdcs:595095f1-bcb0-4f70-857e-f541d9a93db7
+        name: freeze_id_chr11.log
+        md5sum: 2adab11dda24b32f38c8d15b59aca641
+        filesize: 977.0B
+        filetype: .log
+      - id: alspacdcs:64ffd176-931c-4077-9ad4-2a9fcd30ddb3
+        name: freeze_id_chr12.log
+        md5sum: 42e1a1b5359f038351b4c4da9dd64832
+        filesize: 977.0B
+        filetype: .log
+      - id: alspacdcs:357ad1e6-d057-4201-adbd-e54b1659f998
+        name: freeze_id_chr13.log
+        md5sum: e3bdc7637c2434b93036875597d8d0af
+        filesize: 977.0B
+        filetype: .log
+      - id: alspacdcs:60190e1f-b199-4e98-bdf0-9e9fde558722
+        name: freeze_id_chr14.log
+        md5sum: adae00f346ebe7c59179bd6921711b11
+        filesize: 975.0B
+        filetype: .log
+      - id: alspacdcs:b9373ee2-cd15-4098-a754-84b7ee0454cf
+        name: freeze_id_chr15.log
+        md5sum: 1396755abe3983552865e224131367b9
+        filesize: 975.0B
+        filetype: .log
+      - id: alspacdcs:900c8cb4-489d-4990-bdcf-6a2884abfbae
+        name: freeze_id_chr16.log
+        md5sum: f644d2721c522b723f870e122886244b
+        filesize: 975.0B
+        filetype: .log
+      - id: alspacdcs:73c2f0fc-d654-4563-ab9a-9e927d7f7057
+        name: freeze_id_chr17.log
+        md5sum: 62c56ae0fa0d64212bee294600a0f78e
+        filesize: 975.0B
+        filetype: .log
+      - id: alspacdcs:97d1ff20-3781-4b93-b82b-06f485178201
+        name: freeze_id_chr18.log
+        md5sum: b9803f7d4723f6e7d1759115354b88cf
+        filesize: 975.0B
+        filetype: .log
+      - id: alspacdcs:94c2b803-de0d-41c8-9f30-a0b72c6e5e3c
+        name: freeze_id_chr19.log
+        md5sum: 3e462678c1e53cceb57658be036768aa
+        filesize: 975.0B
+        filetype: .log
+      - id: alspacdcs:0a8c20ea-b26c-4794-b9e2-b8971e4da850
+        name: freeze_id_chr20.log
+        md5sum: b5d7ac4496e2c2bb53bd025d6f1cf948
+        filesize: 975.0B
+        filetype: .log
+      - id: alspacdcs:cce89426-b396-43c9-86af-8d1d1ccd2fde
+        name: freeze_id_chr21.log
+        md5sum: 57d7138f8b258ae539b289b863c8bab4
+        filesize: 975.0B
+        filetype: .log
+      - id: alspacdcs:7c8ce228-052f-4490-bf61-ffcb3e517990
+        name: freeze_id_chr22.log
+        md5sum: f547e75de71b74d04a640df1d153d46c
+        filesize: 975.0B
+        filetype: .log

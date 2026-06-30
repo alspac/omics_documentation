@@ -1,0 +1,519 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_f4
+name: >- 
+  Whole Exome Sequencing - Novaseq - G0 & G1 version 2024-09-20 freeze 4
+description: >-
+  This is first iteration of wes_novaseq_g0_g1, first introduced in freeze 4. It contains data in vcf 4.2 format. It contains the majority of the G1 cohort (n=~8296), accompanied by G0 mothers (n=~1642) and partners (n=~1630) to create trios. Participants who have withdrawn their consent are removed and an omics ID applied according to the freeze. Over time the participants are able to withdraw their consent and will be removed from the dataset, so the number of available individuals can reduce as time progresses. 
+  
+  This exome sequencing (ES) data was conducted at the Sanger institute and was part of an effort to ES ALSPAC, MCS and BiB. All ES data was quality controlled at the Sanger institute prior to this ALSPAC release and has been extensively document in the relevant publication (see below). 
+
+  In brief (exert from associated publication, Koko et al., 2024):
+
+    "Sample QC: 
+      * Before variant calling: Samples were removed if they failed one or more filters based on quality of base-calls after sequencing, or quality of the CRAM files of aligned reads. The remainder then underwent variant calling.
+      * After variant calling: We assigned individuals to populations using principal component analysis (PCA), then identified and removed individuals who were outliers on one or more variant-based metrics within each of the populations. We compared the exome data to genotyping array data from the same samples and removed samples that did not match as expected, since these could be sample mix-ups. The samples were also checked for unexpected relatedness; samples showing conflicts between reported and inferred relatedness were removed. This sample QC was split in two separate steps, before and after variant and genotype QC, as detailed in the coming sections. 
+    Integrated variant and genotype QC:
+      * Variant QC: We removed candidate variants which may not be real, instead being artefacts or mapping errors, using a trained random forest model to distinguish likely true positives from likely false positives. 
+      * Genotype QC: We removed low-quality individual genotype calls from the dataset. This was done in conjunction with variant QC, as we will explain below."
+
+  for extended information such as thresholds please find within the publication.
+
+  Associated publication:
+    Koko et al., 2024
+    DOI: doi.org/10.12688/wellcomeopenres.22697.1
+
+
+freeze_size: 167G
+linker_file_md5sum: fafe49f2e5ce4d5bd018fba250503eff
+woc_file_md5sum: 163b7668b82ec7e5e6b7e35aecbbb473
+all_individuals_to_exclude_md5sum: 92b14080f8a933c32fcb064767eb1112
+git_tag: https://github.com/alspac/dataset_wes_novaseq_g0_g1/releases/tag/freeze4
+is_current_freeze: true
+freeze_number: 4
+freeze_date: 2024-06-11
+previous_freeze: N/A
+freeze_of_alspac_dataset_version: alspacdcs:wes_novaseq_g0_g1_2024-09-20
+freeze_of_named_alspac_dataset: alspacdcs:wes_novaseq_g0_g1
+
+has_parts:
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr1_data_f4
+    name: chr1_data
+    data_distributions:
+      - id: alspacdcs:chr1_data.vcf.gz
+        name: chr1_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 1, to be used with chr1_data.vcf.gz.csi
+        md5sum: c61d331e2c58b800516da170853f8220
+        filesize: 17G
+        filetype:  vcf.gz
+        number_of_participants: 11500
+        number_of_variants: 370645 # bcftools query -f '%POS\n' file.vcf.gz | wc -l
+      - id: alspacdcs:_chr1_data.vcf.gz.csi
+        name: chr1_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr1_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: f413bc9edb1d2a959f38790a3c72656c
+        filesize: 64K
+        filetype: .csi
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr2_data_f4
+    name: chr2_data
+    data_distributions:
+      - id: alspacdcs:chr2_data.vcf.gz
+        name: chr2_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 2, to be used with chr2_data.fvcf.gz.csi
+        md5sum: 6c6d6b76a6792444058ff19c0036381c
+        filesize: 12G
+        filetype:  vcf.gz
+        number_of_participants: 11500
+        number_of_variants: 272150
+      - id: alspacdcs:_chr2_data.vcf.gz.csi
+        name: chr2_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr2_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: dc7fe92d532898ecad15efe923c48a12
+        filesize: 48K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr3_data_f4
+    name: chr3_data
+    data_distributions:
+      - id: alspacdcs:chr3_data.vcf.gz
+        name: chr3_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 3, to be used with chr3_data.vcf.gz.csi
+        md5sum: 1bc654effca79e7c67b0e0e9cd180064
+        filesize: 9.1G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 206875
+      - id: alspacdcs:_chr3_data.vcf.gz.csi
+        name: chr3_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr3_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 5e9918574d70f08d50c52bc755e99a57
+        filesize: 48K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr4_data_f4
+    name: chr4_data
+    data_distributions:
+      - id: alspacdcs:chr4_data.vcf.gz
+        name: chr4_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 4, to be used with chr4_data.vcf.gz.csi
+        md5sum: 409b4664817cbccdb04c64ef50c20260
+        filesize: 6.2G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 140675
+      - id: alspacdcs:_chr4_data.vcf.gz.csi
+        name: chr4_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr4_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 2e97a34c0d5de1f4c20a96013ddd3954
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr5_data_f4
+    name: chr5_data
+    data_distributions:
+      - id: alspacdcs:chr5_data.vcf.gz
+        name: chr5_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 5, to be used with chr5_data.vcf.gz.csi
+        md5sum: ca1aefe6597d304995b6fadf26cc1dc6
+        filesize: 7.1G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 161010
+      - id: alspacdcs:_chr5_data.vcf.gz.csi
+        name: chr5_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr5_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: bb0aa89a3bf4ea37d0766437bf954fde
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr6_data_f4
+    name: chr6_data
+    data_distributions:
+      - id: alspacdcs:chr6_data.vcf.gz
+        name: chr6_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 6, to be used with chr6_data.vcf.gz.csi
+        md5sum: e0eaf0d3a06ce9b9b74be440d39702f5
+        filesize: 8.1G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 181754
+      - id: alspacdcs:_chr6_data.vcf.gz.csi
+        name: chr6_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr6_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: d106a089e187fd067841488006d412f3
+        filesize: 48K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr7_data_f4
+    name: chr7_data
+    data_distributions:
+      - id: alspacdcs:chr7_data.vcf.gz
+        name: chr7_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 7, to be used with chr7_data.vcf.gz.csi
+        md5sum: e433cbd47a52fb3a0876a520a4134d31
+        filesize: 8.1G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 181925
+      - id: alspacdcs:_chr7_data.vcf.gz.csi
+        name: chr7_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr7_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 6c2fa683baf0b095cd86d877171e481f
+        filesize: 48K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr8_data_f4
+    name: chr8_data
+    data_distributions:
+      - id: alspacdcs:chr8_data.vcf.gz
+        name: chr8_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 8, to be used with chr8_data.vcf.gz.csi
+        md5sum: 1c9a537e557fb5fdd125b1025fbce749
+        filesize: 5.9G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 133894
+      - id: alspacdcs:_chr8_data.vcf.gz.csi
+        name: chr8_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr8_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 695209b64080ccbe035f51d4d9b92566
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr9_data_f4
+    name: chr9_data
+    data_distributions:
+      - id: alspacdcs:ch9_data.vcf.gz
+        name: chr9_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 9, to be used with chr9_data.vcf.gz.csi
+        md5sum: 2fbd587057be6f3e6e40bfb9d4cdd072
+        filesize: 7.1G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 161039
+      - id: alspacdcs:_chr9_data.vcf.gz.csi
+        name: chr9_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr9_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 0aa0503dfe1a267fef70c19b8ec5ce5d
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr10_data_f4
+    name: chr10_data
+    data_distributions:
+      - id: alspacdcs:chr10_data.vcf.gz
+        name: chr10_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 10, to be used with chr10_data.vcf.gz.csi
+        md5sum: 3fad84065f76243852cb94f191aafc71
+        filesize: 6.6G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 149730
+      - id: alspacdcs:_chr10_data.vcf.gz.csi
+        name: chr10_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr10_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 3f74f64664ce6a5631366d98946546a6
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr11_data_f4
+    name: chr11_data
+    data_distributions:
+      - id: alspacdcs:chr11_data.vcf.gz
+        name: chr11_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 11, to be used with chr11_data.vcf.gz.csi
+        md5sum: 67421ec85241f6162eb9a7ab29e1be6b
+        filesize: 11G 
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 227858
+      - id: alspacdcs:_chr11_data.vcf.gz.csi
+        name: chr11_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr11_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: eec8568f19181000442d8948edcdc65d
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr12_data_f4
+    name: chr12_data
+    data_distributions:
+      - id: alspacdcs:chr12_data.vcf.gz
+        name: chr12_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 12, to be used with chr12_data.vcf.gz.csi
+        md5sum: eb497a8adb2372048ed1badaecb92a96
+        filesize: 8.5G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 193518
+      - id: alspacdcs:_chr12_data.vcf.gz.csi
+        name: chr12_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr12_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 86a00f322b4c7eb4376c5d5f49ebc8d8
+        filesize: 32K
+        filetype: .csi 
+  
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr13_data_f4
+    name: chr13_data
+    data_distributions:
+      - id: alspacdcs:chr13_data.vcf.gz
+        name: chr13_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 13, to be used with chr13_data.vcf.gz.csi
+        md5sum: 0e8074d71e841cdebc9fd86247c46c3f
+        filesize: 2.8G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 63931
+      - id: alspacdcs:_chr13_data.vcf.gz.csi
+        name: chr13_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr13_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 9962040c9d4122ed040f924eb8d2174f
+        filesize: 16K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr14_data_f4
+    name: chr14_data
+    data_distributions:
+      - id: alspacdcs:chr14_data.vcf.gz
+        name: chr14_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 14, to be used with chr14_data.vcf.gz.csi
+        md5sum: e7b8b73da8ddd0bd666f988d5d9d049e
+        filesize: 5.7G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 128137
+      - id: alspacdcs:_chr14_data.vcf.gz.csi
+        name: chr14_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr14_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 63e6e3769d9bb411288d2b5174c61d9d
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr15_data_f4
+    name: chr15_data
+    data_distributions:
+      - id: alspacdcs:chr15_data.vcf.gz
+        name: chr15_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 15, to be used with chr15_data.vcf.gz.csi
+        md5sum: 19ed6a943eb7d379f693b2a9e0f7ff22
+        filesize: 5.6G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 127646
+      - id: alspacdcs:_chr15_data.vcf.gz.csi
+        name: chr15_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr15_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: abc35107b45198cf856fbb943c94c5ba
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr16_data_f4
+    name: chr16_data
+    data_distributions:
+      - id: alspacdcs:chr16_data.vcf.gz
+        name: chr16_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 16, to be used with chr16_data.vcf.gz.csi
+        md5sum: b5bae04936506ba275664aafd595d99d
+        filesize: 8.4G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 186300
+      - id: alspacdcs:_chr16_data.vcf.gz.csi
+        name: chr16_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr16_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 8e97703c8f865ef4cb90db140903022f
+        filesize: 32K 
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr17_data_f4
+    name: chr17_data
+    data_distributions:
+      - id: alspacdcs:chr17_data.vcf.gz
+        name: chr17_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 17, to be used with chr17_data.vcf.gz.csi
+        md5sum: 471702bad7d86459c024fb468c7a7ee9
+        filesize: 10G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 224774
+      - id: alspacdcs:_chr17_data.vcf.gz.csi
+        name: chr17_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr17_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 4782b222eda4bfcb871f330fa2a2728a
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr18_data_f4
+    name: chr18_data
+    data_distributions:
+      - id: alspacdcs:chr18_data.vcf.gz
+        name: chr18_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 18, to be used with chr18_data.vcf.gz.csi
+        md5sum: 3745cae09c423dd4cd00d772c82243d2
+        filesize: 2.5G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 57017
+      - id: alspacdcs:_chr18_data.vcf.gz.csi
+        name: chr18_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr18_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 7439d7225754bfb05a5d60544d8ec763
+        filesize: 16K 
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr19_data_f4
+    name: chr19_data
+    data_distributions:
+      - id: alspacdcs:chr19_data.vcf.gz
+        name: chr19_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 19, to be used with chr19_data.vcf.gz.csi
+        md5sum: e1ca35ee4003146b6d78aa60a11e019c
+        filesize: 13G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 271080
+      - id: alspacdcs:_chr19_data.vcf.gz.csi
+        name: chr19_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr19_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 17f12041e5261526ae320439f2736fa4
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr20_data_f4
+    name: chr20_data
+    data_distributions:
+      - id: alspacdcs:chr20_data.vcf.gz
+        name: chr20_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 20, to be used with chr20_data.vcf.gz.csi
+        md5sum: 7c8cc69afb82df0442116e4dbfd99269
+        filesize: 4.3G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 96655
+      - id: alspacdcs:_chr20_data.vcf.gz.csi
+        name: chr20_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr20_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 2e4526809c85ae04c1a7690a430e3fad
+        filesize: 16K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr21_data_f4
+    name: chr21_data
+    data_distributions:
+      - id: alspacdcs:chr21_data.vcf.gz
+        name: chr21_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 21, to be used with chr21_data.vcf.gz.csi
+        md5sum: 46202d0ba651b0ec1c9b9fbc980fdcb7
+        filesize: 1.9G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 42207
+      - id: alspacdcs:_chr21_data.vcf.gz.csi
+        name: chr21_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr21_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 4e010094593ac87fce4fe5d55cc80bee
+        filesize: 16K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chr22_data_f4
+    name: chr22_data
+    data_distributions:
+      - id: alspacdcs:chr22_data.vcf.gz
+        name: chr22_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome 22, to be used with chr22_data.vcf.gz.csi
+        md5sum: a423d731c368b4ce1f30a896ab0f1c18
+        filesize: 4.3G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 94446
+      - id: alspacdcs:_chr22_data.vcf.gz.csi
+        name: chr22_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chr22_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: ac6eb2a7076ec0221b86c0ac8300c1af
+        filesize: 16K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chrX_data_f4
+    name: chrX_data
+    data_distributions:
+      - id: alspacdcs:chrX_data.vcf.gz
+        name: chrX_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome X, to be used with chrX_data.vcf.gz.csi
+        md5sum: 1ca33edf2265f47f61e34ea4462e5afd
+        filesize: 3.8G
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 86925
+      - id: alspacdcs:_chrX_data.vcf.gz.csi
+        name: chrX_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chrX_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: 1f133d314e9acff9c0075184d495792a
+        filesize: 32K
+        filetype: .csi 
+
+  - id: alspacdcs:wes_novaseq_g0_g1_2024-09-20_chrY_data_f4
+    name: chrY_data
+    data_distributions:
+      - id: alspacdcs:chrY_data.vcf.gz
+        name: chrY_data.vcf.gz
+        description: >- 
+          vcf file containing all participants for chromsome Y, to be used with chrY_data.vcf.gz.csi
+        md5sum: 51a2d25baf60cbaef21b457df2c7530b
+        filesize: 368K
+        filetype:  vcf.gz
+        number_of_participants: 11500 
+        number_of_variants: 9
+      - id: alspacdcs:_chrY_data.vcf.gz.csi
+        name: chrY_data.vcf.gz.csi
+        description: >-
+          index for vcf file - chrY_data.vcf.gz, generated using bcftools v1.19.
+        md5sum: e370622e50f6b9b847ff0925eee02313
+        filesize: 512
+        filetype: .csi

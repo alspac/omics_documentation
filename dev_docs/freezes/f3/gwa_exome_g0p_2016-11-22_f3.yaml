@@ -1,0 +1,113 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gwa_exome_g0p_2016-11-22_f3
+name: Freeze 3 version 2016-11-22 Genome-wide - Illumina exome core array - G0 partners
+description: >-
+  Freeze 3 version 2016-11-22 Genome-wide array data including raw files and genotype calls for G0 partners, also including additional G0 mothers  who were absent from previous genotyping rounds
+freeze_size: 281M
+linker_file_md5sum: b528acad88cd1697129a7cd59aa14ada
+woc_file_md5sum: cf9249c306e766a8689f78197e1f5f25
+all_individuals_to_exclude_md5sum: 7faad74aeebaba4ed71aac783414d75b
+git_tag: https://github.com/alspac/dataset_gwa_exome_g0p/releases/tag/freeze3
+is_current_freeze: true
+freeze_number: 3
+freeze_date: 2023-09-1913
+previous_freeze: alspacdcs:gwa_exome_g0p_2016-11-22_f2
+freeze_of_alspac_dataset_version: alspacdcs:gwa_exome_g0p_2016-11-22
+freeze_of_named_alspac_dataset: alspacdcs:gwa_exome_g0p
+
+has_containers:
+  - id: alspacdcs:6c843f1c-5225-4780-8a93-58315f5e9dfe
+    name: data
+    description: A dir/folder containing the plink data files
+
+has_parts:
+- id: alspacdcs:c5d1dff1-3f6d-4506-aebd-c56db36e8d85
+  name: freeze_id
+  data_distributions:
+  - id: alspacdcs:353f07d8-4345-4904-bca2-f6549612f38d
+    name: freeze_id.fam
+    description: >-
+        A text file with no header line, and one line per sample with the following six fields:
+
+        1. Family ID ('FID')
+        2. Within-family ID ('IID'; cannot be '0')
+        3. Within-family ID of father ('0' if father isn't in dataset)
+        4. Within-family ID of mother ('0' if mother isn't in dataset)
+        5. Sex code ('1' = male, '2' = female, '0' = unknown)
+        6. Phenotype value ('1' = control, '2' = case,
+        '-9'/'0'/non-numeric =
+        missing data if case/control)
+
+        Here We use both the first two fields to have the full id of the
+        participant. i.e. not separate family and within family ids.
+    md5sum: 7c8d1559304240941ef9a047d84299f4
+    filesize: 123KB
+    filetype: .fam
+    number_of_participants: 2198
+    belongs_to_container: alspacdcs:6c843f1c-5225-4780-8a93-58315f5e9dfe
+- id: alspacdcs:c5f6f2d2-3f61-4bfa-a43c-c6e349a76607
+  name: freeze_id
+  data_distributions:
+  - id: alspacdcs:1b737f6f-f7b5-425c-ae16-45ce9ae8796c
+    name: freeze_id.bim
+    description: >-
+      Extended variant information file accompanying a .bed binary
+        genotype table. (in plink you can use --make-just-bim can be used to update just
+        this file.) A text file with no header line, and one line per
+        variant with the following six fields:
+
+          1.Chromosome code (either an integer, or 'X'/'Y'/'XY'/'MT';
+          '0' indicates unknown)
+          or name
+          2. Variant identifier
+          3. Position in morgans or centimorgans (safe to use dummy value of '0')
+          4. Base-pair coordinate (1-based; limited to 231-2)
+          5. Allele 1 (corresponding to clear bits in .bed; usually minor)
+          6. Allele 2 (corresponding to set bits in .bed; usually major)
+        
+    md5sum: 0fe43f888776059fef0a76d3f08d00ad
+    filesize: 14MB
+    filetype: .bim
+    number_of_variants: 507586
+    belongs_to_container: alspacdcs:6c843f1c-5225-4780-8a93-58315f5e9dfe
+- id: alspacdcs:cceed8c5-0276-4dbe-a617-7b585078caa0
+  name: freeze_id
+  data_distributions:
+  - id: alspacdcs:40da3e0d-a450-46ee-954e-c1b70751f3d0
+    name: freeze_id.bed
+    description: >-
+      Primary representation of genotype calls at biallelic
+      variants. Must be accompanied by .bim and .fam files.
+        
+    md5sum: 304b0d356880c5174806ce08d7beffd3
+    filesize: 267MB
+    filetype: .bed
+    number_of_participants: 2198
+    number_of_variants: 507586
+    belongs_to_container: alspacdcs:6c843f1c-5225-4780-8a93-58315f5e9dfe
+- id: alspacdcs:19556134-925a-4753-8834-933c4c74e784
+  name: freeze_id
+  data_distributions:
+  - id: alspacdcs:2d9618aa-32bb-4b32-b62a-1b43f785584d
+    name: freeze_id.log
+    md5sum: 9df3e3d178b71bbc1370e89a329ae543
+    filesize: 1.2KB
+    filetype: .log
+    belongs_to_container: alspacdcs:6c843f1c-5225-4780-8a93-58315f5e9dfe
+- id: alspacdcs:b0d09887-a085-4d7c-a0d2-c9986a72c3db
+  name: freeze_id
+  data_distributions:
+  - id: alspacdcs:e69564ad-9e75-4eea-8779-5ecaf04cff23
+    name: freeze_id.hh
+    description: >-
+      plink .hh file see
+      https://www.cog-genomics.org/plink/1.9/formats#hh 
+    md5sum: 96660f1fa14a45bda605acdfb92f2d3e
+    filesize: 116K
+    filetype: .hh
+    belongs_to_container: alspacdcs:6c843f1c-5225-4780-8a93-58315f5e9dfe
+
+
+  

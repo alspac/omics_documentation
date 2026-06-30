@@ -1,0 +1,75 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gi_hapmap2_g1_2022-12-07_f2
+name: Genome-wide - HapMap2 imputed - G1 version 2022-12-07 freeze 2
+description: >-
+  Freeze 2 of 2022-12-07 version of Genome-wide array data imputed to the HapMap2 reference panel for G1 individuals
+  
+freeze_size: 5G
+linker_file_md5sum: 33b08d90fa3e43504308f20283088a6b
+woc_file_md5sum: 2feb3852dfd14c2868072624fd7fa1ea
+all_individuals_to_exclude_md5sum: da4785a577a4d837883710f7ab45af51
+git_tag: https://github.com/alspac/dataset_gi_hapmap2_g1/releases/tag/freeze2
+is_current_freeze: true
+freeze_number: 2
+freeze_date: 2022-12-19
+previous_freeze: alspacdcs:gi_hapmap2_g1_2022-12-07_f1
+next_freeze:
+freeze_of_alspac_dataset_version: alspacdcs:gi_hapmap2_g1_2022-12-07
+freeze_of_named_alspac_dataset: alspacdcs:gi_hapmap2_g1
+
+
+has_containers:
+  
+  - id: alspacdcs:63f74523-9ddd-4cc7-9037-d166bd1edba9
+    name: data
+    description: A dir/folder containing the plink freeze data files
+
+
+
+has_parts:
+  - id: alspacdcs:1219c7c8-6a5b-482a-bdfc-2f26a4df5885
+    name: freeze_id
+    data_distributions:
+    - id: alspacdcs:60f60918-c307-4350-a88e-1138c360a72b
+      name: freeze_id.fam
+      md5sum: f8a30a2ec01e03cd4c975d5193c42951
+      filesize: 273.1KB
+      filetype: .fam
+      number_of_participants: 8224
+      belongs_to_container: alspacdcs:63f74523-9ddd-4cc7-9037-d166bd1edba9
+  - id: alspacdcs:dd090263-6041-48f4-a28c-af81ff709614
+    name: freeze_id
+    data_distributions:
+    - id: alspacdcs:25a9b8c3-0426-4cfb-b916-d6807c36fc50
+      name: freeze_id.bim
+      md5sum: 854d50582220c70ae5645b1a1c799af1
+      filesize: 67.6MB
+      filetype: .bim
+      number_of_variants: 2543887
+      belongs_to_container: alspacdcs:63f74523-9ddd-4cc7-9037-d166bd1edba9
+  - id: alspacdcs:8b10969b-0e48-4c27-8e9d-efc812042839
+    name: freeze_id
+    data_distributions:
+    - id: alspacdcs:b2436f3c-fbd7-4470-ba44-dac809c767a3
+      name: freeze_id.bed
+      md5sum: 90f19b52657a4fff8b301efbd87ea057
+      filesize: 4.9GB
+      filetype: .bed
+      number_of_variants: 2543887
+      number_of_participants: 8224
+      belongs_to_container: alspacdcs:63f74523-9ddd-4cc7-9037-d166bd1edba9
+  - id: alspacdcs:260ae08f-7077-4fa6-b59d-e1249afddbcf
+    name: freeze_id
+    data_distributions:
+    - id: alspacdcs:3313fbd3-cd49-4c77-a1c6-5cc48d17fdbb
+      name: freeze_id.log
+      md5sum: 05abaddce1dd588b65cc575b2d59061c
+      filesize: 962.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:63f74523-9ddd-4cc7-9037-d166bd1edba9
+
+
+  
+  

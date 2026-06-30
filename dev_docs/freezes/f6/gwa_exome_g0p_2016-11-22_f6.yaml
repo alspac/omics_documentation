@@ -1,0 +1,69 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gwa_exome_g0p_2016-11-22_f6
+name: Freeze 6 version 2016-11-22 Genome-wide - Illumina exome core array - G0 partners
+description: >-
+  Freeze 6 version 2016-11-22 Genome-wide array data including genotype calls for G0 partners, including additional G0 mothers who were absent from previous genotyping rounds. 
+
+  Data in plink format, including .hh file, which is produced automatically when the input data contains heterozygous calls where they shouldn't be possible (haploid chromosomes, male X/Y), or there are nonmissing calls for nonmales on the Y chromosome. Consists of a text file with one line per error (sorted primarily by variant ID, secondarily by sample ID) with the following three fields:
+	1. Family ID
+	2. Within-family ID
+	3. Variant ID
+freeze_size: 281M
+linker_file_md5sum: 45415c7d4fae355b4fb2d6ccd042620d
+woc_file_md5sum: 6c887db8c7dd10cc695630ca73b41405
+all_individuals_to_exclude_md5sum: e4efce63f9f671548d08c8bb2f9cc4f7
+git_tag: https://github.com/alspac/dataset_gwa_exome_g0p/releases/tag/freeze6
+is_current_freeze: true
+freeze_number: 5
+freeze_date: 2025-09-30
+previous_freeze: alspacdcs:gwa_exome_g0p_2016-11-22_f5
+freeze_of_alspac_dataset_version: alspacdcs:gwa_exome_g0p_2016-11-22
+freeze_of_named_alspac_dataset: alspacdcs:gwa_exome_g0p
+
+contains:
+- data
+
+files: []
+data:
+  contains:
+  - freeze_id.bed
+  - freeze_id.bim
+  - freeze_id.fam
+  - freeze_id.hh
+  - freeze_id.log
+  files:
+  - id: alspacdcs:ec23e114-dc37-440f-a7cc-fca07375ccad
+    name: freeze_id.bed
+    md5sum: 304b0d356880c5174806ce08d7beffd3
+    filesize: 266.2MB
+    filetype: .bed
+    belongs_to: data
+  - id: alspacdcs:76ea8622-c436-4e75-a8d2-2c5b2bfd0d2c
+    name: freeze_id.bim
+    md5sum: 0fe43f888776059fef0a76d3f08d00ad
+    filesize: 13.9MB
+    filetype: .bim
+    number_of_variants: 507586
+    belongs_to: data
+  - id: alspacdcs:0e23f056-c8a1-4ccb-8f41-ffae41613be2
+    name: freeze_id.fam
+    md5sum: 5145c717970e73ceaa7268ce00a7ea15
+    filesize: 122.3KB
+    filetype: .fam
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:e5d619e3-7202-4d90-92f4-6a37e47bfe39
+    name: freeze_id.hh
+    md5sum: cfa6a113c8f8e54c4e5d4b69e8a31fa9
+    filesize: 115.3KB
+    filetype: .hh
+    belongs_to: data
+  - id: alspacdcs:773da93d-79bf-464c-a4d6-e3d35d9398f1
+    name: freeze_id.log
+    md5sum: a1ab2605df887f103555e24b11bb2545
+    filesize: 1.1KB
+    filetype: .log
+    belongs_to: data
+

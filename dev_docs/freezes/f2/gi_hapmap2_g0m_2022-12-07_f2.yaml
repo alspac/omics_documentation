@@ -1,0 +1,910 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gi_hapmap2_g0m_2022-12-07_f2
+name: Genome-wide - HapMap2 imputed - G0 mothers version 2022-12-07 freeze 2
+description: >-
+  Version 2022-12-07 freeze 2 of Genome-wide array data imputed to the HapMap2 reference panel for G0 mothers
+freeze_size: 4.9G
+linker_file_md5sum: 33b08d90fa3e43504308f20283088a6b
+woc_file_md5sum: 2feb3852dfd14c2868072624fd7fa1ea
+all_individuals_to_exclude_md5sum: da4785a577a4d837883710f7ab45af51
+git_tag: https://github.com/alspac/dataset_gi_hapmap2_g0m/releases/tag/freeze2
+is_current_freeze: true
+freeze_number: 2
+freeze_date: 2022-12-19
+previous_freeze: alspacdcs:gi_hapmap2_g0m_2022-12-07_f1
+next_freeze:
+freeze_of_alspac_dataset_version: alspacdcs:gi_hapmap2_g0m_2022-12-07
+freeze_of_named_alspac_dataset: alspacdcs:gi_hapmap2_g0m
+
+
+has_containers:
+  - id: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6 ## uuid
+    name: plink
+    description: A dir/folder containing the plink freeze data files
+
+    
+has_parts:
+  - id: alspacdcs:f52d36aa-ec51-4f2a-8e59-0ae28ad7b2ba
+    name: freeze_id_chr7
+    data_distributions:
+    - id: alspacdcs:cab80313-6d01-4104-992b-938a420762cd
+      name: freeze_id_chr7.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:a6ef0f28-7dbe-4810-8f71-94384d81fe5a
+    name: freeze_id_chr16
+    data_distributions:
+    - id: alspacdcs:4556b82b-fd79-4425-88b7-82f566134173
+      name: freeze_id_chr16.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:c7979cfb-552b-4335-a272-69ed873a8611
+    name: freeze_id_chr6
+    data_distributions:
+    - id: alspacdcs:5dd27720-3e0c-4aff-9e6d-27865afd26a8
+      name: freeze_id_chr6.log
+      md5sum: 4ada017794ed183673789bebf273da9c
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:981d5443-66ab-4ed7-a15a-faebf893cde1
+    name: freeze_id_chr20
+    data_distributions:
+    - id: alspacdcs:e5f0d521-d89d-4dcd-999b-f8486778f38c
+      name: freeze_id_chr20.log
+      md5sum: 01b5a0b1d68a90cd63964ad52c1250ba
+      filesize: 992.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:65f873bd-9a86-41c5-89c1-f37a000d9c96
+    name: freeze_id_chr5
+    data_distributions:
+    - id: alspacdcs:91173d72-76d4-4ab2-b125-2e11f9170e94
+      name: freeze_id_chr5.log
+      md5sum: cac146a314fb6850f5a083ac83e83544
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:eec90bbd-3b5b-438d-a80f-fbcb760ae7ba
+    name: freeze_id_chr5
+    data_distributions:
+    - id: alspacdcs:7288969b-99b9-439a-b88d-dec0186953dd
+      name: freeze_id_chr5.bim
+      md5sum: 187f34560b9d2bd4dab39498dc139b21
+      filesize: 4.4MB
+      filetype: .bim
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:d234cd8e-8241-4d8a-b062-7ecb584349be
+    name: freeze_id_chr20
+    data_distributions:
+    - id: alspacdcs:9c10f3e2-4ca3-452d-b709-fc8e57fe66bd
+      name: freeze_id_chr20.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:d1da4947-c33c-4a3a-8a04-d416ec7e1c5f
+    name: freeze_id_chr6
+    data_distributions:
+    - id: alspacdcs:2451e033-59cf-4b2a-b686-3776162dff67
+      name: freeze_id_chr6.bed
+      md5sum: 0339a72e8118ef67f600f2cc1392c136
+      filesize: 353.3MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 182381
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:8b7f0aad-c1d0-4175-b65c-0ce6392b2fed
+    name: freeze_id_chr21
+    data_distributions:
+    - id: alspacdcs:a35c7fc3-d3b0-4b66-9f89-bd8c99d563a1
+      name: freeze_id_chr21.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:02fe6c53-2451-456c-89d7-940ff2931ce5
+    name: freeze_id_chr15
+    data_distributions:
+    - id: alspacdcs:75624335-c6b0-4473-b505-731a6a068289
+      name: freeze_id_chr15.bim
+      md5sum: 7f9249a8777387658b9e880ccf6283cc
+      filesize: 1.9MB
+      filetype: .bim
+      number_of_variants: 168144
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:418912be-8357-493c-baa6-f6830a37feae
+    name: freeze_id_chr1
+    data_distributions:
+    - id: alspacdcs:bc8dc2d5-1a55-4547-b282-a8b0a7900098
+      name: freeze_id_chr1.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:c04e7148-b963-41fd-af51-62801893836c
+    name: freeze_id_chr3
+    data_distributions:
+    - id: alspacdcs:42a6b622-2c1b-471d-a255-a20fcd9cd6f3
+      name: freeze_id_chr3.bed
+      md5sum: 53993ff4c0346a90928ea6f57c316ae0
+      filesize: 337.7MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 174356
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:85ba529e-5d6e-4530-921e-2071c5f80ec2
+    name: freeze_id_chr1
+    data_distributions:
+    - id: alspacdcs:1fb0d26a-f00a-4e33-8792-1b0aa65b8187
+      name: freeze_id_chr1.bed
+      md5sum: 6fa5cc113c749e592d91583d5f257d14
+      filesize: 374.9MB
+      filetype: .bed
+      number_of_variants: 193554
+      number_of_participants: 8124
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:af6f016b-a1c9-4433-8782-c91e376f0324
+    name: freeze_id_chr18
+    data_distributions:
+    - id: alspacdcs:5bf8f5ab-0115-44f4-803d-edefaf5000e7
+      name: freeze_id_chr18.bim
+      md5sum: b2c3323ec24277ecff0b221f6d2795e3
+      filesize: 2.1MB
+      filetype: .bim
+      number_of_variants: 76812
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:465bb628-2422-471b-bdbc-44fce53711dd
+    name: freeze_id_chr12
+    data_distributions:
+    - id: alspacdcs:1302eb29-2946-4811-81cc-d5676ca58f85
+      name: freeze_id_chr12.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:c7fbf1df-07cc-4c80-b759-07cbedf0e91b
+    name: freeze_id_chr4
+    data_distributions:
+    - id: alspacdcs:ae1a6d71-f043-4617-87fd-9a58e5349851
+      name: freeze_id_chr4.bed
+      md5sum: c238bbb7d95f29fbba3c93e15b30bd23
+      filesize: 316.0MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 163157
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:048b5054-96f4-4bdb-be49-80871a143638
+    name: freeze_id_chr12
+    data_distributions:
+    - id: alspacdcs:8b8c3755-0a0b-4182-afc2-1af0bffc0c06
+      name: freeze_id_chr12.bed
+      md5sum: f8a4dcf29da25f900cfa689970d720ef
+      filesize: 241.8MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 124860
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:a82e3486-742c-4c9a-8178-23efeee5fea3
+    name: freeze_id_chr2
+    data_distributions:
+    - id: alspacdcs:030be247-22fa-4efc-aa77-a2a1594569e8
+      name: freeze_id_chr2.log
+      md5sum: a7341c7cc87876298c4223bf8f2532b7
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:4dcd9379-7b60-4f55-8056-60834950ea27
+    name: freeze_id_chr2
+    data_distributions:
+    - id: alspacdcs:73e393f1-614c-4e41-ab76-e7509b5eb672
+      name: freeze_id_chr2.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:2ffa871a-2482-4682-acc9-1aba3cc338db
+    name: freeze_id_chr18
+    data_distributions:
+    - id: alspacdcs:46c108df-3198-4c55-be22-02cf0a3685e6
+      name: freeze_id_chr18.log
+      md5sum: ec2dbf93e2522026a259ef92eaa68f3a
+      filesize: 992.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:05e64663-3254-4936-9d94-8ec1d2fe6f54
+    name: freeze_id_chr20
+    data_distributions:
+    - id: alspacdcs:8921be0d-e030-4e5c-b856-4fed0ba20b96
+      name: freeze_id_chr20.bed
+      md5sum: f825b426e7e551392dc8ff71a5463330
+      filesize: 122.8MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 63408
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:340779dd-9a08-4d61-97a3-f9d2454a8697
+    name: freeze_id_chr4
+    data_distributions:
+    - id: alspacdcs:67a76158-5855-4e2d-9878-c2eb30400e02
+      name: freeze_id_chr4.log
+      md5sum: 6893eb373427e28bcbe582dee47c99bb
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:5b0aebae-ab41-4f85-bc32-1a17db8561cb
+    name: freeze_id_chr10
+    data_distributions:
+    - id: alspacdcs:7169f332-5f15-4448-8488-88ad077ef750
+      name: freeze_id_chr10.log
+      md5sum: 069699ecfb02e6500637899361604f24
+      filesize: 994.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:629598d2-af99-4fc3-8df1-926e0b4055ef
+    name: freeze_id_chr14
+    data_distributions:
+    - id: alspacdcs:072393ab-7abc-48a7-81a3-ffc27db80662
+      name: freeze_id_chr14.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:7989ec08-73b5-496f-ad38-0741d6893d96
+    name: freeze_id_chr17
+    data_distributions:
+    - id: alspacdcs:948e762b-6ef3-4841-8f4f-27eb0d8df8db
+      name: freeze_id_chr17.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:8fdbdcd9-7c30-49bf-ab80-7c330d0a0ea4
+    name: freeze_id_chr8
+    data_distributions:
+    - id: alspacdcs:bb843328-cdf7-4efd-8429-9d93639a4307
+      name: freeze_id_chr8.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:eadca60d-5dd9-44ce-8ae9-0ad748d65e37
+    name: freeze_id_chr9
+    data_distributions:
+    - id: alspacdcs:d380082d-2870-42b6-9cca-c5a3fa444442
+      name: freeze_id_chr9.bed
+      md5sum: 5116ab4bcc98b90a546b5c4d2d801ec1
+      filesize: 236.5MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 122112
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:b0964999-77e4-4140-974d-e999df473438
+    name: freeze_id_chr6
+    data_distributions:
+    - id: alspacdcs:4af28bc0-bfd3-4761-a51f-27edb490bc2d
+      name: freeze_id_chr6.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:989ed402-a9f3-4b1e-93a3-b2d2016c8410
+    name: freeze_id_chr12
+    data_distributions:
+    - id: alspacdcs:4b4e0d6f-aa6b-44c3-8f73-dfc5e6425833
+      name: freeze_id_chr12.log
+      md5sum: 1d411d61a8eee5e9e0bf6804d1ba460e
+      filesize: 994.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:24b2cdf5-de78-49eb-89f4-654701aa69c8
+    name: freeze_id_chr4
+    data_distributions:
+    - id: alspacdcs:9ade1881-5fce-4c8e-9f89-99c0140c2f97
+      name: freeze_id_chr4.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:10ca2381-2e29-4596-953c-c0a9eb598e0a
+    name: freeze_id_chr19
+    data_distributions:
+    - id: alspacdcs:f7386c43-d1c9-4e1f-aa0c-3a72e97757dc
+      name: freeze_id_chr19.bim
+      md5sum: eb33f90e6c4f631aa9683c2fff5e75f7
+      filesize: 1012.3KB
+      filetype: .bim
+      number_of_variants: 37045
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:aa4339c4-0a36-424a-adb8-e0fafc1101ab
+    name: freeze_id_chr20
+    data_distributions:
+    - id: alspacdcs:d175700e-a482-4c65-8211-e9fc86a9e832
+      name: freeze_id_chr20.bim
+      md5sum: ebad5115bb5c0f68ed080c896452bfdd
+      filesize: 1.7MB
+      filetype: .bim
+      number_of_variants: 63408
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:d5bbf7ff-f2f1-4494-aad1-601262e8fe8c
+    name: freeze_id_chr21
+    data_distributions:
+    - id: alspacdcs:09521625-b72a-4164-8817-848cb6cba4be
+      name: freeze_id_chr21.bim
+      md5sum: b9b6bcad51c47f94a6b42c9b564c48b3
+      filesize: 924.7KB
+      filetype: .bim
+      number_of_variants: 33863
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:316f8a2a-9e44-437a-bb92-2de42c79dcf7
+    name: freeze_id_chr13
+    data_distributions:
+    - id: alspacdcs:ff468429-c179-4063-b8bc-4380b6f5bcbd
+      name: freeze_id_chr13.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:2a60adf0-81c6-4e02-b0f4-9f7dcc722094
+    name: freeze_id_chr15
+    data_distributions:
+    - id: alspacdcs:11b81410-2193-4a32-8ac4-8f021141243d
+      name: freeze_id_chr15.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:d84c1bcf-3c27-4b66-a375-7fa56e5e556d
+    name: freeze_id_chr11
+    data_distributions:
+    - id: alspacdcs:fec393d9-dfa8-40bd-8536-f5a91604949e
+      name: freeze_id_chr11.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:4c3f0cd8-77eb-436e-9aeb-fb2728925213
+    name: freeze_id_chr14
+    data_distributions:
+    - id: alspacdcs:aaa37490-b953-4925-b9be-830a3ceb8a9e
+      name: freeze_id_chr14.bim
+      md5sum: e6098ee196c0fb7b5db26cbd31bcb096
+      filesize: 2.3MB
+      filetype: .bim
+      number_of_variants: 83936
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:34f2f166-dfca-47b1-aba7-3c97c009c0dc
+    name: freeze_id_chr2
+    data_distributions:
+    - id: alspacdcs:369dcf88-503d-4a98-aa30-ce3cc7c1333a
+      name: freeze_id_chr2.bed
+      md5sum: 679c79dca22a15518494fbb2fdfb7a73
+      filesize: 427.7MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 220833
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:72d64db9-2e2f-4a82-9fa5-6722bd2cc9e4
+    name: freeze_id_chr18
+    data_distributions:
+    - id: alspacdcs:984ce9b9-9d6e-4ecc-bd1c-8d0902fee87e
+      name: freeze_id_chr18.bed
+      md5sum: bece589f78a088301a5a156239a6908b
+      filesize: 148.8MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 76812
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:c78b777e-00e9-42b2-93ba-a33ab809fba2
+    name: freeze_id_chr7
+    data_distributions:
+    - id: alspacdcs:1a22f317-71e7-41bb-9af0-ad6104aa29b6
+      name: freeze_id_chr7.bim
+      md5sum: 02d89651808eabe235b6c35e06a2a121
+      filesize: 3.8MB
+      filetype: .bim
+      number_of_variants: 143232
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:6a03837e-e8ab-41f4-ae91-56c5c9c2239f
+    name: freeze_id_chr15
+    data_distributions:
+    - id: alspacdcs:ee197d4a-1e33-468e-bac3-6dd0e662fb26
+      name: freeze_id_chr15.log
+      md5sum: c9f21ddf346a1b45de27a41176d06672
+      filesize: 992.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:5ad54753-f82e-4a1c-9ca3-e15cc6609bc8
+    name: freeze_id_chr21
+    data_distributions:
+    - id: alspacdcs:975e345d-deb5-4e15-89ec-ad342b18c2ba
+      name: freeze_id_chr21.bed
+      md5sum: 23b1e2c4f7ee74f8815d5ec296f6e43a
+      filesize: 65.6MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 33863
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:ec359f65-9310-44ad-852f-749402165764
+    name: freeze_id_chr4
+    data_distributions:
+    - id: alspacdcs:1e3ebe8f-8798-4625-b7b8-314f11114c0d
+      name: freeze_id_chr4.bim
+      md5sum: a2604d5a956bd4cbbdab49202aa69eea
+      filesize: 4.3MB
+      filetype: .bim
+      number_of_variants: 163157
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:1032066b-bb6b-402d-9d21-10728d344352
+    name: freeze_id_chr17
+    data_distributions:
+    - id: alspacdcs:d6b53dc8-3d27-413f-9227-e59a4df2c81a
+      name: freeze_id_chr17.log
+      md5sum: 9a23812f79c545fdf58fb33b64b506b3
+      filesize: 992.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:6a830c5f-7397-4e9c-a444-9f62c86547bf
+    name: freeze_id_chr14
+    data_distributions:
+    - id: alspacdcs:8801f40e-bce4-45dd-8a33-1f042497a694
+      name: freeze_id_chr14.bed
+      md5sum: 3c2e76766e229b0a2c80dc2e2cc0e3e2
+      filesize: 162.6MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 83936
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:34cd7eb5-3c5a-48c5-a3cb-058593705e43
+    name: freeze_id_chr3
+    data_distributions:
+    - id: alspacdcs:c5d5969b-af9d-4c8d-8266-e94f7c678071
+      name: freeze_id_chr3.log
+      md5sum: a65f7659065cfe53fff87169c1d9c4ab
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:d2da8b11-a918-4162-8bde-ad4f1fee8498
+    name: freeze_id_chr10
+    data_distributions:
+    - id: alspacdcs:1bc8b4fb-123b-4506-a87f-600cb9633dde
+      name: freeze_id_chr10.bim
+      md5sum: df9073ce37d5833c17a6dd7bb3ba689a
+      filesize: 3.8MB
+      filetype: .bim
+      number_of_variants: 138402
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:1405f6e5-e2b6-4b33-9966-218903dca75b
+    name: freeze_id_chr11
+    data_distributions:
+    - id: alspacdcs:6a00f4ee-57bc-447b-8399-2b3dec9c8e60
+      name: freeze_id_chr11.bim
+      md5sum: 313af6755f961e49ae6de817c365d509
+      filesize: 3.5MB
+      filetype: .bim
+      number_of_variants: 130069
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:bc090ee7-8ed4-4680-a1da-6c31b04ee5f6
+    name: freeze_id_chr9
+    data_distributions:
+    - id: alspacdcs:664eb2ff-6eb9-44f4-b39b-a0f9d309aefe
+      name: freeze_id_chr9.log
+      md5sum: 22c4c68aeedaeb7ca38e8c71340c5c42
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:aeb1d70c-bc8a-4e2b-a20c-7384336b199e
+    name: freeze_id_chr16
+    data_distributions:
+    - id: alspacdcs:0b8ea64e-a336-4e39-a6e8-e2b2d3959f2e
+      name: freeze_id_chr16.bed
+      md5sum: 6065cc7f5feb3d61dba0af30cb339e0f
+      filesize: 138.6MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 71550
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:5fa16fd8-d259-4e6b-9493-421777c1c84f
+    name: freeze_id_chr13
+    data_distributions:
+    - id: alspacdcs:4a5ed486-81ed-44d4-abac-87b743d14bfa
+      name: freeze_id_chr13.bed
+      md5sum: ceb02f423137bc0db69eaded93098b7d
+      filesize: 201.7MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 104120
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:fd96801b-0748-4d45-8ad8-7be84100f4fc
+    name: freeze_id_chr16
+    data_distributions:
+    - id: alspacdcs:35df00bc-5c43-46c3-a5a2-982de2a90be4
+      name: freeze_id_chr16.bim
+      md5sum: 2dbbbbf0790f71af86fc8ecd8b655d30
+      filesize: 1.9MB
+      filetype: .bim
+      number_of_variants: 71550
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:f02b09a6-44f6-4d1c-a73c-02d6b3cca994
+    name: freeze_id_chr2
+    data_distributions:
+    - id: alspacdcs:cc46d45e-b146-4134-957b-09eb643f03d7
+      name: freeze_id_chr2.bim
+      md5sum: 0153a626149a8a47c72f182c1ec77467
+      filesize: 5.9MB
+      filetype: .bim
+      number_of_variants: 220833
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:64e09193-67ae-4edf-ab58-2b4e463f1728
+    name: freeze_id_chr1
+    data_distributions:
+    - id: alspacdcs:7bee6dbf-34cf-4116-ab3d-63cc07a94bb5
+      name: freeze_id_chr1.log
+      md5sum: 7dfd825a254bb8f26d725c0d44b820bf
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:b9b97f2b-b0f6-4246-87e9-bf8c3c4c32fb
+    name: freeze_id_chr22
+    data_distributions:
+    - id: alspacdcs:11083cc8-a1be-4466-98b5-c1b2e1b5a4e1
+      name: freeze_id_chr22.bed
+      md5sum: 3b3671f1daaa9264fbfb455dfc6d4dcf
+      filesize: 65.5MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 33815
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:3a4d950e-abf6-43ef-8850-45abad00dd7c
+    name: freeze_id_chr17
+    data_distributions:
+    - id: alspacdcs:4172ee29-d042-4940-994d-3265bb2787ec
+      name: freeze_id_chr17.bim
+      md5sum: 9b2548fde72d0bb67fb185d45a6fb175
+      filesize: 1.6MB
+      filetype: .bim
+      number_of_variants: 58455
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:adb656b4-2822-40d6-8838-c18e3e3f8ebf
+    name: freeze_id_chr18
+    data_distributions:
+    - id: alspacdcs:656a5f6e-eae5-4f55-8b55-80e8c349274c
+      name: freeze_id_chr18.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:e417de2b-465b-45ed-837a-34aeaefc6b48
+    name: freeze_id_chr14
+    data_distributions:
+    - id: alspacdcs:94f6f643-d29f-4c32-b31e-fe5558b78c9a
+      name: freeze_id_chr14.log
+      md5sum: 69778e46742dd7508d07e18b1581e94f
+      filesize: 992.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:b1a3ade7-9927-4022-b51d-4625a22369e8
+    name: freeze_id_chr9
+    data_distributions:
+    - id: alspacdcs:97e35561-f3de-4d04-bdae-2c97208d020b
+      name: freeze_id_chr9.bim
+      md5sum: a7767f2a1bb755c3ebb0a1163961c2ed
+      filesize: 3.2MB
+      filetype: .bim
+      number_of_variants: 122112
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:d2e165c4-c48f-400d-b8d2-6395123ac76a
+    name: freeze_id_chr1
+    data_distributions:
+    - id: alspacdcs:bb1e5cd5-d421-4542-b0e8-c25473747924
+      name: freeze_id_chr1.bim
+      md5sum: 962617b049a9ab0100affffdab207c04
+      filesize: 5.1MB
+      filetype: .bim
+      number_of_variants: 193554
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:381d3715-b436-4780-9ede-c288504700f4
+    name: freeze_id_chr6
+    data_distributions:
+    - id: alspacdcs:e16425b1-c5ba-4820-a50f-10d3a95a59b6
+      name: freeze_id_chr6.bim
+      md5sum: 7b13b6830fe94fb988a2fcb77df59cc5
+      filesize: 4.8MB
+      filetype: .bim
+      number_of_variants: 182381
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:18b148e1-fb8b-42ba-ad0a-e6541b3e51fa
+    name: freeze_id_chr7
+    data_distributions:
+    - id: alspacdcs:30a02280-214c-4e60-b572-943955783af8
+      name: freeze_id_chr7.log
+      md5sum: 3f740bebb144f9f00494831f081c6ac6
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:3ee40f25-2d9a-471e-b97d-9c0501707e38
+    name: freeze_id_chr11
+    data_distributions:
+    - id: alspacdcs:e73114aa-2a66-4316-943a-a3d38838e110
+      name: freeze_id_chr11.bed
+      md5sum: 87629dc6736fd5d72e6655769af1195c
+      filesize: 251.9MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 130069
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:dd7cee6d-26a4-4831-adb7-17a7a1faa680
+    name: freeze_id_chr12
+    data_distributions:
+    - id: alspacdcs:698cc6cd-12f5-4efb-a8d0-f6867283ad0e
+      name: freeze_id_chr12.bim
+      md5sum: 656b255438b8175b1739abf77e171526
+      filesize: 3.4MB
+      filetype: .bim
+      number_of_variants: 124860
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:846bb3b7-c40c-41c5-9c87-9f360b7e035e
+    name: freeze_id_chr7
+    data_distributions:
+    - id: alspacdcs:953a7afa-016b-48ef-be0a-cf9062d0278e
+      name: freeze_id_chr7.bed
+      md5sum: 7c85c68841737d5f37816e75dae2e3a1
+      filesize: 277.4MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 143232
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:6d61adba-89cb-47de-b952-a0b9cad24e96
+    name: freeze_id_chr22
+    data_distributions:
+    - id: alspacdcs:2c3ddef2-b43b-4f02-a49d-bd0afc5e1097
+      name: freeze_id_chr22.log
+      md5sum: 14ab59ba4ea1f4fbd4c7a423c123cba9
+      filesize: 992.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:e6f230a4-bfb0-4808-a9d6-a740b2d14aa7
+    name: freeze_id_chr3
+    data_distributions:
+    - id: alspacdcs:60756365-1b25-4843-8312-96a5f9d0a1ba
+      name: freeze_id_chr3.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:b82587ef-9908-429e-9213-46ee81825a54
+    name: freeze_id_chr16
+    data_distributions:
+    - id: alspacdcs:eb7fae6a-30bb-4114-b173-88279df0d549
+      name: freeze_id_chr16.log
+      md5sum: 85416c5fa6142f0439ae70b37a5808b8
+      filesize: 992.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:02526725-2b5c-47b7-80da-1871d7116701
+    name: freeze_id_chr9
+    data_distributions:
+    - id: alspacdcs:088b72bf-84a7-470d-aa03-068a5f5d1779
+      name: freeze_id_chr9.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:b70b48f6-9c61-480c-8774-9efb22e65536
+    name: freeze_id_chr3
+    data_distributions:
+    - id: alspacdcs:e06abac9-3fed-47da-ad4f-b862d73abf0e
+      name: freeze_id_chr3.bim
+      md5sum: 7167d91e59ceee29494f6983809d7f1f
+      filesize: 4.6MB
+      filetype: .bim
+      number_of_variants: 174356
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:a650eecc-5a67-4ef4-a058-ed6a7ce24f73
+    name: freeze_id_chr10
+    data_distributions:
+    - id: alspacdcs:7e1b774d-2aa3-43e9-8603-bcce9aa9b525
+      name: freeze_id_chr10.bed
+      number_of_participants: 8124      
+      md5sum: b374362f0e810a9004fca6718462c2fc
+      filesize: 268.1MB
+      filetype: .bed
+      number_of_variants: 138402
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:8d16df55-6adc-4cba-9999-b1e325ca6945
+    name: freeze_id_chr8
+    data_distributions:
+    - id: alspacdcs:8ce7255a-3401-4195-a7bf-d69803699478
+      name: freeze_id_chr8.log
+      md5sum: 76a70ff4f7add78b2f89637e3021f304
+      filesize: 988.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:b55979e2-3e0e-4073-b430-bc1d02fe9407
+    name: freeze_id_chr19
+    data_distributions:
+    - id: alspacdcs:a4e2e16c-15ff-4f67-876b-3932b373c9c6
+      name: freeze_id_chr19.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:9ccbf5c6-772a-4244-9545-c468ec990443
+    name: freeze_id_chr19
+    data_distributions:
+    - id: alspacdcs:a2380e43-63c7-4564-8703-09103b1565d7
+      name: freeze_id_chr19.log
+      md5sum: 8918fede8f9b88416505c8724c522f5d
+      filesize: 992.0B
+      filetype: .log
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:b6a4d58d-591a-4898-bb6e-bdde7b4198e0
+    name: freeze_id_chr15
+    data_distributions:
+    - id: alspacdcs:177d4638-0d17-4c88-b800-69c147e0ba8e
+      name: freeze_id_chr15.bed
+      md5sum: 078d57d6732cf190ce12d041a70e9ea2
+      filesize: 140.0MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 72300
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:a9d9d58a-aef1-4718-97c5-11ae2090ee16
+    name: freeze_id_chr19
+    data_distributions:
+    - id: alspacdcs:bfb1e0c8-f021-491b-ac96-f1a2d8b20334
+      name: freeze_id_chr19.bed
+      md5sum: 843659fc778e2a82e3f46ea31991769a
+      filesize: 71.8MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 37045
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:2853c528-9e92-409f-9617-5d47c80f69c6
+    name: freeze_id_chr10
+    data_distributions:
+    - id: alspacdcs:c87b7fa0-896f-4eda-b5d2-428716967242
+      name: freeze_id_chr10.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:463d1f32-2048-4ab7-a856-86f85ad5ac45
+    name: freeze_id_chr13
+    data_distributions:
+    - id: alspacdcs:da76a088-3b7c-4423-a63e-c0ac64161350
+      name: freeze_id_chr13.log
+      md5sum: 6d3aa262c8f23ae7f35fac5b1e1dc07b
+      filesize: 994.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:5df062a6-f42c-434e-b391-2efebe06cc5b
+    name: freeze_id_chr22
+    data_distributions:
+    - id: alspacdcs:61d395a7-72e0-45bb-bfec-01bc49b916ad
+      name: freeze_id_chr22.bim
+      md5sum: 4850f4458270a4f8f30a682821b2b6f2
+      filesize: 920.9KB
+      filetype: .bim
+      number_of_variants: 33815
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:26c16bd2-6fe9-45da-9fa6-64da34877711
+    name: freeze_id_chr8
+    data_distributions:
+    - id: alspacdcs:76b9f534-850d-478b-ac7b-7bd163beb9cd
+      name: freeze_id_chr8.bim
+      md5sum: 6bd8f2157f87167c7c96ebf1d63d2b3c
+      filesize: 3.9MB
+      filetype: .bim
+      number_of_variants: 147483
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:dab3263d-94a9-4f44-813e-433f87428b3a
+    name: freeze_id_chr17
+    data_distributions:
+    - id: alspacdcs:c480b6e2-7110-4b65-a5e6-da1cf4ee4d4f
+      name: freeze_id_chr17.bed
+      md5sum: 18f30f3422904cf8c63a57c1417db323
+      filesize: 113.2MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 58455
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:ed9a395f-ce22-40e7-b9a3-309a53e1222f
+    name: freeze_id_chr22
+    data_distributions:
+    - id: alspacdcs:1ae14b83-bdd0-4e66-9068-4a296e064f84
+      name: freeze_id_chr22.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:aef1006c-d75c-4f3f-b625-64e89737b456
+    name: freeze_id_chr13
+    data_distributions:
+    - id: alspacdcs:8a3b4ea0-8535-4c4c-8f51-2f7f617eb93f
+      name: freeze_id_chr13.bim
+      md5sum: 35c6120b777725e7b480469d2e2a9686
+      filesize: 2.8MB
+      filetype: .bim
+      number_of_variants: 104120
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:472a41d3-23b5-481e-b8fa-c99a03ced9c1
+    name: freeze_id_chr21
+    data_distributions:
+    - id: alspacdcs:3debb92d-a3bc-45b4-a5fd-447912f4b7d6
+      name: freeze_id_chr21.log
+      md5sum: 12816586007445d7d63de68264e68035
+      filesize: 992.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:0a832be6-00cf-4e45-80a1-f1cd5fc1a77c
+    name: freeze_id_chr11
+    data_distributions:
+    - id: alspacdcs:e3651275-353a-4fa9-81f2-12987d0fa627
+      name: freeze_id_chr11.log
+      md5sum: 690bd8a865945e28a8a3b89fd7fd17c3
+      filesize: 994.0B
+      filetype: .log
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:608e24ca-625c-4e0d-8869-2a7f4646b9d1
+    name: freeze_id_chr8
+    data_distributions:
+    - id: alspacdcs:b48e11aa-6b2e-4340-9c62-ac1bccab7e8a
+      name: freeze_id_chr8.bed
+      md5sum: d3b9d2ee04e7420a000d727681fd64b1
+      filesize: 285.7MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 147483
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:7ecca087-d444-4a4d-be73-53a7e22f2236
+    name: freeze_id_chr5
+    data_distributions:
+    - id: alspacdcs:bcadaf0a-ef43-4c76-aff1-e3777d2930ab
+      name: freeze_id_chr5.bed
+      md5sum: 0a3d2ac67f9b14195900c9af64a9bb59
+      filesize: 325.7MB
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 168144
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+  - id: alspacdcs:2f717b0d-89a0-4697-931c-477269e5405c
+    name: freeze_id_chr5
+    data_distributions:
+    - id: alspacdcs:7aba68da-ec89-409f-af21-c261a98dea20
+      name: freeze_id_chr5.fam
+      md5sum: 20323cdc203fcadf4b2c208f7e15bd59
+      filesize: 277.7KB
+      filetype: .fam
+      number_of_participants: 8124      
+      belongs_to_container: alspacdcs:dabc73ca-1d45-40bb-b0ed-11fab248ddf6
+
+  

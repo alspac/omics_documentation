@@ -1,0 +1,198 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gwa_660_g0m_2022-12-05_f2
+name: Freeze 2 version 2022-12-05 Genome-wide - Illumina 660 quad - G0 mothers
+description: >-
+   Genome-wide array data including raw files and genotype calls for G0 mothers
+freeze_size: 2G
+linker_file_md5sum: 33b08d90fa3e43504308f20283088a6b
+woc_file_md5sum: 2feb3852dfd14c2868072624fd7fa1ea
+all_individuals_to_exclude_md5sum: da4785a577a4d837883710f7ab45af51
+git_tag: https://github.com/alspac/dataset_gwa_660_g0m/releases/tag/freeze2
+is_current_freeze: true
+freeze_number: 2
+freeze_date: 2022-12-19
+freeze_of_alspac_dataset_version: alspacdcs:gwa_660_g0m_2022-12-05
+freeze_of_named_alspac_dataset: alspacdcs:gwa_660_g0m
+
+
+
+has_containers:
+  - id: alspacdcs:b610f7ab-8af9-4bd4-8edc-4d90cd0d2763
+    name: data
+    description: A dir/folder containing the plink data files
+    
+  - id: alspacdcs:ab3e1d38-8d4f-46c9-b860-cbccddecd012
+    name: legacy1
+    description: A dir/folder containing the plink data files
+    belongs_to_container: alspacdcs:b610f7ab-8af9-4bd4-8edc-4d90cd0d2763
+
+  - id: alspacdcs:9f6244b7-b1c6-4164-9180-c996255d8de1
+    name: legacy2
+    description: A dir/folder containing the plink data files
+    belongs_to_container: alspacdcs:b610f7ab-8af9-4bd4-8edc-4d90cd0d2763
+
+has_parts:
+  - id: alspacdcs:39b88df9-de1c-4abd-abd2-68751b6a8e26
+    name: Biallelic genotype table
+    description: >-
+      The genetic data
+    data_distributions:
+    - id: alspacdcs:e0cfc624-5e48-43d0-b31a-160ed23e9768
+      name: freeze_id.bed
+      description: >-
+        Legacy 1 plink bed file.
+        Primary representation of genotype calls at biallelic
+        variants. Must be accompanied by .bim and .fam files.
+        The legacy1 distribution of the plink bed file.
+      md5sum: 8e0233613d6847420aa0c44e5d314c7a
+      filesize: 962M
+      filetype: .bed
+      number_of_participants: 8124
+      number_of_variants: 526688
+      belongs_to_container: alspacdcs:ab3e1d38-8d4f-46c9-b860-cbccddecd012
+    - id: alspacdcs:822e8560-f2f1-49fa-8b03-af745fe130ba
+      name: freeze_id.bed
+      description: >-
+        Legacy 2 plink bed file.
+        Primary representation of genotype calls at biallelic
+        variants. Must be accompanied by .bim and .fam files.
+        The legacy2 distribution of the plink bed file.
+      md5sum: 8e0233613d6847420aa0c44e5d314c7a
+      filesize: 962M
+      filetype: .bed
+      number_of_variants: 465740
+      number_of_participants: 8654
+      belongs_to_container: alspacdcs:9f6244b7-b1c6-4164-9180-c996255d8de1
+  - id: alspacdcs:58b8c0ca-ae2c-4cf6-b4f7-7cbf17a3b10f
+    name: Variant Information 
+    description: >-
+      Information about genetic variants
+    data_distributions:
+    - id: alspacdcs:60b656f8-fb99-4ccd-9701-d7d896b4658d
+      name: freeze_id.bim
+      description: >-
+        Legacy 1
+        Extended variant information file accompanying a .bed binary
+        genotype table. (--make-just-bim can be used to update just
+        this file.) A text file with no header line, and one line per
+        variant with the following six fields:
+
+          1.Chromosome code (either an integer, or 'X'/'Y'/'XY'/'MT';
+          '0' indicates unknown)
+          or name
+          2. Variant identifier
+          3. Position in morgans or centimorgans (safe to use dummy value of '0')
+          4. Base-pair coordinate (1-based; limited to 231-2)
+          5. Allele 1 (corresponding to clear bits in .bed; usually minor)
+          6. Allele 2 (corresponding to set bits in .bed; usually major)
+        
+      md5sum: 9cc913bd598cd4b088ba96599d6eb197
+      filesize: 13M
+      filetype: .bim
+      number_of_variants: 465740
+      belongs_to_container: alspacdcs:ab3e1d38-8d4f-46c9-b860-cbccddecd012
+    - id: alspacdcs:de57fccd-d6a5-4355-8522-c283f9ca589c
+      name: freeze_id.bim
+      description: >-
+        Legacy 2 
+        Extended variant information file accompanying a .bed binary
+        genotype table. (--make-just-bim can be used to update just
+        this file.) A text file with no header line, and one line per
+        variant with the following six fields:
+
+          1.Chromosome code (either an integer, or 'X'/'Y'/'XY'/'MT';
+          '0' indicates unknown)
+          or name
+          2. Variant identifier
+          3. Position in morgans or centimorgans (safe to use dummy value of '0')
+          4. Base-pair coordinate (1-based; limited to 231-2)
+          5. Allele 1 (corresponding to clear bits in .bed; usually minor)
+          6. Allele 2 (corresponding to set bits in .bed; usually major)
+        
+      md5sum: 9cc913bd598cd4b088ba96599d6eb197
+      filesize: 13M
+      filetype: .bim
+      number_of_variants: 465740
+      belongs_to_container: alspacdcs:9f6244b7-b1c6-4164-9180-c996255d8de1
+  - id: alspacdcs:f456e79f-2255-42d8-a121-82d80293a034
+    name:  Sample information
+    description: >-
+      Information about the samples for the dataset
+    data_distributions:
+    - id: alspacdcs:c59e34c3-62e6-4750-8beb-665876b255ff
+      name: freeze_id.fam
+      description: >-
+        legacy 1
+        
+        A text file with no header line, and one line per sample with the following six fields:
+
+        1. Family ID ('FID')
+        2. Within-family ID ('IID'; cannot be '0')
+        3. Within-family ID of father ('0' if father isn't in dataset)
+        4. Within-family ID of mother ('0' if mother isn't in dataset)
+        5. Sex code ('1' = male, '2' = female, '0' = unknown)
+        6. Phenotype value ('1' = control, '2' = case,
+        '-9'/'0'/non-numeric =
+        missing data if case/control)
+        
+      md5sum: 6b50057427ff4a9e1ed6bbbc49f28f14
+      filesize: 448k
+      filetype: .fam
+      number_of_participants: 8654
+      belongs_to_container: alspacdcs:ab3e1d38-8d4f-46c9-b860-cbccddecd012
+    - id: alspacdcs:b454c198-d15b-4420-ab75-270c0377c6eb
+      name: freeze_id.fam
+      description: >-
+        legacy2
+        
+        A text file with no header line, and one line per sample with the following six fields:
+
+        1. Family ID ('FID')
+        2. Within-family ID ('IID'; cannot be '0')
+        3. Within-family ID of father ('0' if father isn't in dataset)
+        4. Within-family ID of mother ('0' if mother isn't in dataset)
+        5. Sex code ('1' = male, '2' = female, '0' = unknown)
+        6. Phenotype value ('1' = control, '2' = case,
+        '-9'/'0'/non-numeric =
+        missing data if case/control)
+        
+      md5sum: 6b50057427ff4a9e1ed6bbbc49f28f14
+      filesize: 448k
+      filetype: .fam
+      number_of_participants: 8654
+      belongs_to_container: alspacdcs:9f6244b7-b1c6-4164-9180-c996255d8de1
+  
+## Add log files..?
+  
+  - id: alspacdcs:971d0382-a395-465c-ba91-e73d5957c768
+    name:  Log information
+    description: >-
+      Information about the plink run for making the dataset
+    data_distributions:
+    - id: alspacdcs:d6df50aa-c36f-4af9-8224-40f0cbd44e21
+      name: freeze_id.fam
+      description: >-
+        legacy 1 plink log file
+      md5sum: d99b968f44a8adc68098b2afdfbbe220
+      filesize: 1k
+      filetype: .log
+      belongs_to_container: alspacdcs:ab3e1d38-8d4f-46c9-b860-cbccddecd012
+  - id: alspacdcs:2e99b905-8f7a-4679-91af-19eaa043b345
+    name:  Log information
+    description: >-
+      Information about the plink run for making the dataset
+    data_distributions:        
+    - id: alspacdcs:fe7667c9-50ce-4385-a3f4-62a740a65336
+      name: freeze_id.log
+      description: >-
+        legacy2 plink log file
+                
+      md5sum: 6b50057427ff4a9e1ed6bbbc49f28f14
+      filesize: 1.1k
+      filetype: .log
+      belongs_to_container: alspacdcs:9f6244b7-b1c6-4164-9180-c996255d8de1
+  
+
+  

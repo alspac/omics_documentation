@@ -1,0 +1,56 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:wes_novaseq_g1_204-04-12_f6
+name: >- 
+  Whole Exome Sequencing - Novaseq - G1 version 2024-04-09 freeze 6
+description: >-
+  This contains whole exome sequencing done at the Broad institute, first introduced in freeze 4. It contains data in vcf 4.2 format and an index file in csi format. It is a subset of the G1 cohort, with participants who have withdrawn their consent removed and omics IDs applied according to the freeze. 
+  
+  Samples were selected for whole exome sequencing at the Broad Institute from the G1 cohort (the cohort of index children) and were from subjects who were singletons/unrelated and of European/British ancestry, had blood-derived DNA available, and had been genotyped on a whole genome genotyping array.
+
+  The QC was performed by at the Broad. The following thresholds were applied:
+  Chimera rate < 0.05
+  Contamination rate < 0.10
+  PF aligned rate < 0.60
+
+  87 individuals were removed from the dataset who were believed to have been a sample mismatch. These exomes had discordance rate of above 0.05 when  compared to existing array data using bcftools gtcheck.
+
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9980234/ describes this dataset in supplementary materials. 
+
+freeze_size: 28G
+linker_file_md5sum: 45415c7d4fae355b4fb2d6ccd042620d
+woc_file_md5sum: 6c887db8c7dd10cc695630ca73b41405
+all_individuals_to_exclude_md5sum: e4efce63f9f671548d08c8bb2f9cc4f7
+git_tag: https://github.com/alspac/dataset_wes_novaseq_g1/releases/tag/freeze6
+is_current_freeze: true
+freeze_number: 6
+freeze_date: 2025-09-30
+previous_freeze: alspacdcs:wes_novaseq_g1_204-04-12_f5
+
+freeze_of_alspac_dataset_version: alspacdcs:wes_novaseq_g1_2024-03-26
+freeze_of_named_alspac_dataset: alspacdcs:wes_novaseq_g1
+
+contains:
+- data
+files: []
+data:
+  contains:
+  - all_chr.vcf.gz.csi
+  - all_chr.vcf.gz
+  files:
+  - id: alspacdcs:614f9332-d95a-446a-a3fc-031649e1d6b3
+    name: all_chr.vcf.gz.csi
+    md5sum: afe84f33398dea988e73e6f66a781977
+    filesize: 785.7KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:60a87d01-0070-41a1-8026-fb726623bc40
+    name: all_chr.vcf.gz
+    md5sum: 3c6c1622289d2df4a5c871275c3bdb9a
+    filesize: 27.1GB
+    filetype: .gz
+    number_of_variants: 2965032
+    number_of_participants: 2879
+    belongs_to: data
+

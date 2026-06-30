@@ -1,0 +1,464 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_f4
+name: >-
+  Genome-wide - 1000G imputed - G0 mothers + G1 version 2015-10-30
+  freeze 4
+description: >-
+  This is the fourth freeze of the the 2015-10-30 version of
+  gi_1000g_g0m_g1 datatset. It contains data in the oxford format
+  which is a combination of bgen and sample (version 1.2) files. It is a subset of
+  the data in gi_1000g_g0m_g1_2015-10-30 limited to one format and
+  with participants who have withdrawn their consent removed.
+
+  The Dec 2013 haplotype release of 1000 genomes phase 1 version 3 have 199 reported SNPs
+  with incorrect strand. The strand issues are present in this imputation version. For more 
+  information and the origins of this list please visit:
+  https://mathgen.stats.ox.ac.uk/impute/data_download_1000G_phase1_integrated_SHAPEIT2_16-06-14.html
+
+  It is very unlikely that they have systematic effects across the genome and most 
+  probably are just isolated to these 199 known problematic SNPs.
+
+  The user is advised to discard them from their analysis.
+freeze_size: 122G
+linker_file_md5sum: fafe49f2e5ce4d5bd018fba250503eff
+woc_file_md5sum: 163b7668b82ec7e5e6b7e35aecbbb473
+all_individuals_to_exclude_md5sum: 92b14080f8a933c32fcb064767eb1112
+git_tag: https://github.com/alspac/dataset_gi_1000g_g0m_g1/releases/tag/freeze4
+is_current_freeze: true
+freeze_number: 4
+freeze_date: 2024-06-11
+previous_freeze: alspacdcs:gi_1000g_g0m_g1_2015-10-30_f3
+freeze_of_alspac_dataset_version: alspacdcs:gi_1000g_g0m_g1_2015-10-30
+freeze_of_named_alspac_dataset: alspacdcs:gi_1000g_g0m_g1
+
+has_parts:
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_sample_f4
+    name: Samples
+    description: >-
+      The samples in the data. To be used with the genetic data.
+    data_distributions:
+      - id: alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+        name: swapped.sample
+        description: >-
+          A plain text .sample file.
+          See https://doi.org/10.1101/308296 for file format details.
+        md5sum: 65bf6fc592b85ce69dec0473aca5b5cd
+        filesize: 1.3M
+        filetype: .sample
+        number_of_participants: 17444
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr1_f4
+    name: Chr1
+    description: Data for Chr1
+    data_distributions:
+      - id: alspacdcs:fad144852b7c9c929ea1a55b8481798c_filtered_01.bgen
+        name: filtered_01.bgen
+        description: >- 
+          An Oxford Bgen file for Chr1. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)       
+        md5sum: fad144852b7c9c929ea1a55b8481798c
+        filesize: 9.1G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 2155158
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr2_f4
+    name: Chr2
+    description: Data for Chr2
+    data_distributions:
+      - id: alspacdcs:91168a792595ee55375d6c72c881fa6c_filtered_02.bgen
+        name: filtered_02.bgen
+        description: >- 
+          An Oxford Bgen file for Chr2. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)         
+        md5sum: 91168a792595ee55375d6c72c881fa6c
+        filesize: 9.1G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 2346862
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr3_f4
+    name: Chr3
+    description: Data for Chr3
+    data_distributions:
+      - id: alspacdcs:6e898fe7aba1d39e832245267a9ec30e_filtered_03.bgen
+        name: filtered_03.bgen
+        description: >- 
+          An Oxford Bgen file for Chr1. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)         
+        md5sum: 6e898fe7aba1d39e832245267a9ec30e
+        filesize: 7.7G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1966662
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr4_f4
+    name: Chr4
+    description: Data for Chr4
+    data_distributions:
+      - id: alspacdcs:c7ba39fbff7de19ffd98b93ff217108b_filtered_04.bgen
+        name: filtered_04.bgen
+        description: >- 
+          An Oxford Bgen file for Chr4. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: c7ba39fbff7de19ffd98b93ff217108b
+        filesize: 8.4G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1968171
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr5_f4
+    name: Chr5
+    description: Data for Chr5
+    data_distributions:
+      - id: alspacdcs:173056913dd6dc1684e9118907af1fd5_filtered_05.bgen
+        name: filtered_05.bgen
+        description: >- 
+          An Oxford Bgen file for Chr5. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: 173056913dd6dc1684e9118907af1fd5
+        filesize: 6.9G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1808090
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr6_f4
+    name: Chr6
+    description: Data for Chr6
+    data_distributions:
+      - id: alspacdcs:b8296902cc14e29111b2caefbc52a00b_filtered_06.bgen
+        name: filtered_06.bgen
+        description: >- 
+          An Oxford Bgen file for Chr6. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+            (bgen v1.2)        
+        md5sum: b8296902cc14e29111b2caefbc52a00b
+        filesize: 6.8G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1755859
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr7_f4
+    name: Chr7
+    description: Data for Chr7
+    data_distributions:
+      - id: alspacdcs:3072cca6a05fdb782b858f70beed6e06_filtered_08.bgen
+        name: filtered_07.bgen
+        description: >- 
+          An Oxford Bgen file for Chr7. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+            (bgen v1.2)        
+        md5sum: 3072cca6a05fdb782b858f70beed6e06
+        filesize: 7.1G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1599387
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr8_f4
+    name: Chr8
+    description: Data for Chr8
+    data_distributions:
+      - id: alspacdcs:c57b0cc8c3b47c8058e6f95ba742a89d_filtered_08.bgen
+        name: filtered_08.bgen
+        description: >- 
+          An Oxford Bgen file for Chr8. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: c57b0cc8c3b47c8058e6f95ba742a89d
+        filesize: 5.9G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1557429
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr9_f4
+    name: Chr9
+    description: Data for Chr9
+    data_distributions:
+      - id: alspacdcs:0e0d21cb1dc4d276d0a4353cc7da0564_filtered_09.bgen
+        name: filtered_09.bgen
+        description: >- 
+          An Oxford Bgen file for Chr9. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)         
+        md5sum: 0e0d21cb1dc4d276d0a4353cc7da0564
+        filesize: 5.1G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1187731
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr10_f4
+    name: Chr10
+    description: Data for Chr10
+    data_distributions:
+      - id: alspacdcs:e5f8a44f260c009a9fec7bdc105ead76_filtered_10.bgen
+        name: filtered_10.bgen
+        description: >- 
+          An Oxford Bgen file for Chr10. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: e5f8a44f260c009a9fec7bdc105ead76
+        filesize: 5.4G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1361506
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr11_f4
+    name: Chr11
+    description: Data for Chr11
+    data_distributions:
+      - id: alspacdcs:7c64c009aaf9fdb84c21b31f51e28bfa_filtered_11.bgen
+        name: filtered_11.bgen
+        description: >- 
+          An Oxford Bgen file for Chr11. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: 7c64c009aaf9fdb84c21b31f51e28bfa
+        filesize: 5.4G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1356882
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr12_f4
+    name: Chr12
+    description: Data for Chr12
+    data_distributions:
+      - id: alspacdcs:8f0d903ca1cf24ca0e45494bd0a1426c_filtered_12.bgen
+        name: filtered_12.bgen
+        description: >- 
+          An Oxford Bgen file for Chr12. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: 8f0d903ca1cf24ca0e45494bd0a1426c
+        filesize: 5.4G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1314328
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr13_f4
+    name: Chr13
+    description: Data for Chr13
+    data_distributions:
+      - id: alspacdcs:e59348ea876d3f5c3b6331e738daa162_filtered_13.bgen
+        name: filtered_13.bgen
+        description: >- 
+          An Oxford Bgen file for Chr13. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: e59348ea876d3f5c3b6331e738daa162
+        filesize: 4.0G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 987740
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr14_f4
+    name: Chr14
+    description: Data for Chr14
+    data_distributions:
+      - id: alspacdcs:3f80471a1e183e478ca3674482ed89e4_filtered_14.bgen
+        name: filtered_14.bgen
+        description: >- 
+          An Oxford Bgen file for Chr14. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)         
+        md5sum: 3f80471a1e183e478ca3674482ed89e4
+        filesize: 3.9G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 904351
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr15_f4
+    name: Chr15
+    description: Data for Chr15
+    data_distributions:
+      - id: alspacdcs:2166a96fc0bbdc990b1bcb513f4372bd_filtered_15.bgen
+        name: filtered_15.bgen
+        description: >- 
+          An Oxford Bgen file for Chr15. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: 2166a96fc0bbdc990b1bcb513f4372bd
+        filesize: 3.7G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 812545
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr16_f4
+    name: Chr16
+    description: Data for Chr16
+    data_distributions:
+      - id: alspacdcs:c44b1d287c79c69b2171c6822339cf4b_filtered_16.bgen
+        name: filtered_16.bgen
+        description: >- 
+          An Oxford Bgen file for Chr16. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)         
+        md5sum: c44b1d287c79c69b2171c6822339cf4b
+        filesize: 4.3G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 865998
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr17_f4
+    name: Chr17
+    description: Data for Chr17
+    data_distributions:
+      - id: alspacdcs:e4c50e9c54d4baa59d191a756d60b32e_filtered_17.bgen
+        name: filtered_17.bgen
+        description: >- 
+          An Oxford Bgen file for Chr17. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: e4c50e9c54d4baa59d191a756d60b32e
+        filesize: 3.8G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 753174
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr18_f4
+    name: Chr18
+    description: Data for Chr18
+    data_distributions:
+      - id: alspacdcs:fa893fede52923d5805f8583dbed51bd_filtered_18.bgen
+        name: filtered_18.bgen
+        description: >- 
+          An Oxford Bgen file for Chr18. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: fa893fede52923d5805f8583dbed51bd
+        filesize: 3.5G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 783010
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr19_f4
+    name: Chr19
+    description: Data for Chr19
+    data_distributions:
+      - id: alspacdcs:999c860cfb0f3484d1a78ef639c594fa_filtered_19.bgen
+        name: filtered_19.bgen
+        description: >- 
+          An Oxford Bgen file for Chr19. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: 999c860cfb0f3484d1a78ef639c594fa
+        filesize: 4.0G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 603516
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr20_f4
+    name: Chr20
+    description: Data for Chr20
+    data_distributions:
+      - id: alspacdcs:59dd1ebbefb28c2b5818fb2aca9805de_filtered_20.bgen
+        name: filtered_20.bgen
+        description: >- 
+          An Oxford Bgen file for Chr20. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: 59dd1ebbefb28c2b5818fb2aca9805de
+        filesize: 2.8G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 617694
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr21_f4
+    name: Chr21
+    description: Data for Chr21
+    data_distributions:
+      - id: alspacdcs:dce2d85e4d08018ea365afdeac561447_filtered_21.bgen
+        name: filtered_21.bgen
+        description: >- 
+          An Oxford Bgen file for Chr21. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)          
+        md5sum: dce2d85e4d08018ea365afdeac561447
+        filesize: 1.9G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 377554
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr22_f4
+    name: Chr22
+    description: Data for Chr22
+    data_distributions:
+      - id: alspacdcs:b5ba868e802d8eee4ac76b0f878d427c_filtered_22.bgen
+        name: filtered_22.bgen
+        description: >- 
+          An Oxford Bgen file for Chr22. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)
+        md5sum: b5ba868e802d8eee4ac76b0f878d427c
+        filesize: 2.1G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 365644
+
+  - id: alspacdcs:gi_1000g_g0m_g1_2015-10-30_chr23_f4
+    name: Chr23
+    description: Data for Chr23
+    data_distributions:
+      - id: alspacdcs:512a78f6c379ce43e827da44a91b4c5f_filtered_23.bgen
+        name: filtered_23.bgen
+        description: >- 
+          An Oxford Bgen file for Chr23. To be used with
+          alspacdcs:65bf6fc592b85ce69dec0473aca5b5cd_swapped.sample
+          file.
+          See https://doi.org/10.1101/308296 for file format details.
+          (bgen v1.2)
+        md5sum: 512a78f6c379ce43e827da44a91b4c5f
+        filesize: 5.9G
+        filetype: .bgen
+        number_of_participants: 17444
+        number_of_variants: 1250218

@@ -1,0 +1,70 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gwa_550_g1_2022-12-05_f6
+name: >-
+  Genome-wide array data for G1 individuals 2022-12-05 freeze 6
+description: >-
+  The sixth freeze of the genome-wide array data for G1 based on the 2022-12-05 release. The data is in plink format.
+  
+  Contains .hh file, which is produced automatically when the input data contains heterozygous calls where they shouldn't be possible (haploid chromosomes, male X/Y), or there are nonmissing calls for nonmales on the Y chromosome. Consists of a text file with one line per error (sorted primarily by variant ID, secondarily by sample ID) with the following three fields:
+	1. Family ID
+	2. Within-family ID
+	3. Variant ID
+freeze_size: 997M
+linker_file_md5sum: 45415c7d4fae355b4fb2d6ccd042620d
+woc_file_md5sum: 6c887db8c7dd10cc695630ca73b41405
+all_individuals_to_exclude_md5sum: e4efce63f9f671548d08c8bb2f9cc4f7
+git_tag: https://github.com/alspac/dataset_gwa_550_g1/releases/tag/freeze6
+is_current_freeze: true
+freeze_number: 6
+freeze_date: 2025-09-30
+previous_freeze: alspacdcs:gwa_550_g1_2022-12-05_f5
+freeze_of_alspac_dataset_version: alspacdcs:gwa_550_g1_2022-12-05
+freeze_of_named_alspac_dataset: alspacdcs:gwa_550_g1
+
+contains:
+- data
+
+files: []
+data:
+  contains:
+  - freeze_id.bed
+  - freeze_id.bim
+  - freeze_id.fam
+  - freeze_id.hh
+  - freeze_id.log
+  files:
+  - id: alspacdcs:19718249-e6b9-437a-89e6-f8023285ba85
+    name: freeze_id.bed
+    md5sum: c708b16229b4a9af9ddd2f98e34b2d39
+    filesize: 981.4MB
+    filetype: .bed
+    belongs_to: data
+  - id: alspacdcs:bd518596-7d72-4662-a351-2aabc4b2c816
+    name: freeze_id.bim
+    md5sum: 0be48a05ee0e98d0de8180ae658768b2
+    filesize: 13.4MB
+    filetype: .bim
+    number_of_variants: 500527
+    belongs_to: data
+  - id: alspacdcs:d25e6ef8-f6c0-4a29-b7f9-1cf9cf4139bb
+    name: freeze_id.fam
+    md5sum: 09847a7ba78db2da9fd6495a5d771c4f
+    filesize: 248.9KB
+    filetype: .fam
+    number_of_participants: 8222
+    belongs_to: data
+  - id: alspacdcs:34ad861a-4492-41d5-a527-17e673aa8196
+    name: freeze_id.hh
+    md5sum: 609e4e8b8fd7f660b853b3f99013c0a4
+    filesize: 1.6MB
+    filetype: .hh
+    belongs_to: data
+  - id: alspacdcs:bad942d2-bd9e-4862-817c-d7e000bad2e0
+    name: freeze_id.log
+    md5sum: af9ddd5af43a34e2acf38ecb99d8fe4b
+    filesize: 1.1KB
+    filetype: .log
+    belongs_to: data
+

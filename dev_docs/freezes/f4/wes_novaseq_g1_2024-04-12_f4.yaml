@@ -1,0 +1,55 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:wes_novaseq_g1_204-04-12_f4
+name: >- 
+  Whole Exome Sequencing - Novaseq - G1 version 2024-04-09 freeze 4
+description: >-
+  This is first iteration of wes_novaseq_g1, first introduced in freeze 4. It contains data in vcf 4.2 format. It is a subset of the G1 cohort, with participants who have withdrawn their consent removed and omics IDs applied according to the freeze. Samples were selected for whole exome sequencing at the Broad Institute from the G1 cohort (the cohort of index children) and were from subjects who were singletons/unrelated and of European/British ancestry, had blood-derived DNA available, and had been genotyped on a whole genome genotyping array.
+
+  The QC was performed by the broad. The following thresholds were applied:
+  Chimera rate < 0.05
+  Contamination rate < 0.10
+  PF aligned rate < 0.60
+
+  87 individuals were removed from the dataset who were believed to have been a sample mismatch. These exomes had discordance rate of above 0.05 when  compared to existing array data using bcftools gtcheck.
+
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9980234/ describes this dataset in supplementary materials. 
+
+freeze_size: 28G
+linker_file_md5sum: fafe49f2e5ce4d5bd018fba250503eff
+woc_file_md5sum: 163b7668b82ec7e5e6b7e35aecbbb473
+all_individuals_to_exclude_md5sum: 92b14080f8a933c32fcb064767eb1112
+git_tag: https://github.com/alspac/dataset_wes_novaseq_g1/releases/tag/freeze4
+is_current_freeze: true
+freeze_number: 4
+freeze_date: 2024-06-11
+previous_freeze: N/A
+
+freeze_of_alspac_dataset_version: alspacdcs:wes_novaseq_g1_2024-03-26
+freeze_of_named_alspac_dataset: alspacdcs:wes_novaseq_g1
+
+has_parts:
+  - id: alspacdcs:wes_novaseq_g1_2024-04-09_all_chr_f4
+    name: all_chr
+    description: >-
+      All chromosomes and all participants within the dataset contained within a single vcf version 4.2 file, which has been compressed using bcftools 1.19.
+    data_distributions:
+      - id: alspacdcs:3e3bde5e-b410-4135-981b-f923f57a6ce0_all_chr.vcf.gz
+        name: all_chr.vcf.gz
+        description: >- 
+          vcf file containing all participants and chromosomes, to be used with all_chr.vcf.gz.csi
+        md5sum: 1f75c2f55107aceaf9d4e7edb19fd364
+        filesize: 28G
+        filetype:  vcf.gz
+        number_of_participants: 2879
+        #number_of_gene_expression_probe_values: 
+
+      - id: alspacdcs:4da2f634-bdb9-4b21-b051-6fa469ba711c_all_chr.vcf.gz.csi
+        name: all_chr.vcf.gz.csi
+        description: >-
+          index for vcf file - all_chr.vcf.gz, generated using bcftools v1.19.
+        md5sum: ff4baac889f49b1cb1611c3c63627890
+        filesize: 800K
+        filetype: .csi
+  

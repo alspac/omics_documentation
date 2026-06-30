@@ -1,0 +1,305 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:dnam_450_g0m_g1_2016-05-03_f3
+name: >-
+  DNA methylation - 450k - G0 mothers + G1 version 2016-05-03 Freeze 3
+description: >-
+  This is the third freeze of the 2016-05-03 version of
+  dnam_450_g0m_g1 dataset.
+
+freeze_size: 18G
+linker_file_md5sum: b528acad88cd1697129a7cd59aa14ada
+woc_file_md5sum: cf9249c306e766a8689f78197e1f5f25
+all_individuals_to_exclude_md5sum: 7faad74aeebaba4ed71aac783414d75b
+git_tag: https://github.com/alspac/dataset_dnam_450_g0m_g1/releases/tag/Freeze3
+is_current_freeze: true
+freeze_number: 3
+freeze_date: 2023-09-13
+previous_freeze: alspacdcs:dnam_450_g0m_g1_2016-05-03_f2
+freeze_of_alspac_dataset_version: alspacdcs:dnam_450_g0m_g1_2016-05-03
+freeze_of_named_alspac_dataset: alspacdcs:dnam_450_g0m_g1
+
+
+has_containers:
+  - id: alspacdcs:ea27b439-5647-4656-b3dd-568437a9d972
+    name: data
+    description: A dir/folder containing the data files
+  - id: alspacdcs:71babe5d-8096-4b81-badd-f092a285d9da
+    name: betas
+    description: A dir/folder containing the beta files
+    belongs_to_container: alspacdcs:ea27b439-5647-4656-b3dd-568437a9d972
+  - id: alspacdcs:fd31262e-5dcb-48a3-a5b0-5b295110094b
+    name: control_matrix
+    description: A dir/folder containing the control matrix files 
+    belongs_to_container: alspacdcs:ea27b439-5647-4656-b3dd-568437a9d972
+  - id: alspacdcs:0928ae7e-6d94-47ce-9890-a8350bcd46aa
+    name: derived
+    description: A dir/folder containing the derived data (e.g. Cell count predictions)
+    belongs_to_container: alspacdcs:ea27b439-5647-4656-b3dd-568437a9d972
+  - id: alspacdcs:e877f56c-6174-4427-a8ba-333b5632d85a
+    name: cellcounts
+    description: A dir/folder containing the cell count predictions
+    belongs_to_container: alspacdcs:0928ae7e-6d94-47ce-9890-a8350bcd46aa
+  - id: alspacdcs:8b59a158-94d0-4244-a779-f4695ceb3d9a
+    name: cord
+    description: >-
+      A dir/folder containing the cell count predictions
+      for cord.
+    belongs_to_container: alspacdcs:e877f56c-6174-4427-a8ba-333b5632d85a
+  - id: alspacdcs:3279aec3-c6c3-4d04-809e-94eadc51c0c8
+    name: andrews-and-bakulski
+    description: >-
+      A dir/folder containing the cell count predictions by
+      andrews-and-bakulski algorithm
+    belongs_to_container: alspacdcs:8b59a158-94d0-4244-a779-f4695ceb3d9a
+
+  - id: alspacdcs:8abae404-42a9-452a-9a26-7f6c8eed5c6b
+    name: gervinandlyle
+    description: >-
+      A dir/folder containing the cell count predictions by
+      gervinandlyle algorithm/method.
+    belongs_to_container: alspacdcs:8b59a158-94d0-4244-a779-f4695ceb3d9a
+
+  - id: alspacdcs:021ad3f5-6e32-42c0-91c6-f996a9b6e62b
+    name: gse68456
+    description: >-
+      A dir/folder containing the cell count predictions by
+      the gse68456 method.
+    belongs_to_container: alspacdcs:8b59a158-94d0-4244-a779-f4695ceb3d9a
+  - id: alspacdcs:ea167030-d783-46c5-b8d5-3cbd9431f396
+    name: houseman
+    description: >-
+      A dir/folder containing the cell count predictions by
+      houseman method. 
+    belongs_to_container: alspacdcs:e877f56c-6174-4427-a8ba-333b5632d85a
+  - id: alspacdcs:6e79ad66-78a5-4102-a071-7c259151d0af
+    name: detection_p_values
+    description: A dir/folder containing the matrix of detection values
+    belongs_to_container: alspacdcs:ea27b439-5647-4656-b3dd-568437a9d972
+  - id: alspacdcs:4e32e07e-181d-46d2-b134-71ee5f6bd53e
+    name: qc.objects_all
+    description: >-
+      A dir/folder containing the samples extracted from
+      lims and not cleaned. 
+    belongs_to_container: alspacdcs:ea27b439-5647-4656-b3dd-568437a9d972
+  - id: alspacdcs:5a4d2e29-aa60-493e-a33c-7bcb63be8088
+    name: qc.objects_clean
+    description: A dir/folder containing the cleaned samples from Lims 
+    belongs_to_container: alspacdcs:ea27b439-5647-4656-b3dd-568437a9d972
+  - id: alspacdcs:3275bc26-4695-43b8-915e-4bbc4d13018f
+    name: samplesheet
+    description: A dir/folder containing the manifest file from Lims.
+    belongs_to_container: alspacdcs:ea27b439-5647-4656-b3dd-568437a9d972
+
+has_parts:
+  - id: alspacdcs:5e9f67ac-4ddd-4535-9991-ea99fa112d45
+    name: betas
+    description: >-
+      Normalized betas using functional normalization.
+      We used 10 PCs on the controlmatrix to regress out technical
+      variation. Slide was regressed out as random effect before
+      normaliziation.
+      CpGs are in rows and samples in columns.
+    data_distributions:
+      - id: alspacdcs:8cace59a-0aef-4977-95eb-d6ef0bccc8b6
+        name: data.Robj
+        description: >-
+          R data object for the Normalized beta data.
+        md5sum: f28327f68c4286c3e0ae721020f55f49
+        filesize: 17G
+        filetype: .Robj
+        belongs_to_container: alspacdcs:71babe5d-8096-4b81-badd-f092a285d9da
+        number_of_participants: 
+  - id: alspacdcs:1100e73c-c40d-41d8-943b-978a155fbc5e
+    name: control matrix
+    description: >-
+      The 850 control probes are summarized in 42 control types.
+      These probes can roughly be divided into negative control probes
+        (613), probes intended for between array normalization (186)
+        and the remainder (49), which are designed for quality
+        control, including assessing the
+        bisulfite conversion rate. None of these probes are designed
+        to measure a biological signal.
+        The summarized control probes can be used as surrogates for
+        unwanted variation and are used for the functional
+        normalization.
+        Samples are rows and 42 control types are in columns.
+    data_distributions:
+      - id: alspacdcs:eaef665f-213a-40e7-9c4b-65dfc1955623
+        name: data.txt
+        description: >-
+          Plain text file of the control matrix.
+
+
+        md5sum: 443369530a5d75fdac8c1cac2fe45e15
+        filesize: 1.8M
+        filetype: .txt
+        belongs_to_container: alspacdcs:fd31262e-5dcb-48a3-a5b0-5b295110094b
+        number_of_participants:        
+
+  - id: alspacdcs:e87e270b-b4e9-45c8-85a9-80489d1a99d3
+    name: andrews and bakulksi cord cell counts
+    description: >-
+      Cellcounts in cord predicted using cord reference published in
+      Bakulski et al 2016 (PMID: 27019159). This reference has been
+      implemented in meffil. In this text file, samples are in rows and cell types in columns.
+    data_distributions:
+      - id: alspacdcs:c2b9acf3-09f5-4d38-8d66-26a37c8f804c
+        name: data.txt
+        description: >-
+          Plain text file of cellcounts in cord predicted using Bakulski.
+
+
+        md5sum: 79b04868cc502a1a34ade01958f22790
+        filesize: 118k
+        filetype: .txt
+        belongs_to_container: alspacdcs:3279aec3-c6c3-4d04-809e-94eadc51c0c8
+        number_of_participants: 912     
+
+  - id: alspacdcs:d059b0ff-65c1-4e39-8d4a-b129b5898811
+    name: geervin and lyle cord cell counts
+    description: >-
+      Cellcounts in cord predicted using GervinandLyle cord reference
+      (unpublised). This reference has been implemented in meffil.
+      Samples are in rows and cell types in columns.
+    data_distributions:
+      - id: alspacdcs:877af9e8-ecfb-46d6-8767-a76ee4c68b2c
+        name: data.txt
+        description: >-
+          Plain text file of cell counts predicted using GervinandLyle
+          cord reference.
+
+
+        md5sum: 0d8535330ac6e12e7f3c5a5f3f30e600
+        filesize: 100k
+        filetype: .txt
+        belongs_to_container: alspacdcs:8abae404-42a9-452a-9a26-7f6c8eed5c6b
+        number_of_participants: 912       
+
+  - id: alspacdcs:8cc1141b-13da-483a-aa47-2b3ca5b7b1c1
+    name: gse68456 cord cell counts
+    description: >-
+      Cellcounts in cord predicted using cord reference published in
+      de Goede et al (PMID: 26366232). This reference has been implemented in meffil.
+      Samples are in rows and cell types in columns.
+    data_distributions:
+      - id: alspacdcs:4df00b08-2234-4231-a408-c17f64f8e75d
+        name: data.txt
+        description: >-
+          Plain text file containinng cell counts predicted using cord reference.
+
+
+        md5sum: 837e1e40bf27d8f6bd1a402f016b798e
+        filesize: 120k
+        filetype: .txt
+        belongs_to_container: alspacdcs:021ad3f5-6e32-42c0-91c6-f996a9b6e62b
+        number_of_participants: 912
+
+  - id: alspacdcs:1153615c-a3d4-4bdf-a294-293994144626
+    name: houseman cell counts
+    description: >-
+      Cell counts extracted using Houseman algorithm implemented in
+      meffil (PMID: 22568884). Samples are in rows and cell types in columns.
+    data_distributions:
+      - id: alspacdcs:4b430991-4329-415c-8781-9f12e7944359
+        name: data.txt
+        description: >-
+          Text file of the cell counts calculated using Houseman algorithm.
+
+
+        md5sum: 2792f7708e710536c069b05c0192c57d
+        filesize: 569k
+        filetype: .txt
+        belongs_to_container: alspacdcs:ea167030-d783-46c5-b8d5-3cbd9431f396
+        number_of_participants: 4843           
+          
+  - id: alspacdcs:0225c24c-a4c6-4c29-a791-71ee7049f899
+    name: detection p values
+    description: >-
+       This matrix shows the detection pvalues for each sample and
+       each CpG and is extracted from the idat files using the "meffil.load.detection.pvalues"
+       function in meffil. CpGs are in rows and samples in columns.
+    data_distributions:
+      - id: alspacdcs:284e4a48-0ec9-4988-bbc9-55c752e94145
+        name: data.Robj
+        description: >-
+          R object file for the detection p values matrix
+
+        md5sum: 5b3445d77c5f212dcd10b1645aca7632
+        filesize: 418M
+        filetype: .Robj
+        belongs_to_container: alspacdcs:6e79ad66-78a5-4102-a071-7c259151d0af
+        number_of_participants:   
+
+  - id: alspacdcs:183a7d3b-16c9-427c-a2ff-ff4f303bdad6
+    name: qc objects all
+    description: >-
+      This objects contain samples extracted from LIMS and is not
+      cleaned up. This object has been used to do the data cleaning.
+      All data processing has been conducted using Meffil.
+      Meffil uses illuminaio R package to parse Illumina IDAT files
+      into a meffil object called qc.objects. All meffil functions,
+      QC summary, functional normalization and post-normalization QC summary
+      operate on the qc or norm.objects. Specifically, the qc.objects contain
+      raw control probe intensities, poor quality probes based on
+      detection Pvalues and number of beads, predicted sex,  predicted
+      cellcounts and a samplesheet with batch variables.
+      In addition, copy number variation can be extracted. This object is a list of individuals.
+    data_distributions:
+      - id: alspacdcs:32c99449-9401-4ccc-8806-1476a535acae
+        name: data.Robj
+        description: >-
+          R data file of the qc objects.
+
+        md5sum: 4e754e357d16b507650a5c5f56621dd3
+        filesize: 497M
+        filetype: .Robj
+        belongs_to_container: alspacdcs:4e32e07e-181d-46d2-b134-71ee5f6bd53e
+        number_of_participants:             
+
+  - id: alspacdcs:76972370-cdf4-4887-b4a5-14fe31236813
+    name: qc objects clean
+    description: >-
+      All data processing has been conducted using Meffil. Meffil uses
+      illuminaio R package to parse Illumina IDAT files into a meffil
+      object called norm.objects. All meffil functions, QC summary,
+      functional normalization and post-normalization QC summary operate on the norm.objects.
+      Specifically, the norm.objects contain raw control probe
+      intensities, quantile distributions of the raw intensities, poor
+      quality probes based on detection Pvalues and number of beads,
+      predicted sex, predicted cellcounts and a samplesheet with batch
+      variables. In addition, copy number variation can be extracted. This object is a list of individuals.
+    data_distributions:
+      - id: alspacdcs:5f2b149e-73dd-44b9-ab15-58d8ffded660
+        name: data.Robj
+        description: >-
+          R object file  of qc objects clean.
+
+
+        md5sum: c69ed033e28ea6f822a85c165cf78b83
+        filesize: 659M
+        filetype: .Robj
+        belongs_to_container: alspacdcs:5a4d2e29-aa60-493e-a33c-7bcb63be8088
+        number_of_participants:           
+
+  - id: alspacdcs:cfd86d55-286a-42cf-86af-ac72ffce4893
+    name: samplesheet
+    description: >-
+      Manifest file with columns extracted directly from LIMS and age,
+      sex, aln, timepoint, timecode, sampletype, genotypeQC columns to
+      remove population stratification samples, duplicate.rm column to
+      remove duplicates.
+      Samples in rows, variables in columns.
+    data_distributions:
+      - id: alspacdcs:727cb669-bda3-44c7-adac-57f67f53eb41
+        name: data.Robj
+        description: >-
+          R data object manifest file.
+
+
+        md5sum: f47ad58a27ebd89d3fe3c81d25b4dc08
+        filesize: 100K
+        filetype: .Robj
+        belongs_to_container: alspacdcs:3275bc26-4695-43b8-915e-4bbc4d13018f
+        number_of_participants: 4843               

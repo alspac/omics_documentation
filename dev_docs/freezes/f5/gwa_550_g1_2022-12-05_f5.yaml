@@ -1,0 +1,129 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gwa_550_g1_2022-12-05_f5
+name: >-
+  Genome-wide array data for G1 individuals 2022-12-05 freeze 5
+description: >-
+  The fith freeze of the genome-wide array data for G1 based on a
+  2022-12-05 release. The data is in plink format.
+freeze_size: 997M
+linker_file_md5sum: a8b3ed028e1a22a41e428612a62bc7c9
+woc_file_md5sum: 163b7668b82ec7e5e6b7e35aecbbb473
+all_individuals_to_exclude_md5sum: e551ddec737da29e25fc8d3119989a6a
+git_tag: https://github.com/alspac/dataset_gwa_550_g1/releases/tag/freeze5
+is_current_freeze: true
+freeze_number: 5
+freeze_date: 2025-02-27
+previous_freeze: alspacdcs:gwa_550_g1_2022-12-05_f4
+freeze_of_alspac_dataset_version: alspacdcs:gwa_550_g1_2022-12-05
+freeze_of_named_alspac_dataset: alspacdcs:gwa_550_g1
+
+has_containers:
+  - id: alspacdcs:1600720f-a580-4999-9bd6-4bbcd60554bb ## uuid
+    name: data
+    description: A dir/folder containing the two freeze data files
+
+    
+has_parts:
+  - id: alspacdcs:b84cc4d9-20b0-40d1-93d2-b5a4d221af3b
+    name: Biallelic genotype table
+    description: >-
+      genotype data
+    data_distributions:
+      - id: alspacdcs:a8552a46-1740-4056-8adf-38d32f6a7472
+        name: freeze_id.bed
+        description: >- 
+          Plink bed file.
+          Primary representation of genotype calls at biallelic
+          variants. Must be accompanied by .bim and .fam files.
+        md5sum: 94973786388f80000dcdad0a80514e37
+        filesize: 982M
+        filetype: .bed
+        number_of_participants: 8223
+        number_of_variants: 500527
+        belongs_to_container: alspacdcs:1600720f-a580-4999-9bd6-4bbcd60554bb
+  - id: alspacdcs:f79e204e-8f5c-4c85-9bd1-07b0e1f1e874
+    name: Variant Information
+    description: >-
+      Information about SNPS
+    data_distributions:
+      - id: alspacdcs:9b0b34c4-f31c-48e9-8cbd-f87d3257de11
+        name: freeze_id.bim
+        description: >-
+           Extended variant information file accompanying a .bed binary
+           genotype table. (--make-just-bim can be used to update just
+           this file.) A text file with no header line, and one line per
+           variant with the following six fields:
+
+           1. Chromosome code (either an integer, or 'X'/'Y'/'XY'/'MT';
+              '0' indicates unknown) or name
+           2. Variant identifier
+           3. Position in morgans or centimorgans (safe to use dummy value of '0')
+           4. Base-pair coordinate (1-based; limited to 231-2)
+           5. Allele 1 (corresponding to clear bits in .bed; usually minor)
+           6. Allele 2 (corresponding to set bits in .bed; usually major)
+        md5sum: b0789ac6126af474c916c80f77335f6a
+        filesize: 14M
+        filetype: .bim
+        number_of_variants: 500527
+        belongs_to_container: alspacdcs:1600720f-a580-4999-9bd6-4bbcd60554bb
+  - id: alspacdcs:6097a628-e5a5-4b03-9281-2efff7ae48f5
+    name: sample info
+    description: >-
+      Sample ids
+    data_distributions:
+      - id: alspacdcs:76b09971-7168-420f-b4f2-7f6482f5d0ef
+        name: freeze_id.fam
+        description: >-
+          A text file with no header line, and one line per sample
+          with the following six fields:
+            1. Family ID ('FID')
+            2. Within-family ID ('IID'; cannot be '0')
+            3. Within-family ID of father ('0' if father isn't in dataset)
+            4. Within-family ID of mother ('0' if mother isn't in dataset)
+            5. Sex code ('1' = male, '2' = female, '0' = unknown)
+            6. Phenotype value ('1' = control, '2' = case,
+            '-9'/'0'/non-numeric =
+            missing data if case/control)
+        md5sum: 2bc551594141e9da29b24488bdd2afe7
+        filesize: 256k
+        filetype: .fam
+        number_of_participants: 8223
+        belongs_to_container: alspacdcs:1600720f-a580-4999-9bd6-4bbcd60554bb
+  - id: alspacdcs:48aeacef-1450-4519-8eb7-c4c25420a4df
+    name: Heterozygous haploid and nonmale Y chromosome call list
+    description: >-
+      A plink report
+    data_distributions:
+      - id: alspacdcs:303a3c36-8b63-4c03-94a9-7fb35bf2885e
+        name: freeze_id.hh
+        description: >-
+          Produced automatically when the input data contains
+          heterozygous calls where they shouldn't be possible (haploid
+          chromosomes, male X/Y), or there are nonmissing calls for
+          nonmales on the Y chromosome.
+
+          A text file with one line per error (sorted primarily by
+          variant ID, secondarily by sample ID) with the following three fields:
+
+          Family ID
+          Within-family ID
+          Variant ID
+        md5sum: cce791501bb562953f352b9f54eacecb
+        filesize: 1.7M
+        filetype: .hh
+        belongs_to_container: alspacdcs:1600720f-a580-4999-9bd6-4bbcd60554bb
+  - id: alspacdcs:b243c546-07d3-43cb-9649-1926973f7211
+    name: Logs
+    description: >-
+      plink log
+    data_distributions:
+      - id: alspacdcs:34f0b85a-c298-4e21-9b8a-f9644d582a1e
+        name: freeze_id.log
+        description: >-
+          plink log file
+        md5sum: 5a63dd14cc69e894f78758f7ca3d8197
+        filesize: 512
+        filetype: .log
+        belongs_to_container: alspacdcs:1600720f-a580-4999-9bd6-4bbcd60554bb

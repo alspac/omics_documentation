@@ -1,0 +1,369 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:wgs_hiseq_g1_2016-08-18_f3
+name: Whole genome sequencing - G1 version 2016-08-18 freeze 3
+description: >-
+   This is the freeze 3 of version 2016-08-18 of the Whole genome sequencing for G1 individuals, part of the UK10K dataset.
+freeze_size: 350G
+linker_file_md5sum: b528acad88cd1697129a7cd59aa14ada
+woc_file_md5sum: cf9249c306e766a8689f78197e1f5f25
+all_individuals_to_exclude_md5sum: 7faad74aeebaba4ed71aac783414d75b
+git_tag: https://github.com/alspac/dataset_wgs_hiseq_g1/releases/tag/freeze3
+is_current_freeze: true
+freeze_number: 3
+freeze_date: 2023-09-13
+previous_freeze: alspacdcs:wgs_hiseq_g1_2016-08-18_f2
+freeze_of_alspac_dataset_version: alspacdcs:wgs_hiseq_g1_2016-08-18
+freeze_of_named_alspac_dataset: alspacdcs:wgs_hiseq_g1
+
+has_containers:
+  - id: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571 ## uuid
+    name: data
+    description: A dir/folder containing the freeze data files
+has_parts:
+  - id: alspacdcs:5633a76c-fdc5-4cb2-9ff4-e42df8619662
+    name: 10_freeze
+    data_distributions:
+    - id: alspacdcs:146a37b8-6eec-41e3-b369-0044a20e429b
+      name: 10_freeze.vcf.gz.csi
+      md5sum: 91511bf844e95e2c3589c5e4b8d29dc0
+      filesize: 97K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:48be8dec-e137-474d-808e-535563799202
+      name: 10_freeze.vcf.gz
+      md5sum: 0fbc3391092f6528bed700bb9678b160
+      filesize: 17G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:8b27a150-8809-4471-9374-1977c84496f6
+    name: 11_freeze
+    data_distributions:
+    - id: alspacdcs:4124a844-e108-42ed-8dfb-b0cebd4f1911
+      name: 11_freeze.vcf.gz.csi
+      md5sum: 0ab4531bb18ae0e0ff4d2b60a91e03bc
+      filesize: 97K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:3b35d468-471e-4f13-beef-16e7877f0a8b
+      name: 11_freeze.vcf.gz
+      md5sum: 9b0fca0596d382b861670db9d1f39a5d
+      filesize: 17G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:3ae0b8ea-47f9-4a99-a8df-67a2b62d8688
+    name: 12_freeze
+    data_distributions:
+    - id: alspacdcs:58b10348-5dba-43f5-87c9-0d7dcb7de96c
+      name: 12_freeze.vcf.gz.csi
+      md5sum: 6cb3ea848c9d2148666ab9d10bf18116
+      filesize: 98K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:60ccbba8-6747-46c6-9f87-31889c028199
+      name: 12_freeze.vcf.gz
+      md5sum: 51c4767c52e3771f6a1cf76f92686389
+      filesize: 17G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:ad543513-2135-4780-9af2-502401a46420
+    name: 13_freeze
+    data_distributions:
+    - id: alspacdcs:0f0c59e8-a860-4684-a5fa-8fed592af5f0
+      name: 13_freeze.vcf.gz.csi
+      md5sum: 0d9c2f70487241a97ffe5076c40bedb6
+      filesize: 71K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:b14dd88d-d6c3-4ebc-bd08-5219c9531292
+      name: 13_freeze.vcf.gz
+      md5sum: 89fbead51842c68140f9232264d0ee8d
+      filesize: 13G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:1fcb13e9-5275-4c42-a402-6cdafdbecaaa
+    name: 14_freeze
+    data_distributions:
+    - id: alspacdcs:d580c4bf-e41b-4e71-a24e-a5d2f94e8f82
+      name: 14_freeze.vcf.gz.csi
+      md5sum: a8073057cb520c8f581b359ad2e2838a
+      filesize: 65K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:4c5daf36-da19-4ef9-b2bf-58130d1ef311
+      name: 14_freeze.vcf.gz
+      md5sum: a8b0753bc6e7abc4b237eb01311a601f
+      filesize: 12G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:9ef54eaa-edea-46f1-b528-a8e3f29d15a0
+    name: 15_freeze
+    data_distributions:
+    - id: alspacdcs:a08d92a9-f555-46ab-afb9-92bc8dcc4d6c
+      name: 15_freeze.vcf.gz.csi
+      md5sum: add4c019bdb6588fa7a215ee326984b5
+      filesize: 59K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:de91ccf4-39b2-4084-8c6f-79912b8a926b
+      name: 15_freeze.vcf.gz
+      md5sum: a25568744021b27b89e5e402d86e7e74
+      filesize: 10G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:6208f513-618a-4cbc-8cdb-d5ae602ebf8c
+    name: 16_freeze
+    data_distributions:
+    - id: alspacdcs:e88c099e-7c0b-4473-93bd-51f3083f1b90
+      name: 16_freeze.vcf.gz.csi
+      md5sum: ee4ce9b3479a9c7ce482b59f0b2bd93d
+      filesize: 58K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:a456feb6-7e1a-498a-8d30-39065f4af552
+      name: 16_freeze.vcf.gz
+      md5sum: 31b6a197d0d939743199bf622e2abdab
+      filesize: 11G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:4972b5af-7c9f-4004-8c7a-ffa6c490791b
+    name: 17_freeze
+    data_distributions:
+    - id: alspacdcs:a4d3b46b-7ceb-4d59-ad1e-f1856712470f
+      name: 17_freeze.vcf.gz.csi
+      md5sum: 7120caa24202ee64a5a4b99e91bbac4d
+      filesize: 57K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:dca2737f-b31b-4768-ac29-5a0a64b6aa05
+      name: 17_freeze.vcf.gz
+      md5sum: f9550f900a3304209eeb3cfd74ffb973
+      filesize: 9.4G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:30815635-3a0d-4bbf-bceb-7128fe47c46b
+    name: 18_freeze
+    data_distributions:
+    - id: alspacdcs:bb32b4e7-82d9-4f95-8d72-2c61f9ef1961
+      name: 18_freeze.vcf.gz.csi
+      md5sum: b8682ac0f332494d59c44601221b42f3
+      filesize: 56K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:d47c688b-6819-4469-b3bf-a7dc591abbd9
+      name: 18_freeze.vcf.gz
+      md5sum: 56120050bd79d79c4cbdf2af9f47cc52
+      filesize: 9.7G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571  
+  - id: alspacdcs:8a371ba2-bbba-484f-9cee-9bdce9d4253e
+    name: 19_freeze
+    data_distributions:
+    - id: alspacdcs:93ccee60-f677-4d67-ba9a-30a47638126b
+      name: 19_freeze.vcf.gz.csi
+      md5sum: fd710d3410d43fd0c711eb2685f31d65
+      filesize: 41K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:366d7fd4-00fd-45a2-b2e5-f7261081b896
+      name: 19_freeze.vcf.gz
+      md5sum: 286780a3cd433f41669ebcbbb2797592
+      filesize: 7.2G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:27b7b3c6-0bfd-4dbc-b181-a3c5fe4847df
+    name: 20_freeze
+    data_distributions:
+    - id: alspacdcs:91e493ea-8e4f-4e8e-a22e-8f88c6b6766e
+      name: 20_freeze.vcf.gz.csi
+      md5sum: 2e5117bb3c3e50fb1ad169112975d6c4
+      filesize: 44K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:871922c6-eef7-4fdd-bcf6-d81c1c984a2e
+      name: 20_freeze.vcf.gz
+      md5sum: 60db6e4041f7d5ec491d5a86ffc92756
+      filesize: 7.6G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:b2e07654-8076-4fc4-8027-4afa99e34f40
+    name: 21_freeze
+    data_distributions:
+    - id: alspacdcs:518c911f-b753-4a69-a920-4f04c49a5587
+      name: 21_freeze.vcf.gz.csi
+      md5sum: 918199bf16c55ee8b099e90c78f7722a
+      filesize: 25K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:b699bbdb-d686-4796-8d25-da87a06cd122
+      name: 21_freeze.vcf.gz
+      md5sum: cbdc96d94b2a4bdd2265ac364020bd9e
+      filesize: 4.5G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:f2d80d1e-af15-42d0-a8a0-aa18ecf06b2c
+    name: 22_freeze
+    data_distributions:
+    - id: alspacdcs:6a0ae694-8985-419e-a4fb-7a84cd244628
+      name: 22_freeze.vcf.gz.csi
+      md5sum: 88e896a168ee7773a3bb179985d6dfd9
+      filesize: 4.6G
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:f0a555db-93f8-470b-9c76-c8f2c7d2bdc5
+      name: 22_freeze.vcf.gz
+      md5sum: 3dee0194f9f3279d7a9d63df36373c56
+      filesize: 25K
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571  
+  - id: alspacdcs:df7a4f81-5f57-4d95-b07a-fe2c81147827
+    name: 1_freeze
+    data_distributions:
+    - id: alspacdcs:a9048d61-ccb4-4570-be15-66e1f7f5edd3
+      name: .vcf.gz.csi
+      md5sum: 8015cf7a7c445913ab20e26c82e391d6
+      filesize: 165K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:0f331c08-9209-4523-bdc2-ba664fbdf290
+      name: .vcf.gz
+      md5sum: c57904a609267af336527b89c6b7d352
+      filesize: 28G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:d469118b-f62c-41ef-a686-2de4db94b534
+    name: 2_freeze
+    data_distributions:
+    - id: alspacdcs:6f05c026-1ede-4518-b911-89e3ae372eaf
+      name: 2_freeze.vcf.gz.csi
+      md5sum: 7614c0827ffd3d6b9330b06e17c63b70
+      filesize: 177K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:a3a71754-a81a-4b31-8c81-8581ca14d256
+      name: 2_freeze.vcf.gz
+      md5sum: 2931880238de0df38880a1a23cc2572c
+      filesize: 30G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:3364d4fb-3423-4e1d-8704-6006e15be96c
+    name: 3_freeze
+    data_distributions:
+    - id: alspacdcs:dcae2bd9-658a-4d04-b5bb-fc0c74f9f463
+      name: 3_freeze.vcf.gz.csi
+      md5sum: ba133388d8dd77faa69f2516f54371b1
+      filesize: 146K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:c1a8bda7-6453-49f8-852f-4f1445d87940
+      name: 3_freeze.vcf.gz
+      md5sum: e30f7e0ab96014e4e3c47005f61537d2
+      filesize: 25G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:8a7521a6-30bf-400e-9608-f16c98e1f174
+    name: 4_freeze
+    data_distributions:
+    - id: alspacdcs:aaa62301-361f-4779-83e8-8ab6a135a61b
+      name: 4_freeze.vcf.gz.csi
+      md5sum: 28e7addb16dd0405872b09489880b887
+      filesize: 139K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:526084e4-2c2d-4723-ba10-b6d26364fd99
+      name: 4_freeze.vcf.gz
+      md5sum: ecb5afbf8da9d64d016ba768807a8744
+      filesize: 24G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571  
+  - id: alspacdcs:81b2e40b-f29e-4390-ac7a-dd90f38e69c5
+    name: 5_freeze
+    data_distributions:
+    - id: alspacdcs:6ca7b22f-f416-439f-ade3-5ec00672c6f6
+      name: 5_freeze.vcf.gz.csi
+      md5sum: bd20d10d9cd6ba10d4a60ffb80e91466
+      filesize: 132K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:f67ce6d2-ee1c-4f2e-9841-0f76374f4969
+      name: 5_freeze.vcf.gz
+      md5sum: df1fb13feb38cdca9e0f8f1e97675be9
+      filesize: 23G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:8bceb3b2-0bed-4844-b3a8-49b9ab225a21
+    name: 6_freeze
+    data_distributions:
+    - id: alspacdcs:c29c3da4-6401-4d0a-b2bc-9a8466071b79
+      name: 6_freeze.vcf.gz.csi
+      md5sum: de346032233062928343da7b881b451e
+      filesize: 125K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:8f4a5481-c05f-4bb8-9c88-50da342a517e
+      name: 6_freeze.vcf.gz
+      md5sum: bba432e85f3fddfa10a6629e55b84ca9
+      filesize: 22G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:2dd0e39f-ea09-4148-bc79-7b6d0f53e18f
+    name: 7_freeze
+    data_distributions:
+    - id: alspacdcs:86afafd8-47db-4bd6-bf56-44349a0048cf
+      name: 7_freeze.vcf.gz.csi
+      md5sum: 116K
+      filesize: 212200545dbbbdadcb9d46250b29909b
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:a282b5fe-4737-46e7-918e-2c1cb556d7e7
+      name: 7_freeze.vcf.gz
+      md5sum: 8290747625ec7d1a049771cac46cf508
+      filesize: 20G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:d109d0e3-17a3-4a16-ae0b-820fce0ac7c8
+    name: 8_freeze
+    data_distributions:
+    - id: alspacdcs:e4908d8d-5be0-4f8c-9b6c-eaf7699803a1
+      name: 8_freeze.vcf.gz.csi
+      md5sum: e89d4b8718cf80caf269ad710439e420
+      filesize: 106K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:9df5ee5c-6804-4fce-a5cc-22acdaed6583
+      name: 8_freeze.vcf.gz
+      md5sum: dae9706dcaa2ef486df7273a4625cd07
+      filesize: 20G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:3ccc6e8a-4199-4691-be97-6e1772badab0
+    name: 9_freeze
+    data_distributions:
+    - id: alspacdcs:0829f3ad-fdfd-4dfc-a955-deb0cb015de1
+      name: 9_freeze.vcf.gz.csi
+      md5sum: 06983116ea48e1f1476d1284d67a708e
+      filesize: 86K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:bfbd9db9-1df0-491d-85fe-0d491464f8fe
+      name: 9_freeze.vcf.gz
+      md5sum: 67f7dfeff3eeb33b9201c504492b3036
+      filesize: 15G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+  - id: alspacdcs:46c814b7-fa5a-4dae-a039-b3f0a8cfc81d
+    name: X_freeze
+    data_distributions:
+    - id: alspacdcs:49783fc3-d727-45ff-9f82-37b7fe28e9c0
+      name: X_freeze.vcf.gz.csi
+      md5sum: 206d0f2365bdc9b128c8dad17b38039a
+      filesize: 110K
+      filetype: .csi
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
+    - id: alspacdcs:be2bfe88-5a33-4046-9f36-db90b1fa108c
+      name: X_freeze.vcf.gz
+      md5sum: cfd01b886762f1a53e6b928a0718f005
+      filesize: 11G
+      filetype: vcf.bgz
+      belongs_to_container: alspacdcs:90e90672-c949-4ac1-bd68-62a40b9f6571
