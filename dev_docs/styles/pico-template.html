@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$title$</title>
+
+    <!-- Pico CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.*/css/pico.min.css">
+
+    <!-- Pandoc header includes -->
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+
+    <!-- Pandoc highlighting -->
+    $if(highlighting-css)$
+    <style>
+        $highlighting-css$
+    </style>
+    $endif$
+
+<style>
+
+body {
+    height: 100%;
+    padding-right: 2rem; /* Adjust value as needed */
+    padding-left: 0rem;  /* Optional for symmetry */
+    max-width: 1800px;   /* Optional: keeps text from stretching too wide */
+    margin: auto;        /* Centers content */
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ----------------------------- *
+ *  Sidebar TOC
+ * ----------------------------- */
+
+#TOC {
+    position: sticky;
+    top: 0;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden; /* prevent sideways scroll */
+    white-space: normal; /* allow wrapping */
+    padding: 1.2rem;
+
+    font-size: 0.7rem;
+    line-height: 1.1;
+
+    /* transform: scale(0.9);
+    transform-origin: top left; */
+
+    background: var(--surface-1);
+    border-right: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-1);
+}
+
+#TOC h2 {
+    margin-top: 0;
+    /* font-size: 0.7rem; */
+}
+
+#TOC h3 {
+    margin-top: 0;
+    /* font-size: 0.65rem; */
+}
+
+/* prevent Pico CSS from applying vertical nav layout */
+#TOC nav, 
+#TOC ul,
+#TOC li,
+#TOC a {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
+
+/* TOC lists */
+#TOC ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#TOC li {
+    margin: 0.25rem 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#TOC li a {
+    text-decoration: none;
+    display: block;
+    padding: 0.15rem 0.3rem;
+    line-height: 1.3;
+    border-radius: 0.25rem;
+    color: var(--text-1);
+    font-size: 0.7rem;
+}
+
+#TOC li a:hover {
+    background: var(--surface-2);
+    color: var(--primary-500);
+}
+
+/* nested lists hidden initially */
+#TOC ul ul {
+    display: none;
+}
+
+#TOC li.open > ul {
+    display: block !important; 
+}
+
+#TOC li.collapsible { 
+    cursor: pointer; 
+}
+
+#TOC li.has-children > a .arrow {
+    float: right;
+    font-size: 0.7rem;
+    transition: transform 0.2s;
+}
+
+#TOC li.open > a .arrow {
+    transform: rotate(90deg);
+}
+
+#TOC li ul { display: none; }          /* initially collapsed sublists */
+
+/* #TOC li.open > ul { display: block; }  expanded */
+
+#TOC li.open > a::after {
+    transform: rotate(90deg);
+}
+
+/* ----------------------------- *
+ *  Main content
+ * ----------------------------- */
+
+main {
+    padding: 10px 10px 0px 20px; /* top right bottom left */
+    overflow-y: auto;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.header-image {
+    float: right;
+    max-width: 40%;   /* adjust size */
+    height: auto;
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* text left, image right */
+    align-items: center;            /* vertically center */
+    margin-bottom: 30px;            /* space below header */
+}
+
+.header-text {
+    max-width: 65%;                 /* text column width */
+}
+
+.header-image {
+    max-width: 30%;                 /* image column width */
+    height: auto;
+    display: block;
+}
+
+/* Code wrapping */
+pre[class*="language-"],
+code[class*="language-"],
+pre[class*="sourceCode"],
+code[class*="sourceCode"] {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+</style>
+</head>
+
+<body>
+<!-- SIDEBAR -->
+<aside id="TOC">
+    <h3>Contents</h3>
+    $if(toc)$
+        $toc$
+    $endif$
+</aside>
+
+<!-- MAIN CONTENT -->
+<main>
+
+$if(title)$
+<header class="header-container">
+    <div class="header-text">
+        <h1>$title$</h1>
+        $if(author)$<p class="author">$author$</p>$endif$
+        $if(date)$<p class="date">$date$</p>$endif$
+    </div>
+
+    $if(header-image)$
+    <img src="$header-image$" class="header-image" alt="Header image">
+    $endif$
+</header>
+$endif$
+
+$body$
+
+</main>
+
+<script>
+// Wait until the DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  const toc = document.getElementById("TOC");
+  if (!toc) return;
+
+  // Mark any li with nested ul as expandable
+  toc.querySelectorAll("li").forEach(li => {
+    if (li.querySelector("ul")) {
+      li.classList.add("has-children");
+    }
+  });
+
+  // Event delegation for clicks
+  toc.addEventListener("click", e => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    const li = link.closest("li");
+    if (!li) return;
+
+    const childUl = li.querySelector("ul");
+    if (childUl) {
+      // Toggle expand/collapse
+      const isOpen = li.classList.contains("open");
+      childUl.style.display = isOpen ? "none" : "block";
+      li.classList.toggle("open", !isOpen);
+      e.preventDefault(); // prevent jump
+    } else {
+      // Smooth scroll for leaf links
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) target.scrollIntoView({behavior: "smooth"});
+    }
+  });
+});
+</script>
+
+</body>
+</html>

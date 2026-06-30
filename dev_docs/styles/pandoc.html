@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$title$</title>
+
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+
+    <!-- Pandoc syntax highlighting CSS -->
+    $if(highlighting-css)$
+    <style>
+    $highlighting-css$
+    </style>
+    $endif$
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+            display: flex;
+            background: #fafafa;
+            color: #222;
+        }
+
+        #TOC {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            width: 250px;
+            padding: 20px;
+            background: #ffffff;
+            border-right: 1px solid #ccc;
+        }
+
+        #TOC ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #TOC li {
+            margin: 8px 0;
+        }
+
+        #TOC a {
+            text-decoration: none;
+            color: #444;
+        }
+
+        #TOC a:hover {
+            color: #005fa3;
+        }
+
+        #content {
+            flex: 1;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #TOC ul ul {
+            display: none;
+        }
+
+        #TOC li:hover > ul {
+            display: block;
+        }
+
+        .line-numbers .line-numbers-rows {
+            width: 2em;
+        }
+
+        .author {
+            font-style: italic;
+            color: #555;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            flex: 1;
+        }
+
+        .header-image {
+            max-height: 80px;
+            margin-left: 20px;
+            display: block;
+        }
+
+        /* Enable wrapping for Prism.js code blocks */
+        pre[class*="language-"] {
+            white-space: pre-wrap !important;
+            word-break: break-word !important;
+            overflow-wrap: anywhere !important;
+        }
+
+        /* Also wrap inside the <code> tag itself */
+        code[class*="language-"] {
+            white-space: pre-wrap !important;
+            word-break: break-word !important;
+            overflow-wrap: anywhere !important;
+        }
+
+                /* Enable wrapping for Prism.js code blocks */
+        pre[class*="sourceCode"] {
+            white-space: pre-wrap !important;
+            word-break: break-word !important;
+            overflow-wrap: anywhere !important;
+        }
+
+        /* Also wrap inside the <code> tag itself */
+        code[class*="sourceCode"] {
+            white-space: pre-wrap !important;
+            word-break: break-word !important;
+            overflow-wrap: anywhere !important;
+        }
+
+        .date {
+            font-style: italic;
+            color: #777;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body class="line-numbers">
+
+<nav id="TOC">
+$if(toc)$
+$toc$
+$endif$
+</nav>
+
+<div id="content">
+$if(title)$
+<div class="header-container">
+    <div class="header-title">
+        <h1>$title$</h1>
+        $if(author)$
+            <p class="author">$author$</p>
+        $endif$
+        $if(date)$
+            <p class="date">$date$</p>
+        $endif$
+    </div>
+    $if(header-image)$
+        <img src="$header-image$" alt="ALSPAC-logo" style="display:block; margin:auto; max-width:100%; height:auto;">
+    $endif$
+</div>
+$endif$
+
+$body$
+
+</div>
+
+</body>
+</html>

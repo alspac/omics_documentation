@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>$title$</title>
+$for(author)$<meta name="author" content="$author$">$endfor$
+
+<!-- ========================= -->
+<!-- Custom Org / ReadTheOrg CSS -->
+<!-- ========================= -->
+
+<style>
+#footlogo { display: none; }
+pre { white-space: pre-wrap; }
+</style>
+
+<!-- ReadTheOrg styles -->
+<link rel="stylesheet" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+
+<!-- ========================= -->
+<!--  Required Libraries       -->
+<!-- ========================= -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+
+<!-- ========================= -->
+<!--    Sticky Header Script   -->
+<!-- ========================= -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Apply sticky headers to all tables
+  $$("table").stickyTableHeaders();
+});
+</script>
+
+<!-- ========================= -->
+<!-- Custom ALSPAC Navigation Logic -->
+<!-- ========================= -->
+
+<script>
+  function scrollToResource(about) {
+    const table = document.querySelector(`table[about="${about}"]`);
+    if (table) {
+      table.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function handleRedirection() {
+    const url = new URL(window.location.href);
+    const hash = url.hash.substr(1);
+    if (hash) {
+      const actualAnchor = document.getElementById(hash);
+      if (actualAnchor) {
+        actualAnchor.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        const about = `http://purl.org/alspac/alspac-data-catalogue-schema/${hash}`;
+        scrollToResource(about);
+      }
+    }
+  }
+
+  function handleInternalNavigation(event) {
+    const target = event.target;
+    if (target.tagName.toLowerCase() === 'a') {
+      const href = target.getAttribute('href');
+      if (href.startsWith('http://purl.org/alspac/alspac-data-catalogue-schema/')) {
+        event.preventDefault();
+        const resourceName = href.replace('http://purl.org/alspac/alspac-data-catalogue-schema/', '');
+        const about = `http://purl.org/alspac/alspac-data-catalogue-schema/${resourceName}`;
+        scrollToResource(about);
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', handleRedirection);
+  document.addEventListener('click', handleInternalNavigation);
+</script>
+
+<!-- Insert any user-specified header includes -->
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!--         TOC Sidebar       -->
+<!-- ========================= -->
+$if(toc)$
+<nav id="TOC">
+$toc$
+</nav>
+$endif$
+
+<!-- ========================= -->
+<!--        Main Content       -->
+<!-- ========================= -->
+<div id="content">
+$body$
+</div>
+
+</body>
+</html>
