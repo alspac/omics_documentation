@@ -1,7 +1,7 @@
 #+TITLE: ALSPAC OMICs Data Catalogue
 #+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
 #+HTML_HEAD_EXTRA: <style> #footlogo { display: none; } </style>
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+SETUPFILE: /mnt/storage/private/alspacdata/omics_data_catalogue/omics_documentation/theme-readtheorg.setup
 #+OPTIONS: ^:nil
 #+AUTHOR: ALSPAC
 #+HTML_HEAD: <style type="text/css">pre {white-space: pre-wrap;}</style>
@@ -598,5 +598,4 @@ omics data.
 If you can not find the answer to your question or you think there is
 something wrong with your data then please contact the alspac-omics@bristol.ac.uk
 mailbox and we will do our best to help you. 
-
 

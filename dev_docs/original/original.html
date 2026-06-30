@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="ALSPAC" />
+  <title>ALSPAC OMICs Data Catalogue</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  <style> #footlogo { display: none; } </style>
+  <style type="text/css">pre {white-space: pre-wrap;}</style>
+  <script>
+  function scrollToResource(about) {
+  const table = document.querySelector(`table[about="${about}"]`);
+  if (table) {
+  table.scrollIntoView({ behavior: 'smooth' });
+  }
+  }
+  
+  function handleRedirection() {
+  const url = new URL(window.location.href);
+  const hash = url.hash.substr(1);
+  if (hash) {
+  const actualAnchor = document.getElementById(hash);
+  if (actualAnchor) {
+  actualAnchor.scrollIntoView({ behavior: 'smooth' });
+  } else {
+  const about = `http://purl.org/alspac/alspac-data-catalogue-schema/${hash}`;
+  scrollToResource(about);
+  }
+  }
+  }
+  
+  function handleInternalNavigation(event) {
+  const target = event.target;
+  if (target.tagName.toLowerCase() === 'a') {
+  const href = target.getAttribute('href');
+  if (href.startsWith('http://purl.org/alspac/alspac-data-catalogue-schema/')) {
+  event.preventDefault();
+  const resourceName = href.replace('http://purl.org/alspac/alspac-data-catalogue-schema/', '');
+  const about = `http://purl.org/alspac/alspac-data-catalogue-schema/${resourceName}`;
+  scrollToResource(about);
+  }
+  }
+  }
+  
+  document.addEventListener('DOMContentLoaded', handleRedirection);
+  document.addEventListener('click', handleInternalNavigation);
+  </script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">ALSPAC OMICs Data Catalogue</h1>
+<p class="author">ALSPAC</p>
+</header>
+<h1 id="introduction">Introduction</h1>
+<p>Welcome to the ALSPAC Omics Catalog, your gateway to the
+comprehensive omics data offered by ALSPAC. Our catalog features a
+variety of named ALSPAC datasets, each consisting of collected or
+produced data that has been organized, named, and curated for ease of
+use. Every named ALSPAC dataset comes with accompanying metadata that
+provides information about the dataset as a whole. Each named ALSPAC
+dataset has at least one release version that includes a curated
+selection of files detailed in the metadata sections.</p>
+<p>Please note that these datasets are not generally accessible.
+However, the information is made available for browsing to help both
+internal ALSPAC users and external researchers understand the data and
+facilitate custom data requests. See <a
+href="http://www.bristol.ac.uk/alspac/researchers/access/">http://www.bristol.ac.uk/alspac/researchers/access/</a>
+for how to do this.</p>
+<p>For our external ALSPAC collaborators, we offer as standard "freezes"
+of specific dataset versions of named ALSPAC datasets. These freezes,
+along with their metadata, are outlined in this catalog. External
+collaborators will be granted access to these freezes upon request (See
+<a
+href="http://www.bristol.ac.uk/alspac/researchers/access/">http://www.bristol.ac.uk/alspac/researchers/access/</a>
+). A freeze represents a carefully selected subset of data files within
+a version, containing the core data from a dataset with withdrawn
+consent removed and specific dataset IDs applied. These freezes are
+subject to periodic updates.</p>
+<svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nodes -->
+  <circle cx="50" cy="100" r="30" fill="#7BC6FF"/>
+  <circle cx="200" cy="100" r="30" fill="#7BC6FF"/>
+  <circle cx="350" cy="100" r="30" fill="#7BC6FF"/>
+
+
+
+  <!-- Node descriptions -->
+  <text x="80" y="55" text-anchor="middle" font-family="Arial" font-size="12" fill="black">NamedALSPACDataset</text>
+  <text x="200" y="55" text-anchor="middle" font-family="Arial" font-size="12" fill="black">DatasetVersion</text>
+  <text x="350" y="55" text-anchor="middle" font-family="Arial" font-size="12" fill="black">Freeze</text>
+
+  <!-- Edges -->
+  <line x1="80" y1="100" x2="170" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="230" y1="100" x2="320" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Arrowhead -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black"/>
+    </marker>
+  </defs>
+</svg>
+
+<p>The metadata presented in our catalog adheres to the ALSPAC Data
+Catalog Schema, which is crafted in LinkML. To explore the full schema
+documentation, please visit: <a
+href="https://alspac.github.io/alspac-data-catalogue-schema/">https://alspac.github.io/alspac-data-catalogue-schema/</a></p>
+<p>This website is equipped with RDFa, enabling the metadata to be
+machine-readable and allowing for the creation of queries using SPARQL
+with compatible tools, such as Apache <a
+href="https://any23.apache.org/">Any23</a> and <a
+href="https://jena.apache.org/">Apache Jena</a>.</p>
+<p>For more information about this see the document on <a
+href="https://www.go-fair.org/fair-principles/">FAIR</a> data principles
+and the document describing the rational and construction of this
+catalog <a
+href="https://github.com/alspac/alspac-data-catalogue-schema/blob/main/paper/paper.org">here</a>.</p>
+<h1 id="catalog-overview">Catalog overview</h1>
+
+<h1 id="genetic-array-data">Genetic Array Data</h1>
+<h2 id="genome-wide---illumina-550-quad---g1-gwa_550_g1">Genome-wide -
+Illumina 550 quad - G1 (gwa_550_g1)</h2>
+<h3 id="dataset-docs">Dataset Docs</h3>
+
+<h3 id="version-docs">Version Docs</h3>
+
+<h3 id="freeze-docs">Freeze Docs</h3>
+
+<h2
+id="genome-wide---illumina-exome-core-array---g0-partners-gwa_exome_g0p">Genome-wide
+- Illumina exome core array - G0 partners (gwa_exome_g0p)</h2>
+<h3 id="dataset-docs-1">Dataset Docs</h3>
+
+<h3 id="version-docs-1">Version Docs</h3>
+
+<h3 id="freeze-docs-1">Freeze Docs</h3>
+
+<h2
+id="genome-wide---illumina-660-quad---g0-mothers-gwa_660_g0m">Genome-wide
+- Illumina 660 quad - G0 mothers (gwa_660_g0m)</h2>
+<h3 id="dataset-docs-2">Dataset Docs</h3>
+
+<h3 id="version-docs-2">Version Docs</h3>
+
+<h3 id="freeze-docs-2">Freeze Docs</h3>
+
+<h2 id="genome-wide---cnv---g1-cnv_550_g1">Genome-wide - CNV - G1
+(cnv_550_g1)</h2>
+<h3 id="dataset-docs-3">Dataset Docs</h3>
+
+<h3 id="version-docs-3">Version Docs</h3>
+
+<h3 id="freeze-docs-3">Freeze Docs</h3>
+
+<h1 id="imputed-data">Imputed Data</h1>
+<h2
+id="genome-wide---hrc-imputed---g0-mothers-g1-gi_hrc_g0m_g1">Genome-wide
+- HRC imputed - G0 mothers + G1 (gi_hrc_g0m_g1)</h2>
+<h3 id="dataset-docs-4">Dataset Docs</h3>
+
+<h3 id="version-docs-4">Version Docs</h3>
+
+<h3 id="freeze-docs-4">Freeze Docs</h3>
+
+<h2 id="genome-wide---hapmap2-imputed---g1-gi_hapmap2_g1">Genome-wide -
+HapMap2 imputed - G1 (gi_hapmap2_g1)</h2>
+<h3 id="dataset-docs-5">Dataset Docs</h3>
+
+<h3 id="version-docs-5">Version Docs</h3>
+
+<h3 id="freeze-docs-5">Freeze Docs</h3>
+
+<h2
+id="genome-wide---hapmap2-imputed---g0-mothers-gi_hapmap2_g0m">Genome-wide
+- HapMap2 imputed - G0 mothers (gi_hapmap2_g0m)</h2>
+<h3 id="dataset-docs-6">Dataset Docs</h3>
+
+<h3 id="version-docs-6">Version Docs</h3>
+
+<h3 id="freeze-docs-6">Freeze Docs</h3>
+
+<h2
+id="genome-wide---1000g-imputed---g0-partners-gi_1000g_g0p">Genome-wide
+- 1000G imputed - G0 partners (gi_1000g_g0p)</h2>
+<h3 id="dataset-docs-7">Dataset Docs</h3>
+
+<h3 id="version-docs-7">Version Docs</h3>
+
+<h3 id="freeze-docs-7">Freeze Docs</h3>
+
+<h2
+id="genome-wide---1000g-imputed---g0-mothers-g1-gi_1000g_g0m_g1">Genome-wide
+- 1000G imputed - G0 mothers + G1 (gi_1000g_g0m_g1)</h2>
+<h3 id="dataset-docs-8">Dataset Docs</h3>
+
+<h3 id="version-docs-8">Version Docs</h3>
+<h3 id="freeze-docs-8">Freeze Docs</h3>
+
+<h1 id="sequence-data">Sequence Data</h1>
+<h2 id="whole-genome-sequencing---g1-wgs_hiseq_g1">Whole genome
+sequencing - G1 (wgs_hiseq_g1)</h2>
+<h3 id="dataset-docs-9">Dataset Docs</h3>
+
+<h3 id="version-docs-9">Version Docs</h3>
+
+<h3 id="freeze-docs-9">Freeze Docs</h3>
+
+<h1 id="epigentic-data">Epigentic Data</h1>
+<h2 id="dna-methylation---450k---g0-mothers-g1-dnam_450_g0m_g1">DNA
+methylation - 450k - G0 mothers + G1 (dnam_450_g0m_g1)</h2>
+<h3 id="dataset-docs-10">Dataset Docs</h3>
+
+<h3 id="version-docs-10">Version Docs</h3>
+
+<h3 id="freeze-docs-10">Freeze Docs</h3>
+
+<h1 id="gene-expression-data">Gene Expression Data</h1>
+<h2 id="gene-expression---array---g1-ge_ht12_g1">Gene expression - array
+- G1 (ge_ht12_g1)</h2>
+<h3 id="dataset-docs-11">Dataset Docs</h3>
+
+<h3 id="version-docs-11">Version Docs</h3>
+
+<h3 id="freeze-docs-11">Freeze Docs</h3>
+
+<h1 id="schema-docs-as-html">Schema Docs as HTML</h1>
+
+<h1 id="omics-tips">Omics tips</h1>
+<h2 id="introduction-1">Introduction</h2>
+<p>This section is a guide to using 'Omics datasets. It explains which
+software to use and describes common file formats. It's a good starting
+point for beginners and helpful for problem-solving.</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>Some information is copied or reworded from software documentation.
+Check the original documentation alongside this guide for up-to-date
+information. Note that some links may no longer work.</p>
+<h2 id="operating-systems">Operating systems</h2>
+<p>You can use ALSPAC data with any operating system, but Unix-based
+systems like Macintosh, Linux, or BSD are more convenient due to the
+data's size and complexity. We recommend using the command line and
+programming scripts with languages like Bash, R, Python, or Perl. Many
+online resources are available to learn these tools. Use free/libre and
+open-source software where possible.</p>
+<p>Links:</p>
+<ul>
+<li>Unix guide: <a
+href="https://www.osc.edu/supercomputing/unix-cmds"><a
+href="https://www.osc.edu/supercomputing/unix-cmds">https://www.osc.edu/supercomputing/unix-cmds</a></a></li>
+<li>Beginning Python: <a
+href="https://www.python.org/about/gettingstarted/"><a
+href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a></a></li>
+<li>Beginning R: <a
+href="https://www.statmethods.net/r-tutorial/index.html"><a
+href="https://www.statmethods.net/r-tutorial/index.html">https://www.statmethods.net/r-tutorial/index.html</a></a></li>
+<li>Free/libre and open-source software: <a
+href="https://www.fsf.org/about/"><a
+href="https://www.fsf.org/about/">https://www.fsf.org/about/</a></a></li>
+</ul>
+<h2 id="key-omics-software">Key Omics software</h2>
+<h3 id="plink">Plink</h3>
+<p>Plink is a tool for performing quality control and whole genome
+association analysis of genetic data.</p>
+<ul>
+<li>Link: <a
+href="http://zzz.bwh.harvard.edu/plink/">http://zzz.bwh.harvard.edu/plink/</a></li>
+</ul>
+<h3 id="snptest">SNPTest</h3>
+<p>SNPTest is a tool for performing whole genome association analysis of
+genetic data.</p>
+<ul>
+<li>Link: <a
+href="https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html">https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html</a>
+(Not open source)</li>
+</ul>
+<h3 id="boltlmm">BoltLmm</h3>
+<p>BoltLmm is a tool for performing genome association analysis of
+genetic data. It is recommended for analysis of more than 5000 samples,
+its methods automatically take into account population
+substructures.</p>
+<ul>
+<li>Link: <a
+href="https://data.broadinstitute.org/alkesgroup/BOLT-LMM/">https://data.broadinstitute.org/alkesgroup/BOLT-LMM/</a></li>
+</ul>
+<h3 id="qctools">Qctools</h3>
+<p>A tool for quality control of genetic data. It is also useful to
+inspect and modify .gen .bgen and vcf files etc (see section 4
+below).</p>
+<ul>
+<li>Link: <a
+href="https://www.well.ox.ac.uk/~gav/qctool_v2/">https://www.well.ox.ac.uk/~gav/qctool_v2/</a></li>
+</ul>
+<h3 id="samtools">SAMTOOLS</h3>
+<p>Samtools is a suite of tools which are used for genomic analysis.</p>
+<ul>
+<li>Link: <a
+href="http://www.htslib.org/">http://www.htslib.org/</a></li>
+</ul>
+<ol>
+<li><p>VCFTOOLS</p>
+<p>Part of samtools that allows you to work with vcf files.</p>
+<ul>
+<li>Link: <a
+href="https://vcftools.github.io/index.html">https://vcftools.github.io/index.html</a></li>
+</ul></li>
+<li><p>BCFTOOLS</p>
+<p>This is a part of samstools and allows users to manipulate .bcf
+files.</p>
+<ul>
+<li>Link: <a
+href="http://samtools.github.io/bcftools/bcftools.html">http://samtools.github.io/bcftools/bcftools.html</a></li>
+</ul></li>
+</ol>
+<h2 id="file-types">File types</h2>
+<p>In a Unix environment the postfix of a file name does not explicitly
+mean anything to the operating system, unlike in a Windows system which
+will look at the file types. In a Unix system it is just part of the
+name of the file and humans use it to distinguish file formats. The
+following is a non-exhaustive list of file types you may encounter
+whilst using ALSPAC Omics data.</p>
+<h3 id="gen">.gen</h3>
+<p>This is an 'oxford' data format for genetic data. The .gen file is a
+plain text file, this means that standard Unix command line tools can be
+used to inspect the data. For example, 'head' or 'less'.</p>
+<p>The .gen (genotype) file stores data on a one-line-per-SNP format.
+The first 5 entries of each line are the SNP ID, RS ID of the SNP,
+base-pair position of the SNP, the allele coded A and the allele coded
+B. The SNP ID can be used to denote the chromosome number of each SNP.
+The next three numbers on the line are the probabilities of the three
+genotypes AA, AB and BB at the SNP for the first individual in the
+cohort. The next three numbers are the genotype probabilities for the
+second individual in the cohort. The next three numbers are for the
+third individual and so on. The order of individuals in the genotype
+file should match the order of the individuals in the sample file (see
+below). It should be noted that the probabilities need not sum to 1 to
+allow for the possibility of a NULL genotype call. This format allows
+for genotype uncertainty. This genotype file format is the same as that
+produced by the genotype calling algorithm CHIAMO. NOTE : We recommend
+that you arrange SNPs in base-pair order in the genotype files. This is
+required if you want to use the files with IMPUTE and will make viewing
+the output of SNPTEST somewhat easier. For example, Suppose you want to
+create a genotype for 2 individuals at 5 SNPs whose genotypes are</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>SNP 1</td>
+<td>AA</td>
+<td>AA</td>
+</tr>
+<tr class="even">
+<td>SNP 2</td>
+<td>GG</td>
+<td>GT</td>
+</tr>
+<tr class="odd">
+<td>SNP 3</td>
+<td>CC</td>
+<td>CT</td>
+</tr>
+<tr class="even">
+<td>SNP 4</td>
+<td>CT</td>
+<td>CT</td>
+</tr>
+<tr class="odd">
+<td>SNP 5</td>
+<td>AG</td>
+<td>GG</td>
+</tr>
+</tbody>
+</table>
+<p>The correct genotype file would look like this:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>SNP1 rs1 1000</td>
+<td>A</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>SNP2 rs2 2000</td>
+<td>G</td>
+<td>T</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>SNP3 rs3 3000</td>
+<td>C</td>
+<td>T</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>SNP4 rs4 4000</td>
+<td>C</td>
+<td>T</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>SNP5 rs5 5000</td>
+<td>A</td>
+<td>G</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bgen">.bgen</h3>
+<p>A binary version of a .gen file. This file can not be visually
+inspected on the command line. .bgen files are used because they greatly
+increase the speed and storage efficiency of software for storing large
+amounts of Omics data. The full details of the file format are discussed
+in : <a
+href="https://www.well.ox.ac.uk/~gav/bgen_format/">https://www.well.ox.ac.uk/~gav/bgen_format/</a>
+bgen files are normally used with tools such as qctools and snptest
+There is also a library for reading .bgen files into R : <a
+href="https://bitbucket.org/gavinband/bgen/wiki/rbgen">https://bitbucket.org/gavinband/bgen/wiki/rbgen</a></p>
+<h3 id="sample">.sample</h3>
+<p>The .sample file is paired with either .gen or .bgen files. It
+contains information on the samples that is not genetic. It is a plain
+text file that can be inspected with standard Unix command line
+tools.</p>
+<p>Please note that the sample file format changed with the release of
+SNPTEST v2. Specifically, the way in which covariates and phenotypes are
+coded on the second line of the header file has changed. The sample file
+has three parts (a) a header line detailing the names of the columns in
+the file, (b) a line detailing the types of variables stored in each
+column, and (c) a line for each individual detailing the information for
+that individual. Here is an example of the start of a sample file for
+reference</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>ID_1</td>
+<td>ID_2</td>
+<td>missing</td>
+<td>cov_1</td>
+<td>cov_2</td>
+<td>cov_3</td>
+<td>cov_4</td>
+<td>pheno1</td>
+<td>bin1</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>D</td>
+<td>D</td>
+<td>C</td>
+<td>C</td>
+<td>P</td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>.007</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>.0019</td>
+<td>-0.008 1.233 1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>.009</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>.0022</td>
+<td>-0.001 6.234 0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>.005</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>.0025</td>
+<td>0.0028 6.121 1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>.007</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>.0017</td>
+<td>-0.011 3.234 1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>.004</td>
+<td>3</td>
+<td>2</td>
+<td>-0</td>
+<td>.012</td>
+<td>0.0236 2.786 0</td>
+</tr>
+</tbody>
+</table>
+<p>The header line: This line needs a minimum of three entries. The
+first three entries should always be ID_1, ID_2 and missing. They denote
+that the first three columns contain the first ID, second ID and missing
+data proportion of each individual. Additional entries on this line
+should be the names of covariates or phenotypes that are included in the
+file. In the above example, there are 4 covariates named cov_1, cov_2,
+cov_3, cov_4, a continuous phenotype named pheno1 and a binary phenotype
+named bin1. NOTE : All phenotypes should appear after the covariates in
+this file. The second line of the file details the type of variables
+included in each column. The first three entries of this line should be
+set to 0. Subsequent entries in this line for covariates and phenotypes
+should be specified by the following rules</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>D</td>
+<td>Discrete covariate (coded using positive integers)</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>Continuous covariates</td>
+</tr>
+<tr class="odd">
+<td>P</td>
+<td>Continuous Phenotype</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Binary Phenotype (0 = Controls, 1 = Cases)</td>
+</tr>
+</tbody>
+</table>
+<p>The remainder of the file should consist of a line for each
+individual containing the information specified by the entries of the
+header line (see example above). Use spaces to separate the entries of
+the sample file and not TABS because that is the expected character.</p>
+<p>Missing values - Specifying missing values for covariates and
+phenotypes is possible. It was recommended that you use -9 for missing
+values. This was the default value assumed by SNPTEST v1, although the
+-missing_code option in SNPTEST v1 meant that you could use other
+numeric values for the missing code, In SNPTEST v2 the behavior of the
+-missing_code option has changed so that it now takes a comma-separated
+list of values, each of which is treated as missing when encountered in
+the sample file(s). Default missing values are now denoted by the two
+character string "NA".</p>
+<h3 id="ped">.ped</h3>
+<p>A plink format file that is in plain text and can be viewed with
+standard tools. It contains genetic variant data. <a
+href="https://www.cog-genomics.org/plink/1.9/formats#ped">https://www.cog-genomics.org/plink/1.9/formats#ped</a></p>
+<h3 id="map">.map</h3>
+<p>A plink format file that is in plain text. It contains information
+about variants. <a
+href="https://www.cog-genomics.org/plink/1.9/formats#map">https://www.cog-genomics.org/plink/1.9/formats#map</a></p>
+<h3 id="bed">.bed</h3>
+<p>A plink format file that isa binary equivalent of a .ped file. It is
+smaller and faster to process but is not easily viewable or editable. <a
+href="https://www.cog-genomics.org/plink/1.9/formats#bed">https://www.cog-genomics.org/plink/1.9/formats#bed</a></p>
+<h3 id="bim">.bim</h3>
+<p>A plink format, similar to a .map file but is used with binary .bed
+files. <a
+href="https://www.cog-genomics.org/plink/1.9/formats#bin">https://www.cog-genomics.org/plink/1.9/formats#bin</a></p>
+<h3 id="fam">.fam</h3>
+<p>A plain text format that contains sample information for plink binary
+files. <a
+href="https://www.cog-genomics.org/plink/1.9/formats#fam">https://www.cog-genomics.org/plink/1.9/formats#fam</a></p>
+<h3 id="csv">.csv</h3>
+<p>A plain text format where different fields are separated by commas.
+(Comma separated variables).</p>
+<h3 id="vcf">.vcf</h3>
+<p>VCF files are a flexible file format for storing different types of
+genetic variants. They are a plain text format that can be inspected on
+the command line with standard Unix tools. However they are often very
+large files, and specific tools such as 'vcftools' are useful for
+working with this data. Commonly SNPs are stored in these files but
+other variants such as Copy Number variations can also be stored. The
+basic form for a vcf file is: <a
+href="https://en.wikipedia.org/wiki/Variant_Call_Format">https://en.wikipedia.org/wiki/Variant_Call_Format</a></p>
+<h3 id="bcf">.bcf</h3>
+<p>This is a binary version of a vcf file. It cannot be inspected on the
+command line, but can be used with the genomic tools mentioned in this
+document.</p>
+<h3 id="tar.gz">.tar.gz</h3>
+<p>This is a standard Unix file format for bundling and compressing a
+set of files. It is similar to a .zip file. It is made by first bundling
+a set of files into a .tar file (sometimes called a tar ball). This is
+then compressed using 'gun zip'. <a
+href="https://en.wikipedia.org/wiki/Tar_(computing)">https://en.wikipedia.org/wiki/Tar_(computing)</a>
+<a
+href="https://en.wikipedia.org/wiki/Gzip">https://en.wikipedia.org/wiki/Gzip</a></p>
+<h3 id="enc">.enc</h3>
+<p>This file extension is used as a convention to mean that the file is
+encrypted. You will need to have that password that was used to encrypt
+the data in order to unencrypt the files. <a
+href="https://en.wikipedia.org/wiki/OpenSSL">https://en.wikipedia.org/wiki/OpenSSL</a></p>
+<h2 id="variantsnp-ids">Variant/SNP ids</h2>
+<p>There are many types of genetic variation. A common type is a single
+nucleotide polymorphism (SNP). Others include copy number
+variations.</p>
+<p>Variants can be specified by a Chromosome and location in reference
+to a specific build of the human genome. They can also be given a
+reference SNP (rs) cluster identifier.</p>
+<ul>
+<li>Chr:Location</li>
+<li>Rs ids</li>
+</ul>
+<h2 id="overview-of-imputation-reference-panels">Overview of Imputation
+reference panels</h2>
+<p>SNP array data frequently contain hundreds of thousands of variants.
+However due to linkage disequilibrium it is possible to estimate many
+more SNP values for an individual. This estimation procedure is called
+imputation and it works by combining an individuals SNP array data with
+a large reference population of sequenced data. In this way it is
+possible to have accurate estimations of millions of SNP values for an
+individual without the cost of fully sequencing each person. ALSPAC has
+prerun the imputation process using three different imputation
+panels.</p>
+<h3 id="panels">Panels</h3>
+<ol>
+<li><p>TOPmed</p>
+<p>An upcoming (to alspac) reference panel which will have the most
+snps</p></li>
+<li><p>HRC</p>
+<p>This is the latest reference panel and our data contains circa 40
+millions of SNPs.</p></li>
+<li><p>1000 Genomes</p>
+<p>This is the previous generation reference panel which is still widely
+used in ALSPAC studies. There are some SNPs that appear in this panel
+that are not in the HRC panel.</p></li>
+<li><p>Hapmap</p>
+<p>This was the first widely used imputation panel.</p></li>
+</ol>
+<h2 id="snp-data-types-from-imputation.">SNP data types from
+imputation.</h2>
+<p>SNPs that have been imputed can be stored and analysed in different
+formats. These can be appropriate for different types of analysis, for
+example an analysis could assume and additive effect for the minor
+allele or it could assume a recessive/dominant effect.</p>
+<ul>
+<li>Best guess. The data will be presented as either 0,1, or 2 to
+represent how many of the minor alleles at that position a person has.
+The best guess is derived from the probability of a variant calculated
+from the imputation process.</li>
+<li>Dosage. This is the probability that the person has 0, 1 or 2 of the
+minor allele. i.e. 0.1, 0.2,0.7. This will sum to one across the three
+possibilities (i.e for each SNP for each individual).</li>
+</ul>
+<h2 id="snp-statistics">SNP Statistics</h2>
+<p>You can generate statistics on your SNP data using the program
+'QCtools'. This will give you the imputation information scores. For
+example:</p>
+<p>qctool -g example.bgen -s example.sample -sample-stats -osample
+sample-stats.txt</p>
+<h2 id="best-practice">Best practice</h2>
+<h3 id="gwas">GWAS</h3>
+<p>We recommend you follow the steps outlined in the following paper
+when performing GWAS: Marees, Andries T., et al. "A tutorial on
+conducting genome‐wide association studies: Quality control and
+statistical analysis." International journal of methods in psychiatric
+research 27.2 (2018): e1608. <a
+href="https://doi.org/10.1002/mpr.1608">https://doi.org/10.1002/mpr.1608</a></p>
+<h3 id="phewas">Phewas</h3>
+<p>We recommend you follow the steps outlined in the following paper
+when performing Phewas: Millard, L., Davies, N., Timpson, N. et al.
+MR-PheWAS: hypothesis prioritization among potential causal effects of
+body mass index on many outcomes, using Mendelian randomization. Sci Rep
+5, 16645 (2015). <a
+href="https://doi.org/10.1038/srep16645">https://doi.org/10.1038/srep16645</a></p>
+<h3 id="methylation">Methylation</h3>
+<p>The following paper describes the methylation data available in
+ALSPAC Relton, Caroline L., et al. "Data resource profile: accessible
+resource for integrated epigenomic studies (ARIES)." International
+journal of epidemiology 44.4 (2015): 1181-1190.</p>
+<h2 id="population-stratification">Population stratification</h2>
+<p>This is when an observed genetic association is due to the
+population/geography. Not taking this into account can lead to biased
+estimates of effects. One common method to account for these is to
+calculate principal components of the genetic data and then to include
+these as covariables in any models. Principal components can be
+generated using plink or other tools.</p>
+<p>For more information about how to do this in plink see:<a
+href="https://www.cog-genomics.org/plink/1.9/strat">https://www.cog-genomics.org/plink/1.9/strat</a></p>
+<p>An common method used to account for population substructure is by
+using linear mixed models. For example using the bolt LMM software
+tool.</p>
+<p><a
+href="https://data.broadinstitute.org/alkesgroup/BOLT-LMM/">https://data.broadinstitute.org/alkesgroup/BOLT-LMM/</a></p>
+<h2 id="common-tasks">Common tasks</h2>
+<p>Here we provide links to webpages that provide instructions or
+provide brief details any code for completing common tasks using the
+various software we have described above (section x):</p>
+<ul>
+<li>Extract some SNPs from a bgen data file and convert to plain
+text.</li>
+</ul>
+<p><a
+href="https://www.well.ox.ac.uk/~gav/qctool_v2/documentation/examples/filtering_variants.html">https://www.well.ox.ac.uk/~gav/qctool_v2/documentation/examples/filtering_variants.html</a></p>
+<ul>
+<li>Extract some SNPs from bed data:</li>
+</ul>
+<p><a
+href="http://zzz.bwh.harvard.edu/plink/dataman.shtml">http://zzz.bwh.harvard.edu/plink/dataman.shtml</a></p>
+<p>plink –bfile mydata –chr 2 –from-kb 5000 –to-kb 10000</p>
+<ul>
+<li>Reading .bgen and .sample oxford files in plink</li>
+</ul>
+<p>Plink supports bgen files but it is fussy about the types of its
+columns in the data.sample file. You may wish to remove or retype
+columns to read a data.sample file into plink. For more info see:</p>
+<p><a
+href="https://www.cog-genomics.org/plink/2.0/input">https://www.cog-genomics.org/plink/2.0/input</a></p>
+<p>To make a new sample file removing some columns you can use the Unix
+command: 'cut -f 1,2,3 -d " " data.sample &gt; data2.sample'</p>
+<h2 id="courses">Courses</h2>
+<p>Working with 'Omics data can be complicated but there are many
+excellent resources available to help you learn how to do this. There
+are both paid in person courses and free online courses.</p>
+<p>Details on paid courses offered by Bristol University can be found
+here: <a
+href="https://www.bristol.ac.uk/medical-school/study/short-courses/">https://www.bristol.ac.uk/medical-school/study/short-courses/</a>
+In addition, a number of free online courses are summarised here: <a
+href="https://www.mooc-list.com/tags/bioinformatics">https://www.mooc-list.com/tags/bioinformatics</a></p>
+<h2 id="further-sources-of-help">Further sources of help</h2>
+<h3 id="stack-exchange">Stack exchange</h3>
+<p>Stack exchange is an online Q&amp;A community which is divided into
+different sub-communities. The first and most well-known is Stack
+overflow. This is one of the best place to ask questions about
+programming on the Internet. Other useful exchange sites include
+bioinformatics <a
+href="https://bioinformatics.stackexchange.com/">https://bioinformatics.stackexchange.com/</a>,
+maths <a href="https://mathoverflow.net/">https://mathoverflow.net/</a>
+and statistics <a
+href="https://stats.stackexchange.com/">https://stats.stackexchange.com/</a>.</p>
+<h3 id="bio-stars">Bio-stars</h3>
+<p>Biostars is bioinformatics community Q&amp;A web-site: <a
+href="https://www.biostars.org/">https://www.biostars.org/</a></p>
+<h3 id="mailing-lists">Mailing lists</h3>
+<p>For individual product/projects there is often a mailing list. For
+example to get help using SNPTEST you can ask on the mailing list <a
+href="https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#contact">https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#contact</a></p>
+<h3 id="ai-tools">AI tools</h3>
+<p>AI tools such as chatGPT can be useful to understand how to work with
+omics data.</p>
+<h3 id="ask-alspac">Ask ALSPAC</h3>
+<p>If you can not find the answer to your question or you think there is
+something wrong with your data then please contact the
+alspac-omics@bristol.ac.uk mailbox and we will do our best to help
+you.</p>
+</body>
+</html>
