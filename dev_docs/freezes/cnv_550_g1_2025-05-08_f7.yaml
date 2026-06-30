@@ -1,0 +1,189 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:cnv_550_g1_2025-05-08_f6
+name: Genome-wide - CNV - G1 release version 2025-05-08 freeze 7
+description: >-
+  This seventh freeze of the cnv_550_g1 dataset. 
+  
+  This is the first freeze containing an updated release, of the CNV dataset. 
+  
+  original-cnv:
+    The original version, (data/original-cnv) contains two csv versions of the originally called CNV data, an unfiltered and filtered versions. 
+    LRR and BAF data was missing from the 23andMe raw genotype data, so was generated for this data using an in house algorithm. Once this data was generated, we ran PennCNV using the hh550 libraries. 
+    There are filtered PennCNV calls. Multiple calls were merged, using a merge fraction of 0.5. Individuals with > 30 CNVs, a Log R Ratio SD of >0.3, a BAF drift of > 0.002, and a waviness factor of > 0.05 were removed. CNVs in which at least 50% of the length of the CNV call overlapped with any of telomeric centromeric, immunoglobulin regions were removed in PennCNV.
+
+    In addition, CNVs covering fewer than 5 probes, of a length < 5kb, and with a confidence score of below 10 were removed. Density was calculated as the number of probes in a CNV divided by the length of the CNV, and CNVs where the density of probes across the call was < 1 probe per 20kb was removed.
+
+    These QC parameters are suggestions only and provided in filtered.cnv. Analysts can apply their own filter parameters to the raw calls in data.cnv
+
+  nd-cnv:
+    Updated version of CNV data, running the Cardiff MRC Pathfinder pipeline which was originally designed for identifying neurodevelopmental CNVs. This was generated using  .tab files from the original CNV dataset, alongisde LRR and BAF which had been derived. 
+
+    A full protocol description is provided in docs/nd-cnv/ALSPAC_CNV_protocol.md.
+
+    The files with omics IDs within contain a 'duplicate_sample' column. This originates from some individuals having multiple samples sent. This is marked to True for only 1 of the duplicates, if any are present. This allows matching the duplicate from the data to the metadata, such as indicating those which pass QC. 
+
+    Suggestions:
+      1. For researchers looking to do entirely their own QC - i.e. no decisions regarding QC have been made to create these files
+        - freeze.rawcnvs, freeze.qcsum, ALSPAC.pfb
+
+      2. For researchers looking for a cleaner dataset - i.e. some decisions around QC have been made to create these files. ALSPAC.qcsum still needed to apply own filters
+        - freeze.goodcnv, freeze.qcpass, freeze.qcsum
+
+    Associated publication: 
+    - DOI: 10.1016/j.biopsych.2025.03.004
+
+freeze_size: 72m
+linker_file_md5sum: 2b2e49bc61c1a0efc3f57db6e48656ea
+woc_file_md5sum: ee409be51e4e12594cb700dd1be99314
+all_individuals_to_exclude_md5sum: 241c00aec78b7178d6797a83478dec02
+git_tag: https://github.com/alspac/dataset_cnv_550_g1/releases/tag/freeze7
+is_current_freeze: true
+freeze_number: 7
+freeze_date: 2026-04-14
+previous_freeze: alspacdcs:cnv_550_g1_2015-11-09_f6
+freeze_of_alspac_dataset_version: alspacdcs:cnv_550_g1_2025-05-08
+freeze_of_named_alspac_dataset: alspacdcs:cnv_550_g1
+
+contains:
+- data
+- docs
+files: []
+data:
+  contains:
+  - nd-cnv
+  - original-cnv
+  files: []
+  nd-cnv:
+    contains:
+    - metadata
+    - cnvdata
+    files: []
+    metadata:
+      contains:
+      - exon.NCBI.NRXN1
+      - exon.PAFAH1B1
+      - exon.YWHAE
+      - ALSPAC.gcmodel
+      - ALSPAC.pfb
+      - freeze.qcpass
+      - freeze.qcsum
+      - CNVS.KK.2019.Sorted.txt
+      - freeze.ids_fail_qc.txt
+      files:
+      - id: alspacdcs:d99dbd7d-128d-421f-aec9-72cec240416c
+        name: exon.NCBI.NRXN1
+        md5sum: 59a58150c3cabc327a1095396cf2c78d
+        filesize: 9.3KB
+        filetype: .NRXN1
+        belongs_to: data/nd-cnv/metadata
+      - id: alspacdcs:7f29c4a9-eca9-45f6-ad33-5322b3b66a50
+        name: exon.PAFAH1B1
+        md5sum: 3f946e6a9a9f7ef9f6edf93d93d14e84
+        filesize: 744.0B
+        filetype: .PAFAH1B1
+        belongs_to: data/nd-cnv/metadata
+      - id: alspacdcs:05116db4-9aee-4eb2-b466-572a8b32a708
+        name: exon.YWHAE
+        md5sum: 3f946e6a9a9f7ef9f6edf93d93d14e84
+        filesize: 744.0B
+        filetype: .YWHAE
+        belongs_to: data/nd-cnv/metadata
+      - id: alspacdcs:56bb7a9f-4ebf-48d4-8656-4250cb38966a
+        name: ALSPAC.gcmodel
+        md5sum: 171c8202b70c9ac40a65a472d92b6e4f
+        filesize: 13.0MB
+        filetype: .gcmodel
+        belongs_to: data/nd-cnv/metadata
+      - id: alspacdcs:7d1da910-c626-4998-8989-c4d6e442520c
+        name: ALSPAC.pfb
+        md5sum: e5205d1b881332b81bb68c336d2c1cf8
+        filesize: 12.5MB
+        filetype: .pfb
+        belongs_to: data/nd-cnv/metadata
+      - id: alspacdcs:cc18e5c1-cb13-48b9-800f-131f3d22a885
+        name: freeze.qcpass
+        md5sum: ab4d7b1449a8690f171834951d73a2cf
+        filesize: 239.4KB
+        filetype: .qcpass
+        belongs_to: data/nd-cnv/metadata
+      - id: alspacdcs:00fafbba-0399-46eb-a503-b0a40cce8f00
+        name: freeze.qcsum
+        md5sum: 626b12d5a805345066882cbea2307f9d
+        filesize: 718.5KB
+        filetype: .qcsum
+        belongs_to: data/nd-cnv/metadata
+      - id: alspacdcs:f8c7f34d-0d99-4797-91c4-49b03a1520d9
+        name: CNVS.KK.2019.Sorted.txt
+        md5sum: 60ca28d8d9c768ce7809b6adae817e23
+        filesize: 2.5KB
+        filetype: .txt
+        belongs_to: data/nd-cnv/metadata
+      - id: alspacdcs:05116fc6-656b-45da-9e2d-613f0ec731f1
+        name: freeze.ids_fail_qc.txt
+        md5sum: 75644a5645b1bb4c3dc1a782ed41236e
+        filesize: 268.8KB
+        filetype: .txt
+        belongs_to: data/nd-cnv/metadata
+    cnvdata:
+      contains:
+      - freeze.goodcnv
+      - freeze.rawcnvs
+      files:
+      - id: alspacdcs:d3638a00-2c5c-418d-9759-be0b345d59d9
+        name: freeze.goodcnv
+        md5sum: ad2cfa64ae53556d6d17ca6761b522a7
+        filesize: 4.3MB
+        filetype: .goodcnv
+        belongs_to: data/nd-cnv/cnvdata
+      - id: alspacdcs:0406571b-565b-47b9-a476-7000f247ea18
+        name: freeze.rawcnvs
+        md5sum: 1ced3622411808452f7a95ba922a3267
+        filesize: 14.2MB
+        filetype: .rawcnvs
+        belongs_to: data/nd-cnv/cnvdata
+  original-cnv:
+    contains:
+    - timepoints.csv
+    - filtered.csv
+    - cnvdata.csv
+    files:
+    - id: alspacdcs:92aa7eb0-dc2f-46ab-a940-28366c5e47d5
+      name: timepoints.csv
+      md5sum: 90640b955d6aaf63866b3cc0281c9bee
+      filesize: 334.5KB
+      filetype: .csv
+      belongs_to: data/original-cnv
+    - id: alspacdcs:c1b84856-19b8-4705-a3d0-06586fd73148
+      name: filtered.csv
+      md5sum: ce186871a415e12bedd90278fc24d75a
+      filesize: 5.8MB
+      filetype: .csv
+      belongs_to: data/original-cnv
+    - id: alspacdcs:7a92ad5b-499d-4b18-9f8c-c40096cf3a75
+      name: cnvdata.csv
+      md5sum: a9c4f47453f184c86d1058be20c386cf
+      filesize: 20.8MB
+      filetype: .csv
+      belongs_to: data/original-cnv
+docs:
+  contains:
+  - nd-cnv
+  nd-cnv:
+    contains:
+    - CNV_QC_ALSPAC.Rmd
+    - ALSPAC_CNV_protocol.md
+    files:
+    - id: alspacdcs:73990a85-038f-443e-b07c-e271614779e1
+      name: CNV_QC_ALSPAC.Rmd
+      md5sum: 14305de35583750ffa0d8c1cc73ee966
+      filesize: 35.3KB
+      filetype: .Rmd
+      belongs_to: docs/nd-cnv
+    - id: alspacdcs:8f93f938-2374-4b9e-a31b-2a563ad0822c
+      name: ALSPAC_CNV_protocol.md
+      md5sum: 892716e4980da9b80896e53cb0928432
+      filesize: 10.0KB
+      filetype: .md
+      belongs_to: docs/nd-cnv

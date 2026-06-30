@@ -1,0 +1,103 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gwa_660_g0m_2022-12-05_f7
+name: Freeze 7 version 2022-12-05 Genome-wide - Illumina 660 quad - G0 mothers
+description: >-
+  Freeze 7 of genome-wide array data including genotype calls for G0 mothers.
+
+  Contains 2 sets of data, legacy1 and legacy2. 
+  legacy1: A dir/folder containing the plink data files. 
+      Includes full set of SNPs, but missing ~500 mothers who 
+      were excluded in legacy QC due to strict relatedness inclusion thresholds.
+  legacy2: A dir/folder containing the plink data files
+      Includes full set of individuals but due to legacy QC is restricted
+      to a set of ~480k SNPs that overlap with the Illumina 550k array 
+      (which was used for G1 in gwa_550_g1). This QC was performed alongside liftOver to Hg37.
+
+freeze_size: 2G
+linker_file_md5sum: 2b2e49bc61c1a0efc3f57db6e48656ea
+woc_file_md5sum: ee409be51e4e12594cb700dd1be99314
+all_individuals_to_exclude_md5sum: 241c00aec78b7178d6797a83478dec02
+git_tag: https://github.com/alspac/dataset_gwa_660_g0m/releases/tag/freeze7
+is_current_freeze: true
+freeze_number: 7
+freeze_date: 2026-04-14
+freeze_of_alspac_dataset_version: alspacdcs:gwa_660_g0m_2022-12-05
+freeze_of_named_alspac_dataset: alspacdcs:gwa_660_g0m
+
+contains:
+- data
+files: []
+data:
+  contains:
+  - legacy2
+  - legacy1
+  files: []
+  legacy2:
+    contains:
+    - freeze_id.bed
+    - freeze_id.bim
+    - freeze_id.fam
+    - freeze_id.log
+    files:
+    - id: alspacdcs:d818bfb5-c99c-4db3-88e2-7037c819f6e2
+      name: freeze_id.bed
+      md5sum: d9be87ec7d2a87429a347adc6efc9db4
+      filesize: 959.8MB
+      filetype: .bed
+      belongs_to: data/legacy2
+    - id: alspacdcs:6d72d6e2-f0bb-460a-b949-05f499d4fefb
+      name: freeze_id.bim
+      md5sum: a733e7ae6ac46a855cc400925a2138fa
+      filesize: 12.3MB
+      filetype: .bim
+      number_of_variants: 465740
+      belongs_to: data/legacy2
+    - id: alspacdcs:64934a22-64fa-4a53-9d03-a7f896604144
+      name: freeze_id.fam
+      md5sum: 6b74cf1f2cebd886a1d52eeac76bac43
+      filesize: 447.3KB
+      filetype: .fam
+      number_of_participants: 8643
+      belongs_to: data/legacy2
+    - id: alspacdcs:e0df3154-5ee3-4397-bdb0-4847a3bf85db
+      name: freeze_id.log
+      md5sum: 083c818ca06a68f73c1cb79bccc0feda
+      filesize: 1.1KB
+      filetype: .log
+      belongs_to: data/legacy2
+  legacy1:
+    contains:
+    - freeze_id.bed
+    - freeze_id.bim
+    - freeze_id.fam
+    - freeze_id.log
+    files:
+    - id: alspacdcs:00fb4b88-5661-4a44-a106-f718cb98ab58
+      name: freeze_id.bed
+      md5sum: 43f6862b721f637e557cae589414c4b8
+      filesize: 1019.1MB
+      filetype: .bed
+      belongs_to: data/legacy1
+    - id: alspacdcs:86d0b324-61e9-4a24-9ce3-d958015a5b94
+      name: freeze_id.bim
+      md5sum: 05b87fd6e4e7ef0c66ccc566bf5786bc
+      filesize: 14.0MB
+      filetype: .bim
+      number_of_variants: 526688
+      belongs_to: data/legacy1
+    - id: alspacdcs:0624e984-b4a9-4c9e-b8ed-0e703c8e6c70
+      name: freeze_id.fam
+      md5sum: 4e0e14fa075f6b1c418c595e6bd805fb
+      filesize: 253.5KB
+      filetype: .fam
+      number_of_participants: 8113
+      belongs_to: data/legacy1
+    - id: alspacdcs:4b64032e-6c27-4962-8bce-91942f138565
+      name: freeze_id.log
+      md5sum: bdcc0e05a9ab89468779ffd131e247f7
+      filesize: 1.1KB
+      filetype: .log
+      belongs_to: data/legacy1
+

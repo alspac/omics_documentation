@@ -1,0 +1,393 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:wgs_hiseq_g1_2016-08-18_f7
+name: Whole genome sequencing - G1 version 2016-08-18 freeze 7
+description: >-
+  This is the freeze 7 of version 2016-08-18 of the Whole genome sequencing for G1 individuals, part of the UK10K dataset.
+freeze_size: 341G
+linker_file_md5sum: 2b2e49bc61c1a0efc3f57db6e48656ea
+woc_file_md5sum: ee409be51e4e12594cb700dd1be99314
+all_individuals_to_exclude_md5sum: 241c00aec78b7178d6797a83478dec02
+git_tag: https://github.com/alspac/dataset_wgs_hiseq_g1/releases/tag/freeze7
+is_current_freeze: true
+freeze_number: 7
+freeze_date: 2026-04-14
+previous_freeze: alspacdcs:wgs_hiseq_g1_2016-08-18_f6
+freeze_of_alspac_dataset_version: alspacdcs:wgs_hiseq_g1_2016-08-18
+freeze_of_named_alspac_dataset: alspacdcs:wgs_hiseq_g1
+
+contains:
+- data
+files: []
+data:
+  contains:
+  - 17_freeze.vcf.gz.csi
+  - 9_freeze.vcf.gz.csi
+  - 8_freeze.vcf.gz.csi
+  - 6_freeze.vcf.gz.csi
+  - 4_freeze.vcf.gz.csi
+  - 16_freeze.vcf.gz.csi
+  - 7_freeze.vcf.gz.csi
+  - 15_freeze.vcf.gz.csi
+  - 20_freeze.vcf.gz.csi
+  - 3_freeze.vcf.gz.csi
+  - 19_freeze.vcf.gz.csi
+  - 12_freeze.vcf.gz.csi
+  - 10_freeze.vcf.gz.csi
+  - 21_freeze.vcf.gz.csi
+  - 1_freeze.vcf.gz.csi
+  - X_freeze.vcf.gz.csi
+  - 11_freeze.vcf.gz.csi
+  - 13_freeze.vcf.gz.csi
+  - 5_freeze.vcf.gz.csi
+  - 18_freeze.vcf.gz.csi
+  - 2_freeze.vcf.gz.csi
+  - 22_freeze.vcf.gz.csi
+  - 14_freeze.vcf.gz.csi
+  - 22_freeze.vcf.gz
+  - 20_freeze.vcf.gz
+  - 18_freeze.vcf.gz
+  - 15_freeze.vcf.gz
+  - 16_freeze.vcf.gz
+  - X_freeze.vcf.gz
+  - 11_freeze.vcf.gz
+  - 8_freeze.vcf.gz
+  - 19_freeze.vcf.gz
+  - 12_freeze.vcf.gz
+  - 5_freeze.vcf.gz
+  - 10_freeze.vcf.gz
+  - 6_freeze.vcf.gz
+  - 7_freeze.vcf.gz
+  - 4_freeze.vcf.gz
+  - 21_freeze.vcf.gz
+  - 9_freeze.vcf.gz
+  - 13_freeze.vcf.gz
+  - 14_freeze.vcf.gz
+  - 17_freeze.vcf.gz
+  - 3_freeze.vcf.gz
+  - 2_freeze.vcf.gz
+  - 1_freeze.vcf.gz
+  files:
+  - id: alspacdcs:42fdb11e-489a-48d9-bfea-205641989a87
+    name: 17_freeze.vcf.gz.csi
+    md5sum: cb91b25b11663a5294b52cdb148f2111
+    filesize: 49.9KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:21c5fe39-742f-40b5-85c9-69e6c58cba99
+    name: 9_freeze.vcf.gz.csi
+    md5sum: 08c718c03529b1de9e09121080e243c7
+    filesize: 75.4KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:caa57080-c78b-4fac-9f30-a9f1248e4c58
+    name: 8_freeze.vcf.gz.csi
+    md5sum: 77418891e834bcc661ef28366d6a2870
+    filesize: 92.8KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:77d196af-f9ae-4b08-a7d4-3f050fd89e09
+    name: 6_freeze.vcf.gz.csi
+    md5sum: 47e67a62888eaa188030340ad35123c7
+    filesize: 109.8KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:d00a65c9-a2e6-4fec-add8-fa6f149dadd8
+    name: 4_freeze.vcf.gz.csi
+    md5sum: ced3865e2a31897e5e303045a5ec5fb6
+    filesize: 122.6KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:fb7bb513-a688-47c9-82d5-b770878f445e
+    name: 16_freeze.vcf.gz.csi
+    md5sum: a1ca66733837987f48d5cfdf81cedd7a
+    filesize: 50.4KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:5365449b-a34f-46f9-b791-cc8721ca4898
+    name: 7_freeze.vcf.gz.csi
+    md5sum: 63320d1b9169a9cf0527fb2adcd53cdc
+    filesize: 101.8KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:1f4508aa-28a5-45d1-90a0-7c3194957ea2
+    name: 15_freeze.vcf.gz.csi
+    md5sum: d50a2f8e9f485acd1b328e7deee56fc8
+    filesize: 51.7KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:1527cc5a-295e-41e5-936d-f4769c0de4d8
+    name: 20_freeze.vcf.gz.csi
+    md5sum: 424757f9b03c71eac9467bf0565c7342
+    filesize: 38.2KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:0f871826-9a4c-431f-b82b-1d557463e292
+    name: 3_freeze.vcf.gz.csi
+    md5sum: a304a2029d4e4007a2a55cc60b5351af
+    filesize: 127.9KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:a323bd35-2699-4dc8-a6e3-5373e2cb1700
+    name: 19_freeze.vcf.gz.csi
+    md5sum: 1b8651ddb8b72717598014335d81b380
+    filesize: 35.7KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:df4d8a66-db06-4eac-91b1-e668231133b9
+    name: 12_freeze.vcf.gz.csi
+    md5sum: 019796cdd326aeb8f1218ec35d5851bd
+    filesize: 85.4KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:e6b3afc0-066a-459b-98b4-709acd7ec2f7
+    name: 10_freeze.vcf.gz.csi
+    md5sum: 74125f1fc2d9d7a16bd040cb219bd425
+    filesize: 85.5KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:3f033bd8-0fe3-4118-8139-0981b16c740a
+    name: 21_freeze.vcf.gz.csi
+    md5sum: 3ff7547f2c3af46d6a733adf0849f935
+    filesize: 22.1KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:890964bd-eb89-43d7-8e71-fd10441cd79a
+    name: 1_freeze.vcf.gz.csi
+    md5sum: 9c00c0c1e0130551b18ff03ed44c30a2
+    filesize: 145.6KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:6811bfed-9dfc-4289-94c4-26868bce2010
+    name: X_freeze.vcf.gz.csi
+    md5sum: 9ce2da7016463ab856b06f5fa0ec9be3
+    filesize: 96.0KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:7231880e-ed5c-44c2-8cbc-a9b0f015be62
+    name: 11_freeze.vcf.gz.csi
+    md5sum: 35acd0fd59f3d23cdc20838a7379eb3e
+    filesize: 85.2KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:a767611d-98c7-42d6-8345-ce1b3d2b0677
+    name: 13_freeze.vcf.gz.csi
+    md5sum: 9a370853a88d632ec83b163de8b06cdb
+    filesize: 62.1KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:6f76db9d-daa9-4ba0-8719-1986ebf80fd5
+    name: 5_freeze.vcf.gz.csi
+    md5sum: bcfa026b5a0e7e42c4226cd04246f502
+    filesize: 116.1KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:c9bac3f4-42cc-4787-be4f-21c91bfb2309
+    name: 18_freeze.vcf.gz.csi
+    md5sum: 2ee78986acc3243a7effe129fcfca4b2
+    filesize: 48.4KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:02e936ab-8803-401f-a996-7f8f2594e3e8
+    name: 2_freeze.vcf.gz.csi
+    md5sum: b21f248b785fcf0db92f72a3c3c66b2f
+    filesize: 156.1KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:6ee4bbea-6596-4f85-bbae-fb68232c82e8
+    name: 22_freeze.vcf.gz.csi
+    md5sum: 452be3c66312943409d7c08ed6455639
+    filesize: 22.1KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:0fda6e99-0f33-4608-b5f9-1837f512b084
+    name: 14_freeze.vcf.gz.csi
+    md5sum: d87ef5118d4bb52d359965ae130a1c02
+    filesize: 56.6KB
+    filetype: .csi
+    belongs_to: data
+  - id: alspacdcs:58d01ac5-3349-474b-b1ef-fc03f4df4613
+    name: 22_freeze.vcf.gz
+    md5sum: 2d2afea28e69432571cfa69982b76018
+    filesize: 4.4GB
+    filetype: .gz
+    number_of_variants: 552675
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:b5ea89d9-cc58-4bd2-9052-313d940ebe8a
+    name: 20_freeze.vcf.gz
+    md5sum: f36f060e329ee42a94ea74fab5c7cbf2
+    filesize: 7.5GB
+    filetype: .gz
+    number_of_variants: 970869
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:5b3664fd-8e7f-4cc8-8de4-866aab57b02a
+    name: 18_freeze.vcf.gz
+    md5sum: f6519f3803638277bc7326609f3b8db1
+    filesize: 9.4GB
+    filetype: .gz
+    number_of_variants: 1220427
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:fe960a81-694c-49d0-bd89-6baf542d1a56
+    name: 15_freeze.vcf.gz
+    md5sum: 25c273b0a99d94e163d224b904b34f01
+    filesize: 9.7GB
+    filetype: .gz
+    number_of_variants: 1262404
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:830d7a0e-b211-40b6-b0ec-37b5af7e79cf
+    name: 16_freeze.vcf.gz
+    md5sum: 89e2a8ddc4353cf0516605bdf4b7aae8
+    filesize: 10.6GB
+    filetype: .gz
+    number_of_variants: 1373607
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:7c9341e3-5296-45e9-a60c-691750b84203
+    name: X_freeze.vcf.gz
+    md5sum: fabcf5ff25b5e630ad8664130d033a62
+    filesize: 10.5GB
+    filetype: .gz
+    number_of_variants: 1700742
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:b54eb344-977d-4743-904a-bcf5e4d8e078
+    name: 11_freeze.vcf.gz
+    md5sum: 90b673f50487abf917ca779689735c3c
+    filesize: 16.4GB
+    filetype: .gz
+    number_of_variants: 2125064
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:500261fd-e6e5-416c-b19f-6b27bb55be48
+    name: 8_freeze.vcf.gz
+    md5sum: a79f949b6c8ca5a5f9d7e05dc92ba5ea
+    filesize: 18.8GB
+    filetype: .gz
+    number_of_variants: 2451009
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:cd7fe7b0-39d9-4f5a-93db-936fef961344
+    name: 19_freeze.vcf.gz
+    md5sum: 9d935e33ecacb23b03923e15f6f320e1
+    filesize: 7.0GB
+    filetype: .gz
+    number_of_variants: 886630
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:1e7f8108-c598-4d63-b360-076d1aa90f92
+    name: 12_freeze.vcf.gz
+    md5sum: 8fd020f20e7301cec7be60750db5ecc8
+    filesize: 15.7GB
+    filetype: .gz
+    number_of_variants: 2047922
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:2fc39798-aabc-418b-b46e-ff8671f0a15c
+    name: 5_freeze.vcf.gz
+    md5sum: 36b370305ee3b6e7c65c0f43f981751b
+    filesize: 21.6GB
+    filetype: .gz
+    number_of_variants: 2804359
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:0d9b1f68-b04b-456c-9b55-c72b3748d517
+    name: 10_freeze.vcf.gz
+    md5sum: 698b546cf2da9c8b7b7082f36972384d
+    filesize: 16.3GB
+    filetype: .gz
+    number_of_variants: 2110436
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:24fcf40d-4b1d-4044-b291-5ed50820097b
+    name: 6_freeze.vcf.gz
+    md5sum: 8e5f91c3ea17e4b048b6866a629d51d3
+    filesize: 21.0GB
+    filetype: .gz
+    number_of_variants: 2704091
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:78e30260-2ea2-435c-a770-3e7a3f2188f5
+    name: 7_freeze.vcf.gz
+    md5sum: 48bf00442127c34f1c254b274a3c1011
+    filesize: 19.0GB
+    filetype: .gz
+    number_of_variants: 2445204
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:8b379f1d-c4f9-4e54-90b5-e99a73805117
+    name: 4_freeze.vcf.gz
+    md5sum: 6572535464c71243562c9beb0679b682
+    filesize: 23.2GB
+    filetype: .gz
+    number_of_variants: 3019176
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:975fe55e-1ffc-4d68-a08d-6f25c1ba9833
+    name: 21_freeze.vcf.gz
+    md5sum: 89a7fc75e89fb03598cc88931769e90f
+    filesize: 4.3GB
+    filetype: .gz
+    number_of_variants: 563988
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:d41ff792-d7aa-4088-8e24-c0c071d158e8
+    name: 9_freeze.vcf.gz
+    md5sum: 3737f24f7dc4cce49cc6d3cd9f7c59fc
+    filesize: 14.2GB
+    filetype: .gz
+    number_of_variants: 1845456
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:b66ce097-f374-474a-a35a-eac64b23b6d5
+    name: 13_freeze.vcf.gz
+    md5sum: d64a161223a91e0382e4e132f03a3d69
+    filesize: 11.8GB
+    filetype: .gz
+    number_of_variants: 1527053
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:98cb679a-0563-4801-967a-3313c39f1097
+    name: 14_freeze.vcf.gz
+    md5sum: a10c0758fde7dc9469276b9122ff03e2
+    filesize: 10.7GB
+    filetype: .gz
+    number_of_variants: 1403580
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:9224d2eb-39e3-4443-81bb-eff4f31befc5
+    name: 17_freeze.vcf.gz
+    md5sum: d10ae9424b7c8b16385f85644aca578f
+    filesize: 9.1GB
+    filetype: .gz
+    number_of_variants: 1177884
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:7d7b9047-48fb-4f01-bfbb-724ff8f341fa
+    name: 3_freeze.vcf.gz
+    md5sum: 2c54dcb4cd5acbb4ca93f2998d5f72e3
+    filesize: 24.2GB
+    filetype: .gz
+    number_of_variants: 3147254
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:20038021-c6cb-4ef3-87e7-d9445867cc65
+    name: 2_freeze.vcf.gz
+    md5sum: ed4e605d0c0362981598e3e63b551a23
+    filesize: 28.8GB
+    filetype: .gz
+    number_of_variants: 3749277
+    number_of_participants: 1865
+    belongs_to: data
+  - id: alspacdcs:eafd2581-0dab-4ff7-a0c5-cede2d346a3f
+    name: 1_freeze.vcf.gz
+    md5sum: 1730c495dca8b0392d02912c27a5d02c
+    filesize: 26.3GB
+    filetype: .gz
+    number_of_variants: 3406915
+    number_of_participants: 1865
+    belongs_to: data

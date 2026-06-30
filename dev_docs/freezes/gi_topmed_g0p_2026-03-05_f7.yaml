@@ -1,0 +1,233 @@
+# This yaml file is a description of a freeze of a released version of a named alspac dataset
+# It should conform to the schema https://github.com/alspac/alspac-data-catalogue-schema
+
+id: alspacdcs:gi_topmed_g0p_2026-03-05_f7
+name: >-
+  Genome-wide - TOPmed imputed - G0 partners version 2026-03-05
+  freeze 7
+description: >-
+  Freeze 7 of version 2026-03-09 Genome-wide array data imputed to the TOPmed round 3 reference panel for G0 partners and a few G0 mothers in bgen and sample file format (version 1.2). 
+freeze_size: 22G
+linker_file_md5sum: 2b2e49bc61c1a0efc3f57db6e48656ea
+woc_file_md5sum: ee409be51e4e12594cb700dd1be99314
+all_individuals_to_exclude_md5sum: 241c00aec78b7178d6797a83478dec02
+git_tag: https://github.com/alspac/dataset_gi_topmed_g0p/releases/tag/freeze7
+is_current_freeze: true
+freeze_number: 7
+freeze_date: 2026-04-14
+previous_freeze: NA
+freeze_of_alspac_dataset_version: alspacdcs:gi_topmed_g0p_2026-03-05
+freeze_of_named_alspac_dataset: alspacdcs:gi_topmed_g0p
+
+contains:
+- data
+files: []
+data:
+  contains:
+  - chr15_freeze.bgen
+  - chr19_freeze.bgen
+  - chr13_freeze.bgen
+  - chr21_freeze.bgen
+  - chr10_freeze.bgen
+  - chr11_freeze.bgen
+  - chr5_freeze.bgen
+  - chr8_freeze.bgen
+  - chr6_freeze.bgen
+  - chr17_freeze.bgen
+  - chr22_freeze.bgen
+  - chr12_freeze.bgen
+  - chr14_freeze.bgen
+  - chr18_freeze.bgen
+  - chr16_freeze.bgen
+  - chr20_freeze.bgen
+  - chr9_freeze.bgen
+  - chr4_freeze.bgen
+  - chr3_freeze.bgen
+  - chr7_freeze.bgen
+  - chr2_freeze.bgen
+  - chr1_freeze.bgen
+  - freeze.sample
+  files:
+  - id: alspacdcs:896a5868-62b3-4977-afc2-7c48e4e83fe3
+    name: chr15_freeze.bgen
+    md5sum: 9606120b7d711ff2b2fc1b270a5a32c9
+    filesize: 665.6MB
+    filetype: .bgen
+    number_of_variants: 946259
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:ca8f89f0-6881-4f9e-9721-fb8150317e5f
+    name: chr19_freeze.bgen
+    md5sum: f05ca7e90fbd43946da44fe412cd3fe7
+    filesize: 558.4MB
+    filetype: .bgen
+    number_of_variants: 738614
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:6a60a87f-5740-4aaa-a966-f7ef23420512
+    name: chr13_freeze.bgen
+    md5sum: 22f3943a6d523918c8ff85babdefdd1a
+    filesize: 815.3MB
+    filetype: .bgen
+    number_of_variants: 1189351
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:7b58037e-5ddb-483b-af5e-32fc53a393d6
+    name: chr21_freeze.bgen
+    md5sum: e1c94daa160cacd8376b2ce13d4634ad
+    filesize: 328.4MB
+    filetype: .bgen
+    number_of_variants: 430038
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:12617f44-9084-40f4-81fd-2c4a207ea9b6
+    name: chr10_freeze.bgen
+    md5sum: 17ea66dec66bf9f792367f8643db009e
+    filesize: 1.1GB
+    filetype: .bgen
+    number_of_variants: 1640786
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:764c2691-3271-41a6-a225-d8a5eb118444
+    name: chr11_freeze.bgen
+    md5sum: f53035ee0dc61b1fb0dd7eace77b316d
+    filesize: 1.1GB
+    filetype: .bgen
+    number_of_variants: 1633833
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:13fffb28-dacc-4a52-bf64-9b715d7eede7
+    name: chr5_freeze.bgen
+    md5sum: 4e65772a4270c7867de4d360b3fbb90e
+    filesize: 1.4GB
+    filetype: .bgen
+    number_of_variants: 2154914
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:3c41c9bb-7162-44fa-97b9-33ed530d61df
+    name: chr8_freeze.bgen
+    md5sum: 22dc547b58371f66dba68e5fa290d9b0
+    filesize: 1.2GB
+    filetype: .bgen
+    number_of_variants: 1840903
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:81576647-1b56-42d1-8733-c7b01bffd43c
+    name: chr6_freeze.bgen
+    md5sum: 51f802c3216c4038bb9e601cfe689ce9
+    filesize: 1.3GB
+    filetype: .bgen
+    number_of_variants: 2094485
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:7eddd9ca-343a-40eb-95f9-9c8ba67b3f22
+    name: chr17_freeze.bgen
+    md5sum: 4dde203a3840e3e5656e9368645c7e79
+    filesize: 680.9MB
+    filetype: .bgen
+    number_of_variants: 928784
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:f4394790-6bdf-495a-a7d9-f1f5fd326b0c
+    name: chr22_freeze.bgen
+    md5sum: 1856df2ac51183f4fa3628e0ac8e10b8
+    filesize: 329.3MB
+    filetype: .bgen
+    number_of_variants: 445037
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:bb68d019-c68b-4c78-beb1-3544a1f57ac7
+    name: chr12_freeze.bgen
+    md5sum: d6554162765d6d1be60b8b1686e8d777
+    filesize: 1.0GB
+    filetype: .bgen
+    number_of_variants: 1571845
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:1f090c2c-b25d-4f02-88a2-b22544997602
+    name: chr14_freeze.bgen
+    md5sum: 90e11d2e620ef759d2687316bc6d97c4
+    filesize: 717.6MB
+    filetype: .bgen
+    number_of_variants: 1063271
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:f9a1d0d7-3d03-4266-a824-08a3cf99b60c
+    name: chr18_freeze.bgen
+    md5sum: f6785ac96db505e6524c62bb97113d13
+    filesize: 671.2MB
+    filetype: .bgen
+    number_of_variants: 941993
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:904b0a56-83b6-4b78-bbd2-c37a4a9a6c78
+    name: chr16_freeze.bgen
+    md5sum: 0fd6bb9434447235cee417188b9c2a52
+    filesize: 732.1MB
+    filetype: .bgen
+    number_of_variants: 1041239
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:0c1bb5af-bf43-40b6-95ff-12e56324bd4e
+    name: chr20_freeze.bgen
+    md5sum: f40f8071f1041eff977bbbfdacfbe7bc
+    filesize: 537.7MB
+    filetype: .bgen
+    number_of_variants: 746712
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:8c5bc46b-9375-4b2a-ab25-299e42b56f08
+    name: chr9_freeze.bgen
+    md5sum: 7f11eaaf2a1994944570eba0ccb1b759
+    filesize: 964.2MB
+    filetype: .bgen
+    number_of_variants: 1446728
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:12b3d880-abb9-4a8e-b9bd-e9bc03de996e
+    name: chr4_freeze.bgen
+    md5sum: 2f42ff7aff9d3554313f062a72cccddd
+    filesize: 1.6GB
+    filetype: .bgen
+    number_of_variants: 2348703
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:f2d71a03-8785-4f47-9a55-3f6e86885bb8
+    name: chr3_freeze.bgen
+    md5sum: 127f3c7043067ddb1966cab142ed541a
+    filesize: 1.6GB
+    filetype: .bgen
+    number_of_variants: 2375486
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:f3a7c283-1d4d-47c5-8519-8b35494b459a
+    name: chr7_freeze.bgen
+    md5sum: f7a00a3fe2411e1b4dd706c173f11cb1
+    filesize: 1.3GB
+    filetype: .bgen
+    number_of_variants: 1924941
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:dfbae54d-05a3-48e7-9cb1-9364be264e34
+    name: chr2_freeze.bgen
+    md5sum: b6d11260933002b6b93914e358bded1e
+    filesize: 1.8GB
+    filetype: .bgen
+    number_of_variants: 2850810
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:abc2cba5-16ee-41eb-8324-238b934937ee
+    name: chr1_freeze.bgen
+    md5sum: 3c84eeb511d11b0aa2b09d840efe122f
+    filesize: 1.7GB
+    filetype: .bgen
+    number_of_variants: 2636883
+    number_of_participants: 2198
+    belongs_to: data
+  - id: alspacdcs:8025063c-1ab2-4d9b-b537-838795b9ef32
+    name: freeze.sample
+    md5sum: bc4d80c65b3a76fe6a4c0e7ca061d8d0
+    filesize: 120.2KB
+    filetype: .sample
+    number_of_participants: 2198
+    belongs_to: data
