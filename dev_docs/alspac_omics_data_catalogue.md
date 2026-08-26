@@ -160,7 +160,7 @@ We combined 477,482 SNP genotypes in common between the sample of mothers and sa
 ## Genome-wide - 1000G imputed - G0 partners (gi_1000g_g0p)
 
 ### Description
-This dataset contains genome-wide array data imputed to the 1000 genomes reference panel for G0 partners, with some additional G0 mothers and G1 individuals. This data has been cleaned, flipped to the positive strand and in b37 coordinates and imputed to the 1000 genomes phase I version 3.<br>
+This dataset contains genome-wide array data imputed to the 1000 genomes reference panel for G0 partners, with some additional G0 mothers. This data has been cleaned, flipped to the positive strand and in b37 coordinates and imputed to the 1000 genomes phase I version 3.<br>
 Reference genome build: `GRCh37`
 
 ### Methodology 
@@ -202,9 +202,7 @@ Samples were excluded if they displayed more than 5% missingness, had indetermin
 
 9,048 subjects and 526,688 SNPs passed these quality control filters.
 
-We combined 477,482 SNP genotypes in common between the sample of mothers and sample of children. We removed SNPs with genotype missingness above 1% due to poor quality (11,396 SNPs removed) and removed a further 321 subjects due to potential ID mismatches. This resulted in a dataset of 17,842 subjects containing 6,305 duos and 465,740 SNPs (112 were removed during liftover and 234 were out of HWE after combination). We estimated haplotypes using ShapeIT(v2.r644) which utilises relatedness during phasing. We obtained a phased version of the 1000 genomes reference panel (Phase 1, Version3) from the Impute2 reference data repository (phased using ShapeItv2.r644, haplotype release date Dec 2013). Imputation of the target data was performed using Impute V2.2.2 against the reference panel(all polymorphic SNPs excluding singletons), using all 2186 reference haplotypes (including non-Europeans).
-
-This gave 8,237 eligible children and 8,196 eligible mothers withavailable genotype data after exclusion of related subjects using cryptic relatedness measures described previously.
+We combined 477,482 SNP genotypes in common between the sample of mothers and sample of children. We removed SNPs with genotype missingness above 1% due to poor quality (11,396 SNPs removed) and removed a further 321 subjects due to potential ID mismatches. This resulted in a dataset of 17,842 subjects containing 6,305 duos and 465,740 SNPs (112 were removed during liftover and 234 were out of HWE after combination). We estimated haplotypes using ShapeIT(v2.r644) which utilises relatedness during phasing. We obtained a phased version of the 1000 genomes reference panel (Phase 1, Version3) from the Impute2 reference data repository (phased using ShapeItv2.r644, haplotype release date Dec 2013). Imputation of the target data was performed using Impute V2.2.2 against the reference panel (all polymorphic SNPs excluding singletons), using all 2186 reference haplotypes (including non-Europeans).
 
 Known issues:
 There is a known strand issue present within this imputation: The Dec 2013 haplotype release of 1000 genomes phase 1 version 3 have 199 reported SNPs with incorrect strand. For more information and the origins of this list please visit https://mathgen.stats.ox.ac.uk/impute/data_download_1000G_phase1_integrated_SHAPEIT2_16-06-14.html. It is very unlikely that they have systematic effects across the genome and most probably are just isolated to these 199 known problematic SNPs. The user is advised to discard them from their analysis.
@@ -221,7 +219,7 @@ Allele frequency concordance with other cohorts: When contributing to consortia 
 ## Genome-wide - TOPMed round 3 imputed - G0 mothers + G1 (gi_topmed_g0m_g1)
 
 ### Description
-This dataset contains genotype data imputed to TOPMed round 2 for G0 mothers and G1.<br>
+This dataset contains genotype data imputed to TOPMed round 3 for G0 mothers and G1.<br>
 Reference genome build: `GRCh38`
 
 ### Methodology
@@ -257,7 +255,7 @@ Phasing and imputation was conducted on the Michigan TOPMed imputation server in
 ## Genome-wide - TOPMed round 3 imputed - G0 partners (gi_topmed_g0p)
 
 ### Description
-This dataset contains genotype data imputed to TOPMed round 2 for G0 mothers and G1.<br>
+This dataset contains genotype data imputed to TOPMed round 3 for G0 Partners, with some additional G0 mothers.<br>
 Reference genome build: `GRCh38`
 
 ### Methodology
